@@ -1,0 +1,76 @@
+# ==========================================
+# .gitignore - Pokémon Trinacria / Sicilia
+# ==========================================
+
+# --- ROM, Salvataggi & File Emulatore ---
+# IMPORTANTE: non versionare ROM con copyright, dump o salvataggi
+*.nds
+*.gba
+*.gbc
+*.bin
+*.sav
+*.dsv
+*.state*
+*.ss*
+*.dump
+build/
+pokeheartgold.us.nds
+
+# Se generi patch binarie temporanee (scommenta se non vuoi tracciarle):
+# *.xdelta
+# *.bps
+# *.ips
+
+# --- Python (trinacria_msg_lint, font_extend, ecc.) ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+dist/
+*.egg-info/
+
+# --- Node.js (dialect_query.mjs, mcp, ecc.) ---
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-store/
+
+# --- Log di build & File temporanei ---
+*.log
+trinacria_build.log
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+
+# --- File di sistema (Windows / macOS / Linux) ---
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+._*
+*~
+
+# --- Editor e IDE ---
+.idea/
+*.sublime-project
+*.sublime-workspace
+# Per VS Code: ignora i dati locali ma mantieni opzionalmente le configurazioni condivise del team
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# --- Variabili d'ambiente e segreti ---
+.env
+.env.*
+!.env.example
