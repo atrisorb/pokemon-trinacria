@@ -2,7 +2,7 @@
 
 **Progetto:** Pokémon Trinacria · autore e copyright: **atrisorb**
 **Base codice:** `F:\Progetti\pokeheartgold` (clone pret, commit `c28680fe0`) · **Cartella documenti:** `F:\Progetti\pokémon-sicilia`
-**Versione del modulo:** 1.1 · 15/10/2026 (allineata al registro delle mappe `docs/MODULO_2/2.1_MAPS_CT_SR_RG.json`: §4.3, §4.7, §7.2, §8.2, §10)
+**Versione del modulo:** 1.2 · 16/10/2026 (allineata al registro delle mappe `docs/MODULO_2/2.1_MAPS_CT_SR_RG.json` v1.1 e alla decisione R-10 di `docs/00_TRAMA_ESPANSA_E_SIDEQUEST.md` v1.2 su centralità dei Pokémon e «U Sistema»: §4.3, §4.4, §4.7, §7.1, §7.2, §8.1, §8.2, §10)
 **Lettore:** LLM esecutore (Gemini Flash o equivalente). Questo documento non chiede di prendere decisioni: ogni valore è già deciso.
 
 Tutti i fatti tecnici di questo modulo (percorsi, nomi di funzioni, righe di codice, ID liberi) sono stati **letti nel repository** il 15/10/2026. Il codice C dei passi M1-08…M1-14 è scritto sulle firme reali delle funzioni, ma **non è ancora stato compilato**: la compilazione è il criterio di successo di ogni passo.
@@ -170,8 +170,8 @@ Le mappe senza testi propri (le aree della Zona Safari, che usano il banco condi
 
 | Costante | Valore | Significato |
 |---|---|---|
-| `TRINACRIA_POSTGAME_TRAINER_FIRST` | 700 | gli allenatori con ID 700–737 esistono solo nel post-game (compagni da ri-sfidare, Maria, Fantasmi della Prima Repubblica). Non vengono scalati di livello e non vengono riattivati (§7.4). Tutti gli altri allenatori della storia usano gli ID 1–699. |
-| `TRINACRIA_POST_LEVEL_BONUS` | 25 | livelli aggiunti alle squadre degli allenatori 1–699 dopo le dimissioni (massimo 100) |
+| `TRINACRIA_POSTGAME_TRAINER_FIRST` | 700 | gli allenatori con ID 700–737 esistono solo nel post-game (compagni da ri-sfidare, Maria, Fantasmi della Prima Repubblica). Non vengono scalati di livello e non vengono riattivati (§7.4). Tutti gli altri allenatori della storia — inclusi i 4 livelli operativi di **«U Sistema»** che sostituiscono il Team Rocket (trama, decisione R-10.2 e R-10.6) — usano gli ID 1–699. |
+| `TRINACRIA_POST_LEVEL_BONUS` | 25 | livelli aggiunti alle squadre degli allenatori 1–699 dopo le dimissioni (massimo 100): rappresenta la riorganizzazione di «U Sistema» sotto nuove sigle sei mesi dopo le dimissioni del protagonista (R-10.6). |
 
 ### 4.5 Codici di carattere nuovi (§5)
 
@@ -842,7 +842,7 @@ La riga 4 resta perché è un'attribuzione obbligatoria dei marchi originali: **
 ## 10. Musica: aggancio tecnico (dettagli nel Modulo 5)
 
 - L'archivio è `files/data/sound/gs_sound_data.sdat`. I nomi delle sequenze sono in `include/constants/sndseq.h`.
-- I nomi Trinacria delle musiche (`SEQ_CT_VERMUT`, `SEQ_TRN_CENTRO_POKEMON`…) sono **alias** degli slot HeartGold, definiti nel file nuovo `include/trinacria/trinacria_seq.h` (contenuto nel registro del Modulo 2, sezione `file_trinacria_seq_h`; 33 nomi nel blocco 2.1). Nessuna sequenza nuova: il Modulo 5 sostituisce i dati dello slot e del suo gemello `SEQ_GS_P_*` (modalità «suoni GB»). Giorno e notte usano lo stesso brano.
+- I nomi Trinacria delle musiche (`SEQ_CT_VERMUT`, `SEQ_TRN_CENTRO_POKEMON`…) sono **alias** degli slot HeartGold, definiti nel file nuovo `include/trinacria/trinacria_seq.h` (contenuto nel registro del Modulo 2, sezione `file_trinacria_seq_h`; 33 nomi nel blocco 2.1). Nessuna sequenza nuova: il Modulo 5 sostituisce i dati dello slot e del suo gemello `SEQ_GS_P_*` (modalità «suoni GB»). Giorno e notte usano lo stesso brano. Gli slot musicali del Team Rocket (`SEQ_GS_R_AJITO`, `SEQ_GS_EYE_ROCKET`, `SEQ_GS_BA_ROCKET` e rispettivi gemelli `SEQ_GS_P_*`) vengono rimappati nel Modulo 2.5 e nel Modulo 5 sui temi dei covi/uffici, degli incontri e delle battaglie di **«U Sistema»** (trama, decisione R-10.6).
 - Il gioco ha già un meccanismo «musica diversa se un flag è acceso»: la tabella `sMusicOverrideMap` in `src/sys_flags.c` (`{ mappa, flag, sequenza }`). Il Modulo 5 la usa per: cenere attiva su Fontanarossa, mondo post-dimissioni, silenzio di Capaci.
 - Regola: nessuna mappa senza musica, tranne Capaci e il Grande Cretto, dove la sequenza è il vento (Modulo 5, `SEQ_CAPACI_WIND_SILENCE`).
 

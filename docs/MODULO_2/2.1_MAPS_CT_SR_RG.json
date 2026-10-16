@@ -2,14 +2,14 @@
   "modulo": "MODULO 2 — GLOBAL_CONSTANTS_REGISTRY",
   "blocco": "2.1",
   "titolo": "Registro delle mappe di Catania (CT), Siracusa (SR) e Ragusa (RG), con il piano globale di slot, griglia e numerazioni",
-  "versione": "1.0",
-  "data": "2026-10-15",
+  "versione": "1.1",
+  "data": "2026-10-16",
   "progetto": "Pokémon Trinacria — autore e copyright: atrisorb",
   "file": "F:\\Progetti\\pokémon-sicilia\\docs\\MODULO_2\\2.1_MAPS_CT_SR_RG.json",
   "lettore": "LLM esecutore. Ogni valore è deciso: si copia, non si sceglie.",
   "fonti": [
-    "docs/00_TRAMA_ESPANSA_E_SIDEQUEST.md (canone narrativo: luoghi, missioni, dungeon)",
-    "docs/MODULO_1_INFRASTRUCTURE_AND_ENGINE_SPEC.md (§4 ID riservati, §7 gemelli, §8 cenere)",
+    "docs/00_TRAMA_ESPANSA_E_SIDEQUEST.md v1.2 (canone narrativo: luoghi, missioni, dungeon, R-09 e R-10 centralità dei Pokémon e architettura di «U Sistema»)",
+    "docs/MODULO_1_INFRASTRUCTURE_AND_ENGINE_SPEC.md v1.2 (§4 ID riservati, §7 gemelli, §8 cenere)",
     "F:\\Progetti\\pokeheartgold @ c28680fe0, letti il 15/10/2026: include/constants/maps.h (540 mappe), src/data/map_headers.h, include/map_header.h, include/constants/map_sections.h, files/msgdata/msg/msg_0279.json, include/constants/flypoints.h, include/constants/spawns.h, include/constants/flags.h, asm/unk_0203BA5C.s (spawn), src/application/pokegear/map/overlay_101_021F79B4.c (tabella del Volo), files/fielddata/mapmatrix/map_matrix/*.bin (matrice 0: 47×17), include/map_matrix.h (MAP_MATRIX_MAX_SIZE 799), include/constants/sndseq.h",
     "Analisi dei riferimenti: ogni simbolo MAP_* cercato in src/, asm/, include/, lib/, files/ (esclusi maps.h e map_headers.h)"
   ],
@@ -32,9 +32,10 @@
     "R-MAP-15": "Centri Pokémon. Ogni Centro ha anche il bancone del negozio (niente mappe «putìa» separate). Il modello HG del Centro ha la scala per il piano interrato: il warp verso il piano interrato non si scrive (negli eventi del Modulo 6 la scala è un oggetto con un cartello «fuori servizio»).",
     "R-MAP-16": "Nomi dei luoghi. msg_0279 (235 messaggi, uno per MAPSEC) cambia solo nei messaggi elencati in «sezioni_pokegear»: testo italiano ufficiale, al massimo 16 caratteri (lunghezza massima misurata in HeartGold), apostrofo ’. MAPSEC 55 (Parco Amici) e 86 (Sala dell’Origine) non si riusano: li legge src/trainer_memo.c.",
     "R-MAP-17": "Luoghi reali e inventati (trama R-05). Cubbar, Vermut, Savia, i lidi e i monumenti sono solo ambientazione. Privè Zagara, il polo petrolchimico con i suoi dirigenti, il club in tonnara, i trasportatori di Vittoria e le Segreterie sono inventati. Pozzallo (hotspot) ha tono sobrio.",
-    "R-MAP-18": "Slot obbligati. 60, 63 e 64 sono la casa e il quartiere del protagonista perché il motore li usa per la nuova partita e per la madre; 173, 357 e 343–356 restano la Zona Safari (Vendicari) perché il motore li carica in modalità Safari; i Centri usano gli slot dell’elenco sPokémonCenterMaps di src/map_header.c quando possibile (serve solo alla reception della Union Room, che in Trinacria non esiste).",
+    "R-MAP-18": "Slot obbligati. 60, 63 e 64 sono la casa e il quartiere del protagonista perché il motore li usa per la nuova partita e per la madre; 173, 357 e 343–356 restano la Zona Safari (Vendicari) perché il motore li carica in modalità Safari; i Centri usano gli slot dell’elenco sPokemonCenterMaps di src/map_header.c quando possibile (serve solo alla reception della Union Room, che in Trinacria non esiste).",
     "R-MAP-19": "Celle e collegamenti verso gli altri blocchi. Le strade di «strade_riservate» hanno qui solo simbolo e celle: id, banchi e intestazioni li assegna il blocco 2.3. Gli «agganci» dicono da quale cella di questo blocco parte ogni collegamento verso le province dei blocchi 2.2 e 2.3.",
-    "R-MAP-20": "Controllo di coerenza (da eseguire prima di applicare il registro): nessun id ripetuto; nessuna cella usata due volte; ogni mappa esterna raggiungibile da MAP_CT_CATANIA_CORSO_ITALIA; numeri dei gemelli contigui; ogni MAPSEC ≤ 16 caratteri. Il generatore di questo file ha superato tutti i controlli (sezione «controllo»)."
+    "R-MAP-20": "Controllo di coerenza (da eseguire prima di applicare il registro): nessun id ripetuto; nessuna cella usata due volte; ogni mappa esterna raggiungibile da MAP_CT_CATANIA_CORSO_ITALIA; numeri dei gemelli contigui; ogni MAPSEC ≤ 16 caratteri. Il generatore di questo file ha superato tutti i controlli (sezione «controllo»).",
+    "R-MAP-21": "Centralità dei Pokémon e operazioni di «U Sistema» nelle mappe (trama R-10). Il campo followMode delle intestazioni (MAP_FOLLOWMODE_ALLOW nelle mappe esterne e nei dungeon, MAP_FOLLOWMODE_HEIGHT_RESTRICT negli interni, MAP_FOLLOWMODE_PREVENT solo nelle mappe SCENA come il treno della Circumetnea) mantiene il Pokémon a seguito visibile accanto al protagonista. Negli eventi (zone_event) del Modulo 6, ogni mappa descritta in «contenuti_trama» include gli sprite overworld dei Pokémon coinvolti nell’ecologia locale o nelle operazioni di «U Sistema» (pizzo biologico, allacci abusivi, roghi, sciami agro-mafiosi, monopolio dei Pokémon curatori, spazzatori bloccati a Fontanarossa, inceneritori viventi del petrolchimico, blocco portuale, catena del freddo a Vittoria, jamming radar a Comiso, Pokémon spia dei Cambiavoti). Nei luoghi della memoria (hotspot di Pozzallo in questo blocco) non ci sono lotte né selvatici e il Pokémon a seguito resta silenzioso."
   },
   "piano_globale": {
     "griglia_matrice_0": {
@@ -3653,7 +3654,7 @@
       "pokegear": {"mapsec": "MAPSEC_CT_VIA_ETNEA", "mapsec_id": 2, "nome": "Via Etnea", "cella": [38, 5], "regione": "MAP_REGION_KANTO"},
       "punto_di_volo": "FLYPOINT_CATANIA",
       "contenuti_trama": [
-        "M-CT-02 (via Etnea, via Gemmellaro, piazza Teatro Massimo, auto blu in via Santa Filomena, Savia)",
+        "M-CT-02 (via Etnea coi Munnizza nei vicoli, via Gemmellaro, piazza Teatro Massimo, auto blu in via Santa Filomena e scagnozzi di U Sistema coi Koffing davanti a Savia)",
         "S-CT-01 (Turi in piazza Università; pacchi di via Etnea e Villa Bellini)",
         "E-CT-04 (motorino sul marciapiede)",
         "E-CT-02 (arancini)"
@@ -3803,7 +3804,7 @@
       "musica": {"giorno": "SEQ_CT_SAN_CRISTOFORO", "notte": "SEQ_CT_SAN_CRISTOFORO", "slot_hg": "SEQ_GS_C_ENJU"},
       "pokegear": {"mapsec": "MAPSEC_CT_SAN_CRISTOFORO", "mapsec_id": 4, "nome": "San Cristoforo", "cella": [37, 5], "regione": "MAP_REGION_KANTO"},
       "punto_di_volo": null,
-      "contenuti_trama": ["M-CT-03 (via Plebiscito, braci, 3 strozzini nei vicoli, B-CT-01)", "ST-04", "P-01 (Ritrovo di Orazio, martedì)", "P-10"],
+      "contenuti_trama": ["M-CT-03 (via Plebiscito, braci, 3 strozzini del pizzo biologico nei vicoli, B-CT-01 Nino U Strozzinu)", "ST-04", "P-01 (Ritrovo di Orazio, martedì)", "P-10"],
       "intestazione": {
         "wildEncounterBank": "ENCDATA_NA",
         "areaDataBank": "5",
@@ -3936,7 +3937,7 @@
       "musica": {"giorno": "SEQ_CT_LIBRINO", "notte": "SEQ_CT_LIBRINO", "slot_hg": "SEQ_GS_C_TANBA"},
       "pokegear": {"mapsec": "MAPSEC_CT_LIBRINO", "mapsec_id": 6, "nome": "Librino", "cella": [36, 6], "regione": "MAP_REGION_KANTO"},
       "punto_di_volo": null,
-      "contenuti_trama": ["M-CT-05 (ingresso del Palazzo di Cemento)", "S-CT-10 (scuola-seggio, Cambiavoti di Catania)", "P-01 (Ritrovo di Chantal, mercoledì)"],
+      "contenuti_trama": ["M-CT-05 (ingresso del Palazzo di Cemento)", "S-CT-10 (scuola-seggio, Cambiavoti di Catania col Pokémon spia sulla cabina)", "P-01 (Ritrovo di Chantal, mercoledì)"],
       "intestazione": {
         "wildEncounterBank": "ENCDATA_NA",
         "areaDataBank": "5",
@@ -5136,7 +5137,7 @@
       "pokegear": {"mapsec": "MAPSEC_CT_VIA_ETNEA", "mapsec_id": 2, "nome": "Via Etnea", "cella": [38, 5], "regione": "MAP_REGION_KANTO"},
       "punto_di_volo": null,
       "contenuti_trama": [
-        "M-CT-02 (Turi, Maria, Prof. Strano; starter dalla scatola di paste di mandorla; Pokedex)",
+        "M-CT-02 (Turi, Maria, Prof. Strano; starter dalla scatola di paste di mandorla; Atlante Biopolitico / Pokedex)",
         "C-01",
         "C-05",
         "ST-12",
@@ -5205,7 +5206,7 @@
       "musica": {"giorno": "SEQ_CT_SAN_CRISTOFORO", "notte": "SEQ_CT_SAN_CRISTOFORO", "slot_hg": "SEQ_GS_C_ENJU"},
       "pokegear": {"mapsec": "MAPSEC_CT_SAN_CRISTOFORO", "mapsec_id": 4, "nome": "San Cristoforo", "cella": [37, 5], "regione": "MAP_REGION_KANTO"},
       "punto_di_volo": null,
-      "contenuti_trama": ["M-CT-03 (Orazio assediato; ricompensa SH 300 Scassatu)", "C-02", "P-10 (Nunzio riapre)"],
+      "contenuti_trama": ["M-CT-03 (Orazio assediato dal pizzo biologico coi Koffing/Slugma nell’officina; ricompensa SH 300 Scassatu)", "C-02", "P-10 (Nunzio riapre)"],
       "note": "Riuso della matrice del negozio di biciclette di Goldenrod.",
       "intestazione": {
         "wildEncounterBank": "ENCDATA_NA",
@@ -5618,7 +5619,7 @@
       "musica": {"giorno": "SEQ_CT_LIBRINO", "notte": "SEQ_CT_LIBRINO", "slot_hg": "SEQ_GS_C_TANBA"},
       "pokegear": {"mapsec": "MAPSEC_CT_PALAZZO_CEMENTO", "mapsec_id": 21, "nome": "Pal. di Cemento", "cella": [36, 6], "regione": "MAP_REGION_KANTO"},
       "punto_di_volo": null,
-      "contenuti_trama": ["D-CT-02 (piani 9 e 10, un allenatore per piano)", "B-CT-02 (Capo-Condominio al 10° piano)"],
+      "contenuti_trama": ["D-CT-02 (piani 9 e 10, un allenatore per piano)", "B-CT-02 (Capo-Condominio al 10° piano: monopolio dell’allaccio elettrico/idrico coi Pokémon Elettro/Acqua)"],
       "note": "Due piani nella stessa mappa: stanza ovest = piano 9, stanza est = piano 10, collegate dalla scala (warp). Tutte e cinque le mappe usano la stessa matrice nuova.",
       "intestazione": {
         "wildEncounterBank": "ENCDATA_NA",
@@ -5688,7 +5689,7 @@
       "musica": {"giorno": "SEQ_TRN_SEGRETERIA", "notte": "SEQ_TRN_SEGRETERIA", "slot_hg": "SEQ_GS_GYM"},
       "pokegear": {"mapsec": "MAPSEC_CT_PALAZZO_ELEFANTI", "mapsec_id": 22, "nome": "Pal. Elefanti", "cella": [38, 6], "regione": "MAP_REGION_KANTO"},
       "punto_di_volo": null,
-      "contenuti_trama": ["M-CT-08 (code di pazienti, sportelli «torna domani»; Primario, Convenzionato, Informatore, Centralinista)"],
+      "contenuti_trama": ["M-CT-08 (code di pazienti, sportelli «torna domani»; Primario, Convenzionato, Informatore, Centralinista che monopolizzano i Pokémon curatori)"],
       "intestazione": {
         "wildEncounterBank": "ENCDATA_NA",
         "areaDataBank": "30",
@@ -5756,7 +5757,7 @@
       "musica": {"giorno": "SEQ_TRN_SEGRETERIA", "notte": "SEQ_TRN_SEGRETERIA", "slot_hg": "SEQ_GS_GYM"},
       "pokegear": {"mapsec": "MAPSEC_CT_PALAZZO_ELEFANTI", "mapsec_id": 22, "nome": "Pal. Elefanti", "cella": [38, 6], "regione": "MAP_REGION_KANTO"},
       "punto_di_volo": null,
-      "contenuti_trama": ["M-CT-08 (Dott. Ignazio Calì, Dossier Liotru)"],
+      "contenuti_trama": ["M-CT-08 (Dott. Ignazio Calì col monopolio dei Chansey/curatori, Dossier Liotru)"],
       "intestazione": {
         "wildEncounterBank": "ENCDATA_NA",
         "areaDataBank": "30",
@@ -6030,7 +6031,7 @@
       "musica": {"giorno": "SEQ_CT_CUBBAR_TECHNO", "notte": "SEQ_CT_CUBBAR_TECHNO", "slot_hg": "SEQ_GS_KABURENJOU"},
       "pokegear": {"mapsec": "MAPSEC_CT_PLAIA", "mapsec_id": 8, "nome": "Plaia", "cella": [38, 7], "regione": "MAP_REGION_KANTO"},
       "punto_di_volo": null,
-      "contenuti_trama": ["M-CT-04 (scoperta del Privè Zagara)", "ST-05"],
+      "contenuti_trama": ["M-CT-04 (scoperta del Privè Zagara: riciclaggio coi Persian/Pizzu e lotte clandestine dei buttafuori di U Sistema)", "ST-05"],
       "note": "Locale inventato (trama R-05.1).",
       "intestazione": {
         "wildEncounterBank": "ENCDATA_NA",
@@ -6169,7 +6170,7 @@
       "musica": {"giorno": "SEQ_CT_FONTANAROSSA_CRISI", "notte": "SEQ_CT_FONTANAROSSA_CRISI", "slot_hg": "SEQ_GS_D_AJITO"},
       "pokegear": {"mapsec": "MAPSEC_CT_TERMINAL_A", "mapsec_id": 24, "nome": "Terminal A", "cella": [36, 7], "regione": "MAP_REGION_KANTO"},
       "punto_di_volo": null,
-      "contenuti_trama": ["M-CT-09 / D-CT-04 (gate; Direttore Operativo dello Scalo; sala VIP con la PEC di Maria)"],
+      "contenuti_trama": ["M-CT-09 / D-CT-04 (gate; Direttore Operativo dello Scalo che blocca i Pokémon spazzatori negli hangar VIP; sala VIP con la PEC di Maria)"],
       "intestazione": {
         "wildEncounterBank": "ENCDATA_NA",
         "areaDataBank": "77",
@@ -6635,7 +6636,7 @@
       "musica": {"giorno": "SEQ_CT_ETNA", "notte": "SEQ_CT_ETNA", "slot_hg": "SEQ_GS_TO_YAKETA"},
       "pokegear": {"mapsec": "MAPSEC_CT_CRATERI_SILVESTRI", "mapsec_id": 26, "nome": "Crat. Silvestri", "cella": [37, 2], "regione": "MAP_REGION_KANTO"},
       "punto_di_volo": null,
-      "contenuti_trama": ["M-CT-06 / D-CT-01 (bocca spenta; B-CT-03 l’Incendiario della Forestale)"],
+      "contenuti_trama": ["M-CT-06 / D-CT-01 (bocca spenta; B-CT-03 l’Incendiario della Forestale coi Pokémon Fuoco della biotruffa boschiva)"],
       "note": "Si entra dai Monti Rossi e si esce su Etna Sud.",
       "intestazione": {
         "wildEncounterBank": "ENCDATA_NA",
@@ -6704,7 +6705,7 @@
       "musica": {"giorno": "SEQ_CT_ETNA", "notte": "SEQ_CT_ETNA", "slot_hg": "SEQ_GS_TO_YAKETA"},
       "pokegear": {"mapsec": "MAPSEC_CT_CRATERE_CENTRALE", "mapsec_id": 27, "nome": "Cratere Centrale", "cella": [37, 2], "regione": "MAP_REGION_KANTO"},
       "punto_di_volo": null,
-      "contenuti_trama": ["P-04 (Fantasma del Cratere Centrale, allenatore 731; Ho-Oh dopo la lotta)"],
+      "contenuti_trama": ["P-04 (Fantasma del Cratere Centrale, allenatore 731; Ho-Oh / FeniceEtnea dopo la lotta)"],
       "note": "Solo post-game: si raggiunge da Etna Sud con Scalaroccia.",
       "intestazione": {
         "wildEncounterBank": "ENCDATA_NA",
@@ -6900,7 +6901,7 @@
       "musica": {"giorno": "SEQ_CT_ETNA", "notte": "SEQ_CT_ETNA", "slot_hg": "SEQ_GS_TO_YAKETA"},
       "pokegear": {"mapsec": "MAPSEC_CT_SCIARA_BRONTE", "mapsec_id": 28, "nome": "Sciara di Bronte", "cella": [34, 2], "regione": "MAP_REGION_KANTO"},
       "punto_di_volo": null,
-      "contenuti_trama": ["M-CT-07 / D-CT-03 (pistacchieti a terrazze, cancelli del cartello; B-CT-04 Don Saro del Pistacchio)"],
+      "contenuti_trama": ["M-CT-07 / D-CT-03 (pistacchieti a terrazze assediati dagli sciami Coleottero del cartello; B-CT-04 Don Saro del Pistacchio)"],
       "intestazione": {
         "wildEncounterBank": "ENCDATA_NA",
         "areaDataBank": "74",
@@ -7776,7 +7777,7 @@
       "musica": {"giorno": "SEQ_SR_BAROCCO_NOTO", "notte": "SEQ_SR_BAROCCO_NOTO", "slot_hg": "SEQ_GS_C_TAMAMUSHI"},
       "pokegear": {"mapsec": "MAPSEC_SR_AVOLA", "mapsec_id": 40, "nome": "Avola", "cella": [39, 13], "regione": "MAP_REGION_KANTO"},
       "punto_di_volo": null,
-      "contenuti_trama": ["S-SR-08 (Nero d’Avola: 6 casse nella pianta esagonale)", "S-SR-09 (scuola: Cambiavoti di Siracusa)"],
+      "contenuti_trama": ["S-SR-08 (Nero d’Avola: 6 casse nella pianta esagonale)", "S-SR-09 (scuola: Cambiavoti di Siracusa col Pokémon spia)"],
       "intestazione": {
         "wildEncounterBank": "ENCDATA_NA",
         "areaDataBank": "4",
@@ -8124,7 +8125,7 @@
       "musica": {"giorno": "SEQ_SR_LENTINI", "notte": "SEQ_SR_LENTINI", "slot_hg": "SEQ_GS_T_CHION"},
       "pokegear": {"mapsec": "MAPSEC_SR_LENTINI", "mapsec_id": 31, "nome": "Lentini", "cella": [37, 9], "regione": "MAP_REGION_KANTO"},
       "punto_di_volo": null,
-      "contenuti_trama": ["S-SR-03 (3 magazzini agrumari da liberare: tre stanze)"],
+      "contenuti_trama": ["S-SR-03 (3 magazzini agrumari occupati dai caporali di U Sistema e dai loro Pokémon: tre stanze)"],
       "intestazione": {
         "wildEncounterBank": "ENCDATA_NA",
         "areaDataBank": "25",
@@ -8261,7 +8262,7 @@
       "musica": {"giorno": "SEQ_SR_POLO_PETROLCHIMICO", "notte": "SEQ_SR_POLO_PETROLCHIMICO", "slot_hg": "SEQ_GS_TO_TOUDAI"},
       "pokegear": {"mapsec": "MAPSEC_SR_PETROLCHIMICO", "mapsec_id": 45, "nome": "Petrolchimico", "cella": [39, 9], "regione": "MAP_REGION_KANTO"},
       "punto_di_volo": null,
-      "contenuti_trama": ["M-SR-02 / D-SR-01 (pontili; serbatoi; Martiddata per le barriere)"],
+      "contenuti_trama": ["M-SR-02 / D-SR-01 (pontili; serbatoi coi Koffing/Weezing/Muk usati come inceneritori viventi; Martiddata per le barriere)"],
       "note": "Polo e dirigenti inventati (trama R-05.2).",
       "intestazione": {
         "wildEncounterBank": "ENCDATA_NA",
@@ -8336,7 +8337,7 @@
       "musica": {"giorno": "SEQ_SR_POLO_PETROLCHIMICO", "notte": "SEQ_SR_POLO_PETROLCHIMICO", "slot_hg": "SEQ_GS_TO_TOUDAI"},
       "pokegear": {"mapsec": "MAPSEC_SR_PETROLCHIMICO", "mapsec_id": 45, "nome": "Petrolchimico", "cella": [39, 10], "regione": "MAP_REGION_KANTO"},
       "punto_di_volo": null,
-      "contenuti_trama": ["M-SR-02 / D-SR-01 (sala controllo; torcia; foto dello scarico)", "B-SR-01 (l’Ing. della Torcia)"],
+      "contenuti_trama": ["M-SR-02 / D-SR-01 (sala controllo; torcia alimentata dallo Smog dei Pokémon Veleno; foto dello scarico)", "B-SR-01 (l’Ing. della Torcia)"],
       "intestazione": {
         "wildEncounterBank": "ENCDATA_NA",
         "areaDataBank": "74",
@@ -8673,7 +8674,7 @@
       "musica": {"giorno": "SEQ_TRN_SEGRETERIA", "notte": "SEQ_TRN_SEGRETERIA", "slot_hg": "SEQ_GS_GYM"},
       "pokegear": {"mapsec": "MAPSEC_SR_CASTELLO_MANIACE", "mapsec_id": 47, "nome": "Castello Maniace", "cella": [40, 11], "regione": "MAP_REGION_KANTO"},
       "punto_di_volo": null,
-      "contenuti_trama": ["M-SR-05 (Comm. Corrado Spataro, Dossier Aretusa)"],
+      "contenuti_trama": ["M-SR-05 (Comm. Corrado Spataro, Barone del blocco portuale coi Pokémon Acqua, Dossier Aretusa)"],
       "intestazione": {
         "wildEncounterBank": "ENCDATA_NA",
         "areaDataBank": "30",
@@ -9844,7 +9845,7 @@
       "musica": {"giorno": "SEQ_SR_MARZAMEMI", "notte": "SEQ_SR_MARZAMEMI", "slot_hg": "SEQ_GS_C_SEKICHIKU"},
       "pokegear": {"mapsec": "MAPSEC_SR_TONNARA", "mapsec_id": 48, "nome": "Tonnara", "cella": [39, 14], "regione": "MAP_REGION_KANTO"},
       "punto_di_volo": null,
-      "contenuti_trama": ["M-SR-03 / D-SR-03 (camera della morte; magazzini del club; Roncigghiu)", "B-SR-03 (la Concessionaria di Marzamemi)"],
+      "contenuti_trama": ["M-SR-03 / D-SR-03 (camera della morte e mare recintato coi Gyarados/Lanturn VIP; magazzini del club; Roncigghiu)", "B-SR-03 (la Concessionaria di Marzamemi)"],
       "note": "Club e concessione inventati (trama R-05.1).",
       "intestazione": {
         "wildEncounterBank": "ENCDATA_NA",
@@ -10452,7 +10453,7 @@
       "musica": {"giorno": "SEQ_RG_MERCATO_ALBA", "notte": "SEQ_RG_MERCATO_ALBA", "slot_hg": "SEQ_GS_C_TOKIWA"},
       "pokegear": {"mapsec": "MAPSEC_RG_VITTORIA", "mapsec_id": 57, "nome": "Vittoria", "cella": [31, 12], "regione": "MAP_REGION_KANTO"},
       "punto_di_volo": "FLYPOINT_VITTORIA",
-      "contenuti_trama": ["M-RG-02 (ingresso del mercato ortofrutticolo, alle 4:00)", "S-RG-08 (scuola: Cambiavoti di Ragusa)", "S-RG-02 (zucchero)"],
+      "contenuti_trama": ["M-RG-02 (ingresso del mercato ortofrutticolo, alle 4:00)", "S-RG-08 (scuola: Cambiavoti di Ragusa col Pokémon spia)", "S-RG-02 (zucchero)"],
       "intestazione": {
         "wildEncounterBank": "ENCDATA_NA",
         "areaDataBank": "5",
@@ -10920,7 +10921,7 @@
       "musica": {"giorno": "SEQ_TRN_SEGRETERIA", "notte": "SEQ_TRN_SEGRETERIA", "slot_hg": "SEQ_GS_GYM"},
       "pokegear": {"mapsec": "MAPSEC_RG_PALAZZO_MERCATO", "mapsec_id": 65, "nome": "Pal. del Mercato", "cella": [34, 12], "regione": "MAP_REGION_KANTO"},
       "punto_di_volo": null,
-      "contenuti_trama": ["M-RG-04 (Cav. Biagio Occhipinti, Dossier Carrubba)"],
+      "contenuti_trama": ["M-RG-04 (Cav. Biagio Occhipinti, monopolista della catena del freddo e dell’ortofrutta, Dossier Carrubba)"],
       "intestazione": {
         "wildEncounterBank": "ENCDATA_NA",
         "areaDataBank": "30",
@@ -11189,7 +11190,7 @@
       "musica": {"giorno": "SEQ_RG_MERCATO_ALBA", "notte": "SEQ_RG_MERCATO_ALBA", "slot_hg": "SEQ_GS_C_TOKIWA"},
       "pokegear": {"mapsec": "MAPSEC_RG_MERCATO_VITTORIA", "mapsec_id": 62, "nome": "Mercato Vittoria", "cella": [31, 12], "regione": "MAP_REGION_KANTO"},
       "punto_di_volo": null,
-      "contenuti_trama": ["M-RG-02 / D-RG-01 (3 padiglioni; Roncigghiu per casse e reti)"],
+      "contenuti_trama": ["M-RG-02 / D-RG-01 (3 padiglioni: racket delle spore e della maturazione coi Pokémon Erba/Veleno; Roncigghiu per casse e reti)"],
       "note": "Trasportatori imposti inventati (trama R-05.1).",
       "intestazione": {
         "wildEncounterBank": "ENCDATA_NA",
@@ -11258,7 +11259,7 @@
       "musica": {"giorno": "SEQ_RG_MERCATO_ALBA", "notte": "SEQ_RG_MERCATO_ALBA", "slot_hg": "SEQ_GS_C_TOKIWA"},
       "pokegear": {"mapsec": "MAPSEC_RG_MERCATO_VITTORIA", "mapsec_id": 62, "nome": "Mercato Vittoria", "cella": [31, 12], "regione": "MAP_REGION_KANTO"},
       "punto_di_volo": null,
-      "contenuti_trama": ["M-RG-02 / D-RG-01 (piazzale dei TIR in movimento a tempo)", "B-RG-01 (il Caporale dei TIR)"],
+      "contenuti_trama": ["M-RG-02 / D-RG-01 (piazzale dei TIR refrigerati dai Pokémon Ghiaccio del clan, in movimento a tempo)", "B-RG-01 (il Caporale dei TIR)"],
       "intestazione": {
         "wildEncounterBank": "ENCDATA_NA",
         "areaDataBank": "74",
@@ -11464,7 +11465,7 @@
       "musica": {"giorno": "SEQ_RG_COMISO_DESERTO", "notte": "SEQ_RG_COMISO_DESERTO", "slot_hg": "SEQ_GS_D_KOUEN"},
       "pokegear": {"mapsec": "MAPSEC_RG_BASE_NATO", "mapsec_id": 63, "nome": "Ex Base NATO", "cella": [32, 13], "regione": "MAP_REGION_KANTO"},
       "punto_di_volo": null,
-      "contenuti_trama": ["M-RG-03 / D-RG-02 (sala radar; pista)"],
+      "contenuti_trama": ["M-RG-03 / D-RG-02 (sala radar coi Pokémon Elettro/Acciaio che disturbano i radiofari di Comiso; pista)"],
       "intestazione": {
         "wildEncounterBank": "ENCDATA_NA",
         "areaDataBank": "74",
