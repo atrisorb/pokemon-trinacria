@@ -1,0 +1,34 @@
+{
+ "testi": [
+  {
+   "id": "t1",
+   "lingua": "scn",
+   "area": "CT",
+   "testo": "Mbare, talìa: a munnizza è ’nta chiazza!"
+  },
+  {
+   "id": "t2",
+   "lingua": "scn",
+   "area": "PA",
+   "testo": "Amunì, picciottu! U Sistema nun sapi nenti."
+  },
+  {
+   "id": "t3",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Hai ricevuto una CoppulaBall e {STRVAR_1 3, 0, 0} sorride."
+  },
+  {
+   "id": "t4",
+   "lingua": "scn",
+   "area": "AG",
+   "testo": "Iu travagghiu cû Ciclopu ô mari: RinaDiL’Etna è tinta."
+  },
+  {
+   "id": "t5",
+   "lingua": "scn",
+   "area": "CT",
+   "testo": "Talìa, ’nta Via Etnea c’è munnizza."
+  }
+ ]
+}

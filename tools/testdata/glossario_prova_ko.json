@@ -1,0 +1,198 @@
+{
+ "glossario_aggiunte": [
+  {
+   "id": "G98-0001",
+   "forma": "Senzafonte",
+   "categoria": "termine",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "senzafonte"
+   ],
+   "varianti_vietate": [],
+   "significato": "prova"
+  },
+  {
+   "id": "G98-0002",
+   "forma": "Munnizza",
+   "categoria": "specie",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "munnizza"
+   ],
+   "varianti_vietate": [],
+   "fonte": "architetto",
+   "significato": "prova"
+  },
+  {
+   "id": "G98-0003",
+   "forma": "Cannolu",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "cannolu"
+   ],
+   "varianti_vietate": [],
+   "fonte": "architetto",
+   "significato": "prova"
+  },
+  {
+   "id": "G98-0004",
+   "forma": "sbirciari",
+   "categoria": "termine",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "sbirciari"
+   ],
+   "varianti_vietate": [
+    "carusu"
+   ],
+   "fonte": "architetto",
+   "significato": "prova"
+  },
+  {
+   "id": "G98-0005",
+   "forma": "arcanu",
+   "categoria": "termine",
+   "lingua": "scn",
+   "aree": [
+    "XX"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "arcanu"
+   ],
+   "varianti_vietate": [],
+   "fonte": "architetto",
+   "significato": "prova"
+  },
+  {
+   "id": "G98-0006",
+   "forma": "«zzu»",
+   "categoria": "termine",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "«zzu»"
+   ],
+   "varianti_vietate": [],
+   "fonte": "architetto",
+   "significato": "prova"
+  },
+  {
+   "id": "G98-0007",
+   "forma": "Faragghiuni",
+   "categoria": "specie",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "faragghiuni"
+   ],
+   "varianti_vietate": [],
+   "fonte": "architetto",
+   "significato": "prova"
+  },
+  {
+   "id": "G98-0008",
+   "forma": "Ciliiliiliili",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "ciliiliiliili"
+   ],
+   "varianti_vietate": [],
+   "fonte": "architetto",
+   "significato": "prova"
+  },
+  {
+   "id": "G98-0009",
+   "forma": "Tumazzu",
+   "categoria": "strumento",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "tumazzu"
+   ],
+   "varianti_vietate": [],
+   "fonte": "architetto",
+   "significato": "prova",
+   "plurale": "TumazzuTumazzuTum"
+  },
+  {
+   "id": "G98-0010",
+   "forma": "Ca'Mia",
+   "categoria": "termine",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "ca'mia"
+   ],
+   "varianti_vietate": [],
+   "fonte": "architetto",
+   "significato": "prova"
+  },
+  {
+   "id": "G98-0011",
+   "forma": "scrusciu",
+   "categoria": "termine",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "scrusciu"
+   ],
+   "varianti_vietate": [],
+   "fonte": "MCP",
+   "significato": "prova"
+  },
+  {
+   "id": "G30-0001",
+   "forma": "duppiu",
+   "categoria": "termine",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "duppiu"
+   ],
+   "varianti_vietate": [],
+   "fonte": "architetto",
+   "significato": "prova"
+  }
+ ]
+}

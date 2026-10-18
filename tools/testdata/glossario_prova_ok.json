@@ -1,0 +1,55 @@
+{
+ "glossario_aggiunte": [
+  {
+   "id": "G99-0001",
+   "forma": "Fetu",
+   "categoria": "abilita",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "fetu"
+   ],
+   "varianti_vietate": [],
+   "fonte": "architetto",
+   "significato": "prova"
+  },
+  {
+   "id": "G99-0002",
+   "forma": "Tumazzu",
+   "categoria": "strumento",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "tumazzu"
+   ],
+   "varianti_vietate": [],
+   "fonte": "architetto",
+   "significato": "prova",
+   "plurale": "Tumazzi",
+   "con_articolo": "un {COLOR 255}Tumazzu{COLOR 0}"
+  },
+  {
+   "id": "G99-0003",
+   "forma": "sciddicari",
+   "categoria": "termine",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "sciddicari",
+    "sciddica"
+   ],
+   "varianti_vietate": [],
+   "fonte": "architetto",
+   "significato": "prova"
+  }
+ ]
+}

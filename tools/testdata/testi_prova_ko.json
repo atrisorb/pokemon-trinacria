@@ -1,0 +1,28 @@
+{
+ "testi": [
+  {
+   "id": "k1",
+   "lingua": "scn",
+   "area": "XX",
+   "testo": "Mbare."
+  },
+  {
+   "id": "k2",
+   "lingua": "scn",
+   "area": "CT",
+   "testo": "Mbare, sugnu stancu."
+  },
+  {
+   "id": "k3",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "La mundizza è ovunque."
+  },
+  {
+   "id": "k4",
+   "lingua": "scn",
+   "area": "PA",
+   "testo": "Mbare, amunì!"
+  }
+ ]
+}
