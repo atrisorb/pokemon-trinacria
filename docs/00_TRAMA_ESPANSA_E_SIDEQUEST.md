@@ -1,12 +1,14 @@
 # Pokémon Trinacria — Trama espansa, sottotrame e missioni secondarie
 
-**Versione:** 1.2 · 16/10/2026 · autore del progetto: **atrisorb**
+**Versione:** 1.4 · 18/10/2026 · autore del progetto: **atrisorb**
 **Fonte:** `F:\Progetti\pokeheartgold\docs\trinacria_spec\` (PLOT_TO_BE_ENRICHED.md, STORY_STATE_MACHINE.json, LLM_MASTER_INSTRUCTIONS.md, SCRIPT_GENERATION_TEMPLATE.md). Questo documento le **estende**: dove le specifiche sono vaghe o in contraddizione, la decisione presa qui è vincolante per i Moduli 2–7 (registro §0).
 
 Il documento è il «canone narrativo». Non contiene ancora le battute: le scrive il Modulo 6, comune per comune, a partire da qui. I nomi siciliani di Pokémon, mosse e strumenti citati sono quelli delle specifiche; quelli mancanti li fissa il Modulo 3.
 
 **Novità della versione 1.1:** decisione R-09 (come i luoghi della trama diventano mappe, dal registro `docs/MODULO_2/2.1_MAPS_CT_SR_RG.json`) e tabelle dei dungeon di CT, SR e RG allineate al registro. Per sapere **in quale mappa** si svolge una missione fa fede il campo `contenuti_trama` del registro del Modulo 2.
 **Novità della versione 1.2:** decisione **R-10** (centralità biopolitica dei Pokémon nel mondo di gioco e architettura di **«U Sistema»**, la mafia siciliana contemporanea che sostituisce il Team Rocket compiendo operazioni sui Pokémon inedite nella storia della serie) e integrazione capillare del ruolo dei Pokémon e di «U Sistema» in tutte le sottotrame (§1), nelle 9 province (§2–§10) e nel post-game (§11), mantenendo invariati codici, mappe, flag, variabili e regole di sicurezza narrativa (R-05).
+**Novità della versione 1.3:** completamento della decisione **R-09** con il registro `docs/MODULO_2/2.3_MAPS_ME_PA_EN_ROADS.json` (Messina, Palermo, Enna, 40 arterie `MAP_STRADA_*`, Lega dell'ARS, Fiera del Mediterraneo e post-game: tutte le **354 mappe** del gioco e tutte le **345 celle giocabili** della Matrice 0 sono ora assegnate e collegate al 100%).
+**Novità della versione 1.4:** R-10.6 allineata al registro `docs/MODULO_2/2.5_TRAINERS_SPRITES_FLY_SEQ.json`: nomi reali delle classi (`TRAINERCLASS_*`, 7 slot del Team Rocket) e degli slot musicali di «U Sistema». Il registro fissa anche gli ID allenatore dei personaggi della trama (Segretari, boss, Cambiavoti, Guastafeste dei comizi, Campioni, Mistretta, alleati e pretoriani di M-EN-05, Ritrovi, Maria, Fantasmi). Punto aperto: Maria (C-05) non ha un Ritrovo (P-01 elenca sette giorni per sette compagni); i suoi ID 712–714 restano riservati.
 
 ---
 
@@ -106,14 +108,15 @@ I nomi dei Dossier sono decisi dall'architetto (il dizionario non ha queste voci
 ### R-08 — Nomi delle missioni → flag e variabili
 
 Ogni elemento di questo documento ha un codice: `M-` principale, `S-` secondaria, `D-` dungeon, `B-` boss secondario, `E-` easter egg, `C-` compagno, `P-` post-game. Il Modulo 2 crea per ognuno un flag di completamento con nome meccanico: `FLAG_` + codice con `-` → `_` (es. `S-CT-03` → `FLAG_S_CT_03`). Le missioni con più di due passi hanno anche una variabile di avanzamento `VAR_` + codice (assegnate da 0x405B in poi).
+Il registro è `docs/MODULO_2/2.4_FLAGS_VARS.json` (18/10/2026): 262 flag di completamento, 48 variabili coi passi, i flag con nome di questo documento (`FLAG_DOSSIER_CT`, `FLAG_RECRUIT_ORAZIO`…) come alias dello stesso numero. Due punti della trama sono fissati lì: **ST-02** — l'Atto di Catania è quello che Maria raccoglie a Fontanarossa e consegna come «primo Atto» a Ortigia (M-SR-04); gli altri 8 li danno le Segreterie, tranne Palermo (M-PA-04); **ST-06** — i 9 Cambiavoti sono le 8 secondarie «Cambiavoti di …» più quello del pontile di Gela in M-CL-02 (diverso da quello del seggio di S-CL-08).
 
 ### R-09 — Dai luoghi alle mappe (registro del Modulo 2)
 
-HeartGold ha **540 slot di mappa** e la matrice del mondo esterno ha al massimo **47×17 = 799 celle**. Per far stare tutta la Sicilia, il registro delle mappe (blocco 2.1, 15/10/2026) segue queste regole. Valgono anche per i blocchi 2.2 e 2.3.
+HeartGold ha **540 slot di mappa** e la matrice del mondo esterno ha al massimo **47×17 = 799 celle**. Per far stare tutta la Sicilia, i registri delle mappe (blocco 2.1 del 15/10/2026 per CT/SR/RG; blocco 2.2 del 16/10/2026 per CL/AG/TP; blocco 2.3 del 17/10/2026 per ME/PA/EN/ROADS) seguono queste regole.
 
-**R-09.1 — Piani e sale diventano stanze.** Quando la trama dice «N mappe» o «N piani», nel gioco sono **stanze** di una stessa mappa, collegate da warp (di solito due per mappa). Piani, allenatori ed eventi restano quelli della trama: cambia solo il numero di slot usati.
+**R-09.1 — Piani e sale diventano stanze.** Quando la trama dice «N mappe» o «N piani», nel gioco sono **stanze** di una stessa mappa, collegate da warp (di solito due o tre per mappa). Piani, allenatori ed eventi restano quelli della trama: cambia solo il numero di slot usati.
 
-| Dungeon o luogo | Trama | Registro 2.1 |
+| Dungeon o luogo | Trama | Registro 2.1 / 2.2 / 2.3 |
 |---|---|---|
 | D-CT-01 Crateri Silvestri e Monti Rossi | 3 mappe | 2 mappe: Monti Rossi (pineta in fiamme + colata del 2001), Crateri Silvestri (bocca spenta) |
 | D-CT-02 Palazzo di Cemento | 10 piani | 5 mappe da 2 piani (`…_P01_P02` … `…_P09_P10`) con una sola matrice nuova |
@@ -131,6 +134,34 @@ HeartGold ha **540 slot di mappa** e la matrice del mondo esterno ha al massimo 
 | M-RG-04 Segreteria 3 | magazzini refrigerati | 2 mappe: magazzini (2 stanze); ufficio del boss |
 | D-RG-02 Ex base NATO | 4 mappe | 2 mappe: hangar + bunker; sala radar + pista |
 | D-RG-03 Cava d'Ispica | 3 mappe | 1 mappa da 3 stanze (necropoli, Larderia, grotte alte) |
+| D-CL-01 Castello Manfredonico | 3 piani sulla rupe | 1 mappa da 3 stanze (`MAP_CL_CASTELLO_MANFREDONICO`) |
+| D-CL-02 MUOS (Niscemi) | 3 mappe | 1 mappa esterna (`MAP_CL_NISCEMI_SUGHERETA`, 2 celle) + 2 mappe interne da 2 stanze (`MAP_CL_NISCEMI_MUOS_RECINZIONE`, `MAP_CL_NISCEMI_MUOS_PARABOLE`) |
+| D-CL-03 Zolfara di Gabbara | 3 livelli di gallerie | 2 mappe: gallerie superiori da 2 stanze (`MAP_CL_GABBARA_ZOLFARA_GALLERIE`) + camera di fondo (`MAP_CL_GABBARA_ZOLFARA_FONDO`) |
+| D-CL-04 Viadotto Salso 2 (Segreteria 4) | 4 piloni + cabina | 2 mappe: piloni da 3 stanze (`MAP_CL_VIADOTTO_SALSO_PILONI`) + cabina sospesa del boss (`MAP_CL_VIADOTTO_SALSO_CABINA`) |
+| D-AG-01 Ipogei della Valle dei Templi | 3 livelli di cunicoli | 2 mappe: gallerie da 2 stanze (`MAP_AG_IPOGEI_GALLERIE`) + grande cisterna (`MAP_AG_IPOGEI_CISTERNA`) |
+| D-AG-02 Grotta della Scala dei Turchi | 2 mappe di marna | 1 mappa da 2 stanze (`MAP_AG_GROTTA_SCALA_DEI_TURCHI`) |
+| D-AG-03 Stufe del Monte Kronio | 3 piani di grotte | 1 mappa da 3 stanze (`MAP_AG_SCIACCA_STUFE_KRONIO`) |
+| D-AG-04 Palazzine di Villaseta (Segreteria 5) | 3 edifici + attico | 2 mappe: cantieri da 3 stanze (`MAP_AG_VILLASETA_CANTIERI`) + attico con piscina del boss (`MAP_AG_VILLASETA_ATTICO_IACONO`) |
+| D-TP-01 Cave di Cusa | 2 mappe | 1 mappa da 2 stanze (`MAP_TP_CAVE_DI_CUSA`) |
+| D-TP-02 Laguna dello Stagnone | 3 mappe | 1 mappa esterna (`MAP_TP_MARSALA_STAGNONE`) + 1 mappa da 3 stanze (`MAP_TP_STAGNONE_LAGUNA`: saline, strada fenicia sommersa, Mozia) |
+| D-TP-03 Cave di tufo di Cala Rossa | 2 mappe | 1 mappa da 2 stanze (`MAP_TP_FAVIGNANA_CALA_ROSSA`) |
+| D-TP-04 Castello di Venere (Segreteria 6) | 3 mappe | 2 mappe: cortili nella nebbia da 2 stanze (`MAP_TP_CASTELLO_VENERE_CORTILI`) + loggia del boss (`MAP_TP_CASTELLO_VENERE_LOGGIA`) |
+| D-TP-05 Grande Cretto di Gibellina | 1 mappa labirinto | 1 mappa da 2 stanze (`MAP_TP_GRANDE_CRETTO`) |
+| D-ME-01 Bosco dei Nebrodi | 3 mappe di faggeta e pascoli | 1 mappa esterna da 3 celle (`MAP_ME_BOSCO_DEI_NEBRODI`) + 1 mappa interna da 2 stanze (`MAP_ME_NEBRODI_PASCOLI_FANTASMA`) |
+| D-ME-02 Archivi della Società Stretto Eterna | 5 piani di faldoni dal 1971 | 1 mappa da 3 stanze (`MAP_ME_ARCHIVI_STRETTO_ETERNA`: piani 1–2, 3–4, 5) |
+| M-ME-06 Palazzo delle Partecipate (Segreteria 7) | salone ingranaggi + CdA | 2 mappe: atrio e corridoio da 2 stanze (`MAP_ME_PALAZZO_PARTECIPATE_ATRIO`) + sala del boss (`MAP_ME_PALAZZO_PARTECIPATE_SALA`) |
+| D-ME-03 Sciara del Fuoco (Stromboli) | 2 mappe vulcaniche | 1 mappa da 2 stanze (`MAP_ME_STROMBOLI_SCIARA_DEL_FUOCO`) |
+| D-ME-04 Gorghi di Cariddi + P-08 | 2 mappe di mare vorticoso | 1 mappa da 2 stanze (`MAP_ME_GORGHI_DI_CARIDDI`) + 1 mappa abissale post-game (`MAP_ME_ABISSO_CARIDDI`) |
+| D-PA-01 Monte Pellegrino e Grotta dell'Addaura | 3 mappe carsiche | 1 mappa esterna da 3 celle (`MAP_PA_MONTE_PELLEGRINO`) + 1 mappa interna da 3 stanze (`MAP_PA_MONTE_PELLEGRINO_GROTTE`) |
+| D-PA-02 Bosco di Ficuzza e Cascata delle Due Rocche | 3 mappe | cella est di Corleone (`[15,6]`) + 1 mappa esterna da 3 celle (`MAP_PA_BOSCO_DI_FICUZZA`) + 1 mappa interna da 2 stanze (`MAP_PA_FICUZZA_VOLIERE_PIZZINI`) + vetta post-game (`MAP_PA_ROCCA_BUSAMBRA_VETTA`) |
+| D-PA-03 Villa Palagonia | 2 mappe tra le statue | 1 mappa da 2 stanze (`MAP_PA_BAGHERIA_VILLA_PALAGONIA`) |
+| D-PA-04 Ex stabilimento di Termini Imerese | 4 mappe | 1 mappa da 3 stanze (`MAP_PA_TERMINI_EX_STABILIMENTO`) |
+| D-PA-05 Palazzo delle Aquile (Segreteria 8) | 3 piani comunali | 2 mappe: corridoi e commissioni da 2 stanze (`MAP_PA_PALAZZO_AQUILE_CORRIDOI`) + sala del boss (`MAP_PA_PALAZZO_AQUILE_SALA_SCADUTO`) |
+| D-PA-06 Via della Lega (corridoi dell'ARS) | 5 piani (2 saltabili con ST-07) | 1 mappa da 3 stanze (`MAP_PA_PALERMO_VIA_DELLA_LEGA`: piani 1–2, 3–4, 5) tra `MAP_PA_PALERMO_LEGA_INGRESSO` e `MAP_PA_PALERMO_LEGA_ATRIO` |
+| D-EN-01 Trazzere dell'A19 | 4 mappe esterne tra piloni | 1 mappa stradale da 5 celle sulla matrice 0 (`MAP_EN_A19_TRAZZERE`) |
+| D-EN-02 Castello di Sperlinga | 2 piani scavati nella roccia | 1 mappa da 2 stanze (`MAP_EN_CASTELLO_DI_SPERLINGA`) |
+| D-EN-03 Rocca di Cerere (Segreteria 9) | 2 mappe nella nebbia | 1 mappa da 2 stanze (`MAP_EN_ROCCA_DI_CERERE_NEBBIA`) + sala della Commissione Elettorale (`MAP_EN_COMMISSIONE_ELETTORALE`) |
+| D-EN-04 Villa Romana del Casale | 3 sale a mosaico + Grande Caccia | 1 mappa da 3 stanze (`MAP_EN_VILLA_ROMANA_CASALE_GALLERIE`) + Sala della Grande Caccia (`MAP_EN_SALA_DELLA_GRANDE_CACCIA`) |
 
 **R-09.2 — Località come seconda cella del comune.** Queste località non hanno una mappa propria: sono una cella in più della mappa esterna del comune.
 
@@ -143,8 +174,25 @@ HeartGold ha **540 slot di mappa** e la matrice del mondo esterno ha al massimo 
 | Scalinata di Santa Maria del Monte | Caltagirone, cella sud: le **7 rampe sono 7 terrazze** della stessa mappa, un allenatore per terrazza |
 | Biviere di Lentini | Lentini, cella ovest |
 | Isola delle Correnti | Portopalo, cella sud (raggiungibile solo con la bassa marea, per script) |
+| Contrada Gabbara (ingresso zolfara) | San Cataldo, cella nord `[22,7]` |
+| Quartiere Rabato e Monte San Paolino | Sutera, cella sud `[20,9]` |
+| Rupe del Castello Manfredonico | Mussomeli, cella nord `[20,6]` |
+| Quartiere Villaseta (ingresso cantieri) | Agrigento, cella ovest `[17,9]` |
+| Marinella di Porto Empedocle | Porto Empedocle, cella ovest `[16,10]` |
+| Belvedere della Scala dei Turchi | Realmonte, cella ovest `[14,9]` |
+| Saline di Trapani e stazione di valle della funivia | Trapani, cella est `[3,4]` |
+| Baglio e faraglioni di Scopello | Castellammare del Golfo, cella ovest `[6,3]` |
+| Spiaggia dei Conigli e Cavallo Bianco | Lampedusa, cella est (matrice propria 2×1 `map_matrix_0335_AG_LAMPEDUSA.bin`) |
+| Promontorio di Tindari e Laghetti di Marinello | Patti, cella est `[33,0]` (`MAP_ME_PATTI_TINDARI`, con interno `MAP_ME_TINDARI_SANTUARIO`) |
+| Isola Bella | Taormina, cella est `[43,1]` (`MAP_ME_TAORMINA`) |
+| Lipari, Vulcano e Stromboli | Isole Eolie, 3 celle in matrice propria 3×1 `map_matrix_0354_ME_ISOLE_EOLIE.bin` (`MAP_ME_ISOLE_EOLIE`) |
+| Aeroporto di Punta Raisi | Cinisi, cella nord `[10,2]` (`MAP_PA_CINISI`) |
+| Isola delle Femmine | Capaci e Isola delle Femmine, cella nord `[11,2]` (`MAP_PA_CAPACI_ISOLA_DELLE_FEMMINE`) |
+| Cascata delle Due Rocche | Corleone, cella est `[15,6]` (`MAP_PA_CORLEONE`) |
+| Sicilia Outlet Village | Agira, cella sud `[32,5]` (`MAP_EN_AGIRA_OUTLET`) |
+| Parco archeologico di Morgantina | Aidone, celle est `[31,7]` e `[31,8]` (`MAP_EN_AIDONE_MORGANTINA`) |
 
-Hanno invece una mappa esterna propria: Ognina, Plaia, Fontanarossa, Aci Trezza, Etna Sud, Neapolis, Ortigia, Vendicari (ingresso), Marzamemi, Ibla, Marina di Ragusa, aeroporto di Comiso, Punta Secca.
+Hanno invece una mappa esterna propria: Ognina, Plaia, Fontanarossa, Aci Trezza, Etna Sud, Neapolis, Ortigia, Vendicari (ingresso), Marzamemi, Ibla, Marina di Ragusa, aeroporto di Comiso, Punta Secca (blocco 2.1); Sughereta di Niscemi, Valloni della SS626, Valle dei Templi, Acquedotto Costiero, Lampedusa, Selinunte, Stagnone di Marsala, Riserva dello Zingaro, Favignana (blocco 2.2); Bosco dei Nebrodi, Isole Eolie, Ganzirri/Torre Faro, Giostra, Diga Jato, Mondello, ZEN 2, Monte Pellegrino, Borgo Vecchio/Porto, Politeama/Libertà, Massimo/Maqueda, Vucciria/Kalsa, Ballarò, Palazzo dei Normanni, Bosco di Ficuzza, Alte Madonie, Enna Bassa, Lago di Pergusa, Pantelleria e le 40 arterie stradali `MAP_STRADA_*` più `MAP_EN_A19_TRAZZERE` (blocco 2.3).
 
 **R-09.3 — Interni tolti: la scena si svolge all'aperto.**
 
@@ -159,9 +207,9 @@ Hanno invece una mappa esterna propria: Ognina, Plaia, Fontanarossa, Aci Trezza,
 
 **R-09.5 — Centri Pokémon con negozio.** Ogni Centro ha anche il bancone del negozio: non esistono mappe separate per i negozi. A Modica il laboratorio di cioccolato fa da Centro e da negozio (M-RG-01).
 
-**R-09.6 — Due regioni nel Pokégear.** La mappa del Pokégear è divisa in **Sicilia orientale** (mappe con cella principale in colonna ≥ 24 della matrice; lato «Kanto» del motore) e **Sicilia occidentale** (lato «Johto»). Tutte le province di CT, SR e RG sono orientali. Da confermare nel Modulo 4.4.
+**R-09.6 — Due regioni nel Pokégear.** La mappa del Pokégear è divisa in **Sicilia orientale** (mappe con cella principale in colonna ≥ 24 della matrice; lato «Kanto» del motore) e **Sicilia occidentale** (colonna ≤ 23; lato «Johto»). Tutte le province di CT, SR, RG, ME ed EN più la fascia orientale di CL (Gela, Niscemi, Sughereta, MUOS, Mazzarino, Riesi, Valloni SS626, Viadotto Salso 2) e le 23 arterie stradali orientali/centrali sono in `MAP_REGION_KANTO`; Caltanissetta città, San Cataldo, Sutera, Mussomeli, AG, TP, PA e le 17 arterie stradali occidentali sono in `MAP_REGION_JOHTO`. Le 4 isole minori (`MAP_AG_LAMPEDUSA`, `MAP_TP_FAVIGNANA`, `MAP_ME_ISOLE_EOLIE`, `MAP_TP_PANTELLERIA`) hanno matrici proprie e usano gli slot speciali `S.S. Aqua` (`308`, `309`) e `Sinjoh` (`522`, `523`).
 
-**R-09.7 — Nebbia gialla del polo petrolchimico.** Augusta, Priolo e le mappe del polo usano il valore meteo **9** (`WEATHER_UNKNOWN_9`, probabilmente nebbia, mai usato da HeartGold). Va verificato a schermo nel Modulo 7: se non mostra nebbia, quelle mappe tornano a `WEATHER_SUNNY` e il Modulo 4 dà la tinta gialla al tileset.
+**R-09.7 — Nebbia gialla del polo petrolchimico e nebbie termali/montane.** Augusta, Priolo e le mappe del polo usano il valore meteo **9** (`WEATHER_UNKNOWN_9`, probabilmente nebbia, mai usato da HeartGold). Va verificato a schermo nel Modulo 7: se non mostra nebbia, quelle mappe tornano a `WEATHER_SUNNY` e il Modulo 4 dà la tinta gialla al tileset. Erice (`MAP_TP_ERICE`, `MAP_TP_CASTELLO_VENERE_CORTILI`), le Stufe di San Calogero (`MAP_AG_SCIACCA_STUFE_KRONIO`), il casolare dei Nebrodi (`MAP_ME_NEBRODI_PASCOLI_FANTASMA`), l'Abisso di Cariddi (`MAP_ME_ABISSO_CARIDDI`), la Vetta di Rocca Busambra (`MAP_PA_ROCCA_BUSAMBRA_VETTA`), Enna Alta (`MAP_EN_ENNA_ALTA`) e la Rocca di Cerere (`MAP_EN_ROCCA_DI_CERERE_NEBBIA`) usano il meteo nativo `WEATHER_FOG` (`6`); Piazza Armerina (`MAP_EN_PIAZZA_ARMERINA`) usa `WEATHER_RAIN` (`1`).
 
 ---
 
@@ -183,7 +231,7 @@ In *Pokémon Trinacria* non esiste un «Team Rocket» fumettistico in divisa ugu
 «U Sistema» disprezza la vecchia estetica della coppola e della lupara (derisa dai suoi stessi dirigenti come *«roba per i film coi turisti»*) e si articola in una **piramide bicefala a 4 livelli operativi** che rimappa tutti gli slot tecnici del Team Rocket in `pokeheartgold`:
 
 1. **Livello 1 — Il Braccio di Strada («A Manovalanza» / Reclute del Sistema):**
-   - Sostituisce le reclute del Team Rocket (`TRAINER_CLASS_TEAM_ROCKET` / `F` e classi affini nel Modulo 2.5).
+   - Sostituisce le reclute del Team Rocket (`TRAINERCLASS_TEAM_ROCKET` / `_F` → `TRAINERCLASS_SCAGNOZZU` / `TRAINERCLASS_INFILTRATA` e classi affini, registro 2.5).
    - Non indossano un'uniforme unica, ma la divisa del loro racket quotidiano: **Parcheggiatori e Strozzini di rione** (con borsello a tracolla, sedia di plastica e fischietto), **Buttafuori della movida** (auricolare e camicia nera), **Caporali dei magazzini e dei TIR**, **Custodi infedeli degli acquedotti**, **Pascolatori abusivi dei Nebrodi**, **Portaborse e Funzionari di sbarramento**.
    - Trattano i propri Pokémon come *manovalanza in nero* o *strumenti di pizzo biologico*, tenuti in `CoppulaBall` o `CuffaBall` non registrate e pompati con stimolanti da mercato nero per intimidire commercianti, contadini e viaggiatori.
 2. **Livello 2 — I Quadri Mobili del Racket, della Notte e del Voto (Esecutivi del Sistema):**
@@ -231,8 +279,8 @@ Nessuna di queste operazioni esiste nei giochi Pokémon tradizionali; ciascuna �
 
 #### R-10.6 — Mappatura Tecnica su `pokeheartgold` (Slot Team Rocket → «U Sistema»)
 
-- Nel Modulo 2 (blocco `2.5`), gli slot di `include/constants/trainer_classes.h` appartenenti al Team Rocket (`TRAINER_CLASS_TEAM_ROCKET`, `TRAINER_CLASS_TEAM_ROCKET_F`, `TRAINER_CLASS_EXECUTIVE_ARCHER`, `ARIANA`, `PETREL`, `PROTON`) vengono rinominati (con alias di compatibilità `*_hg_compat.h`) nelle classi operative di **«U Sistema»** (`Scagnozzu`, `Cambiavoti`, `Caporali`, `CollettuBian.`, `Cassieri`, `Infiltrata`), affiancate dalle altre classi siciliane (`FigghiuDiPapà`, `Parcheggiaturi`, `Assessuri`, `Zauddu`, `Buddaci`).
-- Nel Modulo 5, gli slot musicali del Team Rocket (`SEQ_GS_R_AJITO`, `SEQ_GS_EYE_ROCKET`, `SEQ_GS_BA_ROCKET` e i rispettivi gemelli `SEQ_GS_P_*`) diventano i temi di **«U Sistema»** (tema dei covi/uffici del cartello, tema d'incontro degli scagnozzi/cambiavoti e tema di battaglia del Sistema).
+- Nel Modulo 2 (blocco `2.5`, registro `docs/MODULO_2/2.5_TRAINERS_SPRITES_FLY_SEQ.json`), gli slot di `include/constants/trainer_class.h` appartenenti al Team Rocket vengono rinominati (con alias di compatibilità in `trainer_class_hg_compat.h`) nelle classi operative di **«U Sistema»**: `TRAINERCLASS_TEAM_ROCKET` → `TRAINERCLASS_SCAGNOZZU`, `TRAINERCLASS_TEAM_ROCKET_F` → `TRAINERCLASS_INFILTRATA`, `TRAINERCLASS_EXECUTIVE_ARIANA` → `TRAINERCLASS_CAMBIAVOTI`, `TRAINERCLASS_EXECUTIVE_ARCHER` → `TRAINERCLASS_CASSIERI`, `TRAINERCLASS_EXECUTIVE_PROTON` → `TRAINERCLASS_CAPORALI`, `TRAINERCLASS_EXECUTIVE_PETREL` → `TRAINERCLASS_COLLETTU_BIANCU`, più il settimo slot del Team Rocket, `TRAINERCLASS_SCIENTIST_GS` → `TRAINERCLASS_PORTABORSE` (i «Portaborse e Funzionari di sbarramento» del livello 1). Sono affiancate dalle altre classi siciliane (`FigghiuDiPapà`, `Parcheggiaturi`, `Assessuri`, `Zauddu`, `Buddaci`). Nel repository il prefisso è `TRAINERCLASS_`, non `TRAINER_CLASS_`.
+- Nel Modulo 5, gli slot musicali del Team Rocket (e i rispettivi gemelli `SEQ_GS_P_*`) diventano i temi di **«U Sistema»**: incontro `SEQ_GS_EYE_ROCKET`, lotta `SEQ_GS_VS_ROCKET`, covi e uffici del cartello `SEQ_GS_E_RIVAL1` (il covo del Team Rocket, `SEQ_GS_D_AJITO`, è già la crisi di Fontanarossa del blocco 2.1; `SEQ_GS_R_AJITO` e `SEQ_GS_BA_ROCKET` non esistono).
 - Nel post-game (`FLAG_POST_RESIGNATION`, Modulo 1 §7.4), il reset automatico degli allenatori 1–699 con il bonus di **+25 livelli** ha una giustificazione narrativa perfetta: sei mesi dopo le dimissioni del protagonista, **«U Sistema» ha ripreso il controllo di ogni quartiere, cantiere, porto e segreteria cambiando semplicemente sigla di partito**, con squadre ancora più forti e agguerrite.
 
 ---
@@ -672,8 +720,8 @@ E-ME-01 Il cartello ST-09 a Torre Faro, aggiornato a ogni atto. · E-ME-02 Il «
 
 | Codice | Nome | Struttura | MN | Selvatici ed ecologia | Boss |
 |---|---|---|---|---|---|
-| D-PA-01 | Monte Pellegrino e Grotta dell'Addaura | 3 mappe carsiche sopra Palermo | `Martiddata`, `Spallata` | Roccia, Spettro (`Graveler`, `Golbat`, `Misdreavus`) | post-game P-06 (spostato/collegato a P-03/P-06, vedi §11) |
-| D-PA-02 | Bosco di Ficuzza e Cascata delle Due Rocche | 3 mappe: bosco reale, cascata, masseria delle voliere di `Honchkrow` del voto di scambio | `Roncigghiu`, Cascata | Erba, Acqua, Buio (`Murkrow`, `Honchkrow`, `Houndour`, `Lombre`) | B-PA-02 |
+| D-PA-01 | Monte Pellegrino e Grotta dell'Addaura | 3 mappe carsiche sopra Palermo (`MAP_PA_MONTE_PELLEGRINO_GROTTE`) | `Martiddata`, `Spallata` | Roccia, Spettro (`Graveler`, `Golbat`, `Misdreavus`) | — |
+| D-PA-02 | Bosco di Ficuzza e Cascata delle Due Rocche | 3 mappe: bosco reale, cascata, masseria delle voliere di `Honchkrow` del voto di scambio | `Roncigghiu`, Cascata | Erba, Acqua, Buio (`Murkrow`, `Honchkrow`, `Houndour`, `Lombre`) | B-PA-02 (post-game: P-03 sulla vetta di Rocca Busambra) |
 | D-PA-03 | Villa Palagonia | 2 mappe tra le statue dei mostri | — | Spettro (`Gastly`, `Haunter`, `Shuppet`) | — |
 | D-PA-04 | Ex stabilimento di Termini Imerese | 4 mappe: catena di montaggio, verniciatura, uffici dei liquidatori, piazzale | `Spallata` | Acciaio, Elettro, Spettro (`Magneton`, `Voltorb`, `Koffing`, `Banette`) | B-PA-03 |
 | D-PA-05 | Palazzo delle Aquile | 3 piani di corridoi comunali e sale dei collettori | — | — | Segreteria 8 |
@@ -779,4 +827,4 @@ Ritrovi (8 × 4 sfide) 8 h · Maria 2 h (più preparazione) · Fantasmi e leggen
 | **Totale** | **54** | **77** | **41** | **30** | **39** | 9 Segreterie + 4 Campioni + Presidente |
 | Post-game | 12 voci P | | | | | Maria (95–100), 4 Fantasmi (85–90), Leggendari di Trinacria |
 
-Flag necessari (R-08): 54 + 77 + 30 + 12 ≈ 173 di completamento, più quelli di visibilità degli NPC: rientrano nei 288 dell'intervallo 0x840–0x95F; il resto (visibilità di dettaglio) usa l'intervallo storico liberato (Modulo 1 §4.1).
+Flag necessari (R-08): 262 di completamento (54 M + 77 S + 41 D + 30 B + 40 E, compreso E-ST-09, + 8 C + 12 P) e 22 di sottotrame e stato, in 0x840–0x95B; la visibilità degli NPC e gli oggetti usano l'intervallo storico liberato (registro `docs/MODULO_2/2.4_FLAGS_VARS.json`).

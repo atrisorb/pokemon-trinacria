@@ -2,7 +2,7 @@
 
 **Progetto:** Pokémon Trinacria · autore e copyright: **atrisorb**
 **Base codice:** `F:\Progetti\pokeheartgold` (clone pret, commit `c28680fe0`) · **Cartella documenti:** `F:\Progetti\pokémon-sicilia`
-**Versione del modulo:** 1.2 · 16/10/2026 (allineata al registro delle mappe `docs/MODULO_2/2.1_MAPS_CT_SR_RG.json` v1.1 e alla decisione R-10 di `docs/00_TRAMA_ESPANSA_E_SIDEQUEST.md` v1.2 su centralità dei Pokémon e «U Sistema»: §4.3, §4.4, §4.7, §7.1, §7.2, §8.1, §8.2, §10)
+**Versione del modulo:** 1.4 · 18/10/2026 (v1.4: §10 musiche allineate al registro `docs/MODULO_2/2.5_TRAINERS_SPRITES_FLY_SEQ.json`; allineata al registro delle mappe `docs/MODULO_2/2.1_MAPS_CT_SR_RG.json` v1.1 e alla decisione R-10 di `docs/00_TRAMA_ESPANSA_E_SIDEQUEST.md` v1.2 su centralità dei Pokémon e «U Sistema»: §4.3, §4.4, §4.7, §7.1, §7.2, §8.1, §8.2, §10; v1.3: §4.1, §4.2 e §7.8 allineati al registro di flag, variabili e NPC `docs/MODULO_2/2.4_FLAGS_VARS.json`)
 **Lettore:** LLM esecutore (Gemini Flash o equivalente). Questo documento non chiede di prendere decisioni: ogni valore è già deciso.
 
 Tutti i fatti tecnici di questo modulo (percorsi, nomi di funzioni, righe di codice, ID liberi) sono stati **letti nel repository** il 15/10/2026. Il codice C dei passi M1-08…M1-14 è scritto sulle firme reali delle funzioni, ma **non è ancora stato compilato**: la compilazione è il criterio di successo di ogni passo.
@@ -144,7 +144,7 @@ Analisi del 15/10/2026: l'intervallo **0x832–0x95F** (302 flag) non è usato d
 | 0x836–0x83F | riservati al motore | non usare |
 | 0x840–0x95F | storia, missioni, visibilità degli NPC | assegnati dal Modulo 2 (288 flag) |
 
-Quando gli script di HeartGold saranno stati sostituiti tutti (Modulo 7), il Modulo 2 libera anche l'intervallo storico 0x010–0x31F (esclusi gli ID usati dal C: 0x065, 0x06A, 0x06B, 0x070, 0x073, 0x079, 0x07B, 0x087, 0x099, 0x09A, 0x09C, 0x09F, 0x0A7, 0x0C6, 0x0CA, 0x0EE–0x0F2, 0x0F9, 0x118, 0x11A, 0x11B, 0x11F, 0x127).
+Quando gli script di HeartGold saranno stati sostituiti tutti (Modulo 7), il Modulo 2 libera anche l'intervallo storico **0x040–0x31F** (esclusi gli ID usati dal C: 0x065, 0x06A, 0x06B, 0x070, 0x073, 0x079, 0x07B, 0x087, 0x099, 0x09A, 0x09C, 0x09F, 0x0A7, 0x0C6, 0x0CA, 0x0EE–0x0F2, 0x0F9, 0x118, 0x11A–0x11F, 0x127) e i flag degli oggetti 0x320–0x54F. **Correzione del 18/10/2026 (blocco 2.4):** i flag 0x000–0x03F sono temporanei di mappa (`src/script_manager.c` li azzera a ogni cambio mappa) e non si usano mai per la storia; 0x11C–0x11E sono letti dal C per indice (`FLAG_GOT_BAG + 0…3`, icone del menu). Le assegnazioni definitive e l'elenco dei numeri liberi, calcolato nel repository, sono in `docs/MODULO_2/2.4_FLAGS_VARS.json` (sezione `flag.storico`).
 
 ### 4.2 Variabili (`include/constants/vars.h`)
 
@@ -154,7 +154,9 @@ Non usate da nessun file: 0x4059–0x406F (23) e 0x4152–0x416F (30).
 |---|---|---|
 | 0x4059 | `VAR_TRINACRIA_ATTO` | 0 = prologo, 1–5 = atti, 6 = post-dimissioni |
 | 0x405A | `VAR_TRINACRIA_CONSENSO` | 0–100 (percentuale nei sondaggi) |
-| 0x405B–0x406F, 0x4152–0x416F | missioni | assegnati dal Modulo 2 |
+| 0x405B–0x406F, 0x4152–0x416F | missioni | assegnati dal Modulo 2 (blocco 2.4: 48 variabili, riserva 0x416D–0x416F) |
+
+Le variabili storiche di HeartGold liberate dalla riscrittura delle mappe (166, tra 0x4030 e 0x416F) diventano variabili di scena `VAR_TR_SCENE_*` (blocco 2.4). Non si usano mai 0x4036–0x4039, 0x4043–0x4048 (lette dal C per indice: `src/sys_vars.c`, Pokémon vaganti) né le altre lette dal C.
 
 ### 4.3 Banchi di testo nuovi
 
@@ -631,11 +633,11 @@ Nel caso di comportamento diverso, i messaggi `00007` e `00008` esistono **in en
 
 ### 7.8 Registro degli NPC e proporzione 60/40
 
-Ogni NPC ha una riga in `data/trinacria/npc_registry.csv` (consegnato con il Modulo 2):
+Ogni NPC ha una riga in `data/trinacria/npc_registry.csv` (consegnato con il Modulo 2, blocco 2.4). Le prime 9 colonne sono queste; il blocco 2.4 (`docs/MODULO_2/2.4_FLAGS_VARS.json`, sezione `npc_registry`) aggiunge `ruolo,visibile,hide_flag,trainer_id,pokemon_species,accanto_a,codice_trama,note` (17 colonne in tutto, anche i Pokémon in scena hanno una riga):
 ```csv
 map_symbol,npc_id,x,y,sprite,msg_bank,msg_index,post_category,dialect_area
 ```
-`post_category` vale `CAPRO` (capro espiatorio) o `ESTIMATORE`. Il controllo (strumento consegnato con il Modulo 2) verifica, provincia per provincia, che `CAPRO` sia tra il 58% e il 62% e `ESTIMATORE` tra il 38% e il 42%.
+`post_category` vale `CAPRO` (capro espiatorio) o `ESTIMATORE` per la gente comune e gli allenatori comuni visibili dopo le dimissioni, `ESENTE` per gli altri ruoli (membri di «U Sistema», compagni, personaggi con nome, servizi, luoghi della memoria, Pokémon). Il controllo (`tools/trinacria_registry_check.py --npc …`, consegnato con il blocco 2.4) verifica, provincia per provincia, che `CAPRO` sia tra il 58% e il 62% e `ESTIMATORE` tra il 38% e il 42%.
 
 ### 7.9 Passo M1-11 — Prova del doppio stato
 
@@ -842,7 +844,7 @@ La riga 4 resta perché è un'attribuzione obbligatoria dei marchi originali: **
 ## 10. Musica: aggancio tecnico (dettagli nel Modulo 5)
 
 - L'archivio è `files/data/sound/gs_sound_data.sdat`. I nomi delle sequenze sono in `include/constants/sndseq.h`.
-- I nomi Trinacria delle musiche (`SEQ_CT_VERMUT`, `SEQ_TRN_CENTRO_POKEMON`…) sono **alias** degli slot HeartGold, definiti nel file nuovo `include/trinacria/trinacria_seq.h` (contenuto nel registro del Modulo 2, sezione `file_trinacria_seq_h`; 33 nomi nel blocco 2.1). Nessuna sequenza nuova: il Modulo 5 sostituisce i dati dello slot e del suo gemello `SEQ_GS_P_*` (modalità «suoni GB»). Giorno e notte usano lo stesso brano. Gli slot musicali del Team Rocket (`SEQ_GS_R_AJITO`, `SEQ_GS_EYE_ROCKET`, `SEQ_GS_BA_ROCKET` e rispettivi gemelli `SEQ_GS_P_*`) vengono rimappati nel Modulo 2.5 e nel Modulo 5 sui temi dei covi/uffici, degli incontri e delle battaglie di **«U Sistema»** (trama, decisione R-10.6).
+- I nomi Trinacria delle musiche (`SEQ_CT_VERMUT`, `SEQ_TRN_CENTRO_POKEMON`…) sono **alias** degli slot HeartGold, definiti nel file nuovo `include/trinacria/trinacria_seq.h` (contenuto nel registro del Modulo 2, sezione `file_trinacria_seq_h`; versione definitiva nel blocco 2.5: 62 musiche di campo + 30 di lotta, incontro e vittoria). Il file è incluso da `include/constants/sndseq.h` (blocco 2.5), quindi i nomi valgono anche negli script. Nessuna sequenza nuova: il Modulo 5 sostituisce i dati dello slot e del suo gemello `SEQ_GS_P_*` (modalità «suoni GB») quando esiste. Giorno e notte usano lo stesso brano. Gli slot musicali del Team Rocket sono rimappati sui temi di **«U Sistema»** (trama, decisione R-10.6; registro 2.5, sezione `musiche.slot_team_rocket`): incontro `SEQ_GS_EYE_ROCKET`, lotta `SEQ_GS_VS_ROCKET`, covi e uffici `SEQ_GS_E_RIVAL1` (`SEQ_GS_D_AJITO` è già la crisi di Fontanarossa).
 - Il gioco ha già un meccanismo «musica diversa se un flag è acceso»: la tabella `sMusicOverrideMap` in `src/sys_flags.c` (`{ mappa, flag, sequenza }`). Il Modulo 5 la usa per: cenere attiva su Fontanarossa, mondo post-dimissioni, silenzio di Capaci.
 - Regola: nessuna mappa senza musica, tranne Capaci e il Grande Cretto, dove la sequenza è il vento (Modulo 5, `SEQ_CAPACI_WIND_SILENCE`).
 
