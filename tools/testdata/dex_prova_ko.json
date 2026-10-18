@@ -1,0 +1,3849 @@
+{
+ "nota": "File di prova del collaudo di tools/trinacria_dex_check.py: ogni voce ha un errore voluto.",
+ "errori_attesi": [
+  "D01",
+  "D02",
+  "D03",
+  "D04",
+  "D05",
+  "D06",
+  "D07",
+  "P01",
+  "P02",
+  "P03",
+  "P04",
+  "P05",
+  "P06",
+  "P07",
+  "P08"
+ ],
+ "specie": [
+  {
+   "n": 1,
+   "simbolo": "SPECIES_BULBASAUR",
+   "regionale": 231,
+   "originale": "BULBASAUR",
+   "nome": "Cipuddazzuni",
+   "glossario": "G31-0001",
+   "caratteri": 7,
+   "px": 39,
+   "con_articolo": "un {COLOR 255}Cipuddazzuni{COLOR 0}",
+   "con_articolo_px": 55,
+   "categoria": "Pokémon Seme",
+   "categoria_px": 70,
+   "tipi": [
+    "TYPE_GRASS",
+    "TYPE_POISON"
+   ],
+   "atlante": [
+    "Germoglia negli orti di Pachino e beve il",
+    "sole. I caporali delle serre lo noleggiano",
+    "a ore, come i braccianti."
+   ],
+   "atlante_righe_px": [
+    208,
+    221,
+    131
+   ],
+   "msg_0803": [
+    "Germoglia negli orti di Pachino e beve il\n",
+    "sole. I caporali delle serre lo noleggiano\n",
+    "a ore, come i braccianti."
+   ],
+   "peso": "  6,9 kg",
+   "altezza": " 0,7 m",
+   "banchi": {
+    "msg_0237": "Cipuddazzuni",
+    "msg_0238": "un {COLOR 255}Cipuddazzuni{COLOR 0}",
+    "msg_0816": "Pokémon Seme",
+    "msg_0803": [
+     "Germoglia negli orti di Pachino e beve il\n",
+     "sole. I caporali delle serre lo noleggiano\n",
+     "a ore, come i braccianti."
+    ],
+    "msg_0812": "  6,9 kg",
+    "msg_0813": "  6,9 kg",
+    "msg_0814": " 0,7 m",
+    "msg_0815": " 0,7 m"
+   },
+   "distribuzione": [
+    {
+     "mappa": "MAP_CT_CATANIA_VERMUT",
+     "comune": "Catania",
+     "provincia": "CT",
+     "metodo": "regalo",
+     "livelli": [
+      5,
+      5
+     ],
+     "percentuale": null,
+     "nota": "post-game: il Prof. Strano, una specie per visita — Modulo 6 (6.38)",
+     "ora": "sempre"
+    }
+   ],
+   "altri_modi": [
+    {
+     "metodo": "si evolve in",
+     "in": "SPECIES_IVYSAUR",
+     "come": "al livello 16",
+     "evento": "EVO_LEVEL",
+     "parametro": 16
+    },
+    {
+     "metodo": "uovo",
+     "come": "alla Pensione (MAP_RG_COMISO) da una specie della sua linea"
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "simbolo": "SPECIES_CHARMANDER",
+   "regionale": 234,
+   "originale": "CHARMANDER",
+   "nome": "Scintidda",
+   "glossario": "G31-0004",
+   "caratteri": 9,
+   "px": 48,
+   "con_articolo": "un {COLOR 255}Scintidda{COLOR 0}",
+   "con_articolo_px": 70,
+   "categoria": "Pokémon Lucertola",
+   "categoria_px": 98,
+   "tipi": [
+    "TYPE_FIRE",
+    "TYPE_FIRE"
+   ],
+   "atlante": [
+    "La fiamma della coda misura la sua salute.",
+    "Nelle sciare la usa per scaldarsi; altri la",
+    "usano per accendere sterpi."
+   ],
+   "atlante_righe_px": [
+    222,
+    222,
+    152
+   ],
+   "msg_0803": [
+    "La fiamma della coda misura la sua salute.\n",
+    "Nelle sciare la usa per scaldarsi; altri la\n",
+    "usano per accendere sterpi."
+   ],
+   "peso": "  8,5 kg",
+   "altezza": " 0,6 m",
+   "banchi": {
+    "msg_0237": "Scintidda",
+    "msg_0238": "un {COLOR 255}Scintidda{COLOR 0}",
+    "msg_0816": "Pokémon Lucertola",
+    "msg_0803": [
+     "La fiamma della coda misura la sua salute.\n",
+     "Nelle sciare la usa per scaldarsi; altri la\n",
+     "usano per accendere sterpi."
+    ],
+    "msg_0812": "  8,5 kg",
+    "msg_0813": "  8,5 kg",
+    "msg_0814": " 0,6 m",
+    "msg_0815": " 0,6 m"
+   },
+   "distribuzione": [
+    {
+     "mappa": "MAP_CT_CATANIA_VERMUT",
+     "comune": "Catania",
+     "provincia": "CT",
+     "metodo": "regalo",
+     "livelli": [
+      5,
+      5
+     ],
+     "percentuale": null,
+     "nota": "post-game: il Prof. Strano, una specie per visita — Modulo 6 (6.38)",
+     "ora": "sempre"
+    }
+   ],
+   "altri_modi": [
+    {
+     "metodo": "si evolve in",
+     "in": "SPECIES_CHARMELEON",
+     "come": "al livello 16",
+     "evento": "EVO_LEVEL",
+     "parametro": 16
+    },
+    {
+     "metodo": "uovo",
+     "come": "alla Pensione (MAP_RG_COMISO) da una specie della sua linea"
+    }
+   ]
+  },
+  {
+   "n": 7,
+   "simbolo": "SPECIES_SQUIRTLE",
+   "regionale": 237,
+   "originale": "SQUIRTLE",
+   "nome": "Tartuca",
+   "glossario": "G31-0007",
+   "caratteri": 7,
+   "px": 42,
+   "con_articolo": "un {COLOR 255}Tartuca{COLOR 0}",
+   "con_articolo_px": 58,
+   "categoria": "Pokémon Tartarughina marina",
+   "categoria_px": 103,
+   "tipi": [
+    "TYPE_WATER",
+    "TYPE_WATER"
+   ],
+   "atlante": [
+    "Depone le uova sulle spiagge di sabbia",
+    "fine. Ogni nuovo stabilimento balneare gli",
+    "toglie un metro di casa."
+   ],
+   "atlante_righe_px": [
+    201,
+    219,
+    127
+   ],
+   "msg_0803": [
+    "Depone le uova sulle spiagge di sabbia\n",
+    "fine. Ogni nuovo stabilimento balneare gli\n",
+    "toglie un metro di casa."
+   ],
+   "peso": "  9,0 kg",
+   "altezza": " 0,5 m",
+   "banchi": {
+    "msg_0237": "Tartuca",
+    "msg_0238": "un {COLOR 255}Tartuca{COLOR 0}",
+    "msg_0816": "Pokémon Tartarughina marina",
+    "msg_0803": [
+     "Depone le uova sulle spiagge di sabbia\n",
+     "fine. Ogni nuovo stabilimento balneare gli\n",
+     "toglie un metro di casa."
+    ],
+    "msg_0812": "  9,0 kg",
+    "msg_0813": "  9,0 kg",
+    "msg_0814": " 0,5 m",
+    "msg_0815": " 0,5 m"
+   },
+   "distribuzione": [
+    {
+     "mappa": "MAP_CT_CATANIA_VERMUT",
+     "comune": "Catania",
+     "provincia": "CT",
+     "metodo": "regalo",
+     "livelli": [
+      5,
+      5
+     ],
+     "percentuale": null,
+     "nota": "post-game: il Prof. Strano, una specie per visita — Modulo 6 (6.38)",
+     "ora": "sempre"
+    }
+   ],
+   "altri_modi": [
+    {
+     "metodo": "si evolve in",
+     "in": "SPECIES_WARTORTLE",
+     "come": "al livello 16",
+     "evento": "EVO_LEVEL",
+     "parametro": 16
+    },
+    {
+     "metodo": "uovo",
+     "come": "alla Pensione (MAP_RG_COMISO) da una specie della sua linea"
+    }
+   ]
+  },
+  {
+   "n": 10,
+   "simbolo": "SPECIES_CATERPIE",
+   "regionale": 24,
+   "originale": "CATERPIE",
+   "nome": "Vermiceddu",
+   "glossario": "G31-0010",
+   "caratteri": 10,
+   "px": 57,
+   "con_articolo": "un {COLOR 255}Vermiceddu{COLOR 0}",
+   "con_articolo_px": 73,
+   "categoria": "Pokémon Baco",
+   "categoria_px": 70,
+   "tipi": [
+    "TYPE_BUG",
+    "TYPE_BUG"
+   ],
+   "atlante": [
+    "Una riga troppo lunga per il profilo D-01 del Pokédex di Trinacria"
+   ],
+   "atlante_righe_px": [
+    194,
+    220,
+    106
+   ],
+   "msg_0803": [
+    "Una riga troppo lunga per il profilo D-01 del Pokédex di Trinacria"
+   ],
+   "peso": "  2,9 kg",
+   "altezza": " 0,3 m",
+   "banchi": {
+    "msg_0237": "Vermiceddu",
+    "msg_0238": "un {COLOR 255}Vermiceddu{COLOR 0}",
+    "msg_0816": "Pokémon Baco",
+    "msg_0803": [
+     "Una riga troppo lunga per il profilo D-01 del Pokédex di Trinacria"
+    ],
+    "msg_0812": "  2,9 kg",
+    "msg_0813": "  2,9 kg",
+    "msg_0814": " 0,3 m",
+    "msg_0815": " 0,3 m"
+   },
+   "distribuzione": [
+    {
+     "mappa": "MAP_CT_NICOLOSI",
+     "comune": "Nicolosi",
+     "provincia": "CT",
+     "metodo": "Bottintesta (alberi comuni)",
+     "livelli": [
+      7,
+      10
+     ],
+     "percentuale": 15,
+     "ora": "sempre"
+    },
+    {
+     "mappa": "MAP_CT_NICOLOSI",
+     "comune": "Nicolosi",
+     "provincia": "CT",
+     "metodo": "erba",
+     "livelli": [
+      10,
+      13
+     ],
+     "percentuale": {
+      "morn": 15,
+      "day": 14
+     },
+     "ora": "morn/day"
+    },
+    {
+     "mappa": "MAP_CT_ETNA_MONTI_ROSSI",
+     "comune": "Nicolosi",
+     "provincia": "CT",
+     "metodo": "Bottintesta (alberi comuni)",
+     "livelli": [
+      8,
+      11
+     ],
+     "percentuale": 10,
+     "ora": "sempre"
+    },
+    {
+     "mappa": "MAP_CT_ETNA_MONTI_ROSSI",
+     "comune": "Nicolosi",
+     "provincia": "CT",
+     "metodo": "erba",
+     "livelli": [
+      12,
+      16
+     ],
+     "percentuale": {
+      "morn": 21,
+      "day": 22
+     },
+     "ora": "morn/day"
+    },
+    {
+     "mappa": "MAP_STRADA_SS417_CATANIA_CALTAGIRONE",
+     "comune": "Scordia / Palagonia / Mineo",
+     "provincia": "ROADS",
+     "metodo": "erba",
+     "livelli": [
+      16,
+      16
+     ],
+     "percentuale": {
+      "morn": 10
+     },
+     "ora": "morn"
+    },
+    {
+     "mappa": "MAP_CT_RANDAZZO",
+     "comune": "Randazzo",
+     "provincia": "CT",
+     "metodo": "Bottintesta (alberi comuni)",
+     "livelli": [
+      12,
+      15
+     ],
+     "percentuale": 15,
+     "ora": "sempre"
+    },
+    {
+     "mappa": "MAP_CT_RANDAZZO",
+     "comune": "Randazzo",
+     "provincia": "CT",
+     "metodo": "erba",
+     "livelli": [
+      16,
+      20
+     ],
+     "percentuale": {
+      "morn": 21,
+      "day": 20
+     },
+     "ora": "morn/day"
+    },
+    {
+     "mappa": "MAP_STRADA_SS114_CATANIA_AUGUSTA",
+     "comune": "Carlentini / Augusta",
+     "provincia": "ROADS",
+     "metodo": "erba",
+     "livelli": [
+      16,
+      16
+     ],
+     "percentuale": {
+      "day": 10
+     },
+     "ora": "day"
+    },
+    {
+     "mappa": "MAP_STRADA_SS115_SIRACUSA_AVOLA",
+     "comune": "Siracusa / Avola",
+     "provincia": "ROADS",
+     "metodo": "erba",
+     "livelli": [
+      21,
+      21
+     ],
+     "percentuale": {
+      "morn": 10,
+      "day": 10
+     },
+     "ora": "morn/day"
+    },
+    {
+     "mappa": "MAP_CL_NISCEMI_SUGHERETA",
+     "comune": "Niscemi",
+     "provincia": "CL",
+     "metodo": "Bottintesta (alberi comuni)",
+     "livelli": [
+      27,
+      30
+     ],
+     "percentuale": 50,
+     "ora": "sempre"
+    },
+    {
+     "mappa": "MAP_ME_BOSCO_DEI_NEBRODI",
+     "comune": "San Fratello / Cesarò",
+     "provincia": "ME",
+     "metodo": "Bottintesta (alberi comuni)",
+     "livelli": [
+      45,
+      48
+     ],
+     "percentuale": 5,
+     "ora": "sempre"
+    },
+    {
+     "mappa": "MAP_PA_BOSCO_DI_FICUZZA",
+     "comune": "Corleone",
+     "provincia": "PA",
+     "metodo": "Bottintesta (alberi comuni)",
+     "livelli": [
+      54,
+      57
+     ],
+     "percentuale": 5,
+     "ora": "sempre"
+    },
+    {
+     "mappa": "MAP_STRADA_SS117BIS_PIAZZA_ARMERINA",
+     "comune": "Piazza Armerina / Aidone",
+     "provincia": "ROADS",
+     "metodo": "Bottintesta (alberi comuni)",
+     "livelli": [
+      59,
+      62
+     ],
+     "percentuale": 5,
+     "ora": "sempre"
+    }
+   ],
+   "altri_modi": [
+    {
+     "metodo": "si evolve in",
+     "in": "SPECIES_METAPOD",
+     "come": "al livello 7",
+     "evento": "EVO_LEVEL",
+     "parametro": 7
+    },
+    {
+     "metodo": "uovo",
+     "come": "alla Pensione (MAP_RG_COMISO) da una specie della sua linea"
+    }
+   ]
+  },
+  {
+   "n": 12,
+   "simbolo": "SPECIES_BUTTERFREE",
+   "regionale": 26,
+   "originale": "BUTTERFREE",
+   "nome": "Palummedda",
+   "glossario": "G31-0012",
+   "caratteri": 10,
+   "px": 58,
+   "con_articolo": "un {COLOR 255}Palummedda{COLOR 0}",
+   "con_articolo_px": 74,
+   "categoria": "Pokémon Farfalla",
+   "categoria_px": 89,
+   "tipi": [
+    "TYPE_BUG",
+    "TYPE_FLYING"
+   ],
+   "atlante": [
+    "La sua polvere impollina gli agrumeti della",
+    "Piana. Senza di lei le arance costano il",
+    "doppio. Nessuno la ringrazia."
+   ],
+   "atlante_righe_px": [
+    222,
+    207,
+    155
+   ],
+   "msg_0803": [
+    "La sua polvere impollina gli agrumeti della\n",
+    "Piana. Senza di lei le arance costano il\n",
+    "doppio. Nessuno la ringrazia."
+   ],
+   "peso": "6.9 kg",
+   "altezza": " 1,1 m",
+   "banchi": {
+    "msg_0237": "Palummedda",
+    "msg_0238": "un {COLOR 255}Palummedda{COLOR 0}",
+    "msg_0816": "Pokémon Farfalla",
+    "msg_0803": [
+     "La sua polvere impollina gli agrumeti della\n",
+     "Piana. Senza di lei le arance costano il\n",
+     "doppio. Nessuno la ringrazia."
+    ],
+    "msg_0812": "6.9 kg",
+    "msg_0813": " 32,0 kg",
+    "msg_0814": " 1,1 m",
+    "msg_0815": " 1,1 m"
+   },
+   "distribuzione": [
+    {
+     "mappa": "MAP_CT_RANDAZZO",
+     "comune": "Randazzo",
+     "provincia": "CT",
+     "metodo": "erba",
+     "livelli": [
+      17,
+      18
+     ],
+     "percentuale": {
+      "morn": 5,
+      "day": 5
+     },
+     "ora": "morn/day"
+    },
+    {
+     "mappa": "MAP_CL_NISCEMI_SUGHERETA",
+     "comune": "Niscemi",
+     "provincia": "CL",
+     "metodo": "erba",
+     "livelli": [
+      31,
+      31
+     ],
+     "percentuale": {
+      "morn": 10
+     },
+     "ora": "morn"
+    },
+    {
+     "mappa": "MAP_ME_NEBRODI_PASCOLI_FANTASMA",
+     "comune": "San Fratello / Cesarò",
+     "provincia": "ME",
+     "metodo": "erba",
+     "livelli": [
+      49,
+      54
+     ],
+     "percentuale": {
+      "morn": 24,
+      "day": 16
+     },
+     "ora": "morn/day"
+    },
+    {
+     "mappa": "MAP_PA_BOSCO_DI_FICUZZA",
+     "comune": "Corleone",
+     "provincia": "PA",
+     "metodo": "erba",
+     "livelli": [
+      57,
+      61
+     ],
+     "percentuale": {
+      "morn": 24,
+      "day": 14
+     },
+     "ora": "morn/day"
+    },
+    {
+     "mappa": "MAP_STRADA_SS117BIS_PIAZZA_ARMERINA",
+     "comune": "Piazza Armerina / Aidone",
+     "provincia": "ROADS",
+     "metodo": "erba",
+     "livelli": [
+      62,
+      67
+     ],
+     "percentuale": {
+      "morn": 24,
+      "day": 22
+     },
+     "ora": "morn/day"
+    }
+   ],
+   "altri_modi": [
+    {
+     "metodo": "evoluzione",
+     "da": "SPECIES_METAPOD",
+     "come": "al livello 10",
+     "evento": "EVO_LEVEL",
+     "parametro": 10
+    }
+   ]
+  },
+  {
+   "n": 13,
+   "simbolo": "SPECIES_WEEDLE",
+   "regionale": 27,
+   "originale": "WEEDLE",
+   "nome": "Puncigghiu",
+   "glossario": "G31-9999",
+   "caratteri": 10,
+   "px": 54,
+   "con_articolo": "un {COLOR 255}Puncigghiu{COLOR 0}",
+   "con_articolo_px": 70,
+   "categoria": "Pokémon Millepiedi",
+   "categoria_px": 93,
+   "tipi": [
+    "TYPE_BUG",
+    "TYPE_POISON"
+   ],
+   "atlante": [
+    "Il pungiglione in testa è velenoso. Vive",
+    "tra i rovi del demanio abbandonato, dove",
+    "l’erba non si taglia da anni."
+   ],
+   "atlante_righe_px": [
+    209,
+    216,
+    149
+   ],
+   "msg_0803": [
+    "Il pungiglione in testa è velenoso. Vive\n",
+    "tra i rovi del demanio abbandonato, dove\n",
+    "l’erba non si taglia da anni."
+   ],
+   "peso": "  3,2 kg",
+   "altezza": " 0,3 m",
+   "banchi": {
+    "msg_0237": "Puncigghiu",
+    "msg_0238": "un {COLOR 255}Puncigghiu{COLOR 0}",
+    "msg_0816": "Pokémon Millepiedi",
+    "msg_0803": [
+     "Il pungiglione in testa è velenoso. Vive\n",
+     "tra i rovi del demanio abbandonato, dove\n",
+     "l’erba non si taglia da anni."
+    ],
+    "msg_0812": "  3,2 kg",
+    "msg_0813": "  3,2 kg",
+    "msg_0814": " 0,3 m",
+    "msg_0815": " 0,3 m"
+   },
+   "distribuzione": [
+    {
+     "mappa": "MAP_CT_NICOLOSI",
+     "comune": "Nicolosi",
+     "provincia": "CT",
+     "metodo": "Bottintesta (alberi comuni)",
+     "livelli": [
+      7,
+      10
+     ],
+     "percentuale": 5,
+     "ora": "sempre"
+    },
+    {
+     "mappa": "MAP_CT_NICOLOSI",
+     "comune": "Nicolosi",
+     "provincia": "CT",
+     "metodo": "erba",
+     "livelli": [
+      11,
+      11
+     ],
+     "percentuale": {
+      "morn": 20,
+      "day": 20
+     },
+     "ora": "morn/day"
+    },
+    {
+     "mappa": "MAP_CT_ETNA_MONTI_ROSSI",
+     "comune": "Nicolosi",
+     "provincia": "CT",
+     "metodo": "Bottintesta (alberi comuni)",
+     "livelli": [
+      8,
+      11
+     ],
+     "percentuale": 15,
+     "ora": "sempre"
+    },
+    {
+     "mappa": "MAP_CT_ETNA_MONTI_ROSSI",
+     "comune": "Nicolosi",
+     "provincia": "CT",
+     "metodo": "erba",
+     "livelli": [
+      11,
+      15
+     ],
+     "percentuale": {
+      "morn": 21,
+      "day": 24
+     },
+     "ora": "morn/day"
+    },
+    {
+     "mappa": "MAP_STRADA_SS284_RANDAZZO_BRONTE",
+     "comune": "Maletto / Bronte",
+     "provincia": "ROADS",
+     "metodo": "erba",
+     "livelli": [
+      15,
+      15
+     ],
+     "percentuale": {
+      "morn": 10,
+      "day": 10
+     },
+     "ora": "morn/day"
+    },
+    {
+     "mappa": "MAP_CT_BRONTE",
+     "comune": "Bronte",
+     "provincia": "CT",
+     "metodo": "erba",
+     "livelli": [
+      13,
+      15
+     ],
+     "percentuale": {
+      "morn": 15,
+      "day": 10
+     },
+     "ora": "morn/day"
+    },
+    {
+     "mappa": "MAP_CT_BRONTE_SCIARA",
+     "comune": "Bronte",
+     "provincia": "CT",
+     "metodo": "erba",
+     "livelli": [
+      15,
+      15
+     ],
+     "percentuale": {
+      "morn": 20
+     },
+     "ora": "morn"
+    },
+    {
+     "mappa": "MAP_STRADA_SS417_CATANIA_CALTAGIRONE",
+     "comune": "Scordia / Palagonia / Mineo",
+     "provincia": "ROADS",
+     "metodo": "erba",
+     "livelli": [
+      16,
+      16
+     ],
+     "percentuale": {
+      "morn": 10,
+      "day": 10
+     },
+     "ora": "morn/day"
+    },
+    {
+     "mappa": "MAP_CT_RANDAZZO",
+     "comune": "Randazzo",
+     "provincia": "CT",
+     "metodo": "Bottintesta (alberi comuni)",
+     "livelli": [
+      12,
+      15
+     ],
+     "percentuale": 10,
+     "ora": "sempre"
+    },
+    {
+     "mappa": "MAP_CT_RANDAZZO",
+     "comune": "Randazzo",
+     "provincia": "CT",
+     "metodo": "erba",
+     "livelli": [
+      15,
+      20
+     ],
+     "percentuale": {
+      "morn": 21,
+      "day": 21
+     },
+     "ora": "morn/day"
+    },
+    {
+     "mappa": "MAP_CL_NISCEMI_SUGHERETA",
+     "comune": "Niscemi",
+     "provincia": "CL",
+     "metodo": "Bottintesta (alberi comuni)",
+     "livelli": [
+      27,
+      30
+     ],
+     "percentuale": 5,
+     "ora": "sempre"
+    },
+    {
+     "mappa": "MAP_ME_BOSCO_DEI_NEBRODI",
+     "comune": "San Fratello / Cesarò",
+     "provincia": "ME",
+     "metodo": "Bottintesta (alberi comuni)",
+     "livelli": [
+      45,
+      48
+     ],
+     "percentuale": 5,
+     "ora": "sempre"
+    },
+    {
+     "mappa": "MAP_PA_BOSCO_DI_FICUZZA",
+     "comune": "Corleone",
+     "provincia": "PA",
+     "metodo": "Bottintesta (alberi comuni)",
+     "livelli": [
+      54,
+      57
+     ],
+     "percentuale": 50,
+     "ora": "sempre"
+    },
+    {
+     "mappa": "MAP_STRADA_SS117BIS_PIAZZA_ARMERINA",
+     "comune": "Piazza Armerina / Aidone",
+     "provincia": "ROADS",
+     "metodo": "Bottintesta (alberi comuni)",
+     "livelli": [
+      59,
+      62
+     ],
+     "percentuale": 10,
+     "ora": "sempre"
+    }
+   ],
+   "altri_modi": [
+    {
+     "metodo": "si evolve in",
+     "in": "SPECIES_KAKUNA",
+     "come": "al livello 7",
+     "evento": "EVO_LEVEL",
+     "parametro": 7
+    },
+    {
+     "metodo": "uovo",
+     "come": "alla Pensione (MAP_RG_COMISO) da una specie della sua linea"
+    }
+   ]
+  },
+  {
+   "n": 15,
+   "simbolo": "SPECIES_BEEDRILL",
+   "regionale": 29,
+   "originale": "BEEDRILL",
+   "nome": "Vespuni",
+   "glossario": "G31-0015",
+   "caratteri": 7,
+   "px": 39,
+   "con_articolo": "un {COLOR 255}Vespuni{COLOR 0}",
+   "con_articolo_px": 55,
+   "categoria": "Pokémon Velenape",
+   "categoria_px": 92,
+   "tipi": [
+    "TYPE_BUG",
+    "TYPE_POISON"
+   ],
+   "atlante": [
+    "Difende lo sciame con tre pungiglioni. Il",
+    "cartello del pistacchio lo libera di notte",
+    "sui campi di chi non paga."
+   ],
+   "atlante_righe_px": [
+    211,
+    218,
+    133
+   ],
+   "msg_0803": [
+    "Difende lo sciame con tre pungiglioni. Il\n",
+    "cartello del pistacchio lo libera di notte\n",
+    "sui campi di chi non paga."
+   ],
+   "peso": " 29,5 kg",
+   "altezza": " 1,0 m",
+   "banchi": {
+    "msg_0237": "Vespuni",
+    "msg_0238": "un {COLOR 255}Vespuni{COLOR 0}",
+    "msg_0816": "Pokémon Velenape",
+    "msg_0803": [
+     "Difende lo sciame con tre pungiglioni. Il\n",
+     "cartello del pistacchio lo libera di notte\n",
+     "sui campi di chi non paga."
+    ],
+    "msg_0812": " 29,5 kg",
+    "msg_0813": " 29,5 kg",
+    "msg_0814": " 1,0 m",
+    "msg_0815": " 1,0 m"
+   },
+   "distribuzione": [
+    {
+     "mappa": "MAP_RG_MERCATO_PIAZZALE",
+     "comune": "Vittoria",
+     "provincia": "RG",
+     "metodo": "erba",
+     "livelli": [
+      29,
+      29
+     ],
+     "percentuale": {
+      "morn": 5,
+      "day": 5
+     },
+     "ora": "morn/day"
+    },
+    {
+     "mappa": "MAP_CL_NISCEMI_SUGHERETA",
+     "comune": "Niscemi",
+     "provincia": "CL",
+     "metodo": "erba",
+     "livelli": [
+      31,
+      32
+     ],
+     "percentuale": {
+      "morn": 10,
+      "day": 10
+     },
+     "ora": "morn/day"
+    },
+    {
+     "mappa": "MAP_ME_BOSCO_DEI_NEBRODI",
+     "comune": "San Fratello / Cesarò",
+     "provincia": "ME",
+     "metodo": "erba",
+     "livelli": [
+      49,
+      52
+     ],
+     "percentuale": {
+      "morn": 20,
+      "day": 14
+     },
+     "ora": "morn/day"
+    },
+    {
+     "mappa": "MAP_PA_FICUZZA_VOLIERE_PIZZINI",
+     "comune": "Corleone",
+     "provincia": "PA",
+     "metodo": "erba",
+     "livelli": [
+      60,
+      63
+     ],
+     "percentuale": {
+      "day": 16
+     },
+     "ora": "day"
+    }
+   ],
+   "altri_modi": [
+    {
+     "metodo": "evoluzione",
+     "da": "SPECIES_KAKUNA",
+     "come": "al livello 10",
+     "evento": "EVO_LEVEL",
+     "parametro": 10
+    }
+   ]
+  },
+  {
+   "n": 15,
+   "simbolo": "SPECIES_BEEDRILL",
+   "regionale": 29,
+   "originale": "BEEDRILL",
+   "nome": "Vespuni",
+   "glossario": "G31-0015",
+   "caratteri": 7,
+   "px": 39,
+   "con_articolo": "un {COLOR 255}Vespuni{COLOR 0}",
+   "con_articolo_px": 55,
+   "categoria": "Pokémon Velenape",
+   "categoria_px": 92,
+   "tipi": [
+    "TYPE_BUG",
+    "TYPE_POISON"
+   ],
+   "atlante": [
+    "Difende lo sciame con tre pungiglioni. Il",
+    "cartello del pistacchio lo libera di notte",
+    "sui campi di chi non paga."
+   ],
+   "atlante_righe_px": [
+    211,
+    218,
+    133
+   ],
+   "msg_0803": [
+    "Difende lo sciame con tre pungiglioni. Il\n",
+    "cartello del pistacchio lo libera di notte\n",
+    "sui campi di chi non paga."
+   ],
+   "peso": " 29,5 kg",
+   "altezza": " 1,0 m",
+   "banchi": {
+    "msg_0237": "Vespuni",
+    "msg_0238": "un {COLOR 255}Vespuni{COLOR 0}",
+    "msg_0816": "Pokémon Velenape",
+    "msg_0803": [
+     "Difende lo sciame con tre pungiglioni. Il\n",
+     "cartello del pistacchio lo libera di notte\n",
+     "sui campi di chi non paga."
+    ],
+    "msg_0812": " 29,5 kg",
+    "msg_0813": " 29,5 kg",
+    "msg_0814": " 1,0 m",
+    "msg_0815": " 1,0 m"
+   },
+   "distribuzione": [
+    {
+     "mappa": "MAP_RG_MERCATO_PIAZZALE",
+     "comune": "Vittoria",
+     "provincia": "RG",
+     "metodo": "erba",
+     "livelli": [
+      29,
+      29
+     ],
+     "percentuale": {
+      "morn": 5,
+      "day": 5
+     },
+     "ora": "morn/day"
+    },
+    {
+     "mappa": "MAP_CL_NISCEMI_SUGHERETA",
+     "comune": "Niscemi",
+     "provincia": "CL",
+     "metodo": "erba",
+     "livelli": [
+      31,
+      32
+     ],
+     "percentuale": {
+      "morn": 10,
+      "day": 10
+     },
+     "ora": "morn/day"
+    },
+    {
+     "mappa": "MAP_ME_BOSCO_DEI_NEBRODI",
+     "comune": "San Fratello / Cesarò",
+     "provincia": "ME",
+     "metodo": "erba",
+     "livelli": [
+      49,
+      52
+     ],
+     "percentuale": {
+      "morn": 20,
+      "day": 14
+     },
+     "ora": "morn/day"
+    },
+    {
+     "mappa": "MAP_PA_FICUZZA_VOLIERE_PIZZINI",
+     "comune": "Corleone",
+     "provincia": "PA",
+     "metodo": "erba",
+     "livelli": [
+      60,
+      63
+     ],
+     "percentuale": {
+      "day": 16
+     },
+     "ora": "day"
+    }
+   ],
+   "altri_modi": [
+    {
+     "metodo": "evoluzione",
+     "da": "SPECIES_KAKUNA",
+     "come": "al livello 10",
+     "evento": "EVO_LEVEL",
+     "parametro": 10
+    }
+   ]
+  },
+  {
+   "n": 17,
+   "simbolo": "SPECIES_PIDGEOTTO",
+   "regionale": 11,
+   "originale": "PIDGEOTTO",
+   "nome": "Turturedda",
+   "glossario": "G31-0016",
+   "caratteri": 10,
+   "px": 60,
+   "con_articolo": "un {COLOR 255}Turturedda{COLOR 0}",
+   "con_articolo_px": 76,
+   "categoria": "Pokémon Uccello",
+   "categoria_px": 84,
+   "tipi": [
+    "TYPE_NORMAL",
+    "TYPE_FLYING"
+   ],
+   "atlante": [
+    "Torna ogni sera allo stesso campanile. I",
+    "collettori di voti la usano per recapitare",
+    "pizzini senza telefono."
+   ],
+   "atlante_righe_px": [
+    215,
+    222,
+    121
+   ],
+   "msg_0803": [
+    "Torna ogni sera allo stesso campanile. I\n",
+    "collettori di voti la usano per recapitare\n",
+    "pizzini senza telefono."
+   ],
+   "peso": " 30,0 kg",
+   "altezza": " 1,1 m",
+   "banchi": {
+    "msg_0237": "Turturedd",
+    "msg_0238": "un {COLOR 255}Turturedda{COLOR 0}",
+    "msg_0816": "Pokémon Uccello",
+    "msg_0803": [
+     "Torna ogni sera allo stesso campanile. I\n",
+     "collettori di voti la usano per recapitare\n",
+     "pizzini senza telefono."
+    ],
+    "msg_0812": " 30,0 kg",
+    "msg_0813": " 30,0 kg",
+    "msg_0814": " 1,1 m",
+    "msg_0815": " 1,1 m"
+   },
+   "distribuzione": [
+    {
+     "mappa": "MAP_SR_PORTOPALO",
+     "comune": "Portopalo di Capo Passero",
+     "provincia": "SR",
+     "metodo": "erba",
+     "livelli": [
+      26,
+      27
+     ],
+     "percentuale": {
+      "morn": 5,
+      "day": 5
+     },
+     "ora": "morn/day"
+    },
+    {
+     "mappa": "MAP_RG_SCICLI",
+     "comune": "Scicli",
+     "provincia": "RG",
+     "metodo": "erba",
+     "livelli": [
+      26,
+      26
+     ],
+     "percentuale": {
+      "morn": 10,
+      "day": 10
+     },
+     "ora": "morn/day"
+    },
+    {
+     "mappa": "MAP_RG_SANTA_CROCE_CAMERINA",
+     "comune": "Santa Croce Camerina",
+     "provincia": "RG",
+     "metodo": "erba",
+     "livelli": [
+      24,
+      29
+     ],
+     "percentuale": {
+      "day": 11
+     },
+     "ora": "day"
+    },
+    {
+     "mappa": "MAP_RG_COMISO_AEROPORTO",
+     "comune": "Comiso",
+     "provincia": "RG",
+     "metodo": "erba",
+     "livelli": [
+      29,
+      29
+     ],
+     "percentuale": {
+      "morn": 10,
+      "day": 10
+     },
+     "ora": "morn/day"
+    },
+    {
+     "mappa": "MAP_RG_COMISO_BASE_NATO_PISTA",
+     "comune": "Comiso",
+     "provincia": "RG",
+     "metodo": "erba",
+     "livelli": [
+      29,
+      29
+     ],
+     "percentuale": {
+      "morn": 10,
+      "day": 10
+     },
+     "ora": "morn/day"
+    },
+    {
+     "mappa": "MAP_STRADA_SS117BIS_GELA_NISCEMI",
+     "comune": "Gela / Niscemi",
+     "provincia": "ROADS",
+     "metodo": "erba",
+     "livelli": [
+      29,
+      34
+     ],
+     "percentuale": {
+      "morn": 11,
+      "day": 11
+     },
+     "ora": "morn/day"
+    },
+    {
+     "mappa": "MAP_STRADA_SS190_GELA_MAZZARINO",
+     "comune": "Gela / Mazzarino",
+     "provincia": "ROADS",
+     "metodo": "erba",
+     "livelli": [
+      32,
+      32
+     ],
+     "percentuale": {
+      "morn": 10,
+      "day": 10
+     },
+     "ora": "morn/day"
+    },
+    {
+     "mappa": "MAP_STRADA_SS189_SAN_CATALDO_SUTERA",
+     "comune": "Serradifalco / Montedoro",
+     "provincia": "ROADS",
+     "metodo": "erba",
+     "livelli": [
+      33,
+      36
+     ],
+     "percentuale": {
+      "morn": 15,
+      "day": 15
+     },
+     "ora": "morn/day"
+    },
+    {
+     "mappa": "MAP_STRADA_SS115_GELA_LICATA",
+     "comune": "Gela / Butera / Licata",
+     "provincia": "ROADS",
+     "metodo": "erba",
+     "livelli": [
+      35,
+      35
+     ],
+     "percentuale": {
+      "morn": 20,
+      "day": 20
+     },
+     "ora": "morn/day"
+    },
+    {
+     "mappa": "MAP_AG_PALMA_DI_MONTECHIARO",
+     "comune": "Palma di Montechiaro",
+     "provincia": "AG",
+     "metodo": "erba",
+     "livelli": [
+      35,
+      38
+     ],
+     "percentuale": {
+      "morn": 24,
+      "day": 24
+     },
+     "ora": "morn/day"
+    },
+    {
+     "mappa": "MAP_STRADA_SS122_CANICATTI_CALTANISSETTA",
+     "comune": "Canicattì / Delia / Sommatino",
+     "provincia": "ROADS",
+     "metodo": "erba",
+     "livelli": [
+      35,
+      38
+     ],
+     "percentuale": {
+      "morn": 24,
+      "day": 24
+     },
+     "ora": "morn/day"
+    },
+    {
+     "mappa": "MAP_AG_CANICATTI",
+     "comune": "Canicattì",
+     "provincia": "AG",
+     "metodo": "erba",
+     "livelli": [
+      36,
+      41
+     ],
+     "percentuale": {
+      "morn": 31,
+      "day": 24
+     },
+     "ora": "morn/day"
+    },
+    {
+     "mappa": "MAP_AG_FAVARA",
+     "comune": "Favara",
+     "provincia": "AG",
+     "metodo": "erba",
+     "livelli": [
+      37,
+      40
+     ],
+     "percentuale": {
+      "morn": 24,
+      "day": 24
+     },
+     "ora": "morn/day"
+    },
+    {
+     "mappa": "MAP_STRADA_SS189_SUTERA_AGRIGENTO",
+     "comune": "Campofranco / Comitini / Aragona",
+     "provincia": "ROADS",
+     "metodo": "erba",
+     "livelli": [
+      36,
+      39
+     ],
+     "percentuale": {
+      "morn": 15,
+      "day": 15
+     },
+     "ora": "morn/day"
+    },
+    {
+     "mappa": "MAP_STRADA_SS189_MUSSOMELI_LERCARA",
+     "comune": "Acquaviva Platani / Castronovo di Sicilia",
+     "provincia": "ROADS",
+     "metodo": "erba",
+     "livelli": [
+      37,
+      40
+     ],
+     "percentuale": {
+      "morn": 15
+     },
+     "ora": "morn"
+    },
+    {
+     "mappa": "MAP_AG_ACQUEDOTTO_COSTIERO",
+     "comune": "Siculiana",
+     "provincia": "AG",
+     "metodo": "erba",
+     "livelli": [
+      40,
+      40
+     ],
+     "percentuale": {
+      "morn": 20,
+      "day": 20
+     },
+     "ora": "morn/day"
+    },
+    {
+     "mappa": "MAP_AG_LAMPEDUSA",
+     "comune": "Lampedusa e Linosa",
+     "provincia": "AG",
+     "metodo": "erba",
+     "livelli": [
+      42,
+      42
+     ],
+     "percentuale": {
+      "morn": 20,
+      "day": 20
+     },
+     "ora": "morn/day"
+    },
+    {
+     "mappa": "MAP_STRADA_SS115_SCIACCA_SELINUNTE",
+     "comune": "Sciacca / Menfi",
+     "provincia": "ROADS",
+     "metodo": "erba",
+     "livelli": [
+      41,
+      41
+     ],
+     "percentuale": {
+      "morn": 20,
+      "day": 20
+     },
+     "ora": "morn/day"
+    },
+    {
+     "mappa": "MAP_TP_CAVE_DI_CUSA",
+     "comune": "Campobello di Mazara",
+     "provincia": "TP",
+     "metodo": "erba",
+     "livelli": [
+      43,
+      43
+     ],
+     "percentuale": {
+      "morn": 20,
+      "day": 20
+     },
+     "ora": "morn/day"
+    },
+    {
+     "mappa": "MAP_STRADA_A29_ALCAMO_MARSALA",
+     "comune": "Calatafimi-Segesta / Trapani / Marsala",
+     "provincia": "ROADS",
+     "metodo": "erba",
+     "livelli": [
+      42,
+      46
+     ],
+     "percentuale": {
+      "morn": 31,
+      "day": 24
+     },
+     "ora": "morn/day"
+    },
+    {
+     "mappa": "MAP_TP_MARSALA_STAGNONE",
+     "comune": "Marsala",
+     "provincia": "TP",
+     "metodo": "erba",
+     "livelli": [
+      45,
+      47
+     ],
+     "percentuale": {
+      "morn": 9,
+      "day": 5
+     },
+     "ora": "morn/day"
+    },
+    {
+     "mappa": "MAP_STRADA_SS187_CASTELLAMMARE_TRAPANI",
+     "comune": "Buseto Palizzolo / Valderice",
+     "provincia": "ROADS",
+     "metodo": "erba",
+     "livelli": [
+      45,
+      48
+     ],
+     "percentuale": {
+      "morn": 24,
+      "day": 24
+     },
+     "ora": "morn/day"
+    },
+    {
+     "mappa": "MAP_TP_SAN_VITO_LO_CAPO",
+     "comune": "San Vito Lo Capo",
+     "provincia": "TP",
+     "metodo": "erba",
+     "livelli": [
+      46,
+      46
+     ],
+     "percentuale": {
+      "morn": 20
+     },
+     "ora": "morn"
+    },
+    {
+     "mappa": "MAP_TP_ZINGARO",
+     "comune": "San Vito Lo Capo",
+     "provincia": "TP",
+     "metodo": "erba",
+     "livelli": [
+      46,
+      49
+     ],
+     "percentuale": {
+      "morn": 24,
+      "day": 24
+     },
+     "ora": "morn/day"
+    },
+    {
+     "mappa": "MAP_TP_CASTELLAMMARE_DEL_GOLFO",
+     "comune": "Castellammare del Golfo",
+     "provincia": "TP",
+     "metodo": "erba",
+     "livelli": [
+      46,
+      49
+     ],
+     "percentuale": {
+      "morn": 15,
+      "day": 15
+     },
+     "ora": "morn/day"
+    },
+    {
+     "mappa": "MAP_ME_SAN_FRATELLO",
+     "comune": "San Fratello",
+     "provincia": "ME",
+     "metodo": "erba",
+     "livelli": [
+      46,
+      49
+     ],
+     "percentuale": {
+      "morn": 15
+     },
+     "ora": "morn"
+    },
+    {
+     "mappa": "MAP_STRADA_SS113_CAPO_ORLANDO_TINDARI",
+     "comune": "Brolo / Piraino / Gioiosa Marea",
+     "provincia": "ROADS",
+     "metodo": "erba",
+     "livelli": [
+      48,
+      51
+     ],
+     "percentuale": {
+      "morn": 15,
+      "day": 15
+     },
+     "ora": "morn/day"
+    },
+    {
+     "mappa": "MAP_ME_NEBRODI_PASCOLI_FANTASMA",
+     "comune": "San Fratello / Cesarò",
+     "provincia": "ME",
+     "metodo": "erba",
+     "livelli": [
+      49,
+      53
+     ],
+     "percentuale": {
+      "morn": 25,
+      "day": 16
+     },
+     "ora": "morn/day"
+    },
+    {
+     "mappa": "MAP_STRADA_A20_MILAZZO_MESSINA",
+     "comune": "Rometta / Spadafora / Villafranca Tirrena",
+     "provincia": "ROADS",
+     "metodo": "erba",
+     "livelli": [
+      50,
+      52
+     ],
+     "percentuale": {
+      "morn": 30,
+      "day": 30
+     },
+     "ora": "morn/day"
+    }
+   ],
+   "altri_modi": [
+    {
+     "metodo": "evoluzione",
+     "da": "SPECIES_PIDGEY",
+     "come": "al livello 18",
+     "evento": "EVO_LEVEL",
+     "parametro": 18
+    },
+    {
+     "metodo": "si evolve in",
+     "in": "SPECIES_PIDGEOT",
+     "come": "al livello 36",
+     "evento": "EVO_LEVEL",
+     "parametro": 36
+    }
+   ]
+  }
+ ],
+ "glossario_aggiunte": [
+  {
+   "id": "G31-0001",
+   "forma": "Cipudda",
+   "categoria": "specie",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "cipudda"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0237",
+    "indice": 1,
+    "originale": "BULBASAUR"
+   },
+   "con_articolo": "un {COLOR 255}Cipudda{COLOR 0}",
+   "genere": "m",
+   "significato": "cipolla",
+   "origine": "architetto 3.1",
+   "nota": "Il bulbo sul dorso ricorda una cipolla.",
+   "caratteri": 7,
+   "px": 39,
+   "fonte": "MCP",
+   "lemma_mcp": "cipollina",
+   "limite": "L-01",
+   "con_articolo_px": 55
+  },
+  {
+   "id": "G31-0004",
+   "forma": "Scintidda",
+   "categoria": "specie",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "scintidda"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0237",
+    "indice": 4,
+    "originale": "CHARMANDER"
+   },
+   "con_articolo": "uno {COLOR 255}Scintidda{COLOR 0}",
+   "genere": "m",
+   "significato": "scintilla",
+   "origine": "architetto 3.1",
+   "nota": null,
+   "caratteri": 9,
+   "px": 48,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-01",
+   "con_articolo_px": 70
+  },
+  {
+   "id": "G31-0007",
+   "forma": "Tartuca",
+   "categoria": "specie",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "tartuca"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0237",
+    "indice": 7,
+    "originale": "SQUIRTLE"
+   },
+   "con_articolo": "un {COLOR 255}Tartuca{COLOR 0}",
+   "genere": "m",
+   "significato": "tartaruga",
+   "origine": "architetto 3.1",
+   "nota": null,
+   "caratteri": 7,
+   "px": 42,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-01",
+   "con_articolo_px": 58
+  },
+  {
+   "id": "G31-0010",
+   "forma": "Vermiceddu",
+   "categoria": "specie",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "vermiceddu"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0237",
+    "indice": 10,
+    "originale": "CATERPIE"
+   },
+   "con_articolo": "un {COLOR 255}Vermiceddu{COLOR 0}",
+   "genere": "m",
+   "significato": "vermetto",
+   "origine": "architetto 3.1",
+   "nota": null,
+   "caratteri": 10,
+   "px": 57,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-01",
+   "con_articolo_px": 73
+  },
+  {
+   "id": "G31-0012",
+   "forma": "Palummedda",
+   "categoria": "specie",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "palummedda"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0237",
+    "indice": 12,
+    "originale": "BUTTERFREE"
+   },
+   "con_articolo": "un {COLOR 255}Palummedda{COLOR 0}",
+   "genere": "m",
+   "significato": "farfalla",
+   "origine": "architetto 3.1",
+   "nota": null,
+   "caratteri": 10,
+   "px": 58,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-01",
+   "con_articolo_px": 74
+  },
+  {
+   "id": "G31-0013",
+   "forma": "Puncigghiu",
+   "categoria": "specie",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "puncigghiu"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0237",
+    "indice": 13,
+    "originale": "WEEDLE"
+   },
+   "con_articolo": "un {COLOR 255}Puncigghiu{COLOR 0}",
+   "genere": "m",
+   "significato": "pungiglione",
+   "origine": "architetto 3.1",
+   "nota": null,
+   "caratteri": 10,
+   "px": 54,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-01",
+   "con_articolo_px": 70
+  },
+  {
+   "id": "G31-0015",
+   "forma": "Vespuni",
+   "categoria": "specie",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "vespuni"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0237",
+    "indice": 15,
+    "originale": "BEEDRILL"
+   },
+   "con_articolo": "un {COLOR 255}Vespuni{COLOR 0}",
+   "genere": "m",
+   "significato": "calabrone",
+   "origine": "architetto 3.1",
+   "nota": null,
+   "caratteri": 7,
+   "px": 39,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-01",
+   "con_articolo_px": 55
+  },
+  {
+   "id": "G31-0016",
+   "forma": "Turturedda",
+   "categoria": "specie",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "turturedda"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0237",
+    "indice": 17,
+    "originale": "PIDGEOTTO"
+   },
+   "con_articolo": "un {COLOR 255}Turturedda{COLOR 0}",
+   "genere": "m",
+   "significato": "tortora",
+   "origine": "architetto 3.1",
+   "nota": null,
+   "caratteri": 10,
+   "px": 60,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-01",
+   "con_articolo_px": 76
+  }
+ ],
+ "gs_enc_data": {
+  "encounters": [
+   {
+    "map": "CT_MISTERBIANCO",
+    "land": {
+     "rate": 15,
+     "mons": [
+      {
+       "level": 3,
+       "species": {
+        "morn": "SPECIES_RATTATA",
+        "day": "SPECIES_RATTATA",
+        "nite": "SPECIES_RATTATA"
+       }
+      },
+      {
+       "level": 4,
+       "species": {
+        "morn": "SPECIES_PIDGEY",
+        "day": "SPECIES_PIDGEY",
+        "nite": "SPECIES_HOOTHOOT"
+       }
+      },
+      {
+       "level": 3,
+       "species": {
+        "morn": "SPECIES_SENTRET",
+        "day": "SPECIES_SENTRET",
+        "nite": "SPECIES_MEOWTH"
+       }
+      },
+      {
+       "level": 5,
+       "species": {
+        "morn": "SPECIES_SPEAROW",
+        "day": "SPECIES_SPEAROW",
+        "nite": "SPECIES_KOFFING"
+       }
+      },
+      {
+       "level": 4,
+       "species": {
+        "morn": "SPECIES_SNUBBULL",
+        "day": "SPECIES_SNUBBULL",
+        "nite": "SPECIES_GRIMER"
+       }
+      },
+      {
+       "level": 5,
+       "species": {
+        "morn": "SPECIES_GRIMER",
+        "day": "SPECIES_GRIMER",
+        "nite": "SPECIES_RATTATA"
+       }
+      },
+      {
+       "level": 5,
+       "species": {
+        "morn": "SPECIES_SENTRET",
+        "day": "SPECIES_MAGNEMITE",
+        "nite": "SPECIES_MURKROW"
+       }
+      },
+      {
+       "level": 6,
+       "species": {
+        "morn": "SPECIES_SUNKERN",
+        "day": "SPECIES_SENTRET",
+        "nite": "SPECIES_DROWZEE"
+       }
+      },
+      {
+       "level": 6,
+       "species": {
+        "morn": "SPECIES_DIGLETT",
+        "day": "SPECIES_YANMA",
+        "nite": "SPECIES_MEOWTH"
+       }
+      },
+      {
+       "level": 7,
+       "species": {
+        "morn": "SPECIES_RATTATA",
+        "day": "SPECIES_RATTATA",
+        "nite": "SPECIES_KOFFING"
+       }
+      },
+      {
+       "level": 7,
+       "species": {
+        "morn": "SPECIES_LICKITUNG",
+        "day": "SPECIES_LICKITUNG",
+        "nite": "SPECIES_LICKITUNG"
+       }
+      }
+     ]
+    },
+    "surf": {
+     "rate": 0,
+     "mons": []
+    },
+    "rock_smash": {
+     "rate": 0,
+     "mons": []
+    },
+    "fishing": {
+     "old_rod": {
+      "rate": 0,
+      "mons": []
+     },
+     "good_rod": {
+      "rate": 0,
+      "mons": []
+     },
+     "super_rod": {
+      "rate": 0,
+      "mons": []
+     }
+    },
+    "hoenn": [
+     "SPECIES_PLUSLE",
+     "SPECIES_NINCADA"
+    ],
+    "sinnoh": [
+     "SPECIES_BIDOOF",
+     "SPECIES_STARLY"
+    ],
+    "landSwarm": "SPECIES_RATTATA",
+    "surfSwarm": "SPECIES_NONE",
+    "nightFish": "SPECIES_NONE",
+    "fishSwarm": "SPECIES_NONE"
+   },
+   {
+    "map": "CT_CATANIA_GALERMO",
+    "land": {
+     "rate": 10,
+     "mons": [
+      {
+       "level": 4,
+       "species": {
+        "morn": "SPECIES_RATTATA",
+        "day": "SPECIES_RATTATA",
+        "nite": "SPECIES_RATTATA"
+       }
+      },
+      {
+       "level": 5,
+       "species": {
+        "morn": "SPECIES_PIDGEY",
+        "day": "SPECIES_PIDGEY",
+        "nite": "SPECIES_MEOWTH"
+       }
+      },
+      {
+       "level": 4,
+       "species": {
+        "morn": "SPECIES_SPEAROW",
+        "day": "SPECIES_SPEAROW",
+        "nite": "SPECIES_KOFFING"
+       }
+      },
+      {
+       "level": 6,
+       "species": {
+        "morn": "SPECIES_SENTRET",
+        "day": "SPECIES_SENTRET",
+        "nite": "SPECIES_GRIMER"
+       }
+      },
+      {
+       "level": 5,
+       "species": {
+        "morn": "SPECIES_GRIMER",
+        "day": "SPECIES_GRIMER",
+        "nite": "SPECIES_RATTATA"
+       }
+      },
+      {
+       "level": 6,
+       "species": {
+        "morn": "SPECIES_RATTATA",
+        "day": "SPECIES_RATTATA",
+        "nite": "SPECIES_KOFFING"
+       }
+      },
+      {
+       "level": 6,
+       "species": {
+        "morn": "SPECIES_PIDGEY",
+        "day": "SPECIES_PIDGEY",
+        "nite": "SPECIES_GRIMER"
+       }
+      },
+      {
+       "level": 7,
+       "species": {
+        "morn": "SPECIES_SPEAROW",
+        "day": "SPECIES_MAGNEMITE",
+        "nite": "SPECIES_MURKROW"
+       }
+      },
+      {
+       "level": 7,
+       "species": {
+        "morn": "SPECIES_SENTRET",
+        "day": "SPECIES_SPEAROW",
+        "nite": "SPECIES_DROWZEE"
+       }
+      },
+      {
+       "level": 8,
+       "species": {
+        "morn": "SPECIES_GRIMER",
+        "day": "SPECIES_SENTRET",
+        "nite": "SPECIES_RATTATA"
+       }
+      },
+      {
+       "level": 8,
+       "species": {
+        "morn": "SPECIES_PIDGEY",
+        "day": "SPECIES_GRIMER",
+        "nite": "SPECIES_DROWZEE"
+       }
+      },
+      {
+       "level": 9,
+       "species": {
+        "morn": "SPECIES_PIDGEY",
+        "day": "SPECIES_GRIMER",
+        "nite": "SPECIES_GRIMER"
+       }
+      }
+     ]
+    },
+    "surf": {
+     "rate": 0,
+     "mons": [
+      {
+       "level": {
+        "min": 30,
+        "max": 20
+       },
+       "species": "SPECIES_TENTACOOL"
+      },
+      {
+       "level": {
+        "min": 30,
+        "max": 20
+       },
+       "species": "SPECIES_TENTACOOL"
+      },
+      {
+       "level": {
+        "min": 30,
+        "max": 20
+       },
+       "species": "SPECIES_TENTACOOL"
+      },
+      {
+       "level": {
+        "min": 30,
+        "max": 20
+       },
+       "species": "SPECIES_TENTACOOL"
+      },
+      {
+       "level": {
+        "min": 30,
+        "max": 20
+       },
+       "species": "SPECIES_TENTACOOL"
+      }
+     ]
+    },
+    "rock_smash": {
+     "rate": 0,
+     "mons": []
+    },
+    "fishing": {
+     "old_rod": {
+      "rate": 0,
+      "mons": []
+     },
+     "good_rod": {
+      "rate": 0,
+      "mons": []
+     },
+     "super_rod": {
+      "rate": 0,
+      "mons": []
+     }
+    },
+    "hoenn": [
+     "SPECIES_GULPIN",
+     "SPECIES_ELECTRIKE"
+    ],
+    "sinnoh": [
+     "SPECIES_CHATOT",
+     "SPECIES_BURMY"
+    ],
+    "landSwarm": "SPECIES_RATTATA",
+    "surfSwarm": "SPECIES_NONE",
+    "nightFish": "SPECIES_NONE",
+    "fishSwarm": "SPECIES_NONE"
+   },
+   {
+    "map": "CT_CATANIA_OGNINA",
+    "land": {
+     "rate": 10,
+     "mons": [
+      {
+       "level": 5,
+       "species": {
+        "morn": "SPECIES_KRABBY",
+        "day": "MISSINGNO",
+        "nite": "SPECIES_KRABBY"
+       }
+      },
+      {
+       "level": 6,
+       "species": {
+        "morn": "SPECIES_RATTATA",
+        "day": "SPECIES_RATTATA",
+        "nite": "SPECIES_RATTATA"
+       }
+      },
+      {
+       "level": 5,
+       "species": {
+        "morn": "SPECIES_PIDGEY",
+        "day": "SPECIES_PIDGEY",
+        "nite": "SPECIES_ZUBAT"
+       }
+      },
+      {
+       "level": 7,
+       "species": {
+        "morn": "SPECIES_SHELLDER",
+        "day": "SPECIES_SHELLDER",
+        "nite": "SPECIES_STARYU"
+       }
+      },
+      {
+       "level": 6,
+       "species": {
+        "morn": "SPECIES_GEODUDE",
+        "day": "SPECIES_GEODUDE",
+        "nite": "SPECIES_GEODUDE"
+       }
+      },
+      {
+       "level": 7,
+       "species": {
+        "morn": "SPECIES_CORSOLA",
+        "day": "SPECIES_CORSOLA",
+        "nite": "SPECIES_KRABBY"
+       }
+      },
+      {
+       "level": 7,
+       "species": {
+        "morn": "SPECIES_SHUCKLE",
+        "day": "SPECIES_SHUCKLE",
+        "nite": "SPECIES_SLOWPOKE"
+       }
+      },
+      {
+       "level": 8,
+       "species": {
+        "morn": "SPECIES_NATU",
+        "day": "SPECIES_NATU",
+        "nite": "SPECIES_SHUCKLE"
+       }
+      },
+      {
+       "level": 8,
+       "species": {
+        "morn": "SPECIES_PIDGEY",
+        "day": "SPECIES_PIDGEY",
+        "nite": "SPECIES_ZUBAT"
+       }
+      },
+      {
+       "level": 9,
+       "species": {
+        "morn": "SPECIES_KRABBY",
+        "day": "SPECIES_KRABBY",
+        "nite": "SPECIES_STARYU"
+       }
+      },
+      {
+       "level": 9,
+       "species": {
+        "morn": "SPECIES_SHELLDER",
+        "day": "SPECIES_SHELLDER",
+        "nite": "SPECIES_GEODUDE"
+       }
+      },
+      {
+       "level": 10,
+       "species": {
+        "morn": "SPECIES_GEODUDE",
+        "day": "SPECIES_GEODUDE",
+        "nite": "SPECIES_GEODUDE"
+       }
+      }
+     ]
+    },
+    "surf": {
+     "rate": 15,
+     "mons": [
+      {
+       "level": {
+        "min": 23,
+        "max": 28
+       },
+       "species": "SPECIES_TENTACOOL"
+      },
+      {
+       "level": {
+        "min": 25,
+        "max": 30
+       },
+       "species": "SPECIES_PSYDUCK"
+      },
+      {
+       "level": {
+        "min": 27,
+        "max": 32
+       },
+       "species": "SPECIES_SEEL"
+      },
+      {
+       "level": {
+        "min": 29,
+        "max": 34
+       },
+       "species": "SPECIES_SLOWPOKE"
+      },
+      {
+       "level": {
+        "min": 31,
+        "max": 36
+       },
+       "species": "SPECIES_PSYDUCK"
+      }
+     ]
+    },
+    "rock_smash": {
+     "rate": 50,
+     "mons": [
+      {
+       "level": {
+        "min": 3,
+        "max": 7
+       },
+       "species": "SPECIES_KRABBY"
+      },
+      {
+       "level": {
+        "min": 5,
+        "max": 9
+       },
+       "species": "SPECIES_SHUCKLE"
+      }
+     ]
+    },
+    "fishing": {
+     "old_rod": {
+      "rate": 25,
+      "mons": [
+       {
+        "level": {
+         "min": 8,
+         "max": 12
+        },
+        "species": "SPECIES_MAGIKARP"
+       },
+       {
+        "level": {
+         "min": 8,
+         "max": 12
+        },
+        "species": "SPECIES_TENTACOOL"
+       },
+       {
+        "level": {
+         "min": 8,
+         "max": 12
+        },
+        "species": "SPECIES_KRABBY"
+       },
+       {
+        "level": {
+         "min": 8,
+         "max": 12
+        },
+        "species": "SPECIES_KRABBY"
+       },
+       {
+        "level": {
+         "min": 8,
+         "max": 12
+        },
+        "species": "SPECIES_TENTACOOL"
+       }
+      ]
+     },
+     "good_rod": {
+      "rate": 50,
+      "mons": [
+       {
+        "level": {
+         "min": 16,
+         "max": 20
+        },
+        "species": "SPECIES_TENTACOOL"
+       },
+       {
+        "level": {
+         "min": 16,
+         "max": 20
+        },
+        "species": "SPECIES_SHELLDER"
+       },
+       {
+        "level": {
+         "min": 16,
+         "max": 20
+        },
+        "species": "SPECIES_REMORAID"
+       },
+       {
+        "level": {
+         "min": 16,
+         "max": 20
+        },
+        "species": "SPECIES_CHINCHOU"
+       },
+       {
+        "level": {
+         "min": 16,
+         "max": 20
+        },
+        "species": "SPECIES_CORSOLA"
+       }
+      ]
+     },
+     "super_rod": {
+      "rate": 75,
+      "mons": [
+       {
+        "level": {
+         "min": 35,
+         "max": 40
+        },
+        "species": "SPECIES_TENTACRUEL"
+       },
+       {
+        "level": {
+         "min": 35,
+         "max": 40
+        },
+        "species": "SPECIES_HORSEA"
+       },
+       {
+        "level": {
+         "min": 35,
+         "max": 40
+        },
+        "species": "SPECIES_CORSOLA"
+       },
+       {
+        "level": {
+         "min": 35,
+         "max": 40
+        },
+        "species": "SPECIES_OCTILLERY"
+       },
+       {
+        "level": {
+         "min": 35,
+         "max": 40
+        },
+        "species": "SPECIES_SHELLDER"
+       }
+      ]
+     }
+    },
+    "hoenn": [
+     "SPECIES_ZIGZAGOON",
+     "SPECIES_POOCHYENA"
+    ],
+    "sinnoh": [
+     "SPECIES_BUNEARY",
+     "SPECIES_SHELLOS"
+    ],
+    "landSwarm": "SPECIES_KRABBY",
+    "surfSwarm": "SPECIES_TENTACOOL",
+    "nightFish": "SPECIES_CHINCHOU",
+    "fishSwarm": "SPECIES_TENTACOOL"
+   },
+   {
+    "map": "CT_INESISTENTE",
+    "land": {
+     "rate": 10,
+     "mons": [
+      {
+       "level": 5,
+       "species": {
+        "morn": "SPECIES_KRABBY",
+        "day": "SPECIES_MISSINGNO",
+        "nite": "SPECIES_KRABBY"
+       }
+      },
+      {
+       "level": 6,
+       "species": {
+        "morn": "SPECIES_RATTATA",
+        "day": "SPECIES_RATTATA",
+        "nite": "SPECIES_RATTATA"
+       }
+      },
+      {
+       "level": 5,
+       "species": {
+        "morn": "SPECIES_PIDGEY",
+        "day": "SPECIES_PIDGEY",
+        "nite": "SPECIES_ZUBAT"
+       }
+      },
+      {
+       "level": 7,
+       "species": {
+        "morn": "SPECIES_SHELLDER",
+        "day": "SPECIES_SHELLDER",
+        "nite": "SPECIES_STARYU"
+       }
+      },
+      {
+       "level": 6,
+       "species": {
+        "morn": "SPECIES_GEODUDE",
+        "day": "SPECIES_GEODUDE",
+        "nite": "SPECIES_GEODUDE"
+       }
+      },
+      {
+       "level": 7,
+       "species": {
+        "morn": "SPECIES_CORSOLA",
+        "day": "SPECIES_CORSOLA",
+        "nite": "SPECIES_KRABBY"
+       }
+      },
+      {
+       "level": 7,
+       "species": {
+        "morn": "SPECIES_SHUCKLE",
+        "day": "SPECIES_SHUCKLE",
+        "nite": "SPECIES_SLOWPOKE"
+       }
+      },
+      {
+       "level": 8,
+       "species": {
+        "morn": "SPECIES_NATU",
+        "day": "SPECIES_NATU",
+        "nite": "SPECIES_SHUCKLE"
+       }
+      },
+      {
+       "level": 8,
+       "species": {
+        "morn": "SPECIES_PIDGEY",
+        "day": "SPECIES_PIDGEY",
+        "nite": "SPECIES_ZUBAT"
+       }
+      },
+      {
+       "level": 9,
+       "species": {
+        "morn": "SPECIES_KRABBY",
+        "day": "SPECIES_KRABBY",
+        "nite": "SPECIES_STARYU"
+       }
+      },
+      {
+       "level": 9,
+       "species": {
+        "morn": "SPECIES_SHELLDER",
+        "day": "SPECIES_SHELLDER",
+        "nite": "SPECIES_GEODUDE"
+       }
+      },
+      {
+       "level": 10,
+       "species": {
+        "morn": "SPECIES_GEODUDE",
+        "day": "SPECIES_GEODUDE",
+        "nite": "SPECIES_GEODUDE"
+       }
+      }
+     ]
+    },
+    "surf": {
+     "rate": 15,
+     "mons": [
+      {
+       "level": {
+        "min": 23,
+        "max": 28
+       },
+       "species": "SPECIES_TENTACOOL"
+      },
+      {
+       "level": {
+        "min": 25,
+        "max": 30
+       },
+       "species": "SPECIES_PSYDUCK"
+      },
+      {
+       "level": {
+        "min": 27,
+        "max": 32
+       },
+       "species": "SPECIES_SEEL"
+      },
+      {
+       "level": {
+        "min": 29,
+        "max": 34
+       },
+       "species": "SPECIES_SLOWPOKE"
+      },
+      {
+       "level": {
+        "min": 31,
+        "max": 36
+       },
+       "species": "SPECIES_PSYDUCK"
+      }
+     ]
+    },
+    "rock_smash": {
+     "rate": 50,
+     "mons": [
+      {
+       "level": {
+        "min": 3,
+        "max": 7
+       },
+       "species": "SPECIES_KRABBY"
+      },
+      {
+       "level": {
+        "min": 5,
+        "max": 9
+       },
+       "species": "SPECIES_SHUCKLE"
+      }
+     ]
+    },
+    "fishing": {
+     "old_rod": {
+      "rate": 25,
+      "mons": [
+       {
+        "level": {
+         "min": 8,
+         "max": 12
+        },
+        "species": "SPECIES_MAGIKARP"
+       },
+       {
+        "level": {
+         "min": 8,
+         "max": 12
+        },
+        "species": "SPECIES_TENTACOOL"
+       },
+       {
+        "level": {
+         "min": 8,
+         "max": 12
+        },
+        "species": "SPECIES_KRABBY"
+       },
+       {
+        "level": {
+         "min": 8,
+         "max": 12
+        },
+        "species": "SPECIES_KRABBY"
+       },
+       {
+        "level": {
+         "min": 8,
+         "max": 12
+        },
+        "species": "SPECIES_TENTACOOL"
+       }
+      ]
+     },
+     "good_rod": {
+      "rate": 50,
+      "mons": [
+       {
+        "level": {
+         "min": 16,
+         "max": 20
+        },
+        "species": "SPECIES_TENTACOOL"
+       },
+       {
+        "level": {
+         "min": 16,
+         "max": 20
+        },
+        "species": "SPECIES_SHELLDER"
+       },
+       {
+        "level": {
+         "min": 16,
+         "max": 20
+        },
+        "species": "SPECIES_REMORAID"
+       },
+       {
+        "level": {
+         "min": 16,
+         "max": 20
+        },
+        "species": "SPECIES_CHINCHOU"
+       },
+       {
+        "level": {
+         "min": 16,
+         "max": 20
+        },
+        "species": "SPECIES_CORSOLA"
+       }
+      ]
+     },
+     "super_rod": {
+      "rate": 75,
+      "mons": [
+       {
+        "level": {
+         "min": 35,
+         "max": 40
+        },
+        "species": "SPECIES_TENTACRUEL"
+       },
+       {
+        "level": {
+         "min": 35,
+         "max": 40
+        },
+        "species": "SPECIES_HORSEA"
+       },
+       {
+        "level": {
+         "min": 35,
+         "max": 40
+        },
+        "species": "SPECIES_CORSOLA"
+       },
+       {
+        "level": {
+         "min": 35,
+         "max": 40
+        },
+        "species": "SPECIES_OCTILLERY"
+       },
+       {
+        "level": {
+         "min": 35,
+         "max": 40
+        },
+        "species": "SPECIES_SHELLDER"
+       }
+      ]
+     }
+    },
+    "hoenn": [
+     "SPECIES_ZIGZAGOON",
+     "SPECIES_POOCHYENA"
+    ],
+    "sinnoh": [
+     "SPECIES_BUNEARY",
+     "SPECIES_SHELLOS"
+    ],
+    "landSwarm": "SPECIES_KRABBY",
+    "surfSwarm": "SPECIES_TENTACOOL",
+    "nightFish": "SPECIES_CHINCHOU",
+    "fishSwarm": "SPECIES_TENTACOOL"
+   }
+  ]
+ },
+ "intestazioni": [
+  {
+   "mappa": "MAP_CT_MISTERBIANCO",
+   "wildEncounterBank": "ENCDATA_X"
+  },
+  {
+   "mappa": "MAP_CT_CATANIA_GALERMO",
+   "wildEncounterBank": "ENCDATA_X"
+  },
+  {
+   "mappa": "MAP_CT_CATANIA_OGNINA",
+   "wildEncounterBank": "ENCDATA_X"
+  },
+  {
+   "mappa": "MAP_CT_INESISTENTE",
+   "wildEncounterBank": "ENCDATA_X"
+  }
+ ],
+ "sciami": {
+  "righe": [
+   {
+    "mappa": "MAP_CT_ACI_TREZZA",
+    "tipo": "erba",
+    "specie": "SPECIES_NUMEL"
+   }
+  ],
+  "codice": ""
+ },
+ "evoluzioni": [
+  {
+   "specie": "SPECIES_KADABRA",
+   "bersaglio": "SPECIES_ALAKAZAM",
+   "heartgold": {
+    "method": "EVO_TRADE",
+    "param": 0
+   },
+   "trinacria": {
+    "method": "EVO_TRADE",
+    "param": 0
+   }
+  }
+ ],
+ "safari": [
+  {
+   "area": "SAFARI_ZONE_AREA_PLAINS",
+   "habitat_vendicari": "Macchia mediterranea",
+   "dati": {
+    "area": "SAFARI_ZONE_AREA_PLAINS",
+    "land": {
+     "mons": {
+      "morn": [
+       {
+        "species": "SPECIES_ZIGZAGOON",
+        "level": 24
+       },
+       {
+        "species": "SPECIES_POOCHYENA",
+        "level": 25
+       },
+       {
+        "species": "SPECIES_TAILLOW",
+        "level": 26
+       },
+       {
+        "species": "SPECIES_SKITTY",
+        "level": 27
+       },
+       {
+        "species": "SPECIES_ELECTRIKE",
+        "level": 24
+       },
+       {
+        "species": "SPECIES_SPINDA",
+        "level": 25
+       },
+       {
+        "species": "SPECIES_PLUSLE",
+        "level": 26
+       },
+       {
+        "species": "SPECIES_MINUN",
+        "level": 27
+       },
+       {
+        "species": "SPECIES_GIRAFARIG",
+        "level": 24
+       },
+       {
+        "species": "SPECIES_KANGASKHAN",
+        "level": 25
+       }
+      ],
+      "day": [
+       {
+        "species": "SPECIES_ZIGZAGOON",
+        "level": 24
+       },
+       {
+        "species": "SPECIES_POOCHYENA",
+        "level": 25
+       },
+       {
+        "species": "SPECIES_TAILLOW",
+        "level": 26
+       },
+       {
+        "species": "SPECIES_SKITTY",
+        "level": 27
+       },
+       {
+        "species": "SPECIES_ELECTRIKE",
+        "level": 24
+       },
+       {
+        "species": "SPECIES_SPINDA",
+        "level": 25
+       },
+       {
+        "species": "SPECIES_PLUSLE",
+        "level": 26
+       },
+       {
+        "species": "SPECIES_MINUN",
+        "level": 27
+       },
+       {
+        "species": "SPECIES_GIRAFARIG",
+        "level": 24
+       },
+       {
+        "species": "SPECIES_KANGASKHAN",
+        "level": 25
+       }
+      ],
+      "nite": [
+       {
+        "species": "SPECIES_POOCHYENA",
+        "level": 24
+       },
+       {
+        "species": "SPECIES_POOCHYENA",
+        "level": 25
+       },
+       {
+        "species": "SPECIES_HOOTHOOT",
+        "level": 26
+       },
+       {
+        "species": "SPECIES_SKITTY",
+        "level": 27
+       },
+       {
+        "species": "SPECIES_ELECTRIKE",
+        "level": 24
+       },
+       {
+        "species": "SPECIES_MURKROW",
+        "level": 25
+       },
+       {
+        "species": "SPECIES_PLUSLE",
+        "level": 26
+       },
+       {
+        "species": "SPECIES_MINUN",
+        "level": 27
+       },
+       {
+        "species": "SPECIES_GIRAFARIG",
+        "level": 24
+       },
+       {
+        "species": "SPECIES_KANGASKHAN",
+        "level": 25
+       }
+      ]
+     },
+     "bonus_mons": [
+      {
+       "conditions": [
+        {
+         "object_type": "SAFARI_ZONE_OBJECT_TYPE_PLAINS",
+         "count": 3
+        }
+       ],
+       "morn": {
+        "species": "SPECIES_LINOONE",
+        "level": 34
+       },
+       "day": {
+        "species": "SPECIES_LINOONE",
+        "level": 34
+       },
+       "nite": {
+        "species": "SPECIES_LINOONE",
+        "level": 34
+       }
+      },
+      {
+       "conditions": [
+        {
+         "object_type": "SAFARI_ZONE_OBJECT_TYPE_PLAINS",
+         "count": 10
+        }
+       ],
+       "morn": {
+        "species": "SPECIES_MIGHTYENA",
+        "level": 34
+       },
+       "day": {
+        "species": "SPECIES_MIGHTYENA",
+        "level": 34
+       },
+       "nite": {
+        "species": "SPECIES_MIGHTYENA",
+        "level": 34
+       }
+      },
+      {
+       "conditions": [
+        {
+         "object_type": "SAFARI_ZONE_OBJECT_TYPE_PLAINS",
+         "count": 15
+        }
+       ],
+       "morn": {
+        "species": "SPECIES_SWELLOW",
+        "level": 34
+       },
+       "day": {
+        "species": "SPECIES_SWELLOW",
+        "level": 34
+       },
+       "nite": {
+        "species": "SPECIES_SWELLOW",
+        "level": 34
+       }
+      },
+      {
+       "conditions": [
+        {
+         "object_type": "SAFARI_ZONE_OBJECT_TYPE_FOREST",
+         "count": 3
+        }
+       ],
+       "morn": {
+        "species": "SPECIES_DELCATTY",
+        "level": 34
+       },
+       "day": {
+        "species": "SPECIES_DELCATTY",
+        "level": 34
+       },
+       "nite": {
+        "species": "SPECIES_DELCATTY",
+        "level": 34
+       }
+      },
+      {
+       "conditions": [
+        {
+         "object_type": "SAFARI_ZONE_OBJECT_TYPE_FOREST",
+         "count": 15
+        }
+       ],
+       "morn": {
+        "species": "SPECIES_MANECTRIC",
+        "level": 34
+       },
+       "day": {
+        "species": "SPECIES_MANECTRIC",
+        "level": 34
+       },
+       "nite": {
+        "species": "SPECIES_MANECTRIC",
+        "level": 34
+       }
+      },
+      {
+       "conditions": [
+        {
+         "object_type": "SAFARI_ZONE_OBJECT_TYPE_PEAK",
+         "count": 5
+        }
+       ],
+       "morn": {
+        "species": "SPECIES_LINOONE",
+        "level": 34
+       },
+       "day": {
+        "species": "SPECIES_LINOONE",
+        "level": 34
+       },
+       "nite": {
+        "species": "SPECIES_LINOONE",
+        "level": 34
+       }
+      },
+      {
+       "conditions": [
+        {
+         "object_type": "SAFARI_ZONE_OBJECT_TYPE_PEAK",
+         "count": 10
+        }
+       ],
+       "morn": {
+        "species": "SPECIES_MIGHTYENA",
+        "level": 34
+       },
+       "day": {
+        "species": "SPECIES_MIGHTYENA",
+        "level": 34
+       },
+       "nite": {
+        "species": "SPECIES_MIGHTYENA",
+        "level": 34
+       }
+      },
+      {
+       "conditions": [
+        {
+         "object_type": "SAFARI_ZONE_OBJECT_TYPE_PEAK",
+         "count": 15
+        }
+       ],
+       "morn": {
+        "species": "SPECIES_SWELLOW",
+        "level": 34
+       },
+       "day": {
+        "species": "SPECIES_SWELLOW",
+        "level": 34
+       },
+       "nite": {
+        "species": "SPECIES_SWELLOW",
+        "level": 34
+       }
+      },
+      {
+       "conditions": [
+        {
+         "object_type": "SAFARI_ZONE_OBJECT_TYPE_WATER",
+         "count": 12
+        }
+       ],
+       "morn": {
+        "species": "SPECIES_DELCATTY",
+        "level": 34
+       },
+       "day": {
+        "species": "SPECIES_DELCATTY",
+        "level": 34
+       },
+       "nite": {
+        "species": "SPECIES_DELCATTY",
+        "level": 34
+       }
+      },
+      {
+       "conditions": [
+        {
+         "object_type": "SAFARI_ZONE_OBJECT_TYPE_WATER",
+         "count": 28
+        }
+       ],
+       "morn": {
+        "species": "SPECIES_MANECTRIC",
+        "level": 34
+       },
+       "day": {
+        "species": "SPECIES_MANECTRIC",
+        "level": 34
+       },
+       "nite": {
+        "species": "SPECIES_MANECTRIC",
+        "level": 34
+       }
+      }
+     ],
+     "bonus_param": []
+    },
+    "surf": {
+     "mons": {
+      "morn": [
+       {
+        "species": "SPECIES_WINGULL",
+        "level": 25
+       },
+       {
+        "species": "SPECIES_TENTACOOL",
+        "level": 26
+       },
+       {
+        "species": "SPECIES_PSYDUCK",
+        "level": 27
+       },
+       {
+        "species": "SPECIES_MARILL",
+        "level": 25
+       },
+       {
+        "species": "SPECIES_WOOPER",
+        "level": 26
+       },
+       {
+        "species": "SPECIES_BUIZEL",
+        "level": 27
+       },
+       {
+        "species": "SPECIES_SHELLOS",
+        "level": 25
+       },
+       {
+        "species": "SPECIES_PELIPPER",
+        "level": 26
+       },
+       {
+        "species": "SPECIES_QUAGSIRE",
+        "level": 27
+       },
+       {
+        "species": "SPECIES_FLOATZEL",
+        "level": 25
+       }
+      ],
+      "day": [
+       {
+        "species": "SPECIES_WINGULL",
+        "level": 25
+       },
+       {
+        "species": "SPECIES_TENTACOOL",
+        "level": 26
+       },
+       {
+        "species": "SPECIES_PSYDUCK",
+        "level": 27
+       },
+       {
+        "species": "SPECIES_MARILL",
+        "level": 25
+       },
+       {
+        "species": "SPECIES_WOOPER",
+        "level": 26
+       },
+       {
+        "species": "SPECIES_BUIZEL",
+        "level": 27
+       },
+       {
+        "species": "SPECIES_SHELLOS",
+        "level": 25
+       },
+       {
+        "species": "SPECIES_PELIPPER",
+        "level": 26
+       },
+       {
+        "species": "SPECIES_QUAGSIRE",
+        "level": 27
+       },
+       {
+        "species": "SPECIES_FLOATZEL",
+        "level": 25
+       }
+      ],
+      "nite": [
+       {
+        "species": "SPECIES_WINGULL",
+        "level": 25
+       },
+       {
+        "species": "SPECIES_TENTACOOL",
+        "level": 26
+       },
+       {
+        "species": "SPECIES_PSYDUCK",
+        "level": 27
+       },
+       {
+        "species": "SPECIES_MARILL",
+        "level": 25
+       },
+       {
+        "species": "SPECIES_WOOPER",
+        "level": 26
+       },
+       {
+        "species": "SPECIES_BUIZEL",
+        "level": 27
+       },
+       {
+        "species": "SPECIES_SHELLOS",
+        "level": 25
+       },
+       {
+        "species": "SPECIES_PELIPPER",
+        "level": 26
+       },
+       {
+        "species": "SPECIES_QUAGSIRE",
+        "level": 27
+       },
+       {
+        "species": "SPECIES_FLOATZEL",
+        "level": 25
+       }
+      ]
+     },
+     "bonus_mons": [
+      {
+       "conditions": [
+        {
+         "object_type": "SAFARI_ZONE_OBJECT_TYPE_WATER",
+         "count": 10
+        }
+       ],
+       "morn": {
+        "species": "SPECIES_PELIPPER",
+        "level": 33
+       },
+       "day": {
+        "species": "SPECIES_PELIPPER",
+        "level": 33
+       },
+       "nite": {
+        "species": "SPECIES_PELIPPER",
+        "level": 33
+       }
+      },
+      {
+       "conditions": [
+        {
+         "object_type": "SAFARI_ZONE_OBJECT_TYPE_FOREST",
+         "count": 20
+        }
+       ],
+       "morn": {
+        "species": "SPECIES_QUAGSIRE",
+        "level": 33
+       },
+       "day": {
+        "species": "SPECIES_QUAGSIRE",
+        "level": 33
+       },
+       "nite": {
+        "species": "SPECIES_QUAGSIRE",
+        "level": 33
+       }
+      },
+      {
+       "conditions": [
+        {
+         "object_type": "SAFARI_ZONE_OBJECT_TYPE_FOREST",
+         "count": 20
+        }
+       ],
+       "morn": {
+        "species": "SPECIES_FLOATZEL",
+        "level": 33
+       },
+       "day": {
+        "species": "SPECIES_FLOATZEL",
+        "level": 33
+       },
+       "nite": {
+        "species": "SPECIES_FLOATZEL",
+        "level": 33
+       }
+      }
+     ],
+     "bonus_param": []
+    },
+    "oldrod": {
+     "mons": {
+      "morn": [
+       {
+        "species": "SPECIES_MAGIKARP",
+        "level": 12
+       },
+       {
+        "species": "SPECIES_MAGIKARP",
+        "level": 13
+       },
+       {
+        "species": "SPECIES_MAGIKARP",
+        "level": 14
+       },
+       {
+        "species": "SPECIES_GOLDEEN",
+        "level": 12
+       },
+       {
+        "species": "SPECIES_BARBOACH",
+        "level": 13
+       },
+       {
+        "species": "SPECIES_MAGIKARP",
+        "level": 14
+       },
+       {
+        "species": "SPECIES_GOLDEEN",
+        "level": 12
+       },
+       {
+        "species": "SPECIES_FINNEON",
+        "level": 13
+       },
+       {
+        "species": "SPECIES_MAGIKARP",
+        "level": 14
+       },
+       {
+        "species": "SPECIES_CORPHISH",
+        "level": 12
+       }
+      ],
+      "day": [
+       {
+        "species": "SPECIES_MAGIKARP",
+        "level": 12
+       },
+       {
+        "species": "SPECIES_MAGIKARP",
+        "level": 13
+       },
+       {
+        "species": "SPECIES_MAGIKARP",
+        "level": 14
+       },
+       {
+        "species": "SPECIES_GOLDEEN",
+        "level": 12
+       },
+       {
+        "species": "SPECIES_BARBOACH",
+        "level": 13
+       },
+       {
+        "species": "SPECIES_MAGIKARP",
+        "level": 14
+       },
+       {
+        "species": "SPECIES_GOLDEEN",
+        "level": 12
+       },
+       {
+        "species": "SPECIES_FINNEON",
+        "level": 13
+       },
+       {
+        "species": "SPECIES_MAGIKARP",
+        "level": 14
+       },
+       {
+        "species": "SPECIES_CORPHISH",
+        "level": 12
+       }
+      ],
+      "nite": [
+       {
+        "species": "SPECIES_MAGIKARP",
+        "level": 12
+       },
+       {
+        "species": "SPECIES_MAGIKARP",
+        "level": 13
+       },
+       {
+        "species": "SPECIES_MAGIKARP",
+        "level": 14
+       },
+       {
+        "species": "SPECIES_GOLDEEN",
+        "level": 12
+       },
+       {
+        "species": "SPECIES_BARBOACH",
+        "level": 13
+       },
+       {
+        "species": "SPECIES_MAGIKARP",
+        "level": 14
+       },
+       {
+        "species": "SPECIES_GOLDEEN",
+        "level": 12
+       },
+       {
+        "species": "SPECIES_FINNEON",
+        "level": 13
+       },
+       {
+        "species": "SPECIES_MAGIKARP",
+        "level": 14
+       },
+       {
+        "species": "SPECIES_CORPHISH",
+        "level": 12
+       }
+      ]
+     },
+     "bonus_mons": [
+      {
+       "conditions": [
+        {
+         "object_type": "SAFARI_ZONE_OBJECT_TYPE_WATER",
+         "count": 10
+        }
+       ],
+       "morn": {
+        "species": "SPECIES_FINNEON",
+        "level": 20
+       },
+       "day": {
+        "species": "SPECIES_FINNEON",
+        "level": 20
+       },
+       "nite": {
+        "species": "SPECIES_FINNEON",
+        "level": 20
+       }
+      },
+      {
+       "conditions": [
+        {
+         "object_type": "SAFARI_ZONE_OBJECT_TYPE_WATER",
+         "count": 20
+        }
+       ],
+       "morn": {
+        "species": "SPECIES_MAGIKARP",
+        "level": 20
+       },
+       "day": {
+        "species": "SPECIES_MAGIKARP",
+        "level": 20
+       },
+       "nite": {
+        "species": "SPECIES_MAGIKARP",
+        "level": 20
+       }
+      }
+     ],
+     "bonus_param": []
+    },
+    "goodrod": {
+     "mons": {
+      "morn": [
+       {
+        "species": "SPECIES_MAGIKARP",
+        "level": 25
+       },
+       {
+        "species": "SPECIES_BARBOACH",
+        "level": 26
+       },
+       {
+        "species": "SPECIES_CORPHISH",
+        "level": 27
+       },
+       {
+        "species": "SPECIES_FINNEON",
+        "level": 25
+       },
+       {
+        "species": "SPECIES_CARVANHA",
+        "level": 26
+       },
+       {
+        "species": "SPECIES_GOLDEEN",
+        "level": 27
+       },
+       {
+        "species": "SPECIES_LUVDISC",
+        "level": 25
+       },
+       {
+        "species": "SPECIES_REMORAID",
+        "level": 26
+       },
+       {
+        "species": "SPECIES_HORSEA",
+        "level": 27
+       },
+       {
+        "species": "SPECIES_WAILMER",
+        "level": 25
+       }
+      ],
+      "day": [
+       {
+        "species": "SPECIES_MAGIKARP",
+        "level": 25
+       },
+       {
+        "species": "SPECIES_BARBOACH",
+        "level": 26
+       },
+       {
+        "species": "SPECIES_CORPHISH",
+        "level": 27
+       },
+       {
+        "species": "SPECIES_FINNEON",
+        "level": 25
+       },
+       {
+        "species": "SPECIES_CARVANHA",
+        "level": 26
+       },
+       {
+        "species": "SPECIES_GOLDEEN",
+        "level": 27
+       },
+       {
+        "species": "SPECIES_LUVDISC",
+        "level": 25
+       },
+       {
+        "species": "SPECIES_REMORAID",
+        "level": 26
+       },
+       {
+        "species": "SPECIES_HORSEA",
+        "level": 27
+       },
+       {
+        "species": "SPECIES_WAILMER",
+        "level": 25
+       }
+      ],
+      "nite": [
+       {
+        "species": "SPECIES_MAGIKARP",
+        "level": 25
+       },
+       {
+        "species": "SPECIES_BARBOACH",
+        "level": 26
+       },
+       {
+        "species": "SPECIES_CORPHISH",
+        "level": 27
+       },
+       {
+        "species": "SPECIES_FINNEON",
+        "level": 25
+       },
+       {
+        "species": "SPECIES_CARVANHA",
+        "level": 26
+       },
+       {
+        "species": "SPECIES_GOLDEEN",
+        "level": 27
+       },
+       {
+        "species": "SPECIES_LUVDISC",
+        "level": 25
+       },
+       {
+        "species": "SPECIES_REMORAID",
+        "level": 26
+       },
+       {
+        "species": "SPECIES_HORSEA",
+        "level": 27
+       },
+       {
+        "species": "SPECIES_WAILMER",
+        "level": 25
+       }
+      ]
+     },
+     "bonus_mons": [
+      {
+       "conditions": [
+        {
+         "object_type": "SAFARI_ZONE_OBJECT_TYPE_WATER",
+         "count": 10
+        }
+       ],
+       "morn": {
+        "species": "SPECIES_REMORAID",
+        "level": 33
+       },
+       "day": {
+        "species": "SPECIES_REMORAID",
+        "level": 33
+       },
+       "nite": {
+        "species": "SPECIES_REMORAID",
+        "level": 33
+       }
+      },
+      {
+       "conditions": [
+        {
+         "object_type": "SAFARI_ZONE_OBJECT_TYPE_WATER",
+         "count": 20
+        }
+       ],
+       "morn": {
+        "species": "SPECIES_HORSEA",
+        "level": 33
+       },
+       "day": {
+        "species": "SPECIES_HORSEA",
+        "level": 33
+       },
+       "nite": {
+        "species": "SPECIES_HORSEA",
+        "level": 33
+       }
+      }
+     ],
+     "bonus_param": []
+    },
+    "superrod": {
+     "mons": {
+      "morn": [
+       {
+        "species": "SPECIES_WHISCASH",
+        "level": 40
+       },
+       {
+        "species": "SPECIES_CRAWDAUNT",
+        "level": 41
+       },
+       {
+        "species": "SPECIES_LUMINEON",
+        "level": 42
+       },
+       {
+        "species": "SPECIES_SHARPEDO",
+        "level": 40
+       },
+       {
+        "species": "SPECIES_WAILMER",
+        "level": 41
+       },
+       {
+        "species": "SPECIES_FEEBAS",
+        "level": 42
+       },
+       {
+        "species": "SPECIES_RELICANTH",
+        "level": 40
+       },
+       {
+        "species": "SPECIES_SEAKING",
+        "level": 41
+       },
+       {
+        "species": "SPECIES_GYARADOS",
+        "level": 42
+       },
+       {
+        "species": "SPECIES_CLAMPERL",
+        "level": 40
+       }
+      ],
+      "day": [
+       {
+        "species": "SPECIES_WHISCASH",
+        "level": 40
+       },
+       {
+        "species": "SPECIES_CRAWDAUNT",
+        "level": 41
+       },
+       {
+        "species": "SPECIES_LUMINEON",
+        "level": 42
+       },
+       {
+        "species": "SPECIES_SHARPEDO",
+        "level": 40
+       },
+       {
+        "species": "SPECIES_WAILMER",
+        "level": 41
+       },
+       {
+        "species": "SPECIES_FEEBAS",
+        "level": 42
+       },
+       {
+        "species": "SPECIES_RELICANTH",
+        "level": 40
+       },
+       {
+        "species": "SPECIES_SEAKING",
+        "level": 41
+       },
+       {
+        "species": "SPECIES_GYARADOS",
+        "level": 42
+       },
+       {
+        "species": "SPECIES_CLAMPERL",
+        "level": 40
+       }
+      ],
+      "nite": [
+       {
+        "species": "SPECIES_WHISCASH",
+        "level": 40
+       },
+       {
+        "species": "SPECIES_CRAWDAUNT",
+        "level": 41
+       },
+       {
+        "species": "SPECIES_LUMINEON",
+        "level": 42
+       },
+       {
+        "species": "SPECIES_SHARPEDO",
+        "level": 40
+       },
+       {
+        "species": "SPECIES_WAILMER",
+        "level": 41
+       },
+       {
+        "species": "SPECIES_FEEBAS",
+        "level": 42
+       },
+       {
+        "species": "SPECIES_RELICANTH",
+        "level": 40
+       },
+       {
+        "species": "SPECIES_SEAKING",
+        "level": 41
+       },
+       {
+        "species": "SPECIES_GYARADOS",
+        "level": 42
+       },
+       {
+        "species": "SPECIES_CLAMPERL",
+        "level": 40
+       }
+      ]
+     },
+     "bonus_mons": [
+      {
+       "conditions": [
+        {
+         "object_type": "SAFARI_ZONE_OBJECT_TYPE_WATER",
+         "count": 20
+        }
+       ],
+       "morn": {
+        "species": "SPECIES_SEAKING",
+        "level": 48
+       },
+       "day": {
+        "species": "SPECIES_SEAKING",
+        "level": 48
+       },
+       "nite": {
+        "species": "SPECIES_SEAKING",
+        "level": 48
+       }
+      },
+      {
+       "conditions": [
+        {
+         "object_type": "SAFARI_ZONE_OBJECT_TYPE_WATER",
+         "count": 30
+        }
+       ],
+       "morn": {
+        "species": "SPECIES_GYARADOS",
+        "level": 48
+       },
+       "day": {
+        "species": "SPECIES_GYARADOS",
+        "level": 48
+       },
+       "nite": {
+        "species": "SPECIES_GYARADOS",
+        "level": 48
+       }
+      }
+     ],
+     "bonus_param": []
+    }
+   }
+  }
+ ],
+ "mappe_senza_selvatici": [],
+ "bottintesta": [],
+ "speciali": [],
+ "leggendari": []
+}

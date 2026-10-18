@@ -1,6 +1,6 @@
 # Pokémon Trinacria — Trama espansa, sottotrame e missioni secondarie
 
-**Versione:** 1.5 · 18/10/2026 · autore del progetto: **atrisorb**
+**Versione:** 1.6 · 18/10/2026 · autore del progetto: **atrisorb**
 **Fonte:** `F:\Progetti\pokeheartgold\docs\trinacria_spec\` (PLOT_TO_BE_ENRICHED.md, STORY_STATE_MACHINE.json, LLM_MASTER_INSTRUCTIONS.md, SCRIPT_GENERATION_TEMPLATE.md). Questo documento le **estende**: dove le specifiche sono vaghe o in contraddizione, la decisione presa qui è vincolante per i Moduli 2–7 (registro §0).
 
 Il documento è il «canone narrativo». Non contiene ancora le battute: le scrive il Modulo 6, comune per comune, a partire da qui. I nomi siciliani di Pokémon, mosse, strumenti e classi citati sono quelli del Glossario bloccato (`docs/MODULO_3/3.0_REGOLE_E_GLOSSARIO.json`); quelli mancanti li fissano i blocchi successivi del Modulo 3. Se una forma della trama è diversa da quella del Glossario, vale il Glossario.
@@ -10,6 +10,7 @@ Il documento è il «canone narrativo». Non contiene ancora le battute: le scri
 **Novità della versione 1.3:** completamento della decisione **R-09** con il registro `docs/MODULO_2/2.3_MAPS_ME_PA_EN_ROADS.json` (Messina, Palermo, Enna, 40 arterie `MAP_STRADA_*`, Lega dell'ARS, Fiera del Mediterraneo e post-game: tutte le **354 mappe** del gioco e tutte le **345 celle giocabili** della Matrice 0 sono ora assegnate e collegate al 100%).
 **Novità della versione 1.4:** R-10.6 allineata al registro `docs/MODULO_2/2.5_TRAINERS_SPRITES_FLY_SEQ.json`: nomi reali delle classi (`TRAINERCLASS_*`, 7 slot del Team Rocket) e degli slot musicali di «U Sistema». Il registro fissa anche gli ID allenatore dei personaggi della trama (Segretari, boss, Cambiavoti, Guastafeste dei comizi, Campioni, Mistretta, alleati e pretoriani di M-EN-05, Ritrovi, Maria, Fantasmi). Punto aperto: Maria (C-05) non ha un Ritrovo (P-01 elenca sette giorni per sette compagni); i suoi ID 712–714 restano riservati.
 **Novità della versione 1.5:** nomi allineati al Glossario bloccato del blocco `3.0` (sezione `deviazioni_dalle_specifiche`), che li ha accorciati per i limiti dei buffer o li ha decisi dove la trama li rimandava al Modulo 3: MN 6 Mulinello → `Garòfalu`, MN 7 Cascata → `Ciumara`, MN 8 Scalaroccia → `Acchianata` (R-03); Ho-Oh `FeniceEtnea` → `FeniceEtna`; Lugia `ScillaCariddi` → `Colapisci`; `GranitaConzu` → `GranitaCafè`; `SH 300 Scassatu` → `SH Scassatu`; `CiucculataModica` → `Ciucculatta`; classi `FigghiuDiPapà` → `Figghiu Papà`, `Parcheggiaturi` → `Pustiggiat.`, `CollettuBian.` → `Coll. Biancu` (R-10.6, nomi a schermo; i simboli `TRAINERCLASS_*` non cambiano); il Tropius di Maria si scrive `Carrubba`. I soprannomi dei compagni restano solo nei dialoghi (`Faragghiuni` è il Golem di Turi, la specie è `Ciclopu`; `PaniCaMeusa` è lo Snorlax di Totò, la specie è `Manzuni`). Codici, mappe, flag e variabili non cambiano.
+**Novità della versione 1.6:** nuova decisione **R-10.7** dal blocco `3.1` del Modulo 3 (`docs/MODULO_3/3.1_POKEMON_1-100.json` e `docs/MODULO_3/3.1_PIANO_INCONTRI.json`): il piano degli incontri di tutta l'isola fissa dove vive ogni specie e aggiunge alla trama i regali, gli statici, i fossili, lo scambio di via Etnea, le tre canne, la Pensione di Comiso e il tutor di Bottintesta che il Modulo 6 deve scrivere; i luoghi della memoria (R-05.4) non hanno Pokémon selvatici; le evoluzioni per scambio diventano evoluzioni da soli. Codici, mappe, flag e variabili non cambiano.
 
 ---
 
@@ -284,6 +285,30 @@ Nessuna di queste operazioni esiste nei giochi Pokémon tradizionali; ciascuna �
 - Nel Modulo 5, gli slot musicali del Team Rocket (e i rispettivi gemelli `SEQ_GS_P_*`) diventano i temi di **«U Sistema»**: incontro `SEQ_GS_EYE_ROCKET`, lotta `SEQ_GS_VS_ROCKET`, covi e uffici del cartello `SEQ_GS_E_RIVAL1` (il covo del Team Rocket, `SEQ_GS_D_AJITO`, è già la crisi di Fontanarossa del blocco 2.1; `SEQ_GS_R_AJITO` e `SEQ_GS_BA_ROCKET` non esistono).
 - Nel post-game (`FLAG_POST_RESIGNATION`, Modulo 1 §7.4), il reset automatico degli allenatori 1–699 con il bonus di **+25 livelli** ha una giustificazione narrativa perfetta: sei mesi dopo le dimissioni del protagonista, **«U Sistema» ha ripreso il controllo di ogni quartiere, cantiere, porto e segreteria cambiando semplicemente sigla di partito**, con squadre ancora più forti e agguerrite.
 
+
+#### R-10.7 — Dove vivono i Pokémon: il piano degli incontri (blocco `3.1`)
+
+Il blocco `3.1` del Modulo 3 fissa una volta per tutte le tabelle degli incontri delle 182 mappe con selvatici, le 12 aree del Safari di Vendicari, gli alberi di Bottintesta, i 20 sciami e i programmi radio dei suoni di Hoenn e Sinnoh (post-game): ogni specie non mitica si ottiene senza scambi. Per il Modulo 6 valgono queste aggiunte alla trama (dettagli e livelli in `docs/MODULO_3/3.1_PIANO_INCONTRI.json`, sezioni `speciali`, `leggendari`, `presupposti`):
+
+| Contenuto | Dove e quando | Note |
+|---|---|---|
+| Starter di Johto | `M-CT-02`, Vermut | gli altri due li consegna Turi nel post-game (Ritrovo del lunedì) |
+| Starter di Kanto, Hoenn e Sinnoh | post-game, Vermut | il Prof. Strano ne consegna uno per visita |
+| Uovo di `Togepi` | `M-SR-04`, Fonte Aretusa | regalo di Maria insieme al primo Atto |
+| `Eevee` | dopo `ST-05` | Christian salva un Pokémon da esibizione del Privè Zagara |
+| `Castform` | dopo `M-CT-09`, Etna Sud | regalo del vulcanologo del Rifugio Sapienza |
+| `Chatot` | via Etnea | il promoter lo cede in cambio di un `Passareddu` (scambio con NPC) |
+| `Manzuni` (Snorlax) | `M-PA-02`, Viale Regione Siciliana | statico, parcheggiato in doppia fila; si sveglia col Pokégear |
+| `Rotom`, `Spiritomb` | post-game | nel quadro elettrico del decimo piano del Palazzo di Cemento; tra le statue di Villa Palagonia |
+| Uovo di `Riolu` | `P-02` vinto | regalo di Maria sul tetto del Palazzo di Giustizia |
+| Fossili | Scala dei Turchi, Cava d'Ispica, Grotta dell'Addaura (storia); Pantelleria, sotterranei del Castello Ursino, Rocca Busambra (post-game) | li rianima il Prof. Strano |
+| Canna Vecchia, Canna Buona, Super Canna | Aci Trezza (`S-CT-04`), Marzamemi (dopo `M-SR-03`), Mazara del Vallo (dopo `M-TP-03`) | regali di pescatori e armatori |
+| Pensione Pokémon | Comiso, masseria iblea | serve per le specie che nascono solo dalle uova |
+| Bottintesta | Monti Rossi | insegnante di mosse della pineta |
+| `Unown` | Cava d'Ispica (`S-RG-05`) | compaiono dopo l'enigma delle iscrizioni delle tombe |
+| Leggendari del post-game | 26 statici e vaganti in mappe riservate (oltre a `P-04`, `P-07`, `P-08`) | nomi e voci nei blocchi 3.2–3.5 |
+
+Nei luoghi della memoria (Capaci e Isola delle Femmine, Cinisi, Pozzallo, Gibellina e Grande Cretto, Portella della Ginestra, Porta d'Europa), nel Galà del Teatro Antico, nel Palazzo di Cemento e nel Terminal A non ci sono Pokémon selvatici. Trinacria si gioca da soli: le evoluzioni che in HeartGold richiedono uno scambio avvengono al livello 37 o salendo di livello di giorno con lo strumento dello scambio (per esempio `Lavaniru` → `Ciclopu` al 37).
 ---
 
 ## 1. Sottotrame trasversali
