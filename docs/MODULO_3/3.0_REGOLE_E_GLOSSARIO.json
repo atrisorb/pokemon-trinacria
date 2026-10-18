@@ -2,8 +2,9 @@
   "modulo": 3,
   "blocco": "3.0",
   "titolo": "Limiti dei buffer, regole di nomenclatura e Glossario bloccato (prima parte)",
-  "versione": "1.0",
+  "versione": "1.1",
   "data": "18/10/2026",
+  "correzioni_1_1": "18/10/2026: due attribuzioni al dizionario corrette. G30-0045 Acchianata: lemma_mcp «chianata» (il lemma di cui «acchianata» è variante, «salita ripida e faticosa»), non «muntata», che è un sinonimo. G30-0066 Coll. Biancu: fonte «architetto» senza lemma_mcp, perché il nome è il calco di «colletto bianco» della trama, non una voce del dizionario (R-GLO-03). Cambiano i conteggi per fonte (MCP 59, architetto 190); nessuna forma cambia.",
   "progetto": "Pokémon Trinacria · atrisorb",
   "file": "docs/MODULO_3/3.0_REGOLE_E_GLOSSARIO.json",
   "lettore": "LLM esecutore e autore dei blocchi 3.1–3.13 e del Modulo 6. Ogni valore è deciso: non si sceglie nulla.",
@@ -51,7 +52,7 @@
     "R-NOM-12": "Parole rapide (Easy Chat). src/easy_chat.c legge specie (msg_0237), mosse (msg_0751), tipi (msg_0735) e abilità (msg_0721). Dopo la rinomina le liste non sono più in ordine alfabetico: è accettato, nessun TASK.",
     "R-GLO-01": "Glossario bloccato. È l’elenco di tutte le parole siciliane ammesse nel gioco, più i nomi propri e le parole italiane che compaiono nei nomi e nei testi siciliani. Parte 1: sezione «glossario» di questo blocco. I blocchi 3.1–3.13 e 6.01–6.38 aggiungono voci nella sezione «glossario_aggiunte» del proprio file, con id «G<blocco senza il punto>-NNNN» (G31-0001, G601-0001…). Nessun blocco cambia le voci di un altro: una voce si corregge con una nuova versione del blocco che la contiene.",
     "R-GLO-02": "File unito. Il «GLOSSARIO_BLOCCATO.json» del Modulo 1 §6.4 è l’unione dei blocchi: «python -I tools/trinacria/trinacria_glossary_check.py merge <3.0> <blocchi successivi in ordine> -o data/trinacria/GLOSSARIO_BLOCCATO.json» → MERGE_OK. Il Modulo 7 lo rigenera dopo ogni blocco che aggiunge voci.",
-    "R-GLO-03": "Fonte. «MCP» quando la forma, o per i composti una sua parte, è lemma o variante di F:\\Progetti\\sicilian-dialect-mcp\\vocabolario.json (campo «lemma_mcp»); altrimenti «architetto» (forma decisa dalle specifiche, dalla trama o da un blocco: campo «origine»). Il dizionario non si modifica (Modulo 1 §6.4). Se il dizionario dà una grafia diversa da quella bloccata (mundizza, munnìzza), vale il Glossario.",
+    "R-GLO-03": "Fonte. «MCP» quando la forma, o per i composti una sua parte, è lemma o variante di F:\\Progetti\\sicilian-dialect-mcp\\vocabolario.json (campo «lemma_mcp»); altrimenti «architetto» (forma decisa dalle specifiche, dalla trama o da un blocco: campo «origine»). Il dizionario non si modifica (Modulo 1 §6.4). Se il dizionario dà una grafia diversa da quella bloccata (mundizza, munnìzza), vale il Glossario. Il lemma è quello di cui la forma è variante, non un sinonimo che la cita (Acchianata → chianata, non muntata); un calco dall’italiano resta «architetto» anche se una sua parte compare tra le varianti (Coll. Biancu).",
     "R-GLO-04": "Aree. Una voce vale nelle aree elencate e in tutte le loro sotto-aree (sezione «aree»: SIC contiene OR, SE, CE, OC e GI; OR contiene CT, SRN e ME; ME contiene EO; SE contiene RG e SRS; CE contiene CL, EN e AG; OC contiene PA e TP). «vietata_in» vince su «aree»: sono gli scibbolet del Modulo 1 §6.3 (mbare e carusu mai a Palermo e Trapani, picciottu e travagghiari mai nell’est). Le voci con area IT (italiano, nomi propri, luoghi) valgono ovunque.",
     "R-GLO-05": "Testi del Modulo 6. Ogni blocco 6.NN consegna, insieme ai banchi, il file dei testi da controllare: {\"testi\": [{\"id\": \"msg_0830_00001\", \"lingua\": \"scn\" oppure \"it\", \"area\": \"<codice di «aree»>\", \"testo\": \"<testo del messaggio>\"}]}. Nei messaggi «scn» ogni parola è nel Glossario e ammessa nell’area (codice T02); in tutti i messaggi nessuna variante vietata (T03) e nessuna parola vietata nell’area (T04). I nomi dei luoghi del Pokégear (registri 2.1–2.3, campo «testo» di «sezioni_pokegear») sono ammessi senza voce. Comando: «text --glossary <file del Glossario> --docs <docs> <testi.json>» → TEXT_OK.",
     "R-GLO-06": "Parte 1. Contiene i nomi di sistema già fissati da specifiche e trama (30 specie, 15 mosse con le 8 MN, 15 strumenti, le 12 classi di «U Sistema» e siciliane, i 9 Dossier), i 29 soprannomi della trama, i termini di R-10, gli scibbolet e un nucleo di parole funzionali (articoli, preposizioni, pronomi, verbi e avverbi frequenti) da cui parte il controllo dei testi."
@@ -1991,12 +1992,12 @@
       },
       "significato": "salita ripida",
       "origine": "architetto 3.0",
-      "nota": "MN 8 (trama R-03: «Scalaroccia, nome nel Modulo 3»).",
+      "nota": "MN 8 (trama R-03: «Scalaroccia, nome nel Modulo 3»). Nel dizionario «acchianata» è variante di «chianata»; «muntata» è un sinonimo.",
       "id": "G30-0045",
       "caratteri": 10,
       "px": 57,
       "fonte": "MCP",
-      "lemma_mcp": "muntata",
+      "lemma_mcp": "chianata",
       "limite": "L-08",
       "maiuscolo": "ACCHIANATA",
       "maiuscolo_px": 60
@@ -2662,12 +2663,11 @@
       "con_articolo": "un Coll. Biancu",
       "significato": "colletto bianco: funzionario, dirigente, subappaltatore",
       "origine": "architetto 3.0",
-      "nota": "La trama scrive «CollettuBian.» (13 caratteri, 75 px > 70, L-06).",
+      "nota": "La trama scrive «CollettuBian.» (13 caratteri, 75 px > 70, L-06). Calco di «colletto bianco»: «biancu» è tra le varianti di «jancu», ma il nome non viene dal dizionario (R-GLO-03).",
       "id": "G30-0066",
       "caratteri": 12,
       "px": 62,
-      "fonte": "MCP",
-      "lemma_mcp": "jancu",
+      "fonte": "architetto",
       "limite": "L-06",
       "con_articolo_px": 78
     },
@@ -7414,8 +7414,8 @@
       "nome_proprio": 16
     },
     "per_fonte": {
-      "MCP": 60,
-      "architetto": 189
+      "MCP": 59,
+      "architetto": 190
     },
     "forme_nei_testi": 437,
     "limiti": 14,
@@ -7432,5 +7432,5 @@
       "fonte MCP solo se la forma (o una sua parte) è lemma o variante di vocabolario.json"
     ]
   },
-  "riga_finale": "BLOCCO COMPLETO: 3.0 — 14 limiti misurati (L-01…L-14) e 4 profili di descrizione, 35 regole (limiti, grafia, nomenclatura, Glossario), 18 aree, Glossario parte 1: 249 voci (specie 30, mosse 15, strumenti 15, classi 12, Dossier 9, soprannomi 29, termini 123, nomi propri 16; MCP 60, architetto 189), 18 deviazioni dalle specifiche, strumento collaudato"
+  "riga_finale": "BLOCCO COMPLETO: 3.0 — 14 limiti misurati (L-01…L-14) e 4 profili di descrizione, 35 regole (limiti, grafia, nomenclatura, Glossario), 18 aree, Glossario parte 1: 249 voci (specie 30, mosse 15, strumenti 15, classi 12, Dossier 9, soprannomi 29, termini 123, nomi propri 16; MCP 59, architetto 190), 18 deviazioni dalle specifiche, strumento collaudato"
 }

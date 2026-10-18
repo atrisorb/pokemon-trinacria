@@ -2,7 +2,7 @@
 
 **Progetto:** Pokémon Trinacria · autore e copyright: **atrisorb**
 **Base codice:** `F:\Progetti\pokeheartgold` (clone pret, commit `c28680fe0`) · **Cartella documenti:** `F:\Progetti\pokémon-sicilia`
-**Versione del modulo:** 1.4 · 18/10/2026 (v1.4: §10 musiche allineate al registro `docs/MODULO_2/2.5_TRAINERS_SPRITES_FLY_SEQ.json`; allineata al registro delle mappe `docs/MODULO_2/2.1_MAPS_CT_SR_RG.json` v1.1 e alla decisione R-10 di `docs/00_TRAMA_ESPANSA_E_SIDEQUEST.md` v1.2 su centralità dei Pokémon e «U Sistema»: §4.3, §4.4, §4.7, §7.1, §7.2, §8.1, §8.2, §10; v1.3: §4.1, §4.2 e §7.8 allineati al registro di flag, variabili e NPC `docs/MODULO_2/2.4_FLAGS_VARS.json`)
+**Versione del modulo:** 1.5 · 18/10/2026 (v1.5: §6.4 rimanda al blocco `docs/MODULO_3/3.0_REGOLE_E_GLOSSARIO.json` per il Glossario bloccato e il suo strumento di controllo; v1.4: §10 musiche allineate al registro `docs/MODULO_2/2.5_TRAINERS_SPRITES_FLY_SEQ.json`; allineata al registro delle mappe `docs/MODULO_2/2.1_MAPS_CT_SR_RG.json` v1.1 e alla decisione R-10 di `docs/00_TRAMA_ESPANSA_E_SIDEQUEST.md` v1.2 su centralità dei Pokémon e «U Sistema»: §4.3, §4.4, §4.7, §7.1, §7.2, §8.1, §8.2, §10; v1.3: §4.1, §4.2 e §7.8 allineati al registro di flag, variabili e NPC `docs/MODULO_2/2.4_FLAGS_VARS.json`)
 **Lettore:** LLM esecutore (Gemini Flash o equivalente). Questo documento non chiede di prendere decisioni: ogni valore è già deciso.
 
 Tutti i fatti tecnici di questo modulo (percorsi, nomi di funzioni, righe di codice, ID liberi) sono stati **letti nel repository** il 15/10/2026. Il codice C dei passi M1-08…M1-14 è scritto sulle firme reali delle funzioni, ma **non è ancora stato compilato**: la compilazione è il criterio di successo di ogni passo.
@@ -323,9 +323,15 @@ node tools/trinacria/dialect_query.mjs list_sicilian_municipalities '{"provincia
 Parametri reali degli strumenti: `lookup_sicilian_term {term, quartiere, comune, provincia}`, `translate_to_local_dialect {italian_query, quartiere, comune, provincia}`, `get_location_vocabulary {quartiere, comune, provincia, include_regional_fallbacks}`, `lookup_sicilian_name {query, genere}`, `lookup_sicilian_surname {cognome, area}`, `lookup_sicilian_place {query, comune, provincia, tipo}`, `list_sicilian_municipalities {provincia, search}`, `lookup_sicilian_saying {query, categoria, area}`, `list_sicilian_sayings_by_theme {categoria}`.
 
 **Limite verificato:** il corpus ha 625 lemmi. Parole comunissime come `mbare` e `munnizza` restituiscono `"risultati_trovati": 0`. Quindi:
-1. Ogni parola siciliana usata nei testi è registrata nel **Glossario bloccato** del Modulo 3 (`GLOSSARIO_BLOCCATO.json`) con area, fonte (`MCP` oppure `architetto`) e forma grafica unica.
-2. L'esecutore non decide mai una forma: copia il testo del Modulo 6. Il controllo dell'esecutore è meccanico: ogni parola dei testi siciliani deve stare nel Glossario bloccato (lo script di controllo è fornito con il Modulo 3).
-3. `upsert_sicilian_term` **non** si usa: il dizionario non si modifica.
+1. Ogni parola siciliana usata nei testi è registrata nel **Glossario bloccato** del Modulo 3 con area, fonte (`MCP` con il campo `lemma_mcp`, oppure `architetto`) e forma grafica unica. La prima parte del Glossario, le regole di grafia e di nomenclatura e i limiti dei nomi sono nel blocco `docs/MODULO_3/3.0_REGOLE_E_GLOSSARIO.json` (regole R-GLO-01…06); i blocchi 3.1–3.13 e 6.01–6.38 aggiungono voci nella propria sezione `glossario_aggiunte`.
+2. Il file unico `data/trinacria/GLOSSARIO_BLOCCATO.json` è l'unione dei blocchi, prodotta dallo strumento del blocco 3.0 (copiato in `tools/trinacria/` dal passo 7.2). Criterio: `MERGE_OK`. Il Modulo 7 lo rigenera dopo ogni blocco che aggiunge voci (R-GLO-02).
+3. L'esecutore non decide mai una forma: copia il testo del Modulo 6. Il controllo è meccanico: ogni parola dei messaggi in siciliano deve stare nel Glossario ed essere ammessa nell'area del messaggio (comando `text`, criterio `TEXT_OK`, R-GLO-05).
+4. `upsert_sicilian_term` **non** si usa: il dizionario non si modifica. Se il dizionario dà una grafia diversa da quella del Glossario, vale il Glossario (R-GLO-03).
+
+```bash
+python -I tools/trinacria/trinacria_glossary_check.py merge "F:\Progetti\pokémon-sicilia\docs\MODULO_3\3.0_REGOLE_E_GLOSSARIO.json" <blocchi successivi in ordine> -o data/trinacria/GLOSSARIO_BLOCCATO.json
+python -I tools/trinacria/trinacria_glossary_check.py text --glossary data/trinacria/GLOSSARIO_BLOCCATO.json --docs "F:\Progetti\pokémon-sicilia\docs" <testi.json>
+```
 
 ---
 
