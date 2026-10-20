@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Pokemon Trinacria - controllo dei blocchi delle specie e del piano degli incontri (Modulo 3, blocchi 3.1-3.5;
-D08 dal 3.2, sciami e radio in D08 e vaganti V01-V05 dal 3.3).
+D08 dal 3.2, sciami e radio in D08 e vaganti V01-V05 dal 3.3, categorie ufficiali D09 dal 3.4).
 
 Uso (dalla cartella di F:\\Progetti\\pokémon-sicilia oppure da F:\\Progetti\\pokeheartgold):
     python -I tools/trinacria_dex_check.py --selftest
@@ -112,6 +112,13 @@ def repo_species(repo):
     return {m.group(1): int(m.group(2)) for m in re.finditer(r'#define\s+(SPECIES_\w+)\s+(\d+)', txt)}
 
 
+def repo_categories(repo):
+    """Categorie italiane ufficiali del Pokédex (msg_0826, R-SPE-04): servono a D09."""
+    if not repo:
+        return None
+    return [m['en_US'] for m in load_json(os.path.join(repo, 'files', 'msgdata', 'msg', 'msg_0826.json'))['messages']]
+
+
 def repo_items(repo):
     if not repo:
         return None
@@ -126,7 +133,7 @@ def article(name):
     return ('uno ' if UNO_RE.match(name) else 'un ') + '{COLOR 255}' + name + '{COLOR 0}'
 
 
-def check_species(paths, glossary, rep, font, species_ids=None, entries=None):
+def check_species(paths, glossary, rep, font, species_ids=None, entries=None, categories=None):
     seen = {}
     names = {}
     for e in glossary:
@@ -165,6 +172,15 @@ def check_species(paths, glossary, rep, font, species_ids=None, entries=None):
             cat = s.get('categoria', '')
             if not cat.startswith('Pokémon ') or vis(cat) > CAT_LIMIT[0] or font.px(cat) > CAT_LIMIT[1]:
                 rep.err('D02', where, 'categoria «%s» (%d px) oltre L-12' % (cat, font.px(cat)))
+            if categories is not None and n < len(categories):
+                # R-SPE-04 e R-SPE-21: la categoria e' quella di msg_0826; si cambia solo se quella supera L-12,
+                # e allora «categoria_heartgold» riporta l'originale
+                off = categories[n]
+                too_wide = vis(off) > CAT_LIMIT[0] or font.px(off) > CAT_LIMIT[1]
+                if cat != off and not too_wide:
+                    rep.err('D09', where, 'categoria «%s» diversa da msg_0826 «%s», che sta entro L-12' % (cat, off))
+                elif cat != off and s.get('categoria_heartgold') != off:
+                    rep.err('D09', where, 'categoria accorciata senza «categoria_heartgold» = «%s»' % off)
             lines = s.get('atlante') or []
             ok = 1 <= len(lines) <= DEX_PROFILE[0]
             for L in lines:
@@ -814,7 +830,7 @@ def run_check(args, rep):
         glossary = load_json(os.path.join(docs, 'MODULO_3', '3.0_REGOLE_E_GLOSSARIO.json'))['glossario']
     sids = repo_species(args.repo)
     entries = []
-    n = check_species(args.files, glossary, rep, font, sids, entries)
+    n = check_species(args.files, glossary, rep, font, sids, entries, repo_categories(args.repo))
     print('specie controllate: %d' % n)
     if args.plan:
         maps = load_maps(docs) if docs else None
@@ -840,7 +856,7 @@ def selftest():
     plan = os.path.join(root, 'docs', 'MODULO_3', '3.1_PIANO_INCONTRI.json')
     ko = os.path.join(HERE, 'testdata', 'dex_prova_ko.json')
     repo = next((r for r in DEFAULT_REPOS if os.path.isfile(os.path.join(r, 'include', 'constants', 'species.h'))), None)
-    print('repository per il collaudo: %s' % (repo or 'nessuno (P07 non si controlla)'))
+    print('repository per il collaudo: %s' % (repo or 'nessuno (P07 e D09 non si controllano)'))
     good = True
     rep = Report(quiet=True)
     ok_files += sorted(glob.glob(os.path.join(root, 'docs', 'MODULO_3', '3.[2-5]_POKEMON_*.json')))
@@ -858,7 +874,7 @@ def selftest():
     rep2 = Report(quiet=True)
     a.files, a.plan = [ko], ko
     run_check(a, rep2)
-    expected = [c for c in load_json(ko)['errori_attesi'] if repo or c != 'P07']
+    expected = [c for c in load_json(ko)['errori_attesi'] if repo or c not in ('P07', 'D09')]
     if rep2.codes() != sorted(expected):
         good = False
         print('collaudo: dex_prova_ko.json dà %s invece di %s' % (rep2.codes(), sorted(expected)))

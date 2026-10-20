@@ -1,5 +1,5 @@
 {
- "nota": "File di prova del collaudo di tools/trinacria_dex_check.py: ogni voce ha un errore voluto.",
+ "nota": "File di prova del collaudo di tools/trinacria_dex_check.py: ogni voce ha un errore voluto. D09: n.19 con una categoria diversa da msg_0826 che sta entro L-12 (serve --repo, come P07).",
  "errori_attesi": [
   "D01",
   "D02",
@@ -9,6 +9,7 @@
   "D06",
   "D07",
   "D08",
+  "D09",
   "P01",
   "P02",
   "P03",
@@ -590,6 +591,134 @@
      "parametro": 36
     }
    ]
+  },
+  {
+   "n": 19,
+   "simbolo": "SPECIES_RATTATA",
+   "regionale": 17,
+   "originale": "RATTATA",
+   "nome": "Surciddu",
+   "glossario": "G31-0018",
+   "caratteri": 8,
+   "px": 45,
+   "con_articolo": "un {COLOR 255}Surciddu{COLOR 0}",
+   "con_articolo_px": 61,
+   "categoria": "Pokémon Ratto",
+   "categoria_px": 70,
+   "tipi": [
+    "TYPE_NORMAL",
+    "TYPE_NORMAL"
+   ],
+   "atlante": [
+    "Rosicchia di tutto, anche i cavi dei",
+    "semafori. Prolifera dove la raccolta dei",
+    "rifiuti si ferma per sciopero."
+   ],
+   "atlante_righe_px": [
+    185,
+    212,
+    154
+   ],
+   "msg_0803": [
+    "Rosicchia di tutto, anche i cavi dei\n",
+    "semafori. Prolifera dove la raccolta dei\n",
+    "rifiuti si ferma per sciopero."
+   ],
+   "peso": "  3,5 kg",
+   "altezza": " 0,3 m",
+   "banchi": {
+    "msg_0237": "Surciddu",
+    "msg_0238": "un {COLOR 255}Surciddu{COLOR 0}",
+    "msg_0816": "Pokémon Ratto",
+    "msg_0803": [
+     "Rosicchia di tutto, anche i cavi dei\n",
+     "semafori. Prolifera dove la raccolta dei\n",
+     "rifiuti si ferma per sciopero."
+    ],
+    "msg_0812": "  3,5 kg",
+    "msg_0813": "  3,5 kg",
+    "msg_0814": " 0,3 m",
+    "msg_0815": " 0,3 m"
+   },
+   "distribuzione": [
+    {
+     "mappa": "MAP_CT_MISTERBIANCO",
+     "comune": "Misterbianco",
+     "provincia": "CT",
+     "metodo": "erba",
+     "livelli": [
+      3,
+      7
+     ],
+     "percentuale": {
+      "morn": 24,
+      "day": 24,
+      "nite": 30
+     },
+     "ora": "morn/day/nite"
+    },
+    {
+     "mappa": "MAP_CT_CATANIA_GALERMO",
+     "comune": "Catania",
+     "provincia": "CT",
+     "metodo": "erba",
+     "livelli": [
+      4,
+      8
+     ],
+     "percentuale": {
+      "morn": 30,
+      "day": 30,
+      "nite": 34
+     },
+     "ora": "morn/day/nite"
+    },
+    {
+     "mappa": "MAP_CT_CATANIA_OGNINA",
+     "comune": "Catania",
+     "provincia": "CT",
+     "metodo": "erba",
+     "livelli": [
+      6,
+      6
+     ],
+     "percentuale": {
+      "morn": 20,
+      "day": 20,
+      "nite": 20
+     },
+     "ora": "morn/day/nite"
+    },
+    {
+     "mappa": "MAP_CT_INESISTENTE",
+     "comune": null,
+     "provincia": null,
+     "metodo": "erba",
+     "livelli": [
+      6,
+      6
+     ],
+     "percentuale": {
+      "morn": 20,
+      "day": 20,
+      "nite": 20
+     },
+     "ora": "morn/day/nite"
+    }
+   ],
+   "altri_modi": [
+    {
+     "metodo": "si evolve in",
+     "in": "SPECIES_RATICATE",
+     "come": "al livello 20",
+     "evento": "EVO_LEVEL",
+     "parametro": 20
+    },
+    {
+     "metodo": "uovo",
+     "come": "alla Pensione (MAP_RG_COMISO) da una specie della sua linea"
+    }
+   ]
   }
  ],
  "glossario_aggiunte": [
@@ -832,6 +961,36 @@
    "lemma_mcp": null,
    "limite": "L-01",
    "con_articolo_px": 76
+  },
+  {
+   "id": "G31-0018",
+   "forma": "Surciddu",
+   "categoria": "specie",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "surciddu"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0237",
+    "indice": 19,
+    "originale": "RATTATA"
+   },
+   "con_articolo": "un {COLOR 255}Surciddu{COLOR 0}",
+   "genere": "m",
+   "significato": "topolino",
+   "origine": "architetto 3.1",
+   "nota": null,
+   "caratteri": 8,
+   "px": 45,
+   "fonte": "MCP",
+   "lemma_mcp": "surci",
+   "limite": "L-01",
+   "con_articolo_px": 61
   }
  ],
  "gs_enc_data": {
