@@ -16,7 +16,12 @@
   "P05",
   "P06",
   "P07",
-  "P08"
+  "P08",
+  "V01",
+  "V02",
+  "V03",
+  "V04",
+  "V05"
  ],
  "specie": [
   {
@@ -2830,5 +2835,43 @@
  "mappe_senza_selvatici": [],
  "bottintesta": [],
  "speciali": [],
- "leggendari": []
+ "leggendari": [],
+ "vaganti": {
+  "nota": "V01: 3 slot e un luogo che non è una strada; V02: una strada senza vicini; V03: il vicino 1 non ha il ritorno; V04: il piano di prova non ha vaganti; V05: codice assente.",
+  "slot": [
+   {
+    "indice": 0,
+    "costante": "ROAMER_RAIKOU",
+    "specie": "SPECIES_RAIKOU",
+    "livello": 85
+   },
+   {
+    "indice": 1,
+    "costante": "ROAMER_ENTEI",
+    "specie": "SPECIES_ENTEI",
+    "livello": 85
+   },
+   {
+    "indice": 2,
+    "costante": "ROAMER_SUICUNE",
+    "specie": "SPECIES_SUICUNE",
+    "livello": 85
+   }
+  ],
+  "luoghi": [
+   {
+    "indice": 0,
+    "mappa": "MAP_CT_CATANIA_VERMUT",
+    "vicini": [
+     1
+    ]
+   },
+   {
+    "indice": 1,
+    "mappa": "MAP_STRADA_A18_ACIREALE",
+    "vicini": []
+   }
+  ],
+  "codice": {}
+ }
 }

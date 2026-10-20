@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
-"""Pokemon Trinacria - controllo dei blocchi delle specie e del piano degli incontri (Modulo 3, blocchi 3.1-3.2; D08 dal 3.2).
+"""Pokemon Trinacria - controllo dei blocchi delle specie e del piano degli incontri (Modulo 3, blocchi 3.1-3.5;
+D08 dal 3.2, sciami e radio in D08 e vaganti V01-V05 dal 3.3).
 
 Uso (dalla cartella di F:\\Progetti\\pokémon-sicilia oppure da F:\\Progetti\\pokeheartgold):
     python -I tools/trinacria_dex_check.py --selftest
     python -I tools/trinacria_dex_check.py check docs/MODULO_3/3.1_POKEMON_1-100.json [blocchi 3.2-3.5]
            --plan docs/MODULO_3/3.1_PIANO_INCONTRI.json [--repo F:/Progetti/pokeheartgold] [--docs <docs>]
-    python -I tools/trinacria_dex_check.py export --plan docs/MODULO_3/3.1_PIANO_INCONTRI.json --repo <pokeheartgold> [--write]
+    python -I tools/trinacria_dex_check.py export --plan docs/MODULO_3/3.1_PIANO_INCONTRI.json --repo <pokeheartgold>
+           [--vaganti docs/MODULO_3/3.3_POKEMON_201-300.json] [--write]
 
 Ultima riga stampata: DEX_OK / EXPORT_OK / SELFTEST_OK (oppure *_FAILED).
 Ogni problema e' una riga "ERRORE <codice> <dove>: <messaggio>".
@@ -217,6 +219,10 @@ SAFARI_ENTRANCE = 'SR_VENDICARI_RISERVA'  # ultimo banco: copia di D47R0102, mai
 SAFARI_MAP = 'MAP_SR_VENDICARI_ZONA_01…14'
 SAFARI_WATER = (('surf', 'surf'), ('oldrod', 'Canna Vecchia'), ('goodrod', 'Canna Buona'), ('superrod', 'Super Canna'))
 FISH_RODS = (('old_rod', 'Canna Vecchia'), ('good_rod', 'Canna Buona'), ('super_rod', 'Super Canna'))
+SWARM_FISH_SLOTS = {'old_rod': (2,), 'good_rod': (0, 2, 3), 'super_rod': (0, 1, 2, 3, 4)}
+SWARM_NOTE = 'solo nei giorni dello sciame su questa mappa (sSwarmMapLUT)'
+RADIO = (('hoenn', 'radio (Hoenn)'), ('sinnoh', 'radio (Sinnoh)'))
+RADIO_NOTE = 'col programma del Pokégear acceso (post-game)'
 
 
 def dist_row(maps, mp, metodo, lv, perc, ora, nota=None):
@@ -234,6 +240,47 @@ def safari_row(metodo, lv, perc, ora, nota):
             'livelli': [min(lv), max(lv)], 'percentuale': perc, 'nota': nota, 'ora': ora}
 
 
+def swarm_rows(maps, mp, e, swarms, sp):
+    """R-SPE-15: sciami delle 20 righe di sSwarmMapLUT (src/field/encounter_check.c, EncSlots_Update_*Swarm):
+    erba = slot 0-1, surf = slot 0, canne = slot 2 (Vecchia), 0/2/3 (Buona), 0-4 (Super)."""
+    rows = []
+    for r in swarms:
+        if r['specie'] != sp:
+            continue
+        if r['tipo'] == 'erba':
+            mons = e['land']['mons'][:2]
+            rows.append(dist_row(maps, mp, 'sciame (erba)', [m['level'] for m in mons], sum(PROB['erba'][:2]), 'sempre', SWARM_NOTE))
+        elif r['tipo'] == 'surf':
+            m = e['surf']['mons'][0]
+            rows.append(dist_row(maps, mp, 'sciame (surf)', [m['level']['min'], m['level']['max']], PROB['surf'][0], 'sempre', SWARM_NOTE))
+        else:
+            for key, name in FISH_RODS:
+                mons = e['fishing'][key]['mons']
+                slots = [i for i in SWARM_FISH_SLOTS[key] if i < len(mons)]
+                if slots:
+                    lv = [x for i in slots for x in (mons[i]['level']['min'], mons[i]['level']['max'])]
+                    rows.append(dist_row(maps, mp, 'sciame (%s)' % name, lv, sum(PROB['canne'][i] for i in slots), 'sempre', SWARM_NOTE))
+    return rows
+
+
+def radio_rows(maps, mp, e, sp):
+    """R-SPE-15: suoni di Hoenn e Sinnoh del Pokégear (EncSlotArray_Update_HoennSinnohSounds): la prima specie
+    prende gli slot 2-3 dell'erba, la seconda gli slot 4-5, a ogni ora; solo nelle mappe con l'erba."""
+    rows = []
+    if not e['land'].get('rate'):
+        return rows
+    for key, name in RADIO:
+        lv, p = [], 0
+        for k, slots in enumerate(((2, 3), (4, 5))):
+            if k < len(e.get(key, [])) and e[key][k] == sp:
+                for i in slots:
+                    p += PROB['erba'][i]
+                    lv.append(e['land']['mons'][i]['level'])
+        if p:
+            rows.append(dist_row(maps, mp, name, lv, p, 'sempre', RADIO_NOTE))
+    return rows
+
+
 def plan_distribution(plan, maps, sp):
     """Righe della «distribuzione» di una specie: per mappa (ordine dei banchi, metodi in ordine alfabetico),
     poi Safari, poi regali, statici e leggendari."""
@@ -241,6 +288,9 @@ def plan_distribution(plan, maps, sp):
     trees = collections.defaultdict(list)
     for h in plan.get('bottintesta', []):
         trees['MAP_' + h['map']].append(h)
+    swarms = collections.defaultdict(list)
+    for r in (plan.get('sciami') or {}).get('righe', []):
+        swarms[r['mappa']].append(r)
     for e in plan['gs_enc_data']['encounters']:
         if e['map'] == SAFARI_ENTRANCE:
             continue
@@ -286,6 +336,7 @@ def plan_distribution(plan, maps, sp):
                 m = mons[slot]
                 rows.append(dist_row(maps, mp, name, [m['level']['min'], m['level']['max']],
                                      {'nite': PROB['canne'][slot]}, 'nite', 'slot notturno (nightFish)'))
+        rows += swarm_rows(maps, mp, e, swarms.get(mp, []), sp) + radio_rows(maps, mp, e, sp)
         rows.sort(key=lambda r: r['metodo'])
         out += rows
     out += plan_safari(plan, sp)
@@ -362,6 +413,150 @@ def check_distribution(entries, plan, maps, rep):
             rep.err('D08', '%s n.%s %s' % (os.path.basename(p), s.get('n'), s.get('nome')),
                     'distribuzione diversa dal piano: %d righe invece di %d, prima differenza alla riga %d'
                     % (len(got or []), len(want), diff))
+
+
+# ----------------------------------------------------------------------------------------------
+# Pokémon vaganti (R-INC-09, blocco 3.3 R-SPE-18): src/field_roamer.c e include/constants/roamer.h
+
+ROAMER_NEIGHBORS = 6  # MAX_ROAM_NEIGHBOR di src/field_roamer.c
+ROAMER_SLOTS = 4      # ROAMER_MAX: dimensione dei dati di salvataggio, non cambia
+
+
+def roamer_loc_const(mp):
+    return 'ROAMER_LOC_' + mp[len('MAP_'):]
+
+
+def render_roamer_h(v):
+    out = ['#ifndef POKEHEARTGOLD_CONSTANTS_ROAMER_H', '#define POKEHEARTGOLD_CONSTANTS_ROAMER_H', '']
+    w = max(len(s['costante']) for s in v['slot'])
+    for s in v['slot']:
+        out.append('#define %-*s %d' % (w, s['costante'], s['indice']))
+    out.append('#define %-*s %d' % (w, 'ROAMER_MAX', len(v['slot'])))
+    out.append('')
+    w = max(len(roamer_loc_const(x['mappa'])) for x in v['luoghi'])
+    for x in v['luoghi']:
+        out.append('#define %-*s %d' % (w, roamer_loc_const(x['mappa']), x['indice']))
+    out.append('#define %-*s %d' % (w, 'ROAMER_LOC_COUNT', len(v['luoghi'])))
+    out += ['', '#endif // POKEHEARTGOLD_CONSTANTS_ROAMER_H', '']
+    return '\n'.join(out)
+
+
+def render_roamer_blocks(v):
+    """I quattro pezzi di src/field_roamer.c che il blocco 3.3 riscrive (export --vaganti)."""
+    luoghi = v['luoghi']
+    a = ['static const u32 sRoamerLocations[ROAMER_LOC_COUNT] = {']
+    a += ['    %s, // %d' % (x['mappa'], x['indice']) for x in luoghi]
+    a += ['};', '', '// vicini: strade raggiungibili passando al massimo per una mappa che non e\' una strada (blocco 3.3, R-SPE-18)',
+          'static const struct RoamerAdjacency sRoamerAdjacencyTable[ROAMER_LOC_COUNT] = {']
+    for x in luoghi:
+        nb = [roamer_loc_const(luoghi[i]['mappa']) for i in x['vicini']] + ['-1'] * (ROAMER_NEIGHBORS - len(x['vicini']))
+        a.append('    { %d, { %s } }, // %s' % (len(x['vicini']), ', '.join(nb), roamer_loc_const(x['mappa'])))
+    a.append('};')
+    attivi = [s for s in v['slot'] if s.get('specie')]
+    b = ['    switch (idx) {']
+    for s in attivi:
+        b += ['    case %s:' % s['costante'], '        species = %s;' % s['specie'], '        level = %d;' % s['livello'], '        break;']
+    b += ['    default:', '        GF_ASSERT(FALSE);', '        return;', '    }']
+    c = ['u8 SpeciesToRoamerIdx(u16 species) {', '    switch (species) {']
+    for s in attivi:
+        c += ['    case %s:' % s['specie'], '        return %s;' % s['costante']]
+    c += ['    default:', '        GF_ASSERT(FALSE);', '        return ROAMER_MAX;', '    }', '}']
+    d = ['    loc_num = ROAMER_LOC_COUNT; // tutti i vaganti girano su tutte le strade dell\'isola (blocco 3.3)', '    loc_min = 0;']
+    return {'luoghi_e_vicini': '\n'.join(a), 'creazione': '\n'.join(b), 'specie_a_slot': '\n'.join(c),
+            'luogo_casuale': '\n'.join(d)}
+
+
+def roamer_spans(txt):
+    """Posizioni (inizio, fine) dei quattro pezzi in src/field_roamer.c, prima o dopo la modifica."""
+    spans = {}
+    a = txt.find('static const u32 sRoamerLocations[ROAMER_LOC_COUNT] = {')
+    t = txt.find('sRoamerAdjacencyTable[ROAMER_LOC_COUNT] = {', a)
+    e = txt.find('\n};', t)
+    if a >= 0 and t >= 0 and e >= 0:
+        spans['luoghi_e_vicini'] = (a, e + 3)
+    f = txt.find('void Save_CreateRoamerByID(')
+    s = txt.find('    switch (idx) {', f)
+    e = txt.find('\n    }\n', s)
+    if f >= 0 and s >= 0 and e >= 0:
+        spans['creazione'] = (s, e + 6)
+    s = txt.find('u8 SpeciesToRoamerIdx(u16 species) {')
+    e = txt.find('\n}\n', s)
+    if s >= 0 and e >= 0:
+        spans['specie_a_slot'] = (s, e + 2)
+    k = 'roamer_cur_loc = sRoamerLocations[Roamer_GetLocation(roamer, roamer_idx)];\n'
+    s = txt.find(k)
+    e = txt.find('\n    do {', s)
+    if s >= 0 and e >= 0:
+        spans['luogo_casuale'] = (s + len(k), e)
+    return spans
+
+
+def check_roamers(path, v, plan, maps, rep):
+    where = os.path.basename(path) + ' vaganti'
+    luoghi, slot = v.get('luoghi') or [], v.get('slot') or []
+    roads = [x.get('mappa') for x in luoghi]
+    if len(slot) != ROAMER_SLOTS or [s.get('indice') for s in slot] != list(range(ROAMER_SLOTS)):
+        rep.err('V01', where, '%d slot invece di %d (ROAMER_MAX non cambia)' % (len(slot), ROAMER_SLOTS))
+    if not luoghi or [x.get('indice') for x in luoghi] != list(range(len(luoghi))) or len(set(roads)) != len(roads):
+        rep.err('V01', where, 'luoghi non numerati da 0 o ripetuti')
+    for mp in roads:
+        m = maps.get(mp)
+        if not m or not (mp.startswith('MAP_STRADA_') or m.get('profilo') == 'STRADA'):
+            rep.err('V01', '%s %s' % (where, mp), 'non è una strada dei registri 2.1–2.3')
+    banks = {'MAP_' + e['map'] for e in plan['gs_enc_data']['encounters']} if plan else None
+    for x in luoghi:
+        w = '%s %s' % (where, x.get('mappa'))
+        nb = x.get('vicini') or []
+        if banks is not None and x.get('mappa') not in banks:
+            rep.err('V02', w, 'strada senza banco di incontri: il vagante non si incontra mai')
+        if not 1 <= len(nb) <= ROAMER_NEIGHBORS or len(set(nb)) != len(nb) or \
+                any(not isinstance(i, int) or not 0 <= i < len(luoghi) or i == x.get('indice') for i in nb):
+            rep.err('V02', w, 'vicini non validi (da 1 a %d indici diversi, mai sé stessa): %s' % (ROAMER_NEIGHBORS, nb))
+            continue
+        for i in nb:
+            if x.get('indice') not in (luoghi[i].get('vicini') or []):
+                rep.err('V03', w, 'vicino %d senza il ritorno' % i)
+    legg = {x['specie']: x for x in (plan or {}).get('leggendari', []) if x.get('metodo') == 'vagante'}
+    attivi = [s.get('specie') for s in slot if s.get('specie')]
+    if plan is not None and sorted(attivi) != sorted(legg):
+        rep.err('V04', where, 'specie degli slot %s diverse dai vaganti del piano %s' % (attivi, sorted(legg)))
+    for s in slot:
+        if s.get('specie') in legg and s.get('livello') != legg[s['specie']].get('livello'):
+            rep.err('V04', '%s %s' % (where, s.get('specie')), 'livello %s invece di %s (piano)' % (s.get('livello'), legg[s['specie']].get('livello')))
+    try:
+        want = {'include/constants/roamer.h': render_roamer_h(v), 'src/field_roamer.c': render_roamer_blocks(v)}
+    except (KeyError, TypeError, ValueError, IndexError) as ex:
+        rep.err('V05', where, 'dati dei vaganti non leggibili (%s)' % ex)
+        return
+    if v.get('codice') != want:
+        rep.err('V05', where, 'il codice della sezione «codice» non corrisponde ai dati (rigenerarlo)')
+
+
+def export_roamers(path, repo, write, rep):
+    v = load_json(path)['vaganti']
+    changes = []
+    p = os.path.join(repo, 'include', 'constants', 'roamer.h')
+    new = v['codice']['include/constants/roamer.h']
+    if open(p, encoding='utf-8', newline='').read() != new:
+        changes.append('include/constants/roamer.h')
+        if write:
+            open(p, 'w', encoding='utf-8', newline='\n').write(new)
+    p = os.path.join(repo, 'src', 'field_roamer.c')
+    txt = open(p, encoding='utf-8', newline='').read()
+    spans = roamer_spans(txt)
+    blocks = v['codice']['src/field_roamer.c']
+    for k in blocks:
+        if k not in spans:
+            rep.err('E00', 'src/field_roamer.c', 'pezzo «%s» non trovato' % k)
+            return changes
+    for k in sorted(blocks, key=lambda k: -spans[k][0]):
+        a, b = spans[k]
+        txt = txt[:a] + blocks[k] + txt[b:]
+    if open(p, encoding='utf-8', newline='').read() != txt:
+        changes.append('src/field_roamer.c')
+        if write:
+            open(p, 'w', encoding='utf-8', newline='\n').write(txt)
+    return changes
 
 
 def check_plan(path, rep, species_ids=None, items=None, maps=None):
@@ -628,6 +823,14 @@ def run_check(args, rep):
             check_coverage(plan, args.repo, sids, rep)
             check_distribution(entries, plan, maps or {}, rep)
             print('banchi del piano: %d' % len(plan['gs_enc_data']['encounters']))
+    for p in args.files:
+        try:
+            v = load_json(p).get('vaganti')
+        except Exception:  # noqa: BLE001 - D00 l'ha gia' segnalato
+            continue
+        if v is not None:
+            check_roamers(p, v, plan if args.plan else None, load_maps(docs) if docs else {}, rep)
+            print('vaganti controllati: %d slot, %d luoghi' % (len(v.get('slot') or []), len(v.get('luoghi') or [])))
 
 
 def selftest():
@@ -640,6 +843,7 @@ def selftest():
     print('repository per il collaudo: %s' % (repo or 'nessuno (P07 non si controlla)'))
     good = True
     rep = Report(quiet=True)
+    ok_files += sorted(glob.glob(os.path.join(root, 'docs', 'MODULO_3', '3.[2-5]_POKEMON_*.json')))
 
     class A:
         pass
@@ -648,7 +852,7 @@ def selftest():
     run_check(a, rep)
     if rep.errors:
         good = False
-        print('collaudo: il blocco 3.1 dà errori: %s' % rep.codes())
+        print('collaudo: i blocchi %s danno errori: %s' % (', '.join(os.path.basename(f)[:3] for f in ok_files), rep.codes()))
         for e in rep.errors[:10]:
             print('   ', *e)
     rep2 = Report(quiet=True)
@@ -678,6 +882,7 @@ def main():
     x.add_argument('--plan', required=True)
     x.add_argument('--repo', required=True)
     x.add_argument('--docs')
+    x.add_argument('--vaganti', help='blocco 3.3: scrive anche include/constants/roamer.h e src/field_roamer.c')
     x.add_argument('--write', action='store_true')
     args = ap.parse_args()
     rep = Report()
@@ -686,6 +891,9 @@ def main():
         print('DEX_OK' if not rep.errors else 'DEX_FAILED')
     else:
         export(args.plan, args.repo, args.write, rep, find_docs(args.docs))
+        if args.vaganti:
+            for c in export_roamers(args.vaganti, args.repo, args.write, rep):
+                print(('scritto ' if args.write else 'da scrivere ') + c)
         print('EXPORT_OK' if not rep.errors else 'EXPORT_FAILED')
     return 1 if rep.errors else 0
 
