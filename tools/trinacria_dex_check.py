@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Pokemon Trinacria - controllo dei blocchi delle specie e del piano degli incontri (Modulo 3, blocco 3.1).
+"""Pokemon Trinacria - controllo dei blocchi delle specie e del piano degli incontri (Modulo 3, blocchi 3.1-3.2; D08 dal 3.2).
 
 Uso (dalla cartella di F:\\Progetti\\pokémon-sicilia oppure da F:\\Progetti\\pokeheartgold):
     python -I tools/trinacria_dex_check.py --selftest
@@ -124,7 +124,7 @@ def article(name):
     return ('uno ' if UNO_RE.match(name) else 'un ') + '{COLOR 255}' + name + '{COLOR 0}'
 
 
-def check_species(paths, glossary, rep, font, species_ids=None):
+def check_species(paths, glossary, rep, font, species_ids=None, entries=None):
     seen = {}
     names = {}
     for e in glossary:
@@ -147,6 +147,8 @@ def check_species(paths, glossary, rep, font, species_ids=None):
                 rep.err('D06', where, 'numero fuori intervallo o ripetuto')
                 continue
             seen[n] = p
+            if entries is not None:
+                entries.append((p, s))
             if species_ids is not None and species_ids.get(s.get('simbolo')) != n:
                 rep.err('D06', where, 'il simbolo %s non vale %d in species.h' % (s.get('simbolo'), n))
             nm = s.get('nome', '')
@@ -202,6 +204,164 @@ def load_maps(docs):
 def mon_species(mon):
     s = mon.get('species')
     return list(s.values()) if isinstance(s, dict) else [s]
+
+# ----------------------------------------------------------------------------------------------
+# Distribuzione ricavata dal piano (R-SPE-07, R-INC-07): stesso calcolo per i blocchi 3.1-3.5
+
+TIMES = ('morn', 'day', 'nite')
+# probabilita' degli slot (src/field/encounter_check.c, EncounterSlot_WildMonSlotRoll_*)
+PROB = {'erba': [20, 20, 10, 10, 10, 10, 5, 5, 4, 4, 1, 1], 'surf': [60, 30, 5, 4, 1], 'canne': [40, 30, 15, 10, 5],
+        'spaccaroccia': [80, 20], 'bottintesta': [50, 15, 15, 10, 5, 5]}
+NIGHT_FISH_SLOT = {'good_rod': 3, 'super_rod': 1}
+SAFARI_ENTRANCE = 'SR_VENDICARI_RISERVA'  # ultimo banco: copia di D47R0102, mai usato per gli incontri
+SAFARI_MAP = 'MAP_SR_VENDICARI_ZONA_01…14'
+SAFARI_WATER = (('surf', 'surf'), ('oldrod', 'Canna Vecchia'), ('goodrod', 'Canna Buona'), ('superrod', 'Super Canna'))
+FISH_RODS = (('old_rod', 'Canna Vecchia'), ('good_rod', 'Canna Buona'), ('super_rod', 'Super Canna'))
+
+
+def dist_row(maps, mp, metodo, lv, perc, ora, nota=None):
+    m = maps.get(mp) or {}
+    r = {'mappa': mp, 'comune': m.get('comune'), 'provincia': m.get('provincia'), 'metodo': metodo,
+         'livelli': [min(lv), max(lv)], 'percentuale': perc}
+    if nota is not None:
+        r['nota'] = nota
+    r['ora'] = ora
+    return r
+
+
+def safari_row(metodo, lv, perc, ora, nota):
+    return {'mappa': SAFARI_MAP, 'comune': 'Noto', 'provincia': 'SR', 'metodo': metodo,
+            'livelli': [min(lv), max(lv)], 'percentuale': perc, 'nota': nota, 'ora': ora}
+
+
+def plan_distribution(plan, maps, sp):
+    """Righe della «distribuzione» di una specie: per mappa (ordine dei banchi, metodi in ordine alfabetico),
+    poi Safari, poi regali, statici e leggendari."""
+    out = []
+    trees = collections.defaultdict(list)
+    for h in plan.get('bottintesta', []):
+        trees['MAP_' + h['map']].append(h)
+    for e in plan['gs_enc_data']['encounters']:
+        if e['map'] == SAFARI_ENTRANCE:
+            continue
+        mp = 'MAP_' + e['map']
+        rows = []
+        for h in trees.get(mp, []):
+            for key, name in (('CommonMons', 'Bottintesta (alberi comuni)'), ('RareMons', 'Bottintesta (alberi rari)')):
+                lv, p = [], 0
+                for i, m in enumerate(h.get(key, [])):
+                    if m['species'] == sp:
+                        p += PROB['bottintesta'][i]
+                        lv += [m['minLevel'], m['maxLevel']]
+                if p:
+                    rows.append(dist_row(maps, mp, name, lv, p, 'sempre'))
+        lv, perc = [], {}
+        for i, m in enumerate(e['land']['mons']):
+            for t in TIMES:
+                if m['species'].get(t) == sp:
+                    perc[t] = perc.get(t, 0) + PROB['erba'][i]
+                    lv.append(m['level'])
+        if perc:
+            perc = {t: perc[t] for t in TIMES if t in perc}
+            rows.append(dist_row(maps, mp, 'erba', lv, perc, '/'.join(perc)))
+        for key, name, probs in (('surf', 'surf', PROB['surf']), ('rock_smash', 'Martiddata (Spaccaroccia)', PROB['spaccaroccia'])):
+            lv, p = [], 0
+            for i, m in enumerate(e[key]['mons']):
+                if m['species'] == sp:
+                    p += probs[i]
+                    lv += [m['level']['min'], m['level']['max']]
+            if p:
+                rows.append(dist_row(maps, mp, name, lv, p, 'sempre'))
+        for key, name in FISH_RODS:
+            mons = e['fishing'][key]['mons']
+            lv, p = [], 0
+            for i, m in enumerate(mons):
+                if m['species'] == sp:
+                    p += PROB['canne'][i]
+                    lv += [m['level']['min'], m['level']['max']]
+            if p:
+                rows.append(dist_row(maps, mp, name, lv, p, 'sempre'))
+            slot = NIGHT_FISH_SLOT.get(key)
+            if slot is not None and len(mons) > slot and e.get('nightFish') == sp:
+                m = mons[slot]
+                rows.append(dist_row(maps, mp, name, [m['level']['min'], m['level']['max']],
+                                     {'nite': PROB['canne'][slot]}, 'nite', 'slot notturno (nightFish)'))
+        rows.sort(key=lambda r: r['metodo'])
+        out += rows
+    out += plan_safari(plan, sp)
+    for x in plan.get('speciali', []) + plan.get('leggendari', []):
+        if x.get('specie') == sp:
+            nota = x.get('quando', '') + (' — ' + x['chi'] if x.get('chi') else '')
+            out.append(dist_row(maps, x.get('mappa'), x.get('metodo'), [x.get('livello', 0)], None, 'sempre', nota))
+    return out
+
+
+def plan_safari(plan, sp):
+    rows = []
+    areas = plan.get('safari', [])
+    for a in areas:
+        lv, perc = [], {}
+        for t in TIMES:
+            for m in a['dati']['land']['mons'][t]:
+                if m['species'] == sp:
+                    perc[t] = perc.get(t, 0) + 10
+                    lv.append(m['level'])
+        if perc:
+            rows.append(safari_row('Zona Safari, erba (%s)' % a.get('habitat_vendicari'), lv, perc, '/'.join(perc), a['area']))
+
+    def water_row(metodo, lv, perc, nota):
+        if len(perc) == 3 and len(set(perc.values())) == 1:
+            return safari_row(metodo, lv, perc['morn'], 'sempre', nota)
+        return safari_row(metodo, lv, perc, '/'.join(perc), nota)
+    for key, name in SAFARI_WATER:
+        found = []
+        for a in areas:
+            lv, perc = [], {}
+            for t in TIMES:
+                for m in a['dati'][key]['mons'][t]:
+                    if m['species'] == sp:
+                        perc[t] = perc.get(t, 0) + 10
+                        lv.append(m['level'])
+            if perc:
+                found.append((a, lv, perc))
+        if not found:
+            continue
+        if len(found) == len(areas) and all((x[1], x[2]) == (found[0][1], found[0][2]) for x in found):
+            rows.append(water_row('Zona Safari, ' + name, found[0][1], found[0][2], 'tutte le aree'))
+        else:
+            for a, lv, perc in found:
+                rows.append(water_row('Zona Safari, %s (%s)' % (name, a.get('habitat_vendicari')), lv, perc, a['area']))
+    for a in areas:
+        for key, name in (('land', None),) + SAFARI_WATER:
+            lv, times = [], set()
+            for b in a['dati'][key].get('bonus_mons', []):
+                for t in TIMES:
+                    if b[t]['species'] == sp:
+                        lv.append(b[t]['level'])
+                        times.add(t)
+            if lv:
+                ts = [t for t in TIMES if t in times]
+                metodo = 'Zona Safari, bonus degli oggetti' + ('' if name is None else ', ' + name) + \
+                    ' (%s)' % a.get('habitat_vendicari')
+                rows.append(safari_row(metodo, lv, None, 'sempre' if len(ts) == 3 else '/'.join(ts), a['area']))
+    rows.sort(key=lambda r: r['metodo'])
+    return rows
+
+
+def check_distribution(entries, plan, maps, rep):
+    """D08: la «distribuzione» di ogni specie e' quella che il piano da' (R-INC-07)."""
+    for p, s in entries:
+        try:
+            want = plan_distribution(plan, maps, s.get('simbolo'))
+        except (KeyError, TypeError, IndexError, ValueError) as ex:
+            rep.err('D08', '%s n.%s' % (os.path.basename(p), s.get('n')), 'piano non leggibile per la distribuzione (%s)' % ex)
+            return
+        got = s.get('distribuzione')
+        if got != want:
+            diff = next((i for i, (a, b) in enumerate(zip(got or [], want)) if a != b), min(len(got or []), len(want)))
+            rep.err('D08', '%s n.%s %s' % (os.path.basename(p), s.get('n'), s.get('nome')),
+                    'distribuzione diversa dal piano: %d righe invece di %d, prima differenza alla riga %d'
+                    % (len(got or []), len(want), diff))
 
 
 def check_plan(path, rep, species_ids=None, items=None, maps=None):
@@ -458,12 +618,15 @@ def run_check(args, rep):
     if docs:
         glossary = load_json(os.path.join(docs, 'MODULO_3', '3.0_REGOLE_E_GLOSSARIO.json'))['glossario']
     sids = repo_species(args.repo)
-    n = check_species(args.files, glossary, rep, font, sids)
+    entries = []
+    n = check_species(args.files, glossary, rep, font, sids, entries)
     print('specie controllate: %d' % n)
     if args.plan:
-        plan = check_plan(args.plan, rep, sids, repo_items(args.repo), load_maps(docs) if docs else None)
+        maps = load_maps(docs) if docs else None
+        plan = check_plan(args.plan, rep, sids, repo_items(args.repo), maps)
         if plan is not None:
             check_coverage(plan, args.repo, sids, rep)
+            check_distribution(entries, plan, maps or {}, rep)
             print('banchi del piano: %d' % len(plan['gs_enc_data']['encounters']))
 
 
@@ -500,6 +663,8 @@ def selftest():
 
 
 def main():
+    # la console di Windows (cp1252) non ha U+2009 e simili: senza questo un messaggio d'errore fa crashare lo strumento
+    sys.stdout.reconfigure(errors='backslashreplace')
     if '--selftest' in sys.argv:
         return selftest()
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
