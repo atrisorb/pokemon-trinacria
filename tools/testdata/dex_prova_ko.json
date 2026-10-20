@@ -1,5 +1,5 @@
 {
- "nota": "File di prova del collaudo di tools/trinacria_dex_check.py: ogni voce ha un errore voluto. D09: n.19 con una categoria diversa da msg_0826 che sta entro L-12 (serve --repo, come P07).",
+ "nota": "File di prova del collaudo di tools/trinacria_dex_check.py: ogni voce ha un errore voluto. D09: n.19 con una categoria diversa da msg_0826 che sta entro L-12 (serve --repo, come P07). D10: il collaudo usa --completo e il file ha solo 9 specie diverse.",
  "errori_attesi": [
   "D01",
   "D02",
@@ -10,6 +10,7 @@
   "D07",
   "D08",
   "D09",
+  "D10",
   "P01",
   "P02",
   "P03",

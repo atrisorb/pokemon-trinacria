@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """Pokemon Trinacria - controllo dei blocchi delle specie e del piano degli incontri (Modulo 3, blocchi 3.1-3.5;
-D08 dal 3.2, sciami e radio in D08 e vaganti V01-V05 dal 3.3, categorie ufficiali D09 dal 3.4).
+D08 dal 3.2, sciami e radio in D08 e vaganti V01-V05 dal 3.3, categorie ufficiali D09 dal 3.4, completezza D10 dal 3.5).
 
 Uso (dalla cartella di F:\\Progetti\\pokémon-sicilia oppure da F:\\Progetti\\pokeheartgold):
     python -I tools/trinacria_dex_check.py --selftest
     python -I tools/trinacria_dex_check.py check docs/MODULO_3/3.1_POKEMON_1-100.json [blocchi 3.2-3.5]
-           --plan docs/MODULO_3/3.1_PIANO_INCONTRI.json [--repo F:/Progetti/pokeheartgold] [--docs <docs>]
+           --plan docs/MODULO_3/3.1_PIANO_INCONTRI.json [--repo F:/Progetti/pokeheartgold] [--docs <docs>] [--completo]
     python -I tools/trinacria_dex_check.py export --plan docs/MODULO_3/3.1_PIANO_INCONTRI.json --repo <pokeheartgold>
            [--vaganti docs/MODULO_3/3.3_POKEMON_201-300.json] [--write]
 
@@ -204,6 +204,21 @@ def check_species(paths, glossary, rep, font, species_ids=None, entries=None, ca
                 if k in row and not rx.match(row[k]):
                     rep.err('D04', 'misure n.%s' % row.get('n'), '%s «%s» fuori formato' % (k, row[k]))
     return len(seen)
+
+
+def check_complete(entries, rep):
+    """D10 (dal 3.5, solo con --completo): i blocchi 3.1-3.5 insieme coprono le specie 1-493 e nessun nome si ripete."""
+    nums = {s.get('n') for _, s in entries}
+    missing = [n for n in range(1, 494) if n not in nums]
+    if missing:
+        rep.err('D10', 'specie', '%d specie assenti dai blocchi (%s%s)' % (
+            len(missing), ', '.join(str(n) for n in missing[:10]), '…' if len(missing) > 10 else ''))
+    names = collections.defaultdict(list)
+    for _, s in entries:
+        names[(s.get('nome') or '').lower()].append(s.get('n'))
+    for nm, ns in sorted(names.items()):
+        if len(ns) > 1:
+            rep.err('D10', 'nome %s' % nm, 'usato da più specie: %s' % ', '.join(str(n) for n in ns))
 
 # ----------------------------------------------------------------------------------------------
 # Piano degli incontri
@@ -832,6 +847,8 @@ def run_check(args, rep):
     entries = []
     n = check_species(args.files, glossary, rep, font, sids, entries, repo_categories(args.repo))
     print('specie controllate: %d' % n)
+    if getattr(args, 'completo', False):
+        check_complete(entries, rep)
     if args.plan:
         maps = load_maps(docs) if docs else None
         plan = check_plan(args.plan, rep, sids, repo_items(args.repo), maps)
@@ -864,7 +881,7 @@ def selftest():
     class A:
         pass
     a = A()
-    a.files, a.plan, a.repo, a.docs = ok_files, plan, repo, docs
+    a.files, a.plan, a.repo, a.docs, a.completo = ok_files, plan, repo, docs, True
     run_check(a, rep)
     if rep.errors:
         good = False
@@ -894,6 +911,7 @@ def main():
     c.add_argument('--plan')
     c.add_argument('--repo')
     c.add_argument('--docs')
+    c.add_argument('--completo', action='store_true', help='dal 3.5: D10, tutte le specie 1-493 una volta sola')
     x = sub.add_parser('export')
     x.add_argument('--plan', required=True)
     x.add_argument('--repo', required=True)
