@@ -1,0 +1,994 @@
+{
+ "descrizione": "File di prova per tools/trinacria_items_check.py --selftest: ogni voce ha l’errore scritto in «_errore»; con --completo manca il resto degli strumenti (S09).",
+ "errori_attesi": [
+  "S01",
+  "S02",
+  "S03",
+  "S04",
+  "S05",
+  "S06",
+  "S07",
+  "S08",
+  "S09",
+  "S10",
+  "S11",
+  "S12"
+ ],
+ "strumenti": [
+  {
+   "n": 17,
+   "simbolo": "ITEM_POTION",
+   "originale": "Potion",
+   "nome": "LimuniESali",
+   "lingua": "scn",
+   "glossario": "G30-0050",
+   "genere": "m",
+   "con_articolo": "un {COLOR 255}LimuniESali{COLOR 0}",
+   "plurale": "LimuniESali",
+   "caratteri": 11,
+   "px": 55,
+   "con_articolo_px": 71,
+   "plurale_px": 55,
+   "dati": {
+    "prezzo": 999,
+    "tasca": "POCKET_MEDICINE",
+    "effetto_tenuto": "HOLD_EFFECT_NONE",
+    "parametro_effetto": 20
+   },
+   "descrizione": [
+    "Il seltz limone e sale dei chioschi. Fa",
+    "recuperare 20 PS a un Pokémon."
+   ],
+   "descrizione_righe_px": [
+    199,
+    169
+   ],
+   "ottenimento": {
+    "negozi": [
+     {
+      "bancone": "tutti i Centri Pokémon",
+      "dal_dossier": 0,
+      "livello_scrcmd_mart": 1
+     },
+     {
+      "bancone": "speciale 3",
+      "mappa": "MAP_CT_CATANIA_CENTRO_POKEMON"
+     },
+     {
+      "bancone": "speciale 11",
+      "mappa": "MAP_AG_LAMPEDUSA_CENTRO_POKEMON"
+     },
+     {
+      "bancone": "speciale 18",
+      "mappa": "MAP_PA_PALERMO_CENTRO_POKEMON"
+     },
+     {
+      "bancone": "speciale 28",
+      "mappa": "MAP_CT_BRONTE_CENTRO_POKEMON"
+     }
+    ],
+    "altro": "5 in regalo da Turi al Vermut (capitolo 1)."
+   },
+   "banchi": {
+    "msg_0222": "LimuniESali",
+    "msg_0223": "un {COLOR 255}LimuniESali{COLOR 0}",
+    "msg_0224": "LimuniESali",
+    "msg_0221": [
+     "Il seltz limone e sale dei chioschi. Fa\n",
+     "recuperare 20 PS a un Pokémon."
+    ]
+   },
+   "_errore": "S11: prezzo diverso da item_data.csv"
+  },
+  {
+   "n": 18,
+   "simbolo": "ITEM_ANTIDOTE",
+   "originale": "Antidote",
+   "nome": "ZammùZammùZammùX",
+   "lingua": "scn",
+   "glossario": "G310-0013",
+   "genere": "m",
+   "con_articolo": "uno {COLOR 255}Zammù{COLOR 0}",
+   "plurale": "Zammù",
+   "caratteri": 5,
+   "px": 30,
+   "con_articolo_px": 52,
+   "plurale_px": 30,
+   "dati": {
+    "prezzo": 100,
+    "tasca": "POCKET_MEDICINE",
+    "effetto_tenuto": "HOLD_EFFECT_NONE",
+    "parametro_effetto": 0
+   },
+   "descrizione": [
+    "Acqua e anice dei chioschi, che sistema",
+    "lo stomaco. Cura un Pokémon",
+    "dall’avvelenamento."
+   ],
+   "descrizione_righe_px": [
+    206,
+    151,
+    106
+   ],
+   "ottenimento": {
+    "negozi": [
+     {
+      "bancone": "tutti i Centri Pokémon",
+      "dal_dossier": 0,
+      "livello_scrcmd_mart": 1
+     },
+     {
+      "bancone": "speciale 3",
+      "mappa": "MAP_CT_CATANIA_CENTRO_POKEMON"
+     },
+     {
+      "bancone": "speciale 18",
+      "mappa": "MAP_PA_PALERMO_CENTRO_POKEMON"
+     },
+     {
+      "bancone": "speciale 29",
+      "mappa": "MAP_CL_GELA_CENTRO_POKEMON"
+     }
+    ],
+    "altro": null
+   },
+   "banchi": {
+    "msg_0222": "Zammù",
+    "msg_0223": "uno {COLOR 255}Zammù{COLOR 0}",
+    "msg_0224": "Zammù",
+    "msg_0221": [
+     "Acqua e anice dei chioschi, che sistema\n",
+     "lo stomaco. Cura un Pokémon\n",
+     "dall’avvelenamento."
+    ]
+   },
+   "_errore": "S01 (nome oltre L-03), S02, S06, S07"
+  },
+  {
+   "n": 19,
+   "simbolo": "ITEM_BURN_HEAL",
+   "originale": "Burn Heal",
+   "nome": "Ogghiu",
+   "lingua": "scn",
+   "glossario": "G310-0014",
+   "genere": "m",
+   "con_articolo": "un {COLOR 255}Ogghiu{COLOR 0}",
+   "plurale": "OgghiuOgghiuOgghiuX",
+   "caratteri": 6,
+   "px": 33,
+   "con_articolo_px": 49,
+   "plurale_px": 33,
+   "dati": {
+    "prezzo": 250,
+    "tasca": "POCKET_MEDICINE",
+    "effetto_tenuto": "HOLD_EFFECT_NONE",
+    "parametro_effetto": 0
+   },
+   "descrizione": [
+    "Olio d’oliva, il rimedio della nonna per",
+    "le bruciature. Cura un Pokémon da una",
+    "scottatura."
+   ],
+   "descrizione_righe_px": [
+    201,
+    204,
+    65
+   ],
+   "ottenimento": {
+    "negozi": [
+     {
+      "bancone": "tutti i Centri Pokémon",
+      "dal_dossier": 1,
+      "livello_scrcmd_mart": 2
+     },
+     {
+      "bancone": "speciale 3",
+      "mappa": "MAP_CT_CATANIA_CENTRO_POKEMON"
+     },
+     {
+      "bancone": "speciale 18",
+      "mappa": "MAP_PA_PALERMO_CENTRO_POKEMON"
+     }
+    ],
+    "altro": null
+   },
+   "banchi": {
+    "msg_0222": "Ogghiu",
+    "msg_0223": "un {COLOR 255}Ogghiu{COLOR 0}",
+    "msg_0224": "Ogghiu",
+    "msg_0221": [
+     "Olio d’oliva, il rimedio della nonna per\n",
+     "le bruciature. Cura un Pokémon da una\n",
+     "scottatura."
+    ]
+   },
+   "_errore": "S03 (plurale oltre L-05), S06, S07"
+  },
+  {
+   "n": 20,
+   "simbolo": "ITEM_ICE_HEAL",
+   "originale": "Ice Heal",
+   "nome": "Tannura",
+   "lingua": "scn",
+   "glossario": "G310-0015",
+   "genere": "f",
+   "con_articolo": "una {COLOR 255}Tannura{COLOR 0}",
+   "plurale": "Tannuri",
+   "caratteri": 7,
+   "px": 42,
+   "con_articolo_px": 64,
+   "plurale_px": 39,
+   "dati": {
+    "prezzo": 250,
+    "tasca": "POCKET_MEDICINE",
+    "effetto_tenuto": "HOLD_EFFECT_NONE",
+    "parametro_effetto": 0
+   },
+   "descrizione": [
+    "Un fornello a brace che scalda le ossa.",
+    "Scongela un Pokémon congelato.",
+    "una riga di troppo"
+   ],
+   "descrizione_righe_px": [
+    210,
+    169
+   ],
+   "ottenimento": {
+    "negozi": [
+     {
+      "bancone": "tutti i Centri Pokémon",
+      "dal_dossier": 1,
+      "livello_scrcmd_mart": 2
+     },
+     {
+      "bancone": "speciale 3",
+      "mappa": "MAP_CT_CATANIA_CENTRO_POKEMON"
+     },
+     {
+      "bancone": "speciale 18",
+      "mappa": "MAP_PA_PALERMO_CENTRO_POKEMON"
+     }
+    ],
+    "altro": null
+   },
+   "banchi": {
+    "msg_0222": "Tannura",
+    "msg_0223": "una {COLOR 255}Tannura{COLOR 0}",
+    "msg_0224": "Tannuri",
+    "msg_0221": [
+     "Un fornello a brace che scalda le ossa.\n",
+     "Scongela un Pokémon congelato."
+    ]
+   },
+   "_errore": "S04: quattro righe"
+  },
+  {
+   "n": 21,
+   "simbolo": "ITEM_FOO",
+   "originale": "Awakening",
+   "nome": "Arruspigghiu",
+   "lingua": "scn",
+   "glossario": "G310-0016",
+   "genere": "m",
+   "con_articolo": "un {COLOR 255}Arruspigghiu{COLOR 0}",
+   "plurale": "Arruspigghi",
+   "caratteri": 12,
+   "px": 66,
+   "con_articolo_px": 82,
+   "plurale_px": 60,
+   "dati": {
+    "prezzo": 250,
+    "tasca": "POCKET_MEDICINE",
+    "effetto_tenuto": "HOLD_EFFECT_NONE",
+    "parametro_effetto": 0
+   },
+   "descrizione": [
+    "Un caffè ristretto che sveglierebbe",
+    "anche un morto. Sveglia un Pokémon che",
+    "dorme."
+   ],
+   "descrizione_righe_px": [
+    192,
+    210,
+    35
+   ],
+   "ottenimento": {
+    "negozi": [
+     {
+      "bancone": "tutti i Centri Pokémon",
+      "dal_dossier": 1,
+      "livello_scrcmd_mart": 2
+     },
+     {
+      "bancone": "speciale 3",
+      "mappa": "MAP_CT_CATANIA_CENTRO_POKEMON"
+     },
+     {
+      "bancone": "speciale 18",
+      "mappa": "MAP_PA_PALERMO_CENTRO_POKEMON"
+     }
+    ],
+    "altro": null
+   },
+   "banchi": {
+    "msg_0222": "Arruspigghiu",
+    "msg_0223": "un {COLOR 255}Arruspigghiu{COLOR 0}",
+    "msg_0224": "Arruspigghi",
+    "msg_0221": [
+     "Un caffè ristretto che sveglierebbe\n",
+     "anche un morto. Sveglia un Pokémon che\n",
+     "dorme."
+    ]
+   },
+   "_errore": "S05: simbolo sbagliato"
+  },
+  {
+   "n": 113,
+   "simbolo": "ITEM_UNUSED_113",
+   "originale": "???",
+   "vuoto": false,
+   "nome": "Prova",
+   "_errore": "S10: slot vuoto con un nome"
+  },
+  {
+   "n": 24,
+   "simbolo": "ITEM_MAX_POTION",
+   "originale": "Max Potion",
+   "nome": "LattiMennula",
+   "lingua": "it",
+   "glossario": "G310-0018",
+   "genere": "m",
+   "con_articolo": "un {COLOR 255}LattiMennula{COLOR 0}",
+   "plurale": "LattiMennula",
+   "caratteri": 12,
+   "px": 67,
+   "con_articolo_px": 83,
+   "plurale_px": 67,
+   "dati": {
+    "prezzo": 2500,
+    "tasca": "POCKET_MEDICINE",
+    "effetto_tenuto": "HOLD_EFFECT_NONE",
+    "parametro_effetto": 255
+   },
+   "descrizione": [
+    "Latte di mandorla freschissimo. Fa",
+    "recuperare tutti i PS a un Pokémon."
+   ],
+   "descrizione_righe_px": [
+    183,
+    191
+   ],
+   "ottenimento": {
+    "negozi": [
+     {
+      "bancone": "tutti i Centri Pokémon",
+      "dal_dossier": 7,
+      "livello_scrcmd_mart": 5
+     },
+     {
+      "bancone": "speciale 3",
+      "mappa": "MAP_CT_CATANIA_CENTRO_POKEMON"
+     },
+     {
+      "bancone": "speciale 13",
+      "mappa": "MAP_EN_PIAZZA_ARMERINA_CENTRO_POKEMON"
+     },
+     {
+      "bancone": "speciale 18",
+      "mappa": "MAP_PA_PALERMO_CENTRO_POKEMON"
+     }
+    ],
+    "altro": null
+   },
+   "banchi": {
+    "msg_0222": "LattiMennula",
+    "msg_0223": "un {COLOR 255}LattiMennula{COLOR 0}",
+    "msg_0224": "LattiMennula",
+    "msg_0221": [
+     "Latte di mandorla freschissimo. Fa\n",
+     "recuperare tutti i PS a un Pokémon."
+    ]
+   },
+   "_errore": "S07: nome italiano che la trama non cita"
+  },
+  {
+   "n": 25,
+   "simbolo": "ITEM_HYPER_POTION",
+   "originale": "Hyper Potion",
+   "nome": "Munnizza",
+   "lingua": "scn",
+   "glossario": "G30-0052",
+   "genere": "f",
+   "con_articolo": "una {COLOR 255}GranitaCafè{COLOR 0}",
+   "plurale": "GranitaCafè",
+   "caratteri": 11,
+   "px": 62,
+   "con_articolo_px": 84,
+   "plurale_px": 62,
+   "dati": {
+    "prezzo": 1200,
+    "tasca": "POCKET_MEDICINE",
+    "effetto_tenuto": "HOLD_EFFECT_NONE",
+    "parametro_effetto": 200
+   },
+   "descrizione": [
+    "Granita di caffè con la panna. Fa",
+    "recuperare 200 PS a un Pokémon."
+   ],
+   "descrizione_righe_px": [
+    175,
+    175
+   ],
+   "ottenimento": {
+    "negozi": [
+     {
+      "bancone": "tutti i Centri Pokémon",
+      "dal_dossier": 5,
+      "livello_scrcmd_mart": 4
+     },
+     {
+      "bancone": "speciale 3",
+      "mappa": "MAP_CT_CATANIA_CENTRO_POKEMON"
+     },
+     {
+      "bancone": "speciale 11",
+      "mappa": "MAP_AG_LAMPEDUSA_CENTRO_POKEMON"
+     },
+     {
+      "bancone": "speciale 13",
+      "mappa": "MAP_EN_PIAZZA_ARMERINA_CENTRO_POKEMON"
+     },
+     {
+      "bancone": "speciale 18",
+      "mappa": "MAP_PA_PALERMO_CENTRO_POKEMON"
+     },
+     {
+      "bancone": "speciale 29",
+      "mappa": "MAP_CL_GELA_CENTRO_POKEMON"
+     }
+    ],
+    "altro": null
+   },
+   "banchi": {
+    "msg_0222": "Munnizza",
+    "msg_0223": "una {COLOR 255}GranitaCafè{COLOR 0}",
+    "msg_0224": "GranitaCafè",
+    "msg_0221": [
+     "Granita di caffè con la panna. Fa\n",
+     "recuperare 200 PS a un Pokémon."
+    ]
+   },
+   "_errore": "S08: nome di una specie (e S02, S07)"
+  },
+  {
+   "n": 26,
+   "simbolo": "ITEM_SUPER_POTION",
+   "originale": "Super Potion",
+   "nome": "Mandarinettu",
+   "lingua": "scn",
+   "glossario": "G30-0051",
+   "genere": "m",
+   "con_articolo": "un {COLOR 255}Mandarinettu{COLOR 0}",
+   "plurale": "Mandarinetti",
+   "caratteri": 12,
+   "px": 69,
+   "con_articolo_px": 85,
+   "plurale_px": 66,
+   "dati": {
+    "prezzo": 700,
+    "tasca": "POCKET_MEDICINE",
+    "effetto_tenuto": "HOLD_EFFECT_NONE",
+    "parametro_effetto": 50
+   },
+   "descrizione": [
+    "Bibita al mandarino. Fa recuperare 50",
+    "PS a un Pokémon."
+   ],
+   "descrizione_righe_px": [
+    200,
+    89
+   ],
+   "ottenimento": {
+    "negozi": [],
+    "altro": null
+   },
+   "banchi": {
+    "msg_0222": "Mandarinettu",
+    "msg_0223": "un {COLOR 255}Mandarinettu{COLOR 0}",
+    "msg_0224": "Mandarinetti",
+    "msg_0221": [
+     "Bibita al mandarino. Fa recuperare 50\n",
+     "PS a un Pokémon."
+    ]
+   },
+   "_errore": "S12: negozi diversi da src/scrcmd_mart.c"
+  }
+ ],
+ "piano_negozi": {
+  "spiegazione": "Ogni Centro Pokémon ha il bancone del negozio (trama R-09.5). Il commesso del bancone usa ScrCmd_MartBuy: la merce dipende dai Dossier ottenuti (i 9 Dossier stanno sugli slot medaglia, registro 2.5), con i livelli di _020FBF22 in src/scrcmd_mart.c, che non si modifica. Alcuni Centri hanno un secondo commesso con una lista speciale (ScrCmd_SpecialMartBuy, indice della lista in _0210FA3C): l’indice e il Centro sono fissati qui e valgono anche per le MT e le carte da lettere dei blocchi 3.11 e 3.12. Le liste non cambiano: cambia solo il Centro che le usa (script del Modulo 6).",
+  "livelli_dei_dossier": [
+   {
+    "livello": 1,
+    "dossier_ottenuti": "0",
+    "dal_dossier": 0
+   },
+   {
+    "livello": 2,
+    "dossier_ottenuti": "1–2",
+    "dal_dossier": 1
+   },
+   {
+    "livello": 3,
+    "dossier_ottenuti": "3–4",
+    "dal_dossier": 3
+   },
+   {
+    "livello": 4,
+    "dossier_ottenuti": "5–6",
+    "dal_dossier": 5
+   },
+   {
+    "livello": 5,
+    "dossier_ottenuti": "7",
+    "dal_dossier": 7
+   },
+   {
+    "livello": 6,
+    "dossier_ottenuti": "8 o più",
+    "dal_dossier": 8
+   }
+  ],
+  "bancone_dei_centri": [
+   {
+    "simbolo": "ITEM_ANTIDOTE",
+    "livello": 1,
+    "dal_dossier": 0
+   },
+   {
+    "simbolo": "ITEM_PARLYZ_HEAL",
+    "livello": 1,
+    "dal_dossier": 0
+   },
+   {
+    "simbolo": "ITEM_POKE_BALL",
+    "livello": 1,
+    "dal_dossier": 0
+   },
+   {
+    "simbolo": "ITEM_POTION",
+    "livello": 1,
+    "dal_dossier": 0
+   },
+   {
+    "simbolo": "ITEM_AWAKENING",
+    "livello": 2,
+    "dal_dossier": 1
+   },
+   {
+    "simbolo": "ITEM_BURN_HEAL",
+    "livello": 2,
+    "dal_dossier": 1
+   },
+   {
+    "simbolo": "ITEM_ESCAPE_ROPE",
+    "livello": 2,
+    "dal_dossier": 1
+   },
+   {
+    "simbolo": "ITEM_ICE_HEAL",
+    "livello": 2,
+    "dal_dossier": 1
+   },
+   {
+    "simbolo": "ITEM_REPEL",
+    "livello": 2,
+    "dal_dossier": 1
+   },
+   {
+    "simbolo": "ITEM_SUPER_POTION",
+    "livello": 2,
+    "dal_dossier": 1
+   },
+   {
+    "simbolo": "ITEM_GREAT_BALL",
+    "livello": 3,
+    "dal_dossier": 3
+   },
+   {
+    "simbolo": "ITEM_REVIVE",
+    "livello": 3,
+    "dal_dossier": 3
+   },
+   {
+    "simbolo": "ITEM_SUPER_REPEL",
+    "livello": 3,
+    "dal_dossier": 3
+   },
+   {
+    "simbolo": "ITEM_FULL_HEAL",
+    "livello": 4,
+    "dal_dossier": 5
+   },
+   {
+    "simbolo": "ITEM_HYPER_POTION",
+    "livello": 4,
+    "dal_dossier": 5
+   },
+   {
+    "simbolo": "ITEM_MAX_REPEL",
+    "livello": 4,
+    "dal_dossier": 5
+   },
+   {
+    "simbolo": "ITEM_ULTRA_BALL",
+    "livello": 4,
+    "dal_dossier": 5
+   },
+   {
+    "simbolo": "ITEM_MAX_POTION",
+    "livello": 5,
+    "dal_dossier": 7
+   },
+   {
+    "simbolo": "ITEM_FULL_RESTORE",
+    "livello": 6,
+    "dal_dossier": 8
+   }
+  ],
+  "banconi_speciali": [
+   {
+    "indice": 0,
+    "mappa": "MAP_RG_RAGUSA_CENTRO_POKEMON",
+    "strumenti": [
+     "ITEM_AIR_MAIL",
+     "ITEM_HEAL_BALL"
+    ]
+   },
+   {
+    "indice": 1,
+    "mappa": "MAP_CL_SAN_CATALDO_CENTRO_POKEMON",
+    "strumenti": [
+     "ITEM_TUNNEL_MAIL",
+     "ITEM_HEAL_BALL",
+     "ITEM_NET_BALL"
+    ]
+   },
+   {
+    "indice": 2,
+    "mappa": "MAP_RG_VITTORIA_CENTRO_POKEMON",
+    "strumenti": [
+     "ITEM_BLOOM_MAIL",
+     "ITEM_HEAL_BALL",
+     "ITEM_NET_BALL"
+    ]
+   },
+   {
+    "indice": 3,
+    "mappa": "MAP_CT_CATANIA_CENTRO_POKEMON",
+    "strumenti": [
+     "ITEM_POTION",
+     "ITEM_SUPER_POTION",
+     "ITEM_HYPER_POTION",
+     "ITEM_MAX_POTION",
+     "ITEM_REVIVE",
+     "ITEM_ANTIDOTE",
+     "ITEM_PARLYZ_HEAL",
+     "ITEM_BURN_HEAL",
+     "ITEM_ICE_HEAL",
+     "ITEM_AWAKENING",
+     "ITEM_FULL_HEAL"
+    ]
+   },
+   {
+    "indice": 4,
+    "mappa": "MAP_CT_CATANIA_CENTRO_POKEMON",
+    "strumenti": [
+     "ITEM_POKE_BALL",
+     "ITEM_GREAT_BALL",
+     "ITEM_ULTRA_BALL",
+     "ITEM_ESCAPE_ROPE",
+     "ITEM_POKE_DOLL",
+     "ITEM_REPEL",
+     "ITEM_SUPER_REPEL",
+     "ITEM_MAX_REPEL",
+     "ITEM_GRASS_MAIL",
+     "ITEM_FLAME_MAIL",
+     "ITEM_BUBBLE_MAIL",
+     "ITEM_SPACE_MAIL"
+    ]
+   },
+   {
+    "indice": 5,
+    "mappa": "MAP_ME_MESSINA_CENTRO_POKEMON",
+    "strumenti": [
+     "ITEM_X_SPEED",
+     "ITEM_X_ATTACK",
+     "ITEM_X_DEFENSE",
+     "ITEM_GUARD_SPEC_",
+     "ITEM_DIRE_HIT",
+     "ITEM_X_ACCURACY",
+     "ITEM_X_SPECIAL",
+     "ITEM_X_SP__DEF"
+    ]
+   },
+   {
+    "indice": 6,
+    "mappa": "MAP_ME_MESSINA_CENTRO_POKEMON",
+    "strumenti": [
+     "ITEM_PROTEIN",
+     "ITEM_IRON",
+     "ITEM_CALCIUM",
+     "ITEM_ZINC",
+     "ITEM_CARBOS",
+     "ITEM_HP_UP"
+    ]
+   },
+   {
+    "indice": 7,
+    "mappa": "MAP_PA_FIERA_CENTRO_POKEMON",
+    "strumenti": [
+     "ITEM_TM70",
+     "ITEM_TM17",
+     "ITEM_TM54",
+     "ITEM_TM83",
+     "ITEM_TM16",
+     "ITEM_TM33",
+     "ITEM_TM22",
+     "ITEM_TM52",
+     "ITEM_TM38",
+     "ITEM_TM25",
+     "ITEM_TM14",
+     "ITEM_TM15"
+    ]
+   },
+   {
+    "indice": 8,
+    "mappa": "MAP_EN_NICOSIA_CENTRO_POKEMON",
+    "strumenti": [
+     "ITEM_HEAL_POWDER",
+     "ITEM_ENERGYPOWDER",
+     "ITEM_ENERGY_ROOT",
+     "ITEM_REVIVAL_HERB"
+    ]
+   },
+   {
+    "indice": 9,
+    "mappa": "MAP_SR_SIRACUSA_CENTRO_POKEMON",
+    "strumenti": [
+     "ITEM_AIR_MAIL",
+     "ITEM_HEAL_BALL",
+     "ITEM_NET_BALL"
+    ]
+   },
+   {
+    "indice": 10,
+    "mappa": "MAP_ME_TAORMINA_CENTRO_POKEMON",
+    "strumenti": [
+     "ITEM_HEART_MAIL",
+     "ITEM_HEAL_BALL",
+     "ITEM_NET_BALL"
+    ]
+   },
+   {
+    "indice": 11,
+    "mappa": "MAP_AG_LAMPEDUSA_CENTRO_POKEMON",
+    "strumenti": [
+     "ITEM_POTION",
+     "ITEM_SUPER_POTION",
+     "ITEM_HYPER_POTION",
+     "ITEM_FULL_HEAL",
+     "ITEM_REVIVE"
+    ]
+   },
+   {
+    "indice": 12,
+    "mappa": "MAP_TP_MAZARA_CENTRO_POKEMON",
+    "strumenti": [
+     "ITEM_AIR_MAIL",
+     "ITEM_NET_BALL",
+     "ITEM_DUSK_BALL"
+    ]
+   },
+   {
+    "indice": 13,
+    "mappa": "MAP_EN_PIAZZA_ARMERINA_CENTRO_POKEMON",
+    "strumenti": [
+     "ITEM_ULTRA_BALL",
+     "ITEM_MAX_REPEL",
+     "ITEM_HYPER_POTION",
+     "ITEM_MAX_POTION",
+     "ITEM_FULL_RESTORE",
+     "ITEM_REVIVE",
+     "ITEM_FULL_HEAL"
+    ]
+   },
+   {
+    "indice": 14,
+    "mappa": "MAP_PA_CORLEONE_CENTRO_POKEMON",
+    "strumenti": [
+     "ITEM_AIR_MAIL",
+     "ITEM_NEST_BALL",
+     "ITEM_DUSK_BALL",
+     "ITEM_QUICK_BALL"
+    ]
+   },
+   {
+    "indice": 15,
+    "mappa": "MAP_EN_ENNA_CENTRO_POKEMON",
+    "strumenti": [
+     "ITEM_AIR_MAIL",
+     "ITEM_DUSK_BALL",
+     "ITEM_QUICK_BALL"
+    ]
+   },
+   {
+    "indice": 16,
+    "mappa": "MAP_CT_NICOLOSI_CENTRO_POKEMON",
+    "strumenti": [
+     "ITEM_SNOW_MAIL",
+     "ITEM_DUSK_BALL",
+     "ITEM_QUICK_BALL"
+    ]
+   },
+   {
+    "indice": 17,
+    "mappa": "MAP_CT_PATERNO_CENTRO_POKEMON",
+    "strumenti": [
+     "ITEM_AIR_MAIL",
+     "ITEM_QUICK_BALL"
+    ]
+   },
+   {
+    "indice": 18,
+    "mappa": "MAP_PA_PALERMO_CENTRO_POKEMON",
+    "strumenti": [
+     "ITEM_POTION",
+     "ITEM_SUPER_POTION",
+     "ITEM_HYPER_POTION",
+     "ITEM_MAX_POTION",
+     "ITEM_REVIVE",
+     "ITEM_ANTIDOTE",
+     "ITEM_PARLYZ_HEAL",
+     "ITEM_BURN_HEAL",
+     "ITEM_ICE_HEAL",
+     "ITEM_AWAKENING",
+     "ITEM_FULL_HEAL"
+    ]
+   },
+   {
+    "indice": 19,
+    "mappa": "MAP_PA_PALERMO_CENTRO_POKEMON",
+    "strumenti": [
+     "ITEM_POKE_BALL",
+     "ITEM_GREAT_BALL",
+     "ITEM_ULTRA_BALL",
+     "ITEM_ESCAPE_ROPE",
+     "ITEM_POKE_DOLL",
+     "ITEM_REPEL",
+     "ITEM_SUPER_REPEL",
+     "ITEM_MAX_REPEL",
+     "ITEM_GRASS_MAIL",
+     "ITEM_FLAME_MAIL",
+     "ITEM_BUBBLE_MAIL",
+     "ITEM_SPACE_MAIL"
+    ]
+   },
+   {
+    "indice": 20,
+    "mappa": "MAP_PA_FIERA_CENTRO_POKEMON",
+    "strumenti": [
+     "ITEM_TM21",
+     "ITEM_TM27",
+     "ITEM_TM87",
+     "ITEM_TM78",
+     "ITEM_TM12",
+     "ITEM_TM41",
+     "ITEM_TM20",
+     "ITEM_TM28",
+     "ITEM_TM76",
+     "ITEM_TM55",
+     "ITEM_TM72",
+     "ITEM_TM79"
+    ]
+   },
+   {
+    "indice": 21,
+    "mappa": "MAP_RG_MODICA_LABORATORIO",
+    "strumenti": [
+     "ITEM_AIR_MAIL",
+     "ITEM_TUNNEL_MAIL",
+     "ITEM_BLOOM_MAIL"
+    ]
+   },
+   {
+    "indice": 22,
+    "mappa": "MAP_AG_AGRIGENTO_CENTRO_POKEMON",
+    "strumenti": [
+     "ITEM_X_SPEED",
+     "ITEM_X_ATTACK",
+     "ITEM_X_DEFENSE",
+     "ITEM_GUARD_SPEC_",
+     "ITEM_DIRE_HIT",
+     "ITEM_X_ACCURACY",
+     "ITEM_X_SPECIAL",
+     "ITEM_X_SP__DEF"
+    ]
+   },
+   {
+    "indice": 23,
+    "mappa": "MAP_TP_TRAPANI_CENTRO_POKEMON",
+    "strumenti": [
+     "ITEM_PROTEIN",
+     "ITEM_IRON",
+     "ITEM_CALCIUM",
+     "ITEM_ZINC",
+     "ITEM_CARBOS",
+     "ITEM_HP_UP"
+    ]
+   },
+   {
+    "indice": 24,
+    "mappa": "MAP_SR_AUGUSTA_CENTRO_POKEMON",
+    "strumenti": [
+     "ITEM_STEEL_MAIL",
+     "ITEM_DUSK_BALL",
+     "ITEM_QUICK_BALL"
+    ]
+   },
+   {
+    "indice": 25,
+    "mappa": "MAP_PA_TERMINI_CENTRO_POKEMON",
+    "strumenti": [
+     "ITEM_STEEL_MAIL",
+     "ITEM_NEST_BALL",
+     "ITEM_QUICK_BALL"
+    ]
+   },
+   {
+    "indice": 26,
+    "mappa": "MAP_ME_MILAZZO_CENTRO_POKEMON",
+    "strumenti": [
+     "ITEM_STEEL_MAIL",
+     "ITEM_NET_BALL",
+     "ITEM_HEAL_BALL"
+    ]
+   },
+   {
+    "indice": 27,
+    "mappa": "MAP_CT_ACIREALE_CENTRO_POKEMON",
+    "strumenti": [
+     "ITEM_POKE_DOLL",
+     "ITEM_FRESH_WATER",
+     "ITEM_SODA_POP",
+     "ITEM_LEMONADE",
+     "ITEM_REPEL",
+     "ITEM_HEART_MAIL"
+    ]
+   },
+   {
+    "indice": 28,
+    "mappa": "MAP_CT_BRONTE_CENTRO_POKEMON",
+    "strumenti": [
+     "ITEM_TINYMUSHROOM",
+     "ITEM_POKE_BALL",
+     "ITEM_POTION"
+    ]
+   },
+   {
+    "indice": 29,
+    "mappa": "MAP_CL_GELA_CENTRO_POKEMON",
+    "strumenti": [
+     "ITEM_GREAT_BALL",
+     "ITEM_SUPER_POTION",
+     "ITEM_HYPER_POTION",
+     "ITEM_ANTIDOTE",
+     "ITEM_PARLYZ_HEAL",
+     "ITEM_SUPER_REPEL",
+     "ITEM_REVIVE",
+     "ITEM_AIR_MAIL"
+    ]
+   }
+  ],
+  "prezzi": "Quelli di item_data.csv, copiati nel campo «dati» di ogni strumento: nessun prezzo cambia. L’unica eccezione è una vendita a script, non un negozio: l’AcquaFuntana a 2000 al bar del Terminal A (E-CT-06)."
+ }
+}
