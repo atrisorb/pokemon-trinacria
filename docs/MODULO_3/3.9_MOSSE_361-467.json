@@ -1,0 +1,8631 @@
+{
+ "modulo": 3,
+ "blocco": "3.9",
+ "titolo": "Mosse da #361 a #467",
+ "versione": "1.0",
+ "data": "26/10/2026",
+ "progetto": "Pokémon Trinacria",
+ "file": "docs/MODULO_3/3.9_MOSSE_361-467.json",
+ "lettore": "LLM esecutore e autore dei blocchi 3.10–3.13, 6.x (squadre, insegnanti di mosse, dialoghi) e 7.x (applicazione nel repository). Ogni valore è deciso: non si sceglie nulla.",
+ "fonti": [
+  "F:\\Progetti\\pokeheartgold @ c28680fe0, letti il 26/10/2026: include/constants/moves.h (simboli), files/msgdata/msg/msg_0749.json (descrizioni), msg_0750.json (nomi), msg_0751.json (maiuscolo), files/poketool/waza/waza_tbl.narc (dati: 16 byte per mossa con effetto, classe, potenza, tipo, precisione, PP, probabilità dell’effetto, bersaglio, priorità), files/graphic/font/font_00000000.bin e tools/msgenc/charmap.txt (larghezze e caratteri), src/party_menu.c (sFieldMoves: Rock Climb sì, Defog no).",
+  "docs/MODULO_3/3.0_REGOLE_E_GLOSSARIO.json v1.1: L-08, D-02, R-GRA, R-NOM, R-GLO, le 15 mosse del Glossario (1 in questo intervallo: Acchianata, 431) e le deviazioni D-01…D-18.",
+  "docs/MODULO_3/3.6_MOSSE_1-120.json v1.2, 3.7_MOSSE_121-240.json v1.0 e 3.8_MOSSE_241-360.json v1.0: regole R-MOS-01…11, che valgono anche qui, la deviazione D-19 e i 330 nomi siciliani nuovi dei tre blocchi (nessuno si ripete).",
+  "docs/MODULO_3/3.1–3.5: «glossario_aggiunte» delle 493 specie (i nomi delle mosse non le ripetono; i numeri delle specie citati nelle note vengono da lì).",
+  "F:\\Progetti\\sicilian-dialect-mcp\\vocabolario.json (625 lemmi, versione 2.0.0): attestazione delle forme (campo «lemma_mcp»).",
+  "docs/00_TRAMA_ESPANSA_E_SIDEQUEST.md v1.7 (R-03, M-TP-03/B-TP-02, M-EN-03): Ventoincoda è l’unica mossa di questo intervallo che la trama cita col nome italiano ufficiale; Scalaroccia è già Acchianata (R-03)."
+ ],
+ "come_si_usa": [
+  "Ogni voce di «mosse» dà il nome (msg_0750), il maiuscolo per le parole rapide (msg_0751) e la descrizione (msg_0749) della mossa con lo stesso indice: l’esecutore copia i tre campi di «banchi» nei tre banchi, all’indice «n» (Modulo 7).",
+  "I nomi siciliani nuovi sono nella «glossario_aggiunte» (G39-0001…): entrano nel Glossario bloccato con «merge» (R-GLO-02) e valgono per i testi del Modulo 6.",
+  "Il campo «dati» riporta i dati di HeartGold (tipo, classe, potenza, precisione, PP, effetto, priorità): serve a chi sceglie le mosse delle squadre nel Modulo 6 e non si modifica.",
+  "Questo è l’ultimo blocco delle mosse: con il 3.6, il 3.7 e il 3.8 copre le mosse 1–467 una volta sola (sezione «riepilogo_mosse_1_467», controllo M09 con --completo).",
+  "Controllo: python -I tools/trinacria_moves_check.py check docs/MODULO_3/3.6_MOSSE_1-120.json docs/MODULO_3/3.7_MOSSE_121-240.json docs/MODULO_3/3.8_MOSSE_241-360.json docs/MODULO_3/3.9_MOSSE_361-467.json --repo F:/Progetti/pokeheartgold --completo → MOSSE_OK; poi python -I tools/trinacria_glossary_check.py glossary docs/MODULO_3/3.0_REGOLE_E_GLOSSARIO.json docs/MODULO_3/3.1_POKEMON_1-100.json … docs/MODULO_3/3.9_MOSSE_361-467.json → GLOSSARY_OK.",
+  "Il blocco è generato da tools/generatori/3.9/gen39.py (contenuti in content39.py, parti fisse in text39.py), copia di tools/generatori/3.8/: python -I tools/generatori/3.9/gen39.py lo riscrive."
+ ],
+ "regole": {
+  "R-MOS-01…11": "Valgono come le scrivono i blocchi 3.6 v1.2 (R-MOS-01…08), 3.7 (R-MOS-09, R-MOS-10) e 3.8 (R-MOS-11). Le voci che seguono dicono solo come si applicano a questo intervallo; il 3.9 non aggiunge regole.",
+  "R-MOS-01": "In questo intervallo si ricopia 1 mossa del Glossario 3.0: Acchianata (431). I nomi siciliani più lunghi hanno 12 lettere (Chiovavilenu, Tagghianotti, Ummiragranfa, Tagghiamenti, Fogghiaventu, Cruciavilenu, Rugghiutempu, Sfardaspaziu, Scoppiaciuri): il maiuscolo di msg_0751 misura 72 px al massimo (L-08, 72 px).",
+  "R-MOS-02": "Nome della trama in questo intervallo: Ventoincoda (366; 11 lettere, maiuscolo 66 px, entra in L-08 senza deviazione). Nessun’altra mossa 361–467 compare nella trama col nome italiano: l’elenco dei 17 nomi di R-MOS-02 (3.6 v1.2) è completo e TRAMA_IT dello strumento non cambia.",
+  "R-MOS-04": "Uso fuori dalla lotta in questo intervallo: Acchianata scala le pareti rocciose (src/party_menu.c, sFieldMoves). Defog (Annittata, 432) in HeartGold non ha un uso sul campo e la descrizione non ne aggiunge.",
+  "R-MOS-05": "Nessuna forma scelta coincide con un nome di specie, mossa, strumento, classe, Dossier o soprannome. Le forme vicine a una specie, che la «nota» segnala, restano distinte: Scippata (Scippaturi), Canciascutu (Scutu), Canciacori (Cori), Malasimenza (Simenza), Lustrapetra (Lustrinu), Furficiata (Furficiuni), Tistapaci (Tistuni), Saittata (Saitta), Fogghiaventu (Fogghiazza), Ammagata (Ammagatura), Sciamuarmi (Sciammuni), Rugghiutempu (Tempu), Sfardaspaziu (Spaziu). Scartate in partenza: «Tumpulata» (MCP) per Force Palm, troppo vicina a Timpulata (3); «Pizzupetra» per Stone Edge, perché Pizzu è la mossa 6; «Petraluci» per Power Gem, che si leggerebbe come la specie Petraluna.",
+  "R-MOS-06": "Famiglie di nomi di questo intervallo: pugni Sucapugnu (409) e Lampupugnu (418); ferro Scattaferru (368), Ferruluci (430), Tistaferru (442), Ferrubumma (443); morchia Murcazza (441); draghi Dracupulsu (406), Dracucursa (407), Dracustidda (434); foglie Fogghiaventu (437); palle «-badda» Aurabadda (396), Mirabadda (411), Naturabadda (412); bombe «-bumma» Ciciribumma (402), Zancabumma (426), Ferrubumma (443); zanne Zannatronu, Zannajacciu, Zannafocu (422–424) con Zannavilenu; ombre Ummiragranfa (421), Ummiralesta (425), Ummiraforza (467); lesti Lestujacciu (420) e Lestacqua (453); tagli «Tagghia-» Tagghianotti (400), Tagghiacelu (403), Tagghiamenti (427); veleni «-vilenu» Chiovavilenu (390), Puncivilenu (398), Cruciavilenu (440); scambi «Cancia-» Canciaforza, Canciascutu (384, 385) e Canciacori (391); gli ordini della regina degli sciami «Sciamu-» Sciamuarmi, Sciamuscutu, Sciamucura (454–456); code Cudacqua (401); balli Ballaluna (461). Avalanche (419) ha la stessa descrizione di Rendicuntu (279) come in HeartGold Revenge; Healing Wish e Lunar Dance (361, 461) si somigliano come in HeartGold.",
+  "R-MOS-07": "Fonte (R-GLO-03). «MCP» solo quando il nome è lemma o variante del dizionario: Parrata (1): «parrata» è una variante di «parratina». I nomi derivati o composti da una voce del dizionario (Scippata da scippari, Scattaferru da scattari, Canciaforza da canciari, Unnavacanti da vacanti, Ciciribumma da cìciri, Allavancata da allavancari, Annittata da annititari, Dracustidda da stidda, Zuttazza da zotta, Ammagata da ammagari, Ballaluna da luna, Ventutintu da tintu…) sono «architetto» e la «nota» dice da dove vengono.",
+  "R-MOS-09": "Parole del gioco nelle descrizioni di questo intervallo, col nome italiano ufficiale: «Bacca» (Cugghiuta 363, Scippata 365, Rusicata 450), «Lastra» (Judiziu 449), «Allenatore» (Sigillu 373), «abilità» e il nome dell’abilità Insonnia (Stummacata 380, Malasimenza 388). Nessun nome di tipo.",
+  "R-MOS-10": "Descrizioni che nominano altre mosse col nome di Trinacria: Fintata (364) nomina Riparu e Addunata (182, 197)."
+ },
+ "deviazioni_dalle_specifiche": [],
+ "mosse": [
+  {
+   "n": 361,
+   "simbolo": "MOVE_HEALING_WISH",
+   "originale": "Healing Wish",
+   "nome": "Vutu",
+   "lingua": "scn",
+   "glossario": "G39-0001",
+   "caratteri": 4,
+   "px": 24,
+   "maiuscolo": "VUTU",
+   "maiuscolo_px": 24,
+   "dati": {
+    "tipo": "TYPE_PSYCHIC",
+    "classe": "stato",
+    "potenza": 0,
+    "precisione": 0,
+    "pp": 10,
+    "effetto": 220,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Chi la usa va KO, ma il",
+    "Pokémon che entra al",
+    "suo posto recupera i",
+    "PS e guarisce."
+   ],
+   "descrizione_righe_px": [
+    115,
+    112,
+    111,
+    76
+   ],
+   "msg_0749": [
+    "Chi la usa va KO, ma il\n",
+    "Pokémon che entra al\n",
+    "suo posto recupera i\n",
+    "PS e guarisce.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Vutu",
+    "msg_0751": "VUTU",
+    "msg_0749": [
+     "Chi la usa va KO, ma il\n",
+     "Pokémon che entra al\n",
+     "suo posto recupera i\n",
+     "PS e guarisce.\n"
+    ]
+   }
+  },
+  {
+   "n": 362,
+   "simbolo": "MOVE_BRINE",
+   "originale": "Brine",
+   "nome": "Salamuria",
+   "lingua": "scn",
+   "glossario": "G39-0002",
+   "caratteri": 9,
+   "px": 49,
+   "maiuscolo": "SALAMURIA",
+   "maiuscolo_px": 54,
+   "dati": {
+    "tipo": "TYPE_WATER",
+    "classe": "speciale",
+    "potenza": 65,
+    "precisione": 100,
+    "pp": 10,
+    "effetto": 221,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Se i PS del nemico sono",
+    "scesi a metà o meno,",
+    "la forza raddoppia."
+   ],
+   "descrizione_righe_px": [
+    120,
+    108,
+    103
+   ],
+   "msg_0749": [
+    "Se i PS del nemico sono\n",
+    "scesi a metà o meno,\n",
+    "la forza raddoppia.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Salamuria",
+    "msg_0751": "SALAMURIA",
+    "msg_0749": [
+     "Se i PS del nemico sono\n",
+     "scesi a metà o meno,\n",
+     "la forza raddoppia.\n"
+    ]
+   }
+  },
+  {
+   "n": 363,
+   "simbolo": "MOVE_NATURAL_GIFT",
+   "originale": "Natural Gift",
+   "nome": "Cugghiuta",
+   "lingua": "scn",
+   "glossario": "G39-0003",
+   "caratteri": 9,
+   "px": 51,
+   "maiuscolo": "CUGGHIUTA",
+   "maiuscolo_px": 54,
+   "dati": {
+    "tipo": "TYPE_NORMAL",
+    "classe": "fisica",
+    "potenza": 1,
+    "precisione": 100,
+    "pp": 15,
+    "effetto": 222,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Attacca con la Bacca",
+    "che tiene. Tipo e",
+    "forza dipendono dalla",
+    "Bacca."
+   ],
+   "descrizione_righe_px": [
+    112,
+    89,
+    114,
+    35
+   ],
+   "msg_0749": [
+    "Attacca con la Bacca\n",
+    "che tiene. Tipo e\n",
+    "forza dipendono dalla\n",
+    "Bacca.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Cugghiuta",
+    "msg_0751": "CUGGHIUTA",
+    "msg_0749": [
+     "Attacca con la Bacca\n",
+     "che tiene. Tipo e\n",
+     "forza dipendono dalla\n",
+     "Bacca.\n"
+    ]
+   }
+  },
+  {
+   "n": 364,
+   "simbolo": "MOVE_FEINT",
+   "originale": "Feint",
+   "nome": "Fintata",
+   "lingua": "scn",
+   "glossario": "G39-0004",
+   "caratteri": 7,
+   "px": 39,
+   "maiuscolo": "FINTATA",
+   "maiuscolo_px": 42,
+   "dati": {
+    "tipo": "TYPE_NORMAL",
+    "classe": "fisica",
+    "potenza": 50,
+    "precisione": 100,
+    "pp": 10,
+    "effetto": 223,
+    "probabilita_effetto": 0,
+    "priorita": 2
+   },
+   "descrizione": [
+    "Colpisce anche chi usa",
+    "Riparu o Addunata e",
+    "ne annulla l’effetto."
+   ],
+   "descrizione_righe_px": [
+    118,
+    105,
+    112
+   ],
+   "msg_0749": [
+    "Colpisce anche chi usa\n",
+    "Riparu o Addunata e\n",
+    "ne annulla l’effetto.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Fintata",
+    "msg_0751": "FINTATA",
+    "msg_0749": [
+     "Colpisce anche chi usa\n",
+     "Riparu o Addunata e\n",
+     "ne annulla l’effetto.\n"
+    ]
+   }
+  },
+  {
+   "n": 365,
+   "simbolo": "MOVE_PLUCK",
+   "originale": "Pluck",
+   "nome": "Scippata",
+   "lingua": "scn",
+   "glossario": "G39-0005",
+   "caratteri": 8,
+   "px": 45,
+   "maiuscolo": "SCIPPATA",
+   "maiuscolo_px": 48,
+   "dati": {
+    "tipo": "TYPE_FLYING",
+    "classe": "fisica",
+    "potenza": 60,
+    "precisione": 100,
+    "pp": 20,
+    "effetto": 224,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Becca il nemico. Se",
+    "tiene una Bacca,",
+    "gliela strappa e ne",
+    "ottiene l’effetto."
+   ],
+   "descrizione_righe_px": [
+    99,
+    88,
+    101,
+    97
+   ],
+   "msg_0749": [
+    "Becca il nemico. Se\n",
+    "tiene una Bacca,\n",
+    "gliela strappa e ne\n",
+    "ottiene l’effetto.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Scippata",
+    "msg_0751": "SCIPPATA",
+    "msg_0749": [
+     "Becca il nemico. Se\n",
+     "tiene una Bacca,\n",
+     "gliela strappa e ne\n",
+     "ottiene l’effetto.\n"
+    ]
+   }
+  },
+  {
+   "n": 366,
+   "simbolo": "MOVE_TAILWIND",
+   "originale": "Tailwind",
+   "nome": "Ventoincoda",
+   "lingua": "it",
+   "glossario": null,
+   "nome_della_trama": "Nome italiano ufficiale: la trama lo cita (11 lettere, maiuscolo entro L-08).",
+   "caratteri": 11,
+   "px": 63,
+   "maiuscolo": "VENTOINCODA",
+   "maiuscolo_px": 66,
+   "dati": {
+    "tipo": "TYPE_FLYING",
+    "classe": "stato",
+    "potenza": 0,
+    "precisione": 0,
+    "pp": 30,
+    "effetto": 225,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Un vento turbinoso",
+    "aumenta per tre turni",
+    "la Velocità di tutta la",
+    "squadra."
+   ],
+   "descrizione_righe_px": [
+    101,
+    117,
+    118,
+    47
+   ],
+   "msg_0749": [
+    "Un vento turbinoso\n",
+    "aumenta per tre turni\n",
+    "la Velocità di tutta la\n",
+    "squadra.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Ventoincoda",
+    "msg_0751": "VENTOINCODA",
+    "msg_0749": [
+     "Un vento turbinoso\n",
+     "aumenta per tre turni\n",
+     "la Velocità di tutta la\n",
+     "squadra.\n"
+    ]
+   }
+  },
+  {
+   "n": 367,
+   "simbolo": "MOVE_ACUPRESSURE",
+   "originale": "Acupressure",
+   "nome": "Ditata",
+   "lingua": "scn",
+   "glossario": "G39-0006",
+   "caratteri": 6,
+   "px": 33,
+   "maiuscolo": "DITATA",
+   "maiuscolo_px": 36,
+   "dati": {
+    "tipo": "TYPE_NORMAL",
+    "classe": "stato",
+    "potenza": 0,
+    "precisione": 0,
+    "pp": 30,
+    "effetto": 226,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Preme sui punti di",
+    "pressione e aumenta",
+    "molto una statistica a",
+    "caso."
+   ],
+   "descrizione_righe_px": [
+    93,
+    107,
+    118,
+    29
+   ],
+   "msg_0749": [
+    "Preme sui punti di\n",
+    "pressione e aumenta\n",
+    "molto una statistica a\n",
+    "caso.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Ditata",
+    "msg_0751": "DITATA",
+    "msg_0749": [
+     "Preme sui punti di\n",
+     "pressione e aumenta\n",
+     "molto una statistica a\n",
+     "caso.\n"
+    ]
+   }
+  },
+  {
+   "n": 368,
+   "simbolo": "MOVE_METAL_BURST",
+   "originale": "Metal Burst",
+   "nome": "Scattaferru",
+   "lingua": "scn",
+   "glossario": "G39-0007",
+   "caratteri": 11,
+   "px": 65,
+   "maiuscolo": "SCATTAFERRU",
+   "maiuscolo_px": 66,
+   "dati": {
+    "tipo": "TYPE_STEEL",
+    "classe": "fisica",
+    "potenza": 1,
+    "precisione": 100,
+    "pp": 10,
+    "effetto": 227,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Restituisce con una",
+    "forza molto maggiore",
+    "il danno dell’ultimo",
+    "colpo subito."
+   ],
+   "descrizione_righe_px": [
+    104,
+    110,
+    101,
+    70
+   ],
+   "msg_0749": [
+    "Restituisce con una\n",
+    "forza molto maggiore\n",
+    "il danno dell’ultimo\n",
+    "colpo subito.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Scattaferru",
+    "msg_0751": "SCATTAFERRU",
+    "msg_0749": [
+     "Restituisce con una\n",
+     "forza molto maggiore\n",
+     "il danno dell’ultimo\n",
+     "colpo subito.\n"
+    ]
+   }
+  },
+  {
+   "n": 369,
+   "simbolo": "MOVE_U_TURN",
+   "originale": "U-turn",
+   "nome": "Vutata",
+   "lingua": "scn",
+   "glossario": "G39-0008",
+   "caratteri": 6,
+   "px": 36,
+   "maiuscolo": "VUTATA",
+   "maiuscolo_px": 36,
+   "dati": {
+    "tipo": "TYPE_BUG",
+    "classe": "fisica",
+    "potenza": 70,
+    "precisione": 100,
+    "pp": 20,
+    "effetto": 228,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Dopo l’attacco torna",
+    "indietro e lascia il",
+    "posto a un Pokémon",
+    "della squadra."
+   ],
+   "descrizione_righe_px": [
+    113,
+    98,
+    102,
+    77
+   ],
+   "msg_0749": [
+    "Dopo l’attacco torna\n",
+    "indietro e lascia il\n",
+    "posto a un Pokémon\n",
+    "della squadra.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Vutata",
+    "msg_0751": "VUTATA",
+    "msg_0749": [
+     "Dopo l’attacco torna\n",
+     "indietro e lascia il\n",
+     "posto a un Pokémon\n",
+     "della squadra.\n"
+    ]
+   }
+  },
+  {
+   "n": 370,
+   "simbolo": "MOVE_CLOSE_COMBAT",
+   "originale": "Close Combat",
+   "nome": "Azzuffata",
+   "lingua": "scn",
+   "glossario": "G39-0009",
+   "caratteri": 9,
+   "px": 52,
+   "maiuscolo": "AZZUFFATA",
+   "maiuscolo_px": 54,
+   "dati": {
+    "tipo": "TYPE_FIGHTING",
+    "classe": "fisica",
+    "potenza": 120,
+    "precisione": 100,
+    "pp": 5,
+    "effetto": 229,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Lotta corpo a corpo",
+    "senza difendersi. Cala",
+    "Difesa e Difesa",
+    "Speciale di chi la usa."
+   ],
+   "descrizione_righe_px": [
+    108,
+    118,
+    78,
+    116
+   ],
+   "msg_0749": [
+    "Lotta corpo a corpo\n",
+    "senza difendersi. Cala\n",
+    "Difesa e Difesa\n",
+    "Speciale di chi la usa.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Azzuffata",
+    "msg_0751": "AZZUFFATA",
+    "msg_0749": [
+     "Lotta corpo a corpo\n",
+     "senza difendersi. Cala\n",
+     "Difesa e Difesa\n",
+     "Speciale di chi la usa.\n"
+    ]
+   }
+  },
+  {
+   "n": 371,
+   "simbolo": "MOVE_PAYBACK",
+   "originale": "Payback",
+   "nome": "Scuntata",
+   "lingua": "scn",
+   "glossario": "G39-0010",
+   "caratteri": 8,
+   "px": 48,
+   "maiuscolo": "SCUNTATA",
+   "maiuscolo_px": 48,
+   "dati": {
+    "tipo": "TYPE_DARK",
+    "classe": "fisica",
+    "potenza": 50,
+    "precisione": 100,
+    "pp": 10,
+    "effetto": 230,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Se attacca dopo il",
+    "nemico, la forza",
+    "raddoppia."
+   ],
+   "descrizione_righe_px": [
+    97,
+    85,
+    56
+   ],
+   "msg_0749": [
+    "Se attacca dopo il\n",
+    "nemico, la forza\n",
+    "raddoppia.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Scuntata",
+    "msg_0751": "SCUNTATA",
+    "msg_0749": [
+     "Se attacca dopo il\n",
+     "nemico, la forza\n",
+     "raddoppia.\n"
+    ]
+   }
+  },
+  {
+   "n": 372,
+   "simbolo": "MOVE_ASSURANCE",
+   "originale": "Assurance",
+   "nome": "Ncarcata",
+   "lingua": "scn",
+   "glossario": "G39-0011",
+   "caratteri": 8,
+   "px": 48,
+   "maiuscolo": "NCARCATA",
+   "maiuscolo_px": 48,
+   "dati": {
+    "tipo": "TYPE_DARK",
+    "classe": "fisica",
+    "potenza": 50,
+    "precisione": 100,
+    "pp": 10,
+    "effetto": 231,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Se il nemico ha già",
+    "subito danni nello",
+    "stesso turno, la",
+    "forza raddoppia."
+   ],
+   "descrizione_righe_px": [
+    95,
+    94,
+    89,
+    89
+   ],
+   "msg_0749": [
+    "Se il nemico ha già\n",
+    "subito danni nello\n",
+    "stesso turno, la\n",
+    "forza raddoppia.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Ncarcata",
+    "msg_0751": "NCARCATA",
+    "msg_0749": [
+     "Se il nemico ha già\n",
+     "subito danni nello\n",
+     "stesso turno, la\n",
+     "forza raddoppia.\n"
+    ]
+   }
+  },
+  {
+   "n": 373,
+   "simbolo": "MOVE_EMBARGO",
+   "originale": "Embargo",
+   "nome": "Sigillu",
+   "lingua": "scn",
+   "glossario": "G39-0012",
+   "caratteri": 7,
+   "px": 32,
+   "maiuscolo": "SIGILLU",
+   "maiuscolo_px": 42,
+   "dati": {
+    "tipo": "TYPE_DARK",
+    "classe": "stato",
+    "potenza": 0,
+    "precisione": 100,
+    "pp": 15,
+    "effetto": 232,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Il nemico non può",
+    "usare lo strumento",
+    "che tiene, né il suo",
+    "Allenatore usarne su",
+    "di lui."
+   ],
+   "descrizione_righe_px": [
+    91,
+    102,
+    103,
+    112,
+    31
+   ],
+   "msg_0749": [
+    "Il nemico non può\n",
+    "usare lo strumento\n",
+    "che tiene, né il suo\n",
+    "Allenatore usarne su\n",
+    "di lui."
+   ],
+   "banchi": {
+    "msg_0750": "Sigillu",
+    "msg_0751": "SIGILLU",
+    "msg_0749": [
+     "Il nemico non può\n",
+     "usare lo strumento\n",
+     "che tiene, né il suo\n",
+     "Allenatore usarne su\n",
+     "di lui."
+    ]
+   }
+  },
+  {
+   "n": 374,
+   "simbolo": "MOVE_FLING",
+   "originale": "Fling",
+   "nome": "Lanzata",
+   "lingua": "scn",
+   "glossario": "G39-0013",
+   "caratteri": 7,
+   "px": 42,
+   "maiuscolo": "LANZATA",
+   "maiuscolo_px": 42,
+   "dati": {
+    "tipo": "TYPE_DARK",
+    "classe": "fisica",
+    "potenza": 1,
+    "precisione": 100,
+    "pp": 10,
+    "effetto": 233,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Scaglia sul nemico lo",
+    "strumento che tiene.",
+    "Forza ed effetto",
+    "dipendono dallo",
+    "strumento."
+   ],
+   "descrizione_righe_px": [
+    108,
+    112,
+    90,
+    81,
+    59
+   ],
+   "msg_0749": [
+    "Scaglia sul nemico lo\n",
+    "strumento che tiene.\n",
+    "Forza ed effetto\n",
+    "dipendono dallo\n",
+    "strumento."
+   ],
+   "banchi": {
+    "msg_0750": "Lanzata",
+    "msg_0751": "LANZATA",
+    "msg_0749": [
+     "Scaglia sul nemico lo\n",
+     "strumento che tiene.\n",
+     "Forza ed effetto\n",
+     "dipendono dallo\n",
+     "strumento."
+    ]
+   }
+  },
+  {
+   "n": 375,
+   "simbolo": "MOVE_PSYCHO_SHIFT",
+   "originale": "Psycho Shift",
+   "nome": "Passamali",
+   "lingua": "scn",
+   "glossario": "G39-0014",
+   "caratteri": 9,
+   "px": 49,
+   "maiuscolo": "PASSAMALI",
+   "maiuscolo_px": 54,
+   "dati": {
+    "tipo": "TYPE_PSYCHIC",
+    "classe": "stato",
+    "potenza": 0,
+    "precisione": 90,
+    "pp": 10,
+    "effetto": 234,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Con la forza della",
+    "suggestione passa al",
+    "nemico i propri",
+    "problemi di stato."
+   ],
+   "descrizione_righe_px": [
+    95,
+    111,
+    77,
+    95
+   ],
+   "msg_0749": [
+    "Con la forza della\n",
+    "suggestione passa al\n",
+    "nemico i propri\n",
+    "problemi di stato.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Passamali",
+    "msg_0751": "PASSAMALI",
+    "msg_0749": [
+     "Con la forza della\n",
+     "suggestione passa al\n",
+     "nemico i propri\n",
+     "problemi di stato.\n"
+    ]
+   }
+  },
+  {
+   "n": 376,
+   "simbolo": "MOVE_TRUMP_CARD",
+   "originale": "Trump Card",
+   "nome": "Briscula",
+   "lingua": "scn",
+   "glossario": "G39-0015",
+   "caratteri": 8,
+   "px": 43,
+   "maiuscolo": "BRISCULA",
+   "maiuscolo_px": 48,
+   "dati": {
+    "tipo": "TYPE_NORMAL",
+    "classe": "speciale",
+    "potenza": 1,
+    "precisione": 0,
+    "pp": 5,
+    "effetto": 235,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Meno PP restano a",
+    "questa mossa, più è",
+    "forte."
+   ],
+   "descrizione_righe_px": [
+    96,
+    104,
+    34
+   ],
+   "msg_0749": [
+    "Meno PP restano a\n",
+    "questa mossa, più è\n",
+    "forte.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Briscula",
+    "msg_0751": "BRISCULA",
+    "msg_0749": [
+     "Meno PP restano a\n",
+     "questa mossa, più è\n",
+     "forte.\n"
+    ]
+   }
+  },
+  {
+   "n": 377,
+   "simbolo": "MOVE_HEAL_BLOCK",
+   "originale": "Heal Block",
+   "nome": "Nenticura",
+   "lingua": "scn",
+   "glossario": "G39-0016",
+   "caratteri": 9,
+   "px": 51,
+   "maiuscolo": "NENTICURA",
+   "maiuscolo_px": 54,
+   "dati": {
+    "tipo": "TYPE_PSYCHIC",
+    "classe": "stato",
+    "potenza": 0,
+    "precisione": 100,
+    "pp": 15,
+    "effetto": 236,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Per cinque turni il",
+    "nemico non può usare",
+    "mosse che fanno",
+    "recuperare PS."
+   ],
+   "descrizione_righe_px": [
+    97,
+    111,
+    85,
+    81
+   ],
+   "msg_0749": [
+    "Per cinque turni il\n",
+    "nemico non può usare\n",
+    "mosse che fanno\n",
+    "recuperare PS.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Nenticura",
+    "msg_0751": "NENTICURA",
+    "msg_0749": [
+     "Per cinque turni il\n",
+     "nemico non può usare\n",
+     "mosse che fanno\n",
+     "recuperare PS.\n"
+    ]
+   }
+  },
+  {
+   "n": 378,
+   "simbolo": "MOVE_WRING_OUT",
+   "originale": "Wring Out",
+   "nome": "Sprimuta",
+   "lingua": "scn",
+   "glossario": "G39-0017",
+   "caratteri": 8,
+   "px": 45,
+   "maiuscolo": "SPRIMUTA",
+   "maiuscolo_px": 48,
+   "dati": {
+    "tipo": "TYPE_NORMAL",
+    "classe": "speciale",
+    "potenza": 1,
+    "precisione": 100,
+    "pp": 5,
+    "effetto": 237,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Strizza il nemico con",
+    "forza. Più PS gli",
+    "restano, più è forte."
+   ],
+   "descrizione_righe_px": [
+    109,
+    86,
+    114
+   ],
+   "msg_0749": [
+    "Strizza il nemico con\n",
+    "forza. Più PS gli\n",
+    "restano, più è forte.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Sprimuta",
+    "msg_0751": "SPRIMUTA",
+    "msg_0749": [
+     "Strizza il nemico con\n",
+     "forza. Più PS gli\n",
+     "restano, più è forte.\n"
+    ]
+   }
+  },
+  {
+   "n": 379,
+   "simbolo": "MOVE_POWER_TRICK",
+   "originale": "Power Trick",
+   "nome": "Mmersu",
+   "lingua": "scn",
+   "glossario": "G39-0018",
+   "caratteri": 6,
+   "px": 36,
+   "maiuscolo": "MMERSU",
+   "maiuscolo_px": 36,
+   "dati": {
+    "tipo": "TYPE_PSYCHIC",
+    "classe": "stato",
+    "potenza": 0,
+    "precisione": 0,
+    "pp": 10,
+    "effetto": 238,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Con la forza psichica",
+    "scambia il proprio",
+    "Attacco con la",
+    "propria Difesa."
+   ],
+   "descrizione_righe_px": [
+    111,
+    93,
+    78,
+    80
+   ],
+   "msg_0749": [
+    "Con la forza psichica\n",
+    "scambia il proprio\n",
+    "Attacco con la\n",
+    "propria Difesa.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Mmersu",
+    "msg_0751": "MMERSU",
+    "msg_0749": [
+     "Con la forza psichica\n",
+     "scambia il proprio\n",
+     "Attacco con la\n",
+     "propria Difesa.\n"
+    ]
+   }
+  },
+  {
+   "n": 380,
+   "simbolo": "MOVE_GASTRO_ACID",
+   "originale": "Gastro Acid",
+   "nome": "Stummacata",
+   "lingua": "scn",
+   "glossario": "G39-0019",
+   "caratteri": 10,
+   "px": 60,
+   "maiuscolo": "STUMMACATA",
+   "maiuscolo_px": 60,
+   "dati": {
+    "tipo": "TYPE_POISON",
+    "classe": "stato",
+    "potenza": 0,
+    "precisione": 100,
+    "pp": 10,
+    "effetto": 239,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Sputa acidi gastrici",
+    "sul nemico e ne",
+    "annulla l’abilità."
+   ],
+   "descrizione_righe_px": [
+    104,
+    79,
+    90
+   ],
+   "msg_0749": [
+    "Sputa acidi gastrici\n",
+    "sul nemico e ne\n",
+    "annulla l’abilità.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Stummacata",
+    "msg_0751": "STUMMACATA",
+    "msg_0749": [
+     "Sputa acidi gastrici\n",
+     "sul nemico e ne\n",
+     "annulla l’abilità.\n"
+    ]
+   }
+  },
+  {
+   "n": 381,
+   "simbolo": "MOVE_LUCKY_CHANT",
+   "originale": "Lucky Chant",
+   "nome": "Scongiuru",
+   "lingua": "scn",
+   "glossario": "G39-0020",
+   "caratteri": 9,
+   "px": 51,
+   "maiuscolo": "SCONGIURU",
+   "maiuscolo_px": 54,
+   "dati": {
+    "tipo": "TYPE_NORMAL",
+    "classe": "stato",
+    "potenza": 0,
+    "precisione": 0,
+    "pp": 30,
+    "effetto": 240,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Recita uno scongiuro:",
+    "per cinque turni i",
+    "nemici non fanno",
+    "brutti colpi."
+   ],
+   "descrizione_righe_px": [
+    115,
+    93,
+    85,
+    67
+   ],
+   "msg_0749": [
+    "Recita uno scongiuro:\n",
+    "per cinque turni i\n",
+    "nemici non fanno\n",
+    "brutti colpi.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Scongiuru",
+    "msg_0751": "SCONGIURU",
+    "msg_0749": [
+     "Recita uno scongiuro:\n",
+     "per cinque turni i\n",
+     "nemici non fanno\n",
+     "brutti colpi.\n"
+    ]
+   }
+  },
+  {
+   "n": 382,
+   "simbolo": "MOVE_ME_FIRST",
+   "originale": "Me First",
+   "nome": "Scavarcata",
+   "lingua": "scn",
+   "glossario": "G39-0021",
+   "caratteri": 10,
+   "px": 60,
+   "maiuscolo": "SCAVARCATA",
+   "maiuscolo_px": 60,
+   "dati": {
+    "tipo": "TYPE_NORMAL",
+    "classe": "stato",
+    "potenza": 0,
+    "precisione": 0,
+    "pp": 20,
+    "effetto": 241,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Passa davanti al",
+    "nemico e usa per",
+    "primo, più forte, la",
+    "mossa che lui stava",
+    "per usare."
+   ],
+   "descrizione_righe_px": [
+    87,
+    87,
+    103,
+    103,
+    57
+   ],
+   "msg_0749": [
+    "Passa davanti al\n",
+    "nemico e usa per\n",
+    "primo, più forte, la\n",
+    "mossa che lui stava\n",
+    "per usare."
+   ],
+   "banchi": {
+    "msg_0750": "Scavarcata",
+    "msg_0751": "SCAVARCATA",
+    "msg_0749": [
+     "Passa davanti al\n",
+     "nemico e usa per\n",
+     "primo, più forte, la\n",
+     "mossa che lui stava\n",
+     "per usare."
+    ]
+   }
+  },
+  {
+   "n": 383,
+   "simbolo": "MOVE_COPYCAT",
+   "originale": "Copycat",
+   "nome": "Arripitu",
+   "lingua": "scn",
+   "glossario": "G39-0022",
+   "caratteri": 8,
+   "px": 42,
+   "maiuscolo": "ARRIPITU",
+   "maiuscolo_px": 48,
+   "dati": {
+    "tipo": "TYPE_NORMAL",
+    "classe": "stato",
+    "potenza": 0,
+    "precisione": 0,
+    "pp": 20,
+    "effetto": 242,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Ripete l’ultima mossa",
+    "usata in lotta.",
+    "Fallisce se non è",
+    "stata usata nessuna",
+    "mossa."
+   ],
+   "descrizione_righe_px": [
+    111,
+    80,
+    89,
+    110,
+    35
+   ],
+   "msg_0749": [
+    "Ripete l’ultima mossa\n",
+    "usata in lotta.\n",
+    "Fallisce se non è\n",
+    "stata usata nessuna\n",
+    "mossa."
+   ],
+   "banchi": {
+    "msg_0750": "Arripitu",
+    "msg_0751": "ARRIPITU",
+    "msg_0749": [
+     "Ripete l’ultima mossa\n",
+     "usata in lotta.\n",
+     "Fallisce se non è\n",
+     "stata usata nessuna\n",
+     "mossa."
+    ]
+   }
+  },
+  {
+   "n": 384,
+   "simbolo": "MOVE_POWER_SWAP",
+   "originale": "Power Swap",
+   "nome": "Canciaforza",
+   "lingua": "scn",
+   "glossario": "G39-0023",
+   "caratteri": 11,
+   "px": 62,
+   "maiuscolo": "CANCIAFORZA",
+   "maiuscolo_px": 66,
+   "dati": {
+    "tipo": "TYPE_PSYCHIC",
+    "classe": "stato",
+    "potenza": 0,
+    "precisione": 0,
+    "pp": 10,
+    "effetto": 243,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Con la forza psichica",
+    "scambia col nemico le",
+    "variazioni di Attacco e",
+    "Attacco Speciale."
+   ],
+   "descrizione_righe_px": [
+    111,
+    110,
+    120,
+    94
+   ],
+   "msg_0749": [
+    "Con la forza psichica\n",
+    "scambia col nemico le\n",
+    "variazioni di Attacco e\n",
+    "Attacco Speciale.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Canciaforza",
+    "msg_0751": "CANCIAFORZA",
+    "msg_0749": [
+     "Con la forza psichica\n",
+     "scambia col nemico le\n",
+     "variazioni di Attacco e\n",
+     "Attacco Speciale.\n"
+    ]
+   }
+  },
+  {
+   "n": 385,
+   "simbolo": "MOVE_GUARD_SWAP",
+   "originale": "Guard Swap",
+   "nome": "Canciascutu",
+   "lingua": "scn",
+   "glossario": "G39-0024",
+   "caratteri": 11,
+   "px": 63,
+   "maiuscolo": "CANCIASCUTU",
+   "maiuscolo_px": 66,
+   "dati": {
+    "tipo": "TYPE_PSYCHIC",
+    "classe": "stato",
+    "potenza": 0,
+    "precisione": 0,
+    "pp": 10,
+    "effetto": 244,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Con la forza psichica",
+    "scambia col nemico le",
+    "variazioni di Difesa e",
+    "Difesa Speciale."
+   ],
+   "descrizione_righe_px": [
+    111,
+    110,
+    110,
+    84
+   ],
+   "msg_0749": [
+    "Con la forza psichica\n",
+    "scambia col nemico le\n",
+    "variazioni di Difesa e\n",
+    "Difesa Speciale.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Canciascutu",
+    "msg_0751": "CANCIASCUTU",
+    "msg_0749": [
+     "Con la forza psichica\n",
+     "scambia col nemico le\n",
+     "variazioni di Difesa e\n",
+     "Difesa Speciale.\n"
+    ]
+   }
+  },
+  {
+   "n": 386,
+   "simbolo": "MOVE_PUNISHMENT",
+   "originale": "Punishment",
+   "nome": "Castiu",
+   "lingua": "scn",
+   "glossario": "G39-0025",
+   "caratteri": 6,
+   "px": 33,
+   "maiuscolo": "CASTIU",
+   "maiuscolo_px": 36,
+   "dati": {
+    "tipo": "TYPE_DARK",
+    "classe": "fisica",
+    "potenza": 1,
+    "precisione": 100,
+    "pp": 5,
+    "effetto": 245,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Più il nemico ha",
+    "aumentato le sue",
+    "statistiche, più è",
+    "forte."
+   ],
+   "descrizione_righe_px": [
+    79,
+    90,
+    94,
+    34
+   ],
+   "msg_0749": [
+    "Più il nemico ha\n",
+    "aumentato le sue\n",
+    "statistiche, più è\n",
+    "forte.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Castiu",
+    "msg_0751": "CASTIU",
+    "msg_0749": [
+     "Più il nemico ha\n",
+     "aumentato le sue\n",
+     "statistiche, più è\n",
+     "forte.\n"
+    ]
+   }
+  },
+  {
+   "n": 387,
+   "simbolo": "MOVE_LAST_RESORT",
+   "originale": "Last Resort",
+   "nome": "Ultimucorpu",
+   "lingua": "scn",
+   "glossario": "G39-0026",
+   "caratteri": 11,
+   "px": 61,
+   "maiuscolo": "ULTIMUCORPU",
+   "maiuscolo_px": 66,
+   "dati": {
+    "tipo": "TYPE_NORMAL",
+    "classe": "fisica",
+    "potenza": 130,
+    "precisione": 100,
+    "pp": 5,
+    "effetto": 246,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Si può usare solo dopo",
+    "aver usato in lotta",
+    "tutte le altre mosse",
+    "che conosce."
+   ],
+   "descrizione_righe_px": [
+    119,
+    103,
+    110,
+    69
+   ],
+   "msg_0749": [
+    "Si può usare solo dopo\n",
+    "aver usato in lotta\n",
+    "tutte le altre mosse\n",
+    "che conosce.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Ultimucorpu",
+    "msg_0751": "ULTIMUCORPU",
+    "msg_0749": [
+     "Si può usare solo dopo\n",
+     "aver usato in lotta\n",
+     "tutte le altre mosse\n",
+     "che conosce.\n"
+    ]
+   }
+  },
+  {
+   "n": 388,
+   "simbolo": "MOVE_WORRY_SEED",
+   "originale": "Worry Seed",
+   "nome": "Malasimenza",
+   "lingua": "scn",
+   "glossario": "G39-0027",
+   "caratteri": 11,
+   "px": 61,
+   "maiuscolo": "MALASIMENZA",
+   "maiuscolo_px": 66,
+   "dati": {
+    "tipo": "TYPE_GRASS",
+    "classe": "stato",
+    "potenza": 0,
+    "precisione": 100,
+    "pp": 10,
+    "effetto": 247,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Pianta sul nemico un",
+    "seme che lo",
+    "preoccupa: la sua",
+    "abilità diventa",
+    "Insonnia."
+   ],
+   "descrizione_righe_px": [
+    106,
+    60,
+    95,
+    77,
+    50
+   ],
+   "msg_0749": [
+    "Pianta sul nemico un\n",
+    "seme che lo\n",
+    "preoccupa: la sua\n",
+    "abilità diventa\n",
+    "Insonnia."
+   ],
+   "banchi": {
+    "msg_0750": "Malasimenza",
+    "msg_0751": "MALASIMENZA",
+    "msg_0749": [
+     "Pianta sul nemico un\n",
+     "seme che lo\n",
+     "preoccupa: la sua\n",
+     "abilità diventa\n",
+     "Insonnia."
+    ]
+   }
+  },
+  {
+   "n": 389,
+   "simbolo": "MOVE_SUCKER_PUNCH",
+   "originale": "Sucker Punch",
+   "nome": "Appustata",
+   "lingua": "scn",
+   "glossario": "G39-0028",
+   "caratteri": 9,
+   "px": 54,
+   "maiuscolo": "APPUSTATA",
+   "maiuscolo_px": 54,
+   "dati": {
+    "tipo": "TYPE_DARK",
+    "classe": "fisica",
+    "potenza": 80,
+    "precisione": 100,
+    "pp": 5,
+    "effetto": 248,
+    "probabilita_effetto": 0,
+    "priorita": 1
+   },
+   "descrizione": [
+    "Colpisce per primo, ma",
+    "fallisce se il nemico",
+    "non sta per",
+    "attaccare."
+   ],
+   "descrizione_righe_px": [
+    117,
+    104,
+    62,
+    59
+   ],
+   "msg_0749": [
+    "Colpisce per primo, ma\n",
+    "fallisce se il nemico\n",
+    "non sta per\n",
+    "attaccare.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Appustata",
+    "msg_0751": "APPUSTATA",
+    "msg_0749": [
+     "Colpisce per primo, ma\n",
+     "fallisce se il nemico\n",
+     "non sta per\n",
+     "attaccare.\n"
+    ]
+   }
+  },
+  {
+   "n": 390,
+   "simbolo": "MOVE_TOXIC_SPIKES",
+   "originale": "Toxic Spikes",
+   "nome": "Chiovavilenu",
+   "lingua": "scn",
+   "glossario": "G39-0029",
+   "caratteri": 12,
+   "px": 64,
+   "maiuscolo": "CHIOVAVILENU",
+   "maiuscolo_px": 72,
+   "dati": {
+    "tipo": "TYPE_POISON",
+    "classe": "stato",
+    "potenza": 0,
+    "precisione": 0,
+    "pp": 20,
+    "effetto": 249,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Sparge spine velenose",
+    "attorno ai nemici:",
+    "avvelenano chi entra",
+    "in lotta."
+   ],
+   "descrizione_righe_px": [
+    117,
+    94,
+    111,
+    46
+   ],
+   "msg_0749": [
+    "Sparge spine velenose\n",
+    "attorno ai nemici:\n",
+    "avvelenano chi entra\n",
+    "in lotta.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Chiovavilenu",
+    "msg_0751": "CHIOVAVILENU",
+    "msg_0749": [
+     "Sparge spine velenose\n",
+     "attorno ai nemici:\n",
+     "avvelenano chi entra\n",
+     "in lotta.\n"
+    ]
+   }
+  },
+  {
+   "n": 391,
+   "simbolo": "MOVE_HEART_SWAP",
+   "originale": "Heart Swap",
+   "nome": "Canciacori",
+   "lingua": "scn",
+   "glossario": "G39-0030",
+   "caratteri": 10,
+   "px": 54,
+   "maiuscolo": "CANCIACORI",
+   "maiuscolo_px": 60,
+   "dati": {
+    "tipo": "TYPE_PSYCHIC",
+    "classe": "stato",
+    "potenza": 0,
+    "precisione": 0,
+    "pp": 10,
+    "effetto": 250,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Con la forza psichica",
+    "scambia col nemico",
+    "ogni variazione delle",
+    "statistiche."
+   ],
+   "descrizione_righe_px": [
+    111,
+    96,
+    109,
+    65
+   ],
+   "msg_0749": [
+    "Con la forza psichica\n",
+    "scambia col nemico\n",
+    "ogni variazione delle\n",
+    "statistiche.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Canciacori",
+    "msg_0751": "CANCIACORI",
+    "msg_0749": [
+     "Con la forza psichica\n",
+     "scambia col nemico\n",
+     "ogni variazione delle\n",
+     "statistiche.\n"
+    ]
+   }
+  },
+  {
+   "n": 392,
+   "simbolo": "MOVE_AQUA_RING",
+   "originale": "Aqua Ring",
+   "nome": "Aneddacqua",
+   "lingua": "scn",
+   "glossario": "G39-0031",
+   "caratteri": 10,
+   "px": 60,
+   "maiuscolo": "ANEDDACQUA",
+   "maiuscolo_px": 60,
+   "dati": {
+    "tipo": "TYPE_WATER",
+    "classe": "stato",
+    "potenza": 0,
+    "precisione": 0,
+    "pp": 20,
+    "effetto": 251,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Si avvolge in un velo",
+    "d’acqua e recupera PS",
+    "a ogni turno."
+   ],
+   "descrizione_righe_px": [
+    108,
+    119,
+    70
+   ],
+   "msg_0749": [
+    "Si avvolge in un velo\n",
+    "d’acqua e recupera PS\n",
+    "a ogni turno.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Aneddacqua",
+    "msg_0751": "ANEDDACQUA",
+    "msg_0749": [
+     "Si avvolge in un velo\n",
+     "d’acqua e recupera PS\n",
+     "a ogni turno.\n"
+    ]
+   }
+  },
+  {
+   "n": 393,
+   "simbolo": "MOVE_MAGNET_RISE",
+   "originale": "Magnet Rise",
+   "nome": "Sulluvata",
+   "lingua": "scn",
+   "glossario": "G39-0032",
+   "caratteri": 9,
+   "px": 50,
+   "maiuscolo": "SULLUVATA",
+   "maiuscolo_px": 54,
+   "dati": {
+    "tipo": "TYPE_ELECTRIC",
+    "classe": "stato",
+    "potenza": 0,
+    "precisione": 0,
+    "pp": 10,
+    "effetto": 252,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Si solleva in aria col",
+    "magnetismo elettrico",
+    "per cinque turni."
+   ],
+   "descrizione_righe_px": [
+    109,
+    110,
+    91
+   ],
+   "msg_0749": [
+    "Si solleva in aria col\n",
+    "magnetismo elettrico\n",
+    "per cinque turni.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Sulluvata",
+    "msg_0751": "SULLUVATA",
+    "msg_0749": [
+     "Si solleva in aria col\n",
+     "magnetismo elettrico\n",
+     "per cinque turni.\n"
+    ]
+   }
+  },
+  {
+   "n": 394,
+   "simbolo": "MOVE_FLARE_BLITZ",
+   "originale": "Flare Blitz",
+   "nome": "Focuscuntru",
+   "lingua": "scn",
+   "glossario": "G39-0033",
+   "caratteri": 11,
+   "px": 66,
+   "maiuscolo": "FOCUSCUNTRU",
+   "maiuscolo_px": 66,
+   "dati": {
+    "tipo": "TYPE_FIRE",
+    "classe": "fisica",
+    "potenza": 120,
+    "precisione": 100,
+    "pp": 15,
+    "effetto": 253,
+    "probabilita_effetto": 10,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Si avvolge nel fuoco e",
+    "travolge il nemico.",
+    "Ferisce molto anche",
+    "chi la usa. Può",
+    "scottare."
+   ],
+   "descrizione_righe_px": [
+    116,
+    99,
+    105,
+    78,
+    53
+   ],
+   "msg_0749": [
+    "Si avvolge nel fuoco e\n",
+    "travolge il nemico.\n",
+    "Ferisce molto anche\n",
+    "chi la usa. Può\n",
+    "scottare."
+   ],
+   "banchi": {
+    "msg_0750": "Focuscuntru",
+    "msg_0751": "FOCUSCUNTRU",
+    "msg_0749": [
+     "Si avvolge nel fuoco e\n",
+     "travolge il nemico.\n",
+     "Ferisce molto anche\n",
+     "chi la usa. Può\n",
+     "scottare."
+    ]
+   }
+  },
+  {
+   "n": 395,
+   "simbolo": "MOVE_FORCE_PALM",
+   "originale": "Force Palm",
+   "nome": "Parmata",
+   "lingua": "scn",
+   "glossario": "G39-0034",
+   "caratteri": 7,
+   "px": 42,
+   "maiuscolo": "PARMATA",
+   "maiuscolo_px": 42,
+   "dati": {
+    "tipo": "TYPE_FIGHTING",
+    "classe": "fisica",
+    "potenza": 60,
+    "precisione": 100,
+    "pp": 10,
+    "effetto": 6,
+    "probabilita_effetto": 30,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Colpisce il nemico con",
+    "un’onda d’urto. Può",
+    "paralizzarlo."
+   ],
+   "descrizione_righe_px": [
+    113,
+    107,
+    70
+   ],
+   "msg_0749": [
+    "Colpisce il nemico con\n",
+    "un’onda d’urto. Può\n",
+    "paralizzarlo.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Parmata",
+    "msg_0751": "PARMATA",
+    "msg_0749": [
+     "Colpisce il nemico con\n",
+     "un’onda d’urto. Può\n",
+     "paralizzarlo.\n"
+    ]
+   }
+  },
+  {
+   "n": 396,
+   "simbolo": "MOVE_AURA_SPHERE",
+   "originale": "Aura Sphere",
+   "nome": "Aurabadda",
+   "lingua": "scn",
+   "glossario": "G39-0035",
+   "caratteri": 9,
+   "px": 54,
+   "maiuscolo": "AURABADDA",
+   "maiuscolo_px": 54,
+   "dati": {
+    "tipo": "TYPE_FIGHTING",
+    "classe": "speciale",
+    "potenza": 90,
+    "precisione": 0,
+    "pp": 20,
+    "effetto": 17,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Libera dal profondo",
+    "del corpo una sfera di",
+    "aura. Non sbaglia mai."
+   ],
+   "descrizione_righe_px": [
+    104,
+    118,
+    116
+   ],
+   "msg_0749": [
+    "Libera dal profondo\n",
+    "del corpo una sfera di\n",
+    "aura. Non sbaglia mai.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Aurabadda",
+    "msg_0751": "AURABADDA",
+    "msg_0749": [
+     "Libera dal profondo\n",
+     "del corpo una sfera di\n",
+     "aura. Non sbaglia mai.\n"
+    ]
+   }
+  },
+  {
+   "n": 397,
+   "simbolo": "MOVE_ROCK_POLISH",
+   "originale": "Rock Polish",
+   "nome": "Lustrapetra",
+   "lingua": "scn",
+   "glossario": "G39-0036",
+   "caratteri": 11,
+   "px": 66,
+   "maiuscolo": "LUSTRAPETRA",
+   "maiuscolo_px": 66,
+   "dati": {
+    "tipo": "TYPE_ROCK",
+    "classe": "stato",
+    "potenza": 0,
+    "precisione": 0,
+    "pp": 20,
+    "effetto": 52,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Leviga il corpo per",
+    "ridurre l’attrito e",
+    "aumenta molto la",
+    "Velocità."
+   ],
+   "descrizione_righe_px": [
+    100,
+    101,
+    88,
+    48
+   ],
+   "msg_0749": [
+    "Leviga il corpo per\n",
+    "ridurre l’attrito e\n",
+    "aumenta molto la\n",
+    "Velocità.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Lustrapetra",
+    "msg_0751": "LUSTRAPETRA",
+    "msg_0749": [
+     "Leviga il corpo per\n",
+     "ridurre l’attrito e\n",
+     "aumenta molto la\n",
+     "Velocità.\n"
+    ]
+   }
+  },
+  {
+   "n": 398,
+   "simbolo": "MOVE_POISON_JAB",
+   "originale": "Poison Jab",
+   "nome": "Puncivilenu",
+   "lingua": "scn",
+   "glossario": "G39-0037",
+   "caratteri": 11,
+   "px": 58,
+   "maiuscolo": "PUNCIVILENU",
+   "maiuscolo_px": 66,
+   "dati": {
+    "tipo": "TYPE_POISON",
+    "classe": "fisica",
+    "potenza": 80,
+    "precisione": 100,
+    "pp": 20,
+    "effetto": 2,
+    "probabilita_effetto": 30,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Colpisce con un",
+    "tentacolo o un",
+    "braccio avvelenato.",
+    "Può avvelenare il",
+    "nemico."
+   ],
+   "descrizione_righe_px": [
+    81,
+    78,
+    106,
+    91,
+    38
+   ],
+   "msg_0749": [
+    "Colpisce con un\n",
+    "tentacolo o un\n",
+    "braccio avvelenato.\n",
+    "Può avvelenare il\n",
+    "nemico."
+   ],
+   "banchi": {
+    "msg_0750": "Puncivilenu",
+    "msg_0751": "PUNCIVILENU",
+    "msg_0749": [
+     "Colpisce con un\n",
+     "tentacolo o un\n",
+     "braccio avvelenato.\n",
+     "Può avvelenare il\n",
+     "nemico."
+    ]
+   }
+  },
+  {
+   "n": 399,
+   "simbolo": "MOVE_DARK_PULSE",
+   "originale": "Dark Pulse",
+   "nome": "Scurupulsu",
+   "lingua": "scn",
+   "glossario": "G39-0038",
+   "caratteri": 10,
+   "px": 58,
+   "maiuscolo": "SCURUPULSU",
+   "maiuscolo_px": 60,
+   "dati": {
+    "tipo": "TYPE_DARK",
+    "classe": "speciale",
+    "potenza": 80,
+    "precisione": 100,
+    "pp": 15,
+    "effetto": 31,
+    "probabilita_effetto": 20,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Emana un’aura orribile",
+    "piena di pensieri cupi.",
+    "Può far tentennare il",
+    "nemico."
+   ],
+   "descrizione_righe_px": [
+    119,
+    116,
+    114,
+    38
+   ],
+   "msg_0749": [
+    "Emana un’aura orribile\n",
+    "piena di pensieri cupi.\n",
+    "Può far tentennare il\n",
+    "nemico.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Scurupulsu",
+    "msg_0751": "SCURUPULSU",
+    "msg_0749": [
+     "Emana un’aura orribile\n",
+     "piena di pensieri cupi.\n",
+     "Può far tentennare il\n",
+     "nemico.\n"
+    ]
+   }
+  },
+  {
+   "n": 400,
+   "simbolo": "MOVE_NIGHT_SLASH",
+   "originale": "Night Slash",
+   "nome": "Tagghianotti",
+   "lingua": "scn",
+   "glossario": "G39-0039",
+   "caratteri": 12,
+   "px": 66,
+   "maiuscolo": "TAGGHIANOTTI",
+   "maiuscolo_px": 72,
+   "dati": {
+    "tipo": "TYPE_DARK",
+    "classe": "fisica",
+    "potenza": 70,
+    "precisione": 100,
+    "pp": 15,
+    "effetto": 43,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Colpisce il nemico al",
+    "primo momento buono.",
+    "È facile che sia un",
+    "brutto colpo."
+   ],
+   "descrizione_righe_px": [
+    105,
+    112,
+    97,
+    73
+   ],
+   "msg_0749": [
+    "Colpisce il nemico al\n",
+    "primo momento buono.\n",
+    "È facile che sia un\n",
+    "brutto colpo.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Tagghianotti",
+    "msg_0751": "TAGGHIANOTTI",
+    "msg_0749": [
+     "Colpisce il nemico al\n",
+     "primo momento buono.\n",
+     "È facile che sia un\n",
+     "brutto colpo.\n"
+    ]
+   }
+  },
+  {
+   "n": 401,
+   "simbolo": "MOVE_AQUA_TAIL",
+   "originale": "Aqua Tail",
+   "nome": "Cudacqua",
+   "lingua": "scn",
+   "glossario": "G39-0040",
+   "caratteri": 8,
+   "px": 48,
+   "maiuscolo": "CUDACQUA",
+   "maiuscolo_px": 48,
+   "dati": {
+    "tipo": "TYPE_WATER",
+    "classe": "fisica",
+    "potenza": 90,
+    "precisione": 90,
+    "pp": 10,
+    "effetto": 0,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Agita la coda come",
+    "un’onda furiosa in una",
+    "tempesta."
+   ],
+   "descrizione_righe_px": [
+    97,
+    118,
+    53
+   ],
+   "msg_0749": [
+    "Agita la coda come\n",
+    "un’onda furiosa in una\n",
+    "tempesta.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Cudacqua",
+    "msg_0751": "CUDACQUA",
+    "msg_0749": [
+     "Agita la coda come\n",
+     "un’onda furiosa in una\n",
+     "tempesta.\n"
+    ]
+   }
+  },
+  {
+   "n": 402,
+   "simbolo": "MOVE_SEED_BOMB",
+   "originale": "Seed Bomb",
+   "nome": "Ciciribumma",
+   "lingua": "scn",
+   "glossario": "G39-0041",
+   "caratteri": 11,
+   "px": 57,
+   "maiuscolo": "CICIRIBUMMA",
+   "maiuscolo_px": 66,
+   "dati": {
+    "tipo": "TYPE_GRASS",
+    "classe": "fisica",
+    "potenza": 80,
+    "precisione": 100,
+    "pp": 15,
+    "effetto": 0,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Fa piovere sul nemico",
+    "una raffica di semi dal",
+    "guscio duro."
+   ],
+   "descrizione_righe_px": [
+    112,
+    117,
+    66
+   ],
+   "msg_0749": [
+    "Fa piovere sul nemico\n",
+    "una raffica di semi dal\n",
+    "guscio duro.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Ciciribumma",
+    "msg_0751": "CICIRIBUMMA",
+    "msg_0749": [
+     "Fa piovere sul nemico\n",
+     "una raffica di semi dal\n",
+     "guscio duro.\n"
+    ]
+   }
+  },
+  {
+   "n": 403,
+   "simbolo": "MOVE_AIR_SLASH",
+   "originale": "Air Slash",
+   "nome": "Tagghiacelu",
+   "lingua": "scn",
+   "glossario": "G39-0042",
+   "caratteri": 11,
+   "px": 61,
+   "maiuscolo": "TAGGHIACELU",
+   "maiuscolo_px": 66,
+   "dati": {
+    "tipo": "TYPE_FLYING",
+    "classe": "speciale",
+    "potenza": 75,
+    "precisione": 95,
+    "pp": 20,
+    "effetto": 31,
+    "probabilita_effetto": 30,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Una lama d’aria che",
+    "taglia anche il cielo.",
+    "Può far tentennare il",
+    "nemico."
+   ],
+   "descrizione_righe_px": [
+    102,
+    110,
+    114,
+    38
+   ],
+   "msg_0749": [
+    "Una lama d’aria che\n",
+    "taglia anche il cielo.\n",
+    "Può far tentennare il\n",
+    "nemico.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Tagghiacelu",
+    "msg_0751": "TAGGHIACELU",
+    "msg_0749": [
+     "Una lama d’aria che\n",
+     "taglia anche il cielo.\n",
+     "Può far tentennare il\n",
+     "nemico.\n"
+    ]
+   }
+  },
+  {
+   "n": 404,
+   "simbolo": "MOVE_X_SCISSOR",
+   "originale": "X-Scissor",
+   "nome": "Furficiata",
+   "lingua": "scn",
+   "glossario": "G39-0043",
+   "caratteri": 10,
+   "px": 53,
+   "maiuscolo": "FURFICIATA",
+   "maiuscolo_px": 60,
+   "dati": {
+    "tipo": "TYPE_BUG",
+    "classe": "fisica",
+    "potenza": 80,
+    "precisione": 100,
+    "pp": 15,
+    "effetto": 0,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Incrocia falci o",
+    "artigli come un paio di",
+    "forbici e colpisce il",
+    "nemico."
+   ],
+   "descrizione_righe_px": [
+    83,
+    116,
+    103,
+    38
+   ],
+   "msg_0749": [
+    "Incrocia falci o\n",
+    "artigli come un paio di\n",
+    "forbici e colpisce il\n",
+    "nemico.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Furficiata",
+    "msg_0751": "FURFICIATA",
+    "msg_0749": [
+     "Incrocia falci o\n",
+     "artigli come un paio di\n",
+     "forbici e colpisce il\n",
+     "nemico.\n"
+    ]
+   }
+  },
+  {
+   "n": 405,
+   "simbolo": "MOVE_BUG_BUZZ",
+   "originale": "Bug Buzz",
+   "nome": "Zuzzurìu",
+   "lingua": "scn",
+   "glossario": "G39-0044",
+   "caratteri": 8,
+   "px": 46,
+   "maiuscolo": "ZUZZURÌU",
+   "maiuscolo_px": 48,
+   "dati": {
+    "tipo": "TYPE_BUG",
+    "classe": "speciale",
+    "potenza": 90,
+    "precisione": 100,
+    "pp": 10,
+    "effetto": 72,
+    "probabilita_effetto": 10,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Fa vibrare le ali e",
+    "crea un’onda sonora",
+    "dannosa. Può calare",
+    "la Difesa Speciale del",
+    "nemico."
+   ],
+   "descrizione_righe_px": [
+    96,
+    109,
+    107,
+    113,
+    38
+   ],
+   "msg_0749": [
+    "Fa vibrare le ali e\n",
+    "crea un’onda sonora\n",
+    "dannosa. Può calare\n",
+    "la Difesa Speciale del\n",
+    "nemico."
+   ],
+   "banchi": {
+    "msg_0750": "Zuzzurìu",
+    "msg_0751": "ZUZZURÌU",
+    "msg_0749": [
+     "Fa vibrare le ali e\n",
+     "crea un’onda sonora\n",
+     "dannosa. Può calare\n",
+     "la Difesa Speciale del\n",
+     "nemico."
+    ]
+   }
+  },
+  {
+   "n": 406,
+   "simbolo": "MOVE_DRAGON_PULSE",
+   "originale": "Dragon Pulse",
+   "nome": "Dracupulsu",
+   "lingua": "scn",
+   "glossario": "G39-0045",
+   "caratteri": 10,
+   "px": 58,
+   "maiuscolo": "DRACUPULSU",
+   "maiuscolo_px": 60,
+   "dati": {
+    "tipo": "TYPE_DRAGON",
+    "classe": "speciale",
+    "potenza": 90,
+    "precisione": 100,
+    "pp": 10,
+    "effetto": 0,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Colpisce il nemico con",
+    "un’onda d’urto che",
+    "esce dalla bocca",
+    "spalancata."
+   ],
+   "descrizione_righe_px": [
+    113,
+    102,
+    88,
+    63
+   ],
+   "msg_0749": [
+    "Colpisce il nemico con\n",
+    "un’onda d’urto che\n",
+    "esce dalla bocca\n",
+    "spalancata.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Dracupulsu",
+    "msg_0751": "DRACUPULSU",
+    "msg_0749": [
+     "Colpisce il nemico con\n",
+     "un’onda d’urto che\n",
+     "esce dalla bocca\n",
+     "spalancata.\n"
+    ]
+   }
+  },
+  {
+   "n": 407,
+   "simbolo": "MOVE_DRAGON_RUSH",
+   "originale": "Dragon Rush",
+   "nome": "Dracucursa",
+   "lingua": "scn",
+   "glossario": "G39-0046",
+   "caratteri": 10,
+   "px": 60,
+   "maiuscolo": "DRACUCURSA",
+   "maiuscolo_px": 60,
+   "dati": {
+    "tipo": "TYPE_DRAGON",
+    "classe": "fisica",
+    "potenza": 100,
+    "precisione": 75,
+    "pp": 10,
+    "effetto": 31,
+    "probabilita_effetto": 20,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Carica il nemico con",
+    "una minaccia",
+    "travolgente. Può",
+    "farlo tentennare."
+   ],
+   "descrizione_righe_px": [
+    103,
+    64,
+    91,
+    96
+   ],
+   "msg_0749": [
+    "Carica il nemico con\n",
+    "una minaccia\n",
+    "travolgente. Può\n",
+    "farlo tentennare.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Dracucursa",
+    "msg_0751": "DRACUCURSA",
+    "msg_0749": [
+     "Carica il nemico con\n",
+     "una minaccia\n",
+     "travolgente. Può\n",
+     "farlo tentennare.\n"
+    ]
+   }
+  },
+  {
+   "n": 408,
+   "simbolo": "MOVE_POWER_GEM",
+   "originale": "Power Gem",
+   "nome": "Smiraldata",
+   "lingua": "scn",
+   "glossario": "G39-0047",
+   "caratteri": 10,
+   "px": 55,
+   "maiuscolo": "SMIRALDATA",
+   "maiuscolo_px": 60,
+   "dati": {
+    "tipo": "TYPE_ROCK",
+    "classe": "speciale",
+    "potenza": 70,
+    "precisione": 100,
+    "pp": 20,
+    "effetto": 0,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Attacca con un raggio",
+    "di luce che brilla come",
+    "fatto di gemme."
+   ],
+   "descrizione_righe_px": [
+    117,
+    118,
+    81
+   ],
+   "msg_0749": [
+    "Attacca con un raggio\n",
+    "di luce che brilla come\n",
+    "fatto di gemme.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Smiraldata",
+    "msg_0751": "SMIRALDATA",
+    "msg_0749": [
+     "Attacca con un raggio\n",
+     "di luce che brilla come\n",
+     "fatto di gemme.\n"
+    ]
+   }
+  },
+  {
+   "n": 409,
+   "simbolo": "MOVE_DRAIN_PUNCH",
+   "originale": "Drain Punch",
+   "nome": "Sucapugnu",
+   "lingua": "scn",
+   "glossario": "G39-0048",
+   "caratteri": 9,
+   "px": 54,
+   "maiuscolo": "SUCAPUGNU",
+   "maiuscolo_px": 54,
+   "dati": {
+    "tipo": "TYPE_FIGHTING",
+    "classe": "fisica",
+    "potenza": 60,
+    "precisione": 100,
+    "pp": 5,
+    "effetto": 3,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Un pugno che assorbe",
+    "energia: chi la usa",
+    "recupera metà del",
+    "danno inflitto."
+   ],
+   "descrizione_righe_px": [
+    114,
+    99,
+    96,
+    78
+   ],
+   "msg_0749": [
+    "Un pugno che assorbe\n",
+    "energia: chi la usa\n",
+    "recupera metà del\n",
+    "danno inflitto.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Sucapugnu",
+    "msg_0751": "SUCAPUGNU",
+    "msg_0749": [
+     "Un pugno che assorbe\n",
+     "energia: chi la usa\n",
+     "recupera metà del\n",
+     "danno inflitto.\n"
+    ]
+   }
+  },
+  {
+   "n": 410,
+   "simbolo": "MOVE_VACUUM_WAVE",
+   "originale": "Vacuum Wave",
+   "nome": "Unnavacanti",
+   "lingua": "scn",
+   "glossario": "G39-0049",
+   "caratteri": 11,
+   "px": 63,
+   "maiuscolo": "UNNAVACANTI",
+   "maiuscolo_px": 66,
+   "dati": {
+    "tipo": "TYPE_FIGHTING",
+    "classe": "speciale",
+    "potenza": 40,
+    "precisione": 100,
+    "pp": 30,
+    "effetto": 103,
+    "probabilita_effetto": 0,
+    "priorita": 1
+   },
+   "descrizione": [
+    "Fa roteare i pugni e",
+    "scaglia un’onda di",
+    "vuoto. Colpisce",
+    "sempre per primo."
+   ],
+   "descrizione_righe_px": [
+    106,
+    95,
+    82,
+    94
+   ],
+   "msg_0749": [
+    "Fa roteare i pugni e\n",
+    "scaglia un’onda di\n",
+    "vuoto. Colpisce\n",
+    "sempre per primo.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Unnavacanti",
+    "msg_0751": "UNNAVACANTI",
+    "msg_0749": [
+     "Fa roteare i pugni e\n",
+     "scaglia un’onda di\n",
+     "vuoto. Colpisce\n",
+     "sempre per primo.\n"
+    ]
+   }
+  },
+  {
+   "n": 411,
+   "simbolo": "MOVE_FOCUS_BLAST",
+   "originale": "Focus Blast",
+   "nome": "Mirabadda",
+   "lingua": "scn",
+   "glossario": "G39-0050",
+   "caratteri": 9,
+   "px": 51,
+   "maiuscolo": "MIRABADDA",
+   "maiuscolo_px": 54,
+   "dati": {
+    "tipo": "TYPE_FIGHTING",
+    "classe": "speciale",
+    "potenza": 120,
+    "precisione": 70,
+    "pp": 5,
+    "effetto": 72,
+    "probabilita_effetto": 10,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Si concentra al",
+    "massimo e libera la sua",
+    "forza. Può calare la",
+    "Difesa Speciale del",
+    "nemico."
+   ],
+   "descrizione_righe_px": [
+    81,
+    120,
+    108,
+    99,
+    38
+   ],
+   "msg_0749": [
+    "Si concentra al\n",
+    "massimo e libera la sua\n",
+    "forza. Può calare la\n",
+    "Difesa Speciale del\n",
+    "nemico."
+   ],
+   "banchi": {
+    "msg_0750": "Mirabadda",
+    "msg_0751": "MIRABADDA",
+    "msg_0749": [
+     "Si concentra al\n",
+     "massimo e libera la sua\n",
+     "forza. Può calare la\n",
+     "Difesa Speciale del\n",
+     "nemico."
+    ]
+   }
+  },
+  {
+   "n": 412,
+   "simbolo": "MOVE_ENERGY_BALL",
+   "originale": "Energy Ball",
+   "nome": "Naturabadda",
+   "lingua": "scn",
+   "glossario": "G39-0051",
+   "caratteri": 11,
+   "px": 66,
+   "maiuscolo": "NATURABADDA",
+   "maiuscolo_px": 66,
+   "dati": {
+    "tipo": "TYPE_GRASS",
+    "classe": "speciale",
+    "potenza": 80,
+    "precisione": 100,
+    "pp": 10,
+    "effetto": 72,
+    "probabilita_effetto": 10,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Raccoglie la forza",
+    "della natura e la",
+    "scaglia. Può calare la",
+    "Difesa Speciale del",
+    "nemico."
+   ],
+   "descrizione_righe_px": [
+    96,
+    90,
+    116,
+    99,
+    38
+   ],
+   "msg_0749": [
+    "Raccoglie la forza\n",
+    "della natura e la\n",
+    "scaglia. Può calare la\n",
+    "Difesa Speciale del\n",
+    "nemico."
+   ],
+   "banchi": {
+    "msg_0750": "Naturabadda",
+    "msg_0751": "NATURABADDA",
+    "msg_0749": [
+     "Raccoglie la forza\n",
+     "della natura e la\n",
+     "scaglia. Può calare la\n",
+     "Difesa Speciale del\n",
+     "nemico."
+    ]
+   }
+  },
+  {
+   "n": 413,
+   "simbolo": "MOVE_BRAVE_BIRD",
+   "originale": "Brave Bird",
+   "nome": "Scapicoddu",
+   "lingua": "scn",
+   "glossario": "G39-0052",
+   "caratteri": 10,
+   "px": 57,
+   "maiuscolo": "SCAPICODDU",
+   "maiuscolo_px": 60,
+   "dati": {
+    "tipo": "TYPE_FLYING",
+    "classe": "fisica",
+    "potenza": 120,
+    "precisione": 100,
+    "pp": 15,
+    "effetto": 198,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Chiude le ali e carica",
+    "a bassa quota.",
+    "Ferisce molto anche",
+    "chi la usa."
+   ],
+   "descrizione_righe_px": [
+    111,
+    79,
+    105,
+    56
+   ],
+   "msg_0749": [
+    "Chiude le ali e carica\n",
+    "a bassa quota.\n",
+    "Ferisce molto anche\n",
+    "chi la usa.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Scapicoddu",
+    "msg_0751": "SCAPICODDU",
+    "msg_0749": [
+     "Chiude le ali e carica\n",
+     "a bassa quota.\n",
+     "Ferisce molto anche\n",
+     "chi la usa.\n"
+    ]
+   }
+  },
+  {
+   "n": 414,
+   "simbolo": "MOVE_EARTH_POWER",
+   "originale": "Earth Power",
+   "nome": "Forzaterra",
+   "lingua": "scn",
+   "glossario": "G39-0053",
+   "caratteri": 10,
+   "px": 60,
+   "maiuscolo": "FORZATERRA",
+   "maiuscolo_px": 60,
+   "dati": {
+    "tipo": "TYPE_GROUND",
+    "classe": "speciale",
+    "potenza": 90,
+    "precisione": 100,
+    "pp": 10,
+    "effetto": 72,
+    "probabilita_effetto": 10,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Fa eruttare il",
+    "terreno sotto il",
+    "nemico. Può calarne la",
+    "Difesa Speciale."
+   ],
+   "descrizione_righe_px": [
+    75,
+    87,
+    118,
+    84
+   ],
+   "msg_0749": [
+    "Fa eruttare il\n",
+    "terreno sotto il\n",
+    "nemico. Può calarne la\n",
+    "Difesa Speciale.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Forzaterra",
+    "msg_0751": "FORZATERRA",
+    "msg_0749": [
+     "Fa eruttare il\n",
+     "terreno sotto il\n",
+     "nemico. Può calarne la\n",
+     "Difesa Speciale.\n"
+    ]
+   }
+  },
+  {
+   "n": 415,
+   "simbolo": "MOVE_SWITCHEROO",
+   "originale": "Switcheroo",
+   "nome": "Barattu",
+   "lingua": "scn",
+   "glossario": "G39-0054",
+   "caratteri": 7,
+   "px": 42,
+   "maiuscolo": "BARATTU",
+   "maiuscolo_px": 42,
+   "dati": {
+    "tipo": "TYPE_DARK",
+    "classe": "stato",
+    "potenza": 0,
+    "precisione": 100,
+    "pp": 10,
+    "effetto": 177,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Scambia gli strumenti",
+    "col nemico così in",
+    "fretta che l’occhio",
+    "non lo segue."
+   ],
+   "descrizione_righe_px": [
+    111,
+    92,
+    103,
+    71
+   ],
+   "msg_0749": [
+    "Scambia gli strumenti\n",
+    "col nemico così in\n",
+    "fretta che l’occhio\n",
+    "non lo segue.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Barattu",
+    "msg_0751": "BARATTU",
+    "msg_0749": [
+     "Scambia gli strumenti\n",
+     "col nemico così in\n",
+     "fretta che l’occhio\n",
+     "non lo segue.\n"
+    ]
+   }
+  },
+  {
+   "n": 416,
+   "simbolo": "MOVE_GIGA_IMPACT",
+   "originale": "Giga Impact",
+   "nome": "Scuntrazzu",
+   "lingua": "scn",
+   "glossario": "G39-0055",
+   "caratteri": 10,
+   "px": 60,
+   "maiuscolo": "SCUNTRAZZU",
+   "maiuscolo_px": 60,
+   "dati": {
+    "tipo": "TYPE_NORMAL",
+    "classe": "fisica",
+    "potenza": 150,
+    "precisione": 90,
+    "pp": 5,
+    "effetto": 80,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Carica il nemico con",
+    "tutta la forza. Al",
+    "turno dopo chi la usa",
+    "deve riprendere fiato."
+   ],
+   "descrizione_righe_px": [
+    103,
+    96,
+    113,
+    120
+   ],
+   "msg_0749": [
+    "Carica il nemico con\n",
+    "tutta la forza. Al\n",
+    "turno dopo chi la usa\n",
+    "deve riprendere fiato.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Scuntrazzu",
+    "msg_0751": "SCUNTRAZZU",
+    "msg_0749": [
+     "Carica il nemico con\n",
+     "tutta la forza. Al\n",
+     "turno dopo chi la usa\n",
+     "deve riprendere fiato.\n"
+    ]
+   }
+  },
+  {
+   "n": 417,
+   "simbolo": "MOVE_NASTY_PLOT",
+   "originale": "Nasty Plot",
+   "nome": "Cumplottu",
+   "lingua": "scn",
+   "glossario": "G39-0056",
+   "caratteri": 9,
+   "px": 52,
+   "maiuscolo": "CUMPLOTTU",
+   "maiuscolo_px": 54,
+   "dati": {
+    "tipo": "TYPE_DARK",
+    "classe": "stato",
+    "potenza": 0,
+    "precisione": 0,
+    "pp": 20,
+    "effetto": 53,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Pensa cose malvagie",
+    "per stimolare il",
+    "cervello. Aumenta",
+    "molto l’Attacco",
+    "Speciale."
+   ],
+   "descrizione_righe_px": [
+    105,
+    82,
+    95,
+    83,
+    48
+   ],
+   "msg_0749": [
+    "Pensa cose malvagie\n",
+    "per stimolare il\n",
+    "cervello. Aumenta\n",
+    "molto l’Attacco\n",
+    "Speciale."
+   ],
+   "banchi": {
+    "msg_0750": "Cumplottu",
+    "msg_0751": "CUMPLOTTU",
+    "msg_0749": [
+     "Pensa cose malvagie\n",
+     "per stimolare il\n",
+     "cervello. Aumenta\n",
+     "molto l’Attacco\n",
+     "Speciale."
+    ]
+   }
+  },
+  {
+   "n": 418,
+   "simbolo": "MOVE_BULLET_PUNCH",
+   "originale": "Bullet Punch",
+   "nome": "Lampupugnu",
+   "lingua": "scn",
+   "glossario": "G39-0057",
+   "caratteri": 10,
+   "px": 60,
+   "maiuscolo": "LAMPUPUGNU",
+   "maiuscolo_px": 60,
+   "dati": {
+    "tipo": "TYPE_STEEL",
+    "classe": "fisica",
+    "potenza": 40,
+    "precisione": 100,
+    "pp": 30,
+    "effetto": 103,
+    "probabilita_effetto": 0,
+    "priorita": 1
+   },
+   "descrizione": [
+    "Un pugno duro e",
+    "veloce come un",
+    "proiettile. Colpisce",
+    "sempre per primo."
+   ],
+   "descrizione_righe_px": [
+    84,
+    78,
+    104,
+    94
+   ],
+   "msg_0749": [
+    "Un pugno duro e\n",
+    "veloce come un\n",
+    "proiettile. Colpisce\n",
+    "sempre per primo.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Lampupugnu",
+    "msg_0751": "LAMPUPUGNU",
+    "msg_0749": [
+     "Un pugno duro e\n",
+     "veloce come un\n",
+     "proiettile. Colpisce\n",
+     "sempre per primo.\n"
+    ]
+   }
+  },
+  {
+   "n": 419,
+   "simbolo": "MOVE_AVALANCHE",
+   "originale": "Avalanche",
+   "nome": "Allavancata",
+   "lingua": "scn",
+   "glossario": "G39-0058",
+   "caratteri": 11,
+   "px": 62,
+   "maiuscolo": "ALLAVANCATA",
+   "maiuscolo_px": 66,
+   "dati": {
+    "tipo": "TYPE_ICE",
+    "classe": "fisica",
+    "potenza": 60,
+    "precisione": 100,
+    "pp": 10,
+    "effetto": 185,
+    "probabilita_effetto": 0,
+    "priorita": -4
+   },
+   "descrizione": [
+    "Se nello stesso turno",
+    "ha subito un colpo dal",
+    "nemico, fa il doppio",
+    "del danno."
+   ],
+   "descrizione_righe_px": [
+    116,
+    117,
+    101,
+    55
+   ],
+   "msg_0749": [
+    "Se nello stesso turno\n",
+    "ha subito un colpo dal\n",
+    "nemico, fa il doppio\n",
+    "del danno.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Allavancata",
+    "msg_0751": "ALLAVANCATA",
+    "msg_0749": [
+     "Se nello stesso turno\n",
+     "ha subito un colpo dal\n",
+     "nemico, fa il doppio\n",
+     "del danno.\n"
+    ]
+   }
+  },
+  {
+   "n": 420,
+   "simbolo": "MOVE_ICE_SHARD",
+   "originale": "Ice Shard",
+   "nome": "Lestujacciu",
+   "lingua": "scn",
+   "glossario": "G39-0059",
+   "caratteri": 11,
+   "px": 62,
+   "maiuscolo": "LESTUJACCIU",
+   "maiuscolo_px": 66,
+   "dati": {
+    "tipo": "TYPE_ICE",
+    "classe": "fisica",
+    "potenza": 40,
+    "precisione": 100,
+    "pp": 30,
+    "effetto": 103,
+    "probabilita_effetto": 0,
+    "priorita": 1
+   },
+   "descrizione": [
+    "Ghiaccia all’istante",
+    "pezzi di ghiaccio e li",
+    "scaglia. Colpisce",
+    "sempre per primo."
+   ],
+   "descrizione_righe_px": [
+    104,
+    107,
+    89,
+    94
+   ],
+   "msg_0749": [
+    "Ghiaccia all’istante\n",
+    "pezzi di ghiaccio e li\n",
+    "scaglia. Colpisce\n",
+    "sempre per primo.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Lestujacciu",
+    "msg_0751": "LESTUJACCIU",
+    "msg_0749": [
+     "Ghiaccia all’istante\n",
+     "pezzi di ghiaccio e li\n",
+     "scaglia. Colpisce\n",
+     "sempre per primo.\n"
+    ]
+   }
+  },
+  {
+   "n": 421,
+   "simbolo": "MOVE_SHADOW_CLAW",
+   "originale": "Shadow Claw",
+   "nome": "Ummiragranfa",
+   "lingua": "scn",
+   "glossario": "G39-0060",
+   "caratteri": 12,
+   "px": 68,
+   "maiuscolo": "UMMIRAGRANFA",
+   "maiuscolo_px": 72,
+   "dati": {
+    "tipo": "TYPE_GHOST",
+    "classe": "fisica",
+    "potenza": 70,
+    "precisione": 100,
+    "pp": 15,
+    "effetto": 43,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Colpisce con artigli",
+    "aguzzi fatti d’ombra.",
+    "È facile che sia un",
+    "brutto colpo."
+   ],
+   "descrizione_righe_px": [
+    103,
+    113,
+    97,
+    73
+   ],
+   "msg_0749": [
+    "Colpisce con artigli\n",
+    "aguzzi fatti d’ombra.\n",
+    "È facile che sia un\n",
+    "brutto colpo.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Ummiragranfa",
+    "msg_0751": "UMMIRAGRANFA",
+    "msg_0749": [
+     "Colpisce con artigli\n",
+     "aguzzi fatti d’ombra.\n",
+     "È facile che sia un\n",
+     "brutto colpo.\n"
+    ]
+   }
+  },
+  {
+   "n": 422,
+   "simbolo": "MOVE_THUNDER_FANG",
+   "originale": "Thunder Fang",
+   "nome": "Zannatronu",
+   "lingua": "scn",
+   "glossario": "G39-0061",
+   "caratteri": 10,
+   "px": 60,
+   "maiuscolo": "ZANNATRONU",
+   "maiuscolo_px": 60,
+   "dati": {
+    "tipo": "TYPE_ELECTRIC",
+    "classe": "fisica",
+    "potenza": 65,
+    "precisione": 95,
+    "pp": 15,
+    "effetto": 275,
+    "probabilita_effetto": 10,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Morde con zanne",
+    "elettriche. Può far",
+    "tentennare o",
+    "paralizzare il nemico."
+   ],
+   "descrizione_righe_px": [
+    86,
+    103,
+    70,
+    114
+   ],
+   "msg_0749": [
+    "Morde con zanne\n",
+    "elettriche. Può far\n",
+    "tentennare o\n",
+    "paralizzare il nemico.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Zannatronu",
+    "msg_0751": "ZANNATRONU",
+    "msg_0749": [
+     "Morde con zanne\n",
+     "elettriche. Può far\n",
+     "tentennare o\n",
+     "paralizzare il nemico.\n"
+    ]
+   }
+  },
+  {
+   "n": 423,
+   "simbolo": "MOVE_ICE_FANG",
+   "originale": "Ice Fang",
+   "nome": "Zannajacciu",
+   "lingua": "scn",
+   "glossario": "G39-0062",
+   "caratteri": 11,
+   "px": 62,
+   "maiuscolo": "ZANNAJACCIU",
+   "maiuscolo_px": 66,
+   "dati": {
+    "tipo": "TYPE_ICE",
+    "classe": "fisica",
+    "potenza": 65,
+    "precisione": 95,
+    "pp": 15,
+    "effetto": 274,
+    "probabilita_effetto": 10,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Morde con zanne",
+    "gelate. Può far",
+    "tentennare o",
+    "congelare il nemico."
+   ],
+   "descrizione_righe_px": [
+    86,
+    82,
+    70,
+    105
+   ],
+   "msg_0749": [
+    "Morde con zanne\n",
+    "gelate. Può far\n",
+    "tentennare o\n",
+    "congelare il nemico.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Zannajacciu",
+    "msg_0751": "ZANNAJACCIU",
+    "msg_0749": [
+     "Morde con zanne\n",
+     "gelate. Può far\n",
+     "tentennare o\n",
+     "congelare il nemico.\n"
+    ]
+   }
+  },
+  {
+   "n": 424,
+   "simbolo": "MOVE_FIRE_FANG",
+   "originale": "Fire Fang",
+   "nome": "Zannafocu",
+   "lingua": "scn",
+   "glossario": "G39-0063",
+   "caratteri": 9,
+   "px": 53,
+   "maiuscolo": "ZANNAFOCU",
+   "maiuscolo_px": 54,
+   "dati": {
+    "tipo": "TYPE_FIRE",
+    "classe": "fisica",
+    "potenza": 65,
+    "precisione": 95,
+    "pp": 15,
+    "effetto": 273,
+    "probabilita_effetto": 10,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Morde con zanne",
+    "infuocate. Può far",
+    "tentennare o",
+    "scottare il nemico."
+   ],
+   "descrizione_righe_px": [
+    86,
+    98,
+    70,
+    101
+   ],
+   "msg_0749": [
+    "Morde con zanne\n",
+    "infuocate. Può far\n",
+    "tentennare o\n",
+    "scottare il nemico.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Zannafocu",
+    "msg_0751": "ZANNAFOCU",
+    "msg_0749": [
+     "Morde con zanne\n",
+     "infuocate. Può far\n",
+     "tentennare o\n",
+     "scottare il nemico.\n"
+    ]
+   }
+  },
+  {
+   "n": 425,
+   "simbolo": "MOVE_SHADOW_SNEAK",
+   "originale": "Shadow Sneak",
+   "nome": "Ummiralesta",
+   "lingua": "scn",
+   "glossario": "G39-0064",
+   "caratteri": 11,
+   "px": 61,
+   "maiuscolo": "UMMIRALESTA",
+   "maiuscolo_px": 66,
+   "dati": {
+    "tipo": "TYPE_GHOST",
+    "classe": "fisica",
+    "potenza": 40,
+    "precisione": 100,
+    "pp": 30,
+    "effetto": 103,
+    "probabilita_effetto": 0,
+    "priorita": 1
+   },
+   "descrizione": [
+    "Allunga la sua ombra e",
+    "colpisce il nemico alle",
+    "spalle. Colpisce",
+    "sempre per primo."
+   ],
+   "descrizione_righe_px": [
+    118,
+    115,
+    84,
+    94
+   ],
+   "msg_0749": [
+    "Allunga la sua ombra e\n",
+    "colpisce il nemico alle\n",
+    "spalle. Colpisce\n",
+    "sempre per primo.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Ummiralesta",
+    "msg_0751": "UMMIRALESTA",
+    "msg_0749": [
+     "Allunga la sua ombra e\n",
+     "colpisce il nemico alle\n",
+     "spalle. Colpisce\n",
+     "sempre per primo.\n"
+    ]
+   }
+  },
+  {
+   "n": 426,
+   "simbolo": "MOVE_MUD_BOMB",
+   "originale": "Mud Bomb",
+   "nome": "Zancabumma",
+   "lingua": "scn",
+   "glossario": "G39-0065",
+   "caratteri": 10,
+   "px": 60,
+   "maiuscolo": "ZANCABUMMA",
+   "maiuscolo_px": 60,
+   "dati": {
+    "tipo": "TYPE_GROUND",
+    "classe": "speciale",
+    "potenza": 65,
+    "precisione": 85,
+    "pp": 10,
+    "effetto": 73,
+    "probabilita_effetto": 30,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Scaglia una palla di",
+    "fango compatto. Può",
+    "calare la precisione",
+    "del nemico."
+   ],
+   "descrizione_righe_px": [
+    102,
+    108,
+    106,
+    58
+   ],
+   "msg_0749": [
+    "Scaglia una palla di\n",
+    "fango compatto. Può\n",
+    "calare la precisione\n",
+    "del nemico.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Zancabumma",
+    "msg_0751": "ZANCABUMMA",
+    "msg_0749": [
+     "Scaglia una palla di\n",
+     "fango compatto. Può\n",
+     "calare la precisione\n",
+     "del nemico.\n"
+    ]
+   }
+  },
+  {
+   "n": 427,
+   "simbolo": "MOVE_PSYCHO_CUT",
+   "originale": "Psycho Cut",
+   "nome": "Tagghiamenti",
+   "lingua": "scn",
+   "glossario": "G39-0066",
+   "caratteri": 12,
+   "px": 66,
+   "maiuscolo": "TAGGHIAMENTI",
+   "maiuscolo_px": 72,
+   "dati": {
+    "tipo": "TYPE_PSYCHIC",
+    "classe": "fisica",
+    "potenza": 70,
+    "precisione": 100,
+    "pp": 20,
+    "effetto": 43,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Squarcia il nemico con",
+    "lame di forza psichica.",
+    "È facile che sia un",
+    "brutto colpo."
+   ],
+   "descrizione_righe_px": [
+    115,
+    119,
+    97,
+    73
+   ],
+   "msg_0749": [
+    "Squarcia il nemico con\n",
+    "lame di forza psichica.\n",
+    "È facile che sia un\n",
+    "brutto colpo.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Tagghiamenti",
+    "msg_0751": "TAGGHIAMENTI",
+    "msg_0749": [
+     "Squarcia il nemico con\n",
+     "lame di forza psichica.\n",
+     "È facile che sia un\n",
+     "brutto colpo.\n"
+    ]
+   }
+  },
+  {
+   "n": 428,
+   "simbolo": "MOVE_ZEN_HEADBUTT",
+   "originale": "Zen Headbutt",
+   "nome": "Tistapaci",
+   "lingua": "scn",
+   "glossario": "G39-0067",
+   "caratteri": 9,
+   "px": 48,
+   "maiuscolo": "TISTAPACI",
+   "maiuscolo_px": 54,
+   "dati": {
+    "tipo": "TYPE_PSYCHIC",
+    "classe": "fisica",
+    "potenza": 80,
+    "precisione": 90,
+    "pp": 15,
+    "effetto": 31,
+    "probabilita_effetto": 20,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Concentra la volontà",
+    "nella testa e",
+    "colpisce. Può far",
+    "tentennare il nemico."
+   ],
+   "descrizione_righe_px": [
+    112,
+    70,
+    91,
+    113
+   ],
+   "msg_0749": [
+    "Concentra la volontà\n",
+    "nella testa e\n",
+    "colpisce. Può far\n",
+    "tentennare il nemico.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Tistapaci",
+    "msg_0751": "TISTAPACI",
+    "msg_0749": [
+     "Concentra la volontà\n",
+     "nella testa e\n",
+     "colpisce. Può far\n",
+     "tentennare il nemico.\n"
+    ]
+   }
+  },
+  {
+   "n": 429,
+   "simbolo": "MOVE_MIRROR_SHOT",
+   "originale": "Mirror Shot",
+   "nome": "Lustrata",
+   "lingua": "scn",
+   "glossario": "G39-0068",
+   "caratteri": 8,
+   "px": 48,
+   "maiuscolo": "LUSTRATA",
+   "maiuscolo_px": 48,
+   "dati": {
+    "tipo": "TYPE_STEEL",
+    "classe": "speciale",
+    "potenza": 65,
+    "precisione": 85,
+    "pp": 10,
+    "effetto": 73,
+    "probabilita_effetto": 30,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Emette un lampo dal",
+    "corpo lucidato. Può",
+    "calare la precisione",
+    "del nemico."
+   ],
+   "descrizione_righe_px": [
+    104,
+    104,
+    106,
+    58
+   ],
+   "msg_0749": [
+    "Emette un lampo dal\n",
+    "corpo lucidato. Può\n",
+    "calare la precisione\n",
+    "del nemico.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Lustrata",
+    "msg_0751": "LUSTRATA",
+    "msg_0749": [
+     "Emette un lampo dal\n",
+     "corpo lucidato. Può\n",
+     "calare la precisione\n",
+     "del nemico.\n"
+    ]
+   }
+  },
+  {
+   "n": 430,
+   "simbolo": "MOVE_FLASH_CANNON",
+   "originale": "Flash Cannon",
+   "nome": "Ferruluci",
+   "lingua": "scn",
+   "glossario": "G39-0069",
+   "caratteri": 9,
+   "px": 49,
+   "maiuscolo": "FERRULUCI",
+   "maiuscolo_px": 54,
+   "dati": {
+    "tipo": "TYPE_STEEL",
+    "classe": "speciale",
+    "potenza": 80,
+    "precisione": 100,
+    "pp": 10,
+    "effetto": 72,
+    "probabilita_effetto": 10,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Raccoglie tutta",
+    "l’energia luminosa e la",
+    "libera. Può calare la",
+    "Difesa Speciale del",
+    "nemico."
+   ],
+   "descrizione_righe_px": [
+    83,
+    119,
+    110,
+    99,
+    38
+   ],
+   "msg_0749": [
+    "Raccoglie tutta\n",
+    "l’energia luminosa e la\n",
+    "libera. Può calare la\n",
+    "Difesa Speciale del\n",
+    "nemico."
+   ],
+   "banchi": {
+    "msg_0750": "Ferruluci",
+    "msg_0751": "FERRULUCI",
+    "msg_0749": [
+     "Raccoglie tutta\n",
+     "l’energia luminosa e la\n",
+     "libera. Può calare la\n",
+     "Difesa Speciale del\n",
+     "nemico."
+    ]
+   }
+  },
+  {
+   "n": 431,
+   "simbolo": "MOVE_ROCK_CLIMB",
+   "originale": "Rock Climb",
+   "nome": "Acchianata",
+   "lingua": "scn",
+   "glossario": "G30-0045",
+   "caratteri": 10,
+   "px": 57,
+   "maiuscolo": "ACCHIANATA",
+   "maiuscolo_px": 60,
+   "dati": {
+    "tipo": "TYPE_NORMAL",
+    "classe": "fisica",
+    "potenza": 90,
+    "precisione": 85,
+    "pp": 20,
+    "effetto": 76,
+    "probabilita_effetto": 20,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Una carica che può",
+    "confondere il nemico.",
+    "Fuori dalla lotta",
+    "scala le pareti",
+    "rocciose."
+   ],
+   "descrizione_righe_px": [
+    99,
+    112,
+    89,
+    79,
+    50
+   ],
+   "msg_0749": [
+    "Una carica che può\n",
+    "confondere il nemico.\n",
+    "Fuori dalla lotta\n",
+    "scala le pareti\n",
+    "rocciose."
+   ],
+   "banchi": {
+    "msg_0750": "Acchianata",
+    "msg_0751": "ACCHIANATA",
+    "msg_0749": [
+     "Una carica che può\n",
+     "confondere il nemico.\n",
+     "Fuori dalla lotta\n",
+     "scala le pareti\n",
+     "rocciose."
+    ]
+   }
+  },
+  {
+   "n": 432,
+   "simbolo": "MOVE_DEFOG",
+   "originale": "Defog",
+   "nome": "Annittata",
+   "lingua": "scn",
+   "glossario": "G39-0070",
+   "caratteri": 9,
+   "px": 51,
+   "maiuscolo": "ANNITTATA",
+   "maiuscolo_px": 54,
+   "dati": {
+    "tipo": "TYPE_FLYING",
+    "classe": "stato",
+    "potenza": 0,
+    "precisione": 0,
+    "pp": 15,
+    "effetto": 258,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Cala l’elusione del",
+    "nemico e spazza via",
+    "dal suo campo",
+    "trappole e barriere."
+   ],
+   "descrizione_righe_px": [
+    98,
+    102,
+    72,
+    110
+   ],
+   "msg_0749": [
+    "Cala l’elusione del\n",
+    "nemico e spazza via\n",
+    "dal suo campo\n",
+    "trappole e barriere.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Annittata",
+    "msg_0751": "ANNITTATA",
+    "msg_0749": [
+     "Cala l’elusione del\n",
+     "nemico e spazza via\n",
+     "dal suo campo\n",
+     "trappole e barriere.\n"
+    ]
+   }
+  },
+  {
+   "n": 433,
+   "simbolo": "MOVE_TRICK_ROOM",
+   "originale": "Trick Room",
+   "nome": "Suttasupra",
+   "lingua": "scn",
+   "glossario": "G39-0071",
+   "caratteri": 10,
+   "px": 60,
+   "maiuscolo": "SUTTASUPRA",
+   "maiuscolo_px": 60,
+   "dati": {
+    "tipo": "TYPE_PSYCHIC",
+    "classe": "stato",
+    "potenza": 0,
+    "precisione": 0,
+    "pp": 5,
+    "effetto": 259,
+    "probabilita_effetto": 0,
+    "priorita": -7
+   },
+   "descrizione": [
+    "Crea uno spazio",
+    "strano: per cinque",
+    "turni i Pokémon più",
+    "lenti agiscono per",
+    "primi."
+   ],
+   "descrizione_righe_px": [
+    83,
+    100,
+    99,
+    96,
+    29
+   ],
+   "msg_0749": [
+    "Crea uno spazio\n",
+    "strano: per cinque\n",
+    "turni i Pokémon più\n",
+    "lenti agiscono per\n",
+    "primi."
+   ],
+   "banchi": {
+    "msg_0750": "Suttasupra",
+    "msg_0751": "SUTTASUPRA",
+    "msg_0749": [
+     "Crea uno spazio\n",
+     "strano: per cinque\n",
+     "turni i Pokémon più\n",
+     "lenti agiscono per\n",
+     "primi."
+    ]
+   }
+  },
+  {
+   "n": 434,
+   "simbolo": "MOVE_DRACO_METEOR",
+   "originale": "Draco Meteor",
+   "nome": "Dracustidda",
+   "lingua": "scn",
+   "glossario": "G39-0072",
+   "caratteri": 11,
+   "px": 63,
+   "maiuscolo": "DRACUSTIDDA",
+   "maiuscolo_px": 66,
+   "dati": {
+    "tipo": "TYPE_DRAGON",
+    "classe": "speciale",
+    "potenza": 140,
+    "precisione": 90,
+    "pp": 5,
+    "effetto": 204,
+    "probabilita_effetto": 100,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Fa piovere comete dal",
+    "cielo. Il contraccolpo",
+    "cala molto l’Attacco",
+    "Speciale di chi la usa."
+   ],
+   "descrizione_righe_px": [
+    115,
+    118,
+    109,
+    116
+   ],
+   "msg_0749": [
+    "Fa piovere comete dal\n",
+    "cielo. Il contraccolpo\n",
+    "cala molto l’Attacco\n",
+    "Speciale di chi la usa.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Dracustidda",
+    "msg_0751": "DRACUSTIDDA",
+    "msg_0749": [
+     "Fa piovere comete dal\n",
+     "cielo. Il contraccolpo\n",
+     "cala molto l’Attacco\n",
+     "Speciale di chi la usa.\n"
+    ]
+   }
+  },
+  {
+   "n": 435,
+   "simbolo": "MOVE_DISCHARGE",
+   "originale": "Discharge",
+   "nome": "Saittata",
+   "lingua": "scn",
+   "glossario": "G39-0073",
+   "caratteri": 8,
+   "px": 45,
+   "maiuscolo": "SAITTATA",
+   "maiuscolo_px": 48,
+   "dati": {
+    "tipo": "TYPE_ELECTRIC",
+    "classe": "speciale",
+    "potenza": 80,
+    "precisione": 100,
+    "pp": 15,
+    "effetto": 6,
+    "probabilita_effetto": 30,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Una scarica elettrica",
+    "colpisce tutti i",
+    "Pokémon in lotta. Può",
+    "paralizzarli."
+   ],
+   "descrizione_righe_px": [
+    114,
+    81,
+    114,
+    67
+   ],
+   "msg_0749": [
+    "Una scarica elettrica\n",
+    "colpisce tutti i\n",
+    "Pokémon in lotta. Può\n",
+    "paralizzarli.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Saittata",
+    "msg_0751": "SAITTATA",
+    "msg_0749": [
+     "Una scarica elettrica\n",
+     "colpisce tutti i\n",
+     "Pokémon in lotta. Può\n",
+     "paralizzarli.\n"
+    ]
+   }
+  },
+  {
+   "n": 436,
+   "simbolo": "MOVE_LAVA_PLUME",
+   "originale": "Lava Plume",
+   "nome": "Lavicata",
+   "lingua": "scn",
+   "glossario": "G39-0074",
+   "caratteri": 8,
+   "px": 45,
+   "maiuscolo": "LAVICATA",
+   "maiuscolo_px": 48,
+   "dati": {
+    "tipo": "TYPE_FIRE",
+    "classe": "speciale",
+    "potenza": 80,
+    "precisione": 100,
+    "pp": 15,
+    "effetto": 4,
+    "probabilita_effetto": 30,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Fiamme scarlatte",
+    "investono tutti i",
+    "Pokémon in lotta.",
+    "Possono scottarli."
+   ],
+   "descrizione_righe_px": [
+    89,
+    89,
+    92,
+    100
+   ],
+   "msg_0749": [
+    "Fiamme scarlatte\n",
+    "investono tutti i\n",
+    "Pokémon in lotta.\n",
+    "Possono scottarli.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Lavicata",
+    "msg_0751": "LAVICATA",
+    "msg_0749": [
+     "Fiamme scarlatte\n",
+     "investono tutti i\n",
+     "Pokémon in lotta.\n",
+     "Possono scottarli.\n"
+    ]
+   }
+  },
+  {
+   "n": 437,
+   "simbolo": "MOVE_LEAF_STORM",
+   "originale": "Leaf Storm",
+   "nome": "Fogghiaventu",
+   "lingua": "scn",
+   "glossario": "G39-0075",
+   "caratteri": 12,
+   "px": 69,
+   "maiuscolo": "FOGGHIAVENTU",
+   "maiuscolo_px": 72,
+   "dati": {
+    "tipo": "TYPE_GRASS",
+    "classe": "speciale",
+    "potenza": 140,
+    "precisione": 90,
+    "pp": 5,
+    "effetto": 204,
+    "probabilita_effetto": 100,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Scatena una tempesta",
+    "di foglie aguzze. Il",
+    "contraccolpo cala",
+    "molto l’Attacco",
+    "Speciale di chi la usa."
+   ],
+   "descrizione_righe_px": [
+    116,
+    102,
+    96,
+    83,
+    116
+   ],
+   "msg_0749": [
+    "Scatena una tempesta\n",
+    "di foglie aguzze. Il\n",
+    "contraccolpo cala\n",
+    "molto l’Attacco\n",
+    "Speciale di chi la usa."
+   ],
+   "banchi": {
+    "msg_0750": "Fogghiaventu",
+    "msg_0751": "FOGGHIAVENTU",
+    "msg_0749": [
+     "Scatena una tempesta\n",
+     "di foglie aguzze. Il\n",
+     "contraccolpo cala\n",
+     "molto l’Attacco\n",
+     "Speciale di chi la usa."
+    ]
+   }
+  },
+  {
+   "n": 438,
+   "simbolo": "MOVE_POWER_WHIP",
+   "originale": "Power Whip",
+   "nome": "Zuttazza",
+   "lingua": "scn",
+   "glossario": "G39-0076",
+   "caratteri": 8,
+   "px": 48,
+   "maiuscolo": "ZUTTAZZA",
+   "maiuscolo_px": 48,
+   "dati": {
+    "tipo": "TYPE_GRASS",
+    "classe": "fisica",
+    "potenza": 120,
+    "precisione": 85,
+    "pp": 10,
+    "effetto": 0,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Agita con violenza",
+    "liane o tentacoli e",
+    "sferza il nemico."
+   ],
+   "descrizione_righe_px": [
+    96,
+    98,
+    88
+   ],
+   "msg_0749": [
+    "Agita con violenza\n",
+    "liane o tentacoli e\n",
+    "sferza il nemico.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Zuttazza",
+    "msg_0751": "ZUTTAZZA",
+    "msg_0749": [
+     "Agita con violenza\n",
+     "liane o tentacoli e\n",
+     "sferza il nemico.\n"
+    ]
+   }
+  },
+  {
+   "n": 439,
+   "simbolo": "MOVE_ROCK_WRECKER",
+   "originale": "Rock Wrecker",
+   "nome": "Mazzacani",
+   "lingua": "scn",
+   "glossario": "G39-0077",
+   "caratteri": 9,
+   "px": 51,
+   "maiuscolo": "MAZZACANI",
+   "maiuscolo_px": 54,
+   "dati": {
+    "tipo": "TYPE_ROCK",
+    "classe": "fisica",
+    "potenza": 150,
+    "precisione": 90,
+    "pp": 5,
+    "effetto": 80,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Scaglia un masso",
+    "enorme sul nemico. Al",
+    "turno dopo chi la usa",
+    "deve riprendere fiato."
+   ],
+   "descrizione_righe_px": [
+    87,
+    112,
+    113,
+    120
+   ],
+   "msg_0749": [
+    "Scaglia un masso\n",
+    "enorme sul nemico. Al\n",
+    "turno dopo chi la usa\n",
+    "deve riprendere fiato.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Mazzacani",
+    "msg_0751": "MAZZACANI",
+    "msg_0749": [
+     "Scaglia un masso\n",
+     "enorme sul nemico. Al\n",
+     "turno dopo chi la usa\n",
+     "deve riprendere fiato.\n"
+    ]
+   }
+  },
+  {
+   "n": 440,
+   "simbolo": "MOVE_CROSS_POISON",
+   "originale": "Cross Poison",
+   "nome": "Cruciavilenu",
+   "lingua": "scn",
+   "glossario": "G39-0078",
+   "caratteri": 12,
+   "px": 64,
+   "maiuscolo": "CRUCIAVILENU",
+   "maiuscolo_px": 72,
+   "dati": {
+    "tipo": "TYPE_POISON",
+    "classe": "fisica",
+    "potenza": 70,
+    "precisione": 100,
+    "pp": 20,
+    "effetto": 209,
+    "probabilita_effetto": 10,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Un fendente a croce",
+    "che può avvelenare il",
+    "nemico. È facile che",
+    "sia un brutto colpo."
+   ],
+   "descrizione_righe_px": [
+    107,
+    113,
+    104,
+    108
+   ],
+   "msg_0749": [
+    "Un fendente a croce\n",
+    "che può avvelenare il\n",
+    "nemico. È facile che\n",
+    "sia un brutto colpo.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Cruciavilenu",
+    "msg_0751": "CRUCIAVILENU",
+    "msg_0749": [
+     "Un fendente a croce\n",
+     "che può avvelenare il\n",
+     "nemico. È facile che\n",
+     "sia un brutto colpo.\n"
+    ]
+   }
+  },
+  {
+   "n": 441,
+   "simbolo": "MOVE_GUNK_SHOT",
+   "originale": "Gunk Shot",
+   "nome": "Murcazza",
+   "lingua": "scn",
+   "glossario": "G39-0079",
+   "caratteri": 8,
+   "px": 48,
+   "maiuscolo": "MURCAZZA",
+   "maiuscolo_px": 48,
+   "dati": {
+    "tipo": "TYPE_POISON",
+    "classe": "fisica",
+    "potenza": 120,
+    "precisione": 70,
+    "pp": 5,
+    "effetto": 2,
+    "probabilita_effetto": 30,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Scaglia rifiuti sudici",
+    "contro il nemico. Può",
+    "avvelenarlo."
+   ],
+   "descrizione_righe_px": [
+    107,
+    111,
+    67
+   ],
+   "msg_0749": [
+    "Scaglia rifiuti sudici\n",
+    "contro il nemico. Può\n",
+    "avvelenarlo.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Murcazza",
+    "msg_0751": "MURCAZZA",
+    "msg_0749": [
+     "Scaglia rifiuti sudici\n",
+     "contro il nemico. Può\n",
+     "avvelenarlo.\n"
+    ]
+   }
+  },
+  {
+   "n": 442,
+   "simbolo": "MOVE_IRON_HEAD",
+   "originale": "Iron Head",
+   "nome": "Tistaferru",
+   "lingua": "scn",
+   "glossario": "G39-0080",
+   "caratteri": 10,
+   "px": 56,
+   "maiuscolo": "TISTAFERRU",
+   "maiuscolo_px": 60,
+   "dati": {
+    "tipo": "TYPE_STEEL",
+    "classe": "fisica",
+    "potenza": 80,
+    "precisione": 100,
+    "pp": 15,
+    "effetto": 31,
+    "probabilita_effetto": 30,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Colpisce con la testa",
+    "dura come l’acciaio.",
+    "Può far tentennare il",
+    "nemico."
+   ],
+   "descrizione_righe_px": [
+    113,
+    106,
+    114,
+    38
+   ],
+   "msg_0749": [
+    "Colpisce con la testa\n",
+    "dura come l’acciaio.\n",
+    "Può far tentennare il\n",
+    "nemico.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Tistaferru",
+    "msg_0751": "TISTAFERRU",
+    "msg_0749": [
+     "Colpisce con la testa\n",
+     "dura come l’acciaio.\n",
+     "Può far tentennare il\n",
+     "nemico.\n"
+    ]
+   }
+  },
+  {
+   "n": 443,
+   "simbolo": "MOVE_MAGNET_BOMB",
+   "originale": "Magnet Bomb",
+   "nome": "Ferrubumma",
+   "lingua": "scn",
+   "glossario": "G39-0081",
+   "caratteri": 10,
+   "px": 60,
+   "maiuscolo": "FERRUBUMMA",
+   "maiuscolo_px": 60,
+   "dati": {
+    "tipo": "TYPE_STEEL",
+    "classe": "fisica",
+    "potenza": 60,
+    "precisione": 0,
+    "pp": 20,
+    "effetto": 17,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Lancia una bomba",
+    "d’acciaio che si",
+    "attacca al nemico. Non",
+    "sbaglia mai."
+   ],
+   "descrizione_righe_px": [
+    89,
+    82,
+    120,
+    61
+   ],
+   "msg_0749": [
+    "Lancia una bomba\n",
+    "d’acciaio che si\n",
+    "attacca al nemico. Non\n",
+    "sbaglia mai.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Ferrubumma",
+    "msg_0751": "FERRUBUMMA",
+    "msg_0749": [
+     "Lancia una bomba\n",
+     "d’acciaio che si\n",
+     "attacca al nemico. Non\n",
+     "sbaglia mai.\n"
+    ]
+   }
+  },
+  {
+   "n": 444,
+   "simbolo": "MOVE_STONE_EDGE",
+   "originale": "Stone Edge",
+   "nome": "Puntapetra",
+   "lingua": "scn",
+   "glossario": "G39-0082",
+   "caratteri": 10,
+   "px": 60,
+   "maiuscolo": "PUNTAPETRA",
+   "maiuscolo_px": 60,
+   "dati": {
+    "tipo": "TYPE_ROCK",
+    "classe": "fisica",
+    "potenza": 100,
+    "precisione": 80,
+    "pp": 5,
+    "effetto": 43,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Trafigge il nemico con",
+    "una pietra affilata. È",
+    "facile che sia un",
+    "brutto colpo."
+   ],
+   "descrizione_righe_px": [
+    114,
+    115,
+    87,
+    73
+   ],
+   "msg_0749": [
+    "Trafigge il nemico con\n",
+    "una pietra affilata. È\n",
+    "facile che sia un\n",
+    "brutto colpo.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Puntapetra",
+    "msg_0751": "PUNTAPETRA",
+    "msg_0749": [
+     "Trafigge il nemico con\n",
+     "una pietra affilata. È\n",
+     "facile che sia un\n",
+     "brutto colpo.\n"
+    ]
+   }
+  },
+  {
+   "n": 445,
+   "simbolo": "MOVE_CAPTIVATE",
+   "originale": "Captivate",
+   "nome": "Ammagata",
+   "lingua": "scn",
+   "glossario": "G39-0083",
+   "caratteri": 8,
+   "px": 48,
+   "maiuscolo": "AMMAGATA",
+   "maiuscolo_px": 48,
+   "dati": {
+    "tipo": "TYPE_NORMAL",
+    "classe": "stato",
+    "potenza": 0,
+    "precisione": 100,
+    "pp": 20,
+    "effetto": 265,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Se il nemico è di sesso",
+    "opposto, ne resta",
+    "sedotto e il suo",
+    "Attacco Speciale cala",
+    "molto."
+   ],
+   "descrizione_righe_px": [
+    117,
+    97,
+    85,
+    115,
+    33
+   ],
+   "msg_0749": [
+    "Se il nemico è di sesso\n",
+    "opposto, ne resta\n",
+    "sedotto e il suo\n",
+    "Attacco Speciale cala\n",
+    "molto."
+   ],
+   "banchi": {
+    "msg_0750": "Ammagata",
+    "msg_0751": "AMMAGATA",
+    "msg_0749": [
+     "Se il nemico è di sesso\n",
+     "opposto, ne resta\n",
+     "sedotto e il suo\n",
+     "Attacco Speciale cala\n",
+     "molto."
+    ]
+   }
+  },
+  {
+   "n": 446,
+   "simbolo": "MOVE_STEALTH_ROCK",
+   "originale": "Stealth Rock",
+   "nome": "Petruzzi",
+   "lingua": "scn",
+   "glossario": "G39-0084",
+   "caratteri": 8,
+   "px": 45,
+   "maiuscolo": "PETRUZZI",
+   "maiuscolo_px": 48,
+   "dati": {
+    "tipo": "TYPE_ROCK",
+    "classe": "stato",
+    "potenza": 0,
+    "precisione": 0,
+    "pp": 20,
+    "effetto": 266,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Mette pietre sospese",
+    "attorno ai nemici:",
+    "feriscono chi entra in",
+    "lotta."
+   ],
+   "descrizione_righe_px": [
+    113,
+    94,
+    116,
+    33
+   ],
+   "msg_0749": [
+    "Mette pietre sospese\n",
+    "attorno ai nemici:\n",
+    "feriscono chi entra in\n",
+    "lotta.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Petruzzi",
+    "msg_0751": "PETRUZZI",
+    "msg_0749": [
+     "Mette pietre sospese\n",
+     "attorno ai nemici:\n",
+     "feriscono chi entra in\n",
+     "lotta.\n"
+    ]
+   }
+  },
+  {
+   "n": 447,
+   "simbolo": "MOVE_GRASS_KNOT",
+   "originale": "Grass Knot",
+   "nome": "Ruppu",
+   "lingua": "scn",
+   "glossario": "G39-0085",
+   "caratteri": 5,
+   "px": 30,
+   "maiuscolo": "RUPPU",
+   "maiuscolo_px": 30,
+   "dati": {
+    "tipo": "TYPE_GRASS",
+    "classe": "speciale",
+    "potenza": 1,
+    "precisione": 100,
+    "pp": 20,
+    "effetto": 196,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Fa inciampare il nemico",
+    "in un nodo d’erba. Più",
+    "il nemico è pesante,",
+    "più danno fa."
+   ],
+   "descrizione_righe_px": [
+    118,
+    116,
+    105,
+    69
+   ],
+   "msg_0749": [
+    "Fa inciampare il nemico\n",
+    "in un nodo d’erba. Più\n",
+    "il nemico è pesante,\n",
+    "più danno fa.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Ruppu",
+    "msg_0751": "RUPPU",
+    "msg_0749": [
+     "Fa inciampare il nemico\n",
+     "in un nodo d’erba. Più\n",
+     "il nemico è pesante,\n",
+     "più danno fa.\n"
+    ]
+   }
+  },
+  {
+   "n": 448,
+   "simbolo": "MOVE_CHATTER",
+   "originale": "Chatter",
+   "nome": "Parrata",
+   "lingua": "scn",
+   "glossario": "G39-0086",
+   "caratteri": 7,
+   "px": 42,
+   "maiuscolo": "PARRATA",
+   "maiuscolo_px": 42,
+   "dati": {
+    "tipo": "TYPE_FLYING",
+    "classe": "speciale",
+    "potenza": 60,
+    "precisione": 100,
+    "pp": 20,
+    "effetto": 267,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Attacca con un’onda",
+    "sonora fatta di parole",
+    "imparate. Può",
+    "confondere il nemico."
+   ],
+   "descrizione_righe_px": [
+    109,
+    120,
+    72,
+    112
+   ],
+   "msg_0749": [
+    "Attacca con un’onda\n",
+    "sonora fatta di parole\n",
+    "imparate. Può\n",
+    "confondere il nemico.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Parrata",
+    "msg_0751": "PARRATA",
+    "msg_0749": [
+     "Attacca con un’onda\n",
+     "sonora fatta di parole\n",
+     "imparate. Può\n",
+     "confondere il nemico.\n"
+    ]
+   }
+  },
+  {
+   "n": 449,
+   "simbolo": "MOVE_JUDGMENT",
+   "originale": "Judgment",
+   "nome": "Judiziu",
+   "lingua": "scn",
+   "glossario": "G39-0087",
+   "caratteri": 7,
+   "px": 36,
+   "maiuscolo": "JUDIZIU",
+   "maiuscolo_px": 42,
+   "dati": {
+    "tipo": "TYPE_NORMAL",
+    "classe": "speciale",
+    "potenza": 100,
+    "precisione": 100,
+    "pp": 10,
+    "effetto": 268,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Scaglia infiniti raggi",
+    "di luce. Il tipo cambia",
+    "a seconda della",
+    "Lastra che tiene."
+   ],
+   "descrizione_righe_px": [
+    107,
+    116,
+    82,
+    94
+   ],
+   "msg_0749": [
+    "Scaglia infiniti raggi\n",
+    "di luce. Il tipo cambia\n",
+    "a seconda della\n",
+    "Lastra che tiene.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Judiziu",
+    "msg_0751": "JUDIZIU",
+    "msg_0749": [
+     "Scaglia infiniti raggi\n",
+     "di luce. Il tipo cambia\n",
+     "a seconda della\n",
+     "Lastra che tiene.\n"
+    ]
+   }
+  },
+  {
+   "n": 450,
+   "simbolo": "MOVE_BUG_BITE",
+   "originale": "Bug Bite",
+   "nome": "Rusicata",
+   "lingua": "scn",
+   "glossario": "G39-0088",
+   "caratteri": 8,
+   "px": 45,
+   "maiuscolo": "RUSICATA",
+   "maiuscolo_px": 48,
+   "dati": {
+    "tipo": "TYPE_BUG",
+    "classe": "fisica",
+    "potenza": 60,
+    "precisione": 100,
+    "pp": 20,
+    "effetto": 224,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Morde il nemico. Se",
+    "tiene una Bacca, la",
+    "mangia e ne ottiene",
+    "l’effetto."
+   ],
+   "descrizione_righe_px": [
+    99,
+    102,
+    102,
+    54
+   ],
+   "msg_0749": [
+    "Morde il nemico. Se\n",
+    "tiene una Bacca, la\n",
+    "mangia e ne ottiene\n",
+    "l’effetto.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Rusicata",
+    "msg_0751": "RUSICATA",
+    "msg_0749": [
+     "Morde il nemico. Se\n",
+     "tiene una Bacca, la\n",
+     "mangia e ne ottiene\n",
+     "l’effetto.\n"
+    ]
+   }
+  },
+  {
+   "n": 451,
+   "simbolo": "MOVE_CHARGE_BEAM",
+   "originale": "Charge Beam",
+   "nome": "Tronuraggiu",
+   "lingua": "scn",
+   "glossario": "G39-0089",
+   "caratteri": 11,
+   "px": 63,
+   "maiuscolo": "TRONURAGGIU",
+   "maiuscolo_px": 66,
+   "dati": {
+    "tipo": "TYPE_ELECTRIC",
+    "classe": "speciale",
+    "potenza": 50,
+    "precisione": 90,
+    "pp": 10,
+    "effetto": 276,
+    "probabilita_effetto": 70,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Spara un fascio di",
+    "elettricità. Può",
+    "aumentare l’Attacco",
+    "Speciale di chi la usa."
+   ],
+   "descrizione_righe_px": [
+    95,
+    85,
+    109,
+    116
+   ],
+   "msg_0749": [
+    "Spara un fascio di\n",
+    "elettricità. Può\n",
+    "aumentare l’Attacco\n",
+    "Speciale di chi la usa.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Tronuraggiu",
+    "msg_0751": "TRONURAGGIU",
+    "msg_0749": [
+     "Spara un fascio di\n",
+     "elettricità. Può\n",
+     "aumentare l’Attacco\n",
+     "Speciale di chi la usa.\n"
+    ]
+   }
+  },
+  {
+   "n": 452,
+   "simbolo": "MOVE_WOOD_HAMMER",
+   "originale": "Wood Hammer",
+   "nome": "Mazzalignu",
+   "lingua": "scn",
+   "glossario": "G39-0090",
+   "caratteri": 10,
+   "px": 55,
+   "maiuscolo": "MAZZALIGNU",
+   "maiuscolo_px": 60,
+   "dati": {
+    "tipo": "TYPE_GRASS",
+    "classe": "fisica",
+    "potenza": 120,
+    "precisione": 100,
+    "pp": 15,
+    "effetto": 198,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Colpisce col corpo",
+    "duro come il legno.",
+    "Ferisce molto anche",
+    "chi la usa."
+   ],
+   "descrizione_righe_px": [
+    97,
+    100,
+    105,
+    56
+   ],
+   "msg_0749": [
+    "Colpisce col corpo\n",
+    "duro come il legno.\n",
+    "Ferisce molto anche\n",
+    "chi la usa.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Mazzalignu",
+    "msg_0751": "MAZZALIGNU",
+    "msg_0749": [
+     "Colpisce col corpo\n",
+     "duro come il legno.\n",
+     "Ferisce molto anche\n",
+     "chi la usa.\n"
+    ]
+   }
+  },
+  {
+   "n": 453,
+   "simbolo": "MOVE_AQUA_JET",
+   "originale": "Aqua Jet",
+   "nome": "Lestacqua",
+   "lingua": "scn",
+   "glossario": "G39-0091",
+   "caratteri": 9,
+   "px": 54,
+   "maiuscolo": "LESTACQUA",
+   "maiuscolo_px": 54,
+   "dati": {
+    "tipo": "TYPE_WATER",
+    "classe": "fisica",
+    "potenza": 40,
+    "precisione": 100,
+    "pp": 20,
+    "effetto": 103,
+    "probabilita_effetto": 0,
+    "priorita": 1
+   },
+   "descrizione": [
+    "Si lancia sul nemico",
+    "così veloce da",
+    "sembrare invisibile.",
+    "Colpisce sempre per",
+    "primo."
+   ],
+   "descrizione_righe_px": [
+    101,
+    76,
+    103,
+    105,
+    32
+   ],
+   "msg_0749": [
+    "Si lancia sul nemico\n",
+    "così veloce da\n",
+    "sembrare invisibile.\n",
+    "Colpisce sempre per\n",
+    "primo."
+   ],
+   "banchi": {
+    "msg_0750": "Lestacqua",
+    "msg_0751": "LESTACQUA",
+    "msg_0749": [
+     "Si lancia sul nemico\n",
+     "così veloce da\n",
+     "sembrare invisibile.\n",
+     "Colpisce sempre per\n",
+     "primo."
+    ]
+   }
+  },
+  {
+   "n": 454,
+   "simbolo": "MOVE_ATTACK_ORDER",
+   "originale": "Attack Order",
+   "nome": "Sciamuarmi",
+   "lingua": "scn",
+   "glossario": "G39-0092",
+   "caratteri": 10,
+   "px": 54,
+   "maiuscolo": "SCIAMUARMI",
+   "maiuscolo_px": 60,
+   "dati": {
+    "tipo": "TYPE_BUG",
+    "classe": "fisica",
+    "potenza": 90,
+    "precisione": 100,
+    "pp": 15,
+    "effetto": 43,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Chiama i suoi",
+    "sottoposti a",
+    "malmenare il nemico. È",
+    "facile che sia un",
+    "brutto colpo."
+   ],
+   "descrizione_righe_px": [
+    65,
+    67,
+    115,
+    87,
+    73
+   ],
+   "msg_0749": [
+    "Chiama i suoi\n",
+    "sottoposti a\n",
+    "malmenare il nemico. È\n",
+    "facile che sia un\n",
+    "brutto colpo."
+   ],
+   "banchi": {
+    "msg_0750": "Sciamuarmi",
+    "msg_0751": "SCIAMUARMI",
+    "msg_0749": [
+     "Chiama i suoi\n",
+     "sottoposti a\n",
+     "malmenare il nemico. È\n",
+     "facile che sia un\n",
+     "brutto colpo."
+    ]
+   }
+  },
+  {
+   "n": 455,
+   "simbolo": "MOVE_DEFEND_ORDER",
+   "originale": "Defend Order",
+   "nome": "Sciamuscutu",
+   "lingua": "scn",
+   "glossario": "G39-0093",
+   "caratteri": 11,
+   "px": 63,
+   "maiuscolo": "SCIAMUSCUTU",
+   "maiuscolo_px": 66,
+   "dati": {
+    "tipo": "TYPE_BUG",
+    "classe": "stato",
+    "potenza": 0,
+    "precisione": 0,
+    "pp": 10,
+    "effetto": 206,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Chiama i suoi",
+    "sottoposti a fargli",
+    "scudo. Aumenta Difesa",
+    "e Difesa Speciale."
+   ],
+   "descrizione_righe_px": [
+    65,
+    101,
+    117,
+    94
+   ],
+   "msg_0749": [
+    "Chiama i suoi\n",
+    "sottoposti a fargli\n",
+    "scudo. Aumenta Difesa\n",
+    "e Difesa Speciale.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Sciamuscutu",
+    "msg_0751": "SCIAMUSCUTU",
+    "msg_0749": [
+     "Chiama i suoi\n",
+     "sottoposti a fargli\n",
+     "scudo. Aumenta Difesa\n",
+     "e Difesa Speciale.\n"
+    ]
+   }
+  },
+  {
+   "n": 456,
+   "simbolo": "MOVE_HEAL_ORDER",
+   "originale": "Heal Order",
+   "nome": "Sciamucura",
+   "lingua": "scn",
+   "glossario": "G39-0094",
+   "caratteri": 10,
+   "px": 57,
+   "maiuscolo": "SCIAMUCURA",
+   "maiuscolo_px": 60,
+   "dati": {
+    "tipo": "TYPE_BUG",
+    "classe": "stato",
+    "potenza": 0,
+    "precisione": 0,
+    "pp": 10,
+    "effetto": 32,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Chiama i suoi",
+    "sottoposti a curarlo.",
+    "Recupera fino a metà",
+    "dei PS massimi."
+   ],
+   "descrizione_righe_px": [
+    65,
+    116,
+    110,
+    76
+   ],
+   "msg_0749": [
+    "Chiama i suoi\n",
+    "sottoposti a curarlo.\n",
+    "Recupera fino a metà\n",
+    "dei PS massimi.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Sciamucura",
+    "msg_0751": "SCIAMUCURA",
+    "msg_0749": [
+     "Chiama i suoi\n",
+     "sottoposti a curarlo.\n",
+     "Recupera fino a metà\n",
+     "dei PS massimi.\n"
+    ]
+   }
+  },
+  {
+   "n": 457,
+   "simbolo": "MOVE_HEAD_SMASH",
+   "originale": "Head Smash",
+   "nome": "Rumpitesta",
+   "lingua": "scn",
+   "glossario": "G39-0095",
+   "caratteri": 10,
+   "px": 57,
+   "maiuscolo": "RUMPITESTA",
+   "maiuscolo_px": 60,
+   "dati": {
+    "tipo": "TYPE_ROCK",
+    "classe": "fisica",
+    "potenza": 150,
+    "precisione": 80,
+    "pp": 5,
+    "effetto": 269,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Un attacco a tutta",
+    "forza che mette in",
+    "pericolo la vita.",
+    "Ferisce moltissimo",
+    "anche chi la usa."
+   ],
+   "descrizione_righe_px": [
+    102,
+    98,
+    87,
+    95,
+    90
+   ],
+   "msg_0749": [
+    "Un attacco a tutta\n",
+    "forza che mette in\n",
+    "pericolo la vita.\n",
+    "Ferisce moltissimo\n",
+    "anche chi la usa."
+   ],
+   "banchi": {
+    "msg_0750": "Rumpitesta",
+    "msg_0751": "RUMPITESTA",
+    "msg_0749": [
+     "Un attacco a tutta\n",
+     "forza che mette in\n",
+     "pericolo la vita.\n",
+     "Ferisce moltissimo\n",
+     "anche chi la usa."
+    ]
+   }
+  },
+  {
+   "n": 458,
+   "simbolo": "MOVE_DOUBLE_HIT",
+   "originale": "Double Hit",
+   "nome": "Duicorpi",
+   "lingua": "scn",
+   "glossario": "G39-0096",
+   "caratteri": 8,
+   "px": 42,
+   "maiuscolo": "DUICORPI",
+   "maiuscolo_px": 48,
+   "dati": {
+    "tipo": "TYPE_NORMAL",
+    "classe": "fisica",
+    "potenza": 35,
+    "precisione": 90,
+    "pp": 10,
+    "effetto": 44,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Colpisce il nemico con",
+    "la coda, con le liane o",
+    "altro due volte di",
+    "fila."
+   ],
+   "descrizione_righe_px": [
+    113,
+    118,
+    95,
+    23
+   ],
+   "msg_0749": [
+    "Colpisce il nemico con\n",
+    "la coda, con le liane o\n",
+    "altro due volte di\n",
+    "fila.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Duicorpi",
+    "msg_0751": "DUICORPI",
+    "msg_0749": [
+     "Colpisce il nemico con\n",
+     "la coda, con le liane o\n",
+     "altro due volte di\n",
+     "fila.\n"
+    ]
+   }
+  },
+  {
+   "n": 459,
+   "simbolo": "MOVE_ROAR_OF_TIME",
+   "originale": "Roar of Time",
+   "nome": "Rugghiutempu",
+   "lingua": "scn",
+   "glossario": "G39-0097",
+   "caratteri": 12,
+   "px": 69,
+   "maiuscolo": "RUGGHIUTEMPU",
+   "maiuscolo_px": 72,
+   "dati": {
+    "tipo": "TYPE_DRAGON",
+    "classe": "speciale",
+    "potenza": 150,
+    "precisione": 90,
+    "pp": 5,
+    "effetto": 80,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Colpisce con un",
+    "potere che distorce il",
+    "tempo. Al turno dopo",
+    "chi la usa deve",
+    "riprendere fiato."
+   ],
+   "descrizione_righe_px": [
+    81,
+    118,
+    111,
+    79,
+    92
+   ],
+   "msg_0749": [
+    "Colpisce con un\n",
+    "potere che distorce il\n",
+    "tempo. Al turno dopo\n",
+    "chi la usa deve\n",
+    "riprendere fiato."
+   ],
+   "banchi": {
+    "msg_0750": "Rugghiutempu",
+    "msg_0751": "RUGGHIUTEMPU",
+    "msg_0749": [
+     "Colpisce con un\n",
+     "potere che distorce il\n",
+     "tempo. Al turno dopo\n",
+     "chi la usa deve\n",
+     "riprendere fiato."
+    ]
+   }
+  },
+  {
+   "n": 460,
+   "simbolo": "MOVE_SPACIAL_REND",
+   "originale": "Spacial Rend",
+   "nome": "Sfardaspaziu",
+   "lingua": "scn",
+   "glossario": "G39-0098",
+   "caratteri": 12,
+   "px": 68,
+   "maiuscolo": "SFARDASPAZIU",
+   "maiuscolo_px": 72,
+   "dati": {
+    "tipo": "TYPE_DRAGON",
+    "classe": "speciale",
+    "potenza": 100,
+    "precisione": 95,
+    "pp": 5,
+    "effetto": 43,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Squarcia il nemico",
+    "insieme allo spazio",
+    "intorno. È facile che",
+    "sia un brutto colpo."
+   ],
+   "descrizione_righe_px": [
+    93,
+    97,
+    110,
+    108
+   ],
+   "msg_0749": [
+    "Squarcia il nemico\n",
+    "insieme allo spazio\n",
+    "intorno. È facile che\n",
+    "sia un brutto colpo.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Sfardaspaziu",
+    "msg_0751": "SFARDASPAZIU",
+    "msg_0749": [
+     "Squarcia il nemico\n",
+     "insieme allo spazio\n",
+     "intorno. È facile che\n",
+     "sia un brutto colpo.\n"
+    ]
+   }
+  },
+  {
+   "n": 461,
+   "simbolo": "MOVE_LUNAR_DANCE",
+   "originale": "Lunar Dance",
+   "nome": "Ballaluna",
+   "lingua": "scn",
+   "glossario": "G39-0099",
+   "caratteri": 9,
+   "px": 48,
+   "maiuscolo": "BALLALUNA",
+   "maiuscolo_px": 54,
+   "dati": {
+    "tipo": "TYPE_PSYCHIC",
+    "classe": "stato",
+    "potenza": 0,
+    "precisione": 0,
+    "pp": 10,
+    "effetto": 270,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Chi la usa va KO, ma il",
+    "Pokémon che entra al",
+    "suo posto guarisce",
+    "del tutto."
+   ],
+   "descrizione_righe_px": [
+    115,
+    112,
+    101,
+    55
+   ],
+   "msg_0749": [
+    "Chi la usa va KO, ma il\n",
+    "Pokémon che entra al\n",
+    "suo posto guarisce\n",
+    "del tutto.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Ballaluna",
+    "msg_0751": "BALLALUNA",
+    "msg_0749": [
+     "Chi la usa va KO, ma il\n",
+     "Pokémon che entra al\n",
+     "suo posto guarisce\n",
+     "del tutto.\n"
+    ]
+   }
+  },
+  {
+   "n": 462,
+   "simbolo": "MOVE_CRUSH_GRIP",
+   "originale": "Crush Grip",
+   "nome": "Strinciuni",
+   "lingua": "scn",
+   "glossario": "G39-0100",
+   "caratteri": 10,
+   "px": 51,
+   "maiuscolo": "STRINCIUNI",
+   "maiuscolo_px": 60,
+   "dati": {
+    "tipo": "TYPE_NORMAL",
+    "classe": "fisica",
+    "potenza": 1,
+    "precisione": 100,
+    "pp": 5,
+    "effetto": 237,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Stritola il nemico con",
+    "grande forza. Più PS",
+    "gli restano, più è",
+    "forte."
+   ],
+   "descrizione_righe_px": [
+    113,
+    109,
+    93,
+    34
+   ],
+   "msg_0749": [
+    "Stritola il nemico con\n",
+    "grande forza. Più PS\n",
+    "gli restano, più è\n",
+    "forte.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Strinciuni",
+    "msg_0751": "STRINCIUNI",
+    "msg_0749": [
+     "Stritola il nemico con\n",
+     "grande forza. Più PS\n",
+     "gli restano, più è\n",
+     "forte.\n"
+    ]
+   }
+  },
+  {
+   "n": 463,
+   "simbolo": "MOVE_MAGMA_STORM",
+   "originale": "Magma Storm",
+   "nome": "Tirribìliu",
+   "lingua": "scn",
+   "glossario": "G39-0101",
+   "caratteri": 10,
+   "px": 47,
+   "maiuscolo": "TIRRIBÌLIU",
+   "maiuscolo_px": 60,
+   "dati": {
+    "tipo": "TYPE_FIRE",
+    "classe": "speciale",
+    "potenza": 120,
+    "precisione": 70,
+    "pp": 5,
+    "effetto": 42,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Intrappola il nemico in",
+    "un vortice di fuoco",
+    "che infuria per",
+    "due-cinque turni."
+   ],
+   "descrizione_righe_px": [
+    119,
+    101,
+    79,
+    93
+   ],
+   "msg_0749": [
+    "Intrappola il nemico in\n",
+    "un vortice di fuoco\n",
+    "che infuria per\n",
+    "due-cinque turni.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Tirribìliu",
+    "msg_0751": "TIRRIBÌLIU",
+    "msg_0749": [
+     "Intrappola il nemico in\n",
+     "un vortice di fuoco\n",
+     "che infuria per\n",
+     "due-cinque turni.\n"
+    ]
+   }
+  },
+  {
+   "n": 464,
+   "simbolo": "MOVE_DARK_VOID",
+   "originale": "Dark Void",
+   "nome": "Notticupa",
+   "lingua": "scn",
+   "glossario": "G39-0102",
+   "caratteri": 9,
+   "px": 51,
+   "maiuscolo": "NOTTICUPA",
+   "maiuscolo_px": 54,
+   "dati": {
+    "tipo": "TYPE_DARK",
+    "classe": "stato",
+    "potenza": 0,
+    "precisione": 80,
+    "pp": 10,
+    "effetto": 1,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Trascina il nemico in",
+    "un mondo di buio",
+    "totale e lo fa",
+    "addormentare."
+   ],
+   "descrizione_righe_px": [
+    106,
+    84,
+    73,
+    77
+   ],
+   "msg_0749": [
+    "Trascina il nemico in\n",
+    "un mondo di buio\n",
+    "totale e lo fa\n",
+    "addormentare.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Notticupa",
+    "msg_0751": "NOTTICUPA",
+    "msg_0749": [
+     "Trascina il nemico in\n",
+     "un mondo di buio\n",
+     "totale e lo fa\n",
+     "addormentare.\n"
+    ]
+   }
+  },
+  {
+   "n": 465,
+   "simbolo": "MOVE_SEED_FLARE",
+   "originale": "Seed Flare",
+   "nome": "Scoppiaciuri",
+   "lingua": "scn",
+   "glossario": "G39-0103",
+   "caratteri": 12,
+   "px": 63,
+   "maiuscolo": "SCOPPIACIURI",
+   "maiuscolo_px": 72,
+   "dati": {
+    "tipo": "TYPE_GRASS",
+    "classe": "speciale",
+    "potenza": 120,
+    "precisione": 85,
+    "pp": 5,
+    "effetto": 271,
+    "probabilita_effetto": 40,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Libera un’onda d’urto",
+    "dal profondo del",
+    "corpo. Può calare",
+    "molto la Difesa",
+    "Speciale del nemico."
+   ],
+   "descrizione_righe_px": [
+    117,
+    87,
+    95,
+    78,
+    105
+   ],
+   "msg_0749": [
+    "Libera un’onda d’urto\n",
+    "dal profondo del\n",
+    "corpo. Può calare\n",
+    "molto la Difesa\n",
+    "Speciale del nemico."
+   ],
+   "banchi": {
+    "msg_0750": "Scoppiaciuri",
+    "msg_0751": "SCOPPIACIURI",
+    "msg_0749": [
+     "Libera un’onda d’urto\n",
+     "dal profondo del\n",
+     "corpo. Può calare\n",
+     "molto la Difesa\n",
+     "Speciale del nemico."
+    ]
+   }
+  },
+  {
+   "n": 466,
+   "simbolo": "MOVE_OMINOUS_WIND",
+   "originale": "Ominous Wind",
+   "nome": "Ventutintu",
+   "lingua": "scn",
+   "glossario": "G39-0104",
+   "caratteri": 10,
+   "px": 57,
+   "maiuscolo": "VENTUTINTU",
+   "maiuscolo_px": 60,
+   "dati": {
+    "tipo": "TYPE_GHOST",
+    "classe": "speciale",
+    "potenza": 60,
+    "precisione": 100,
+    "pp": 5,
+    "effetto": 140,
+    "probabilita_effetto": 10,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Un vento ripugnante.",
+    "Può aumentare tutte",
+    "le statistiche di chi",
+    "la usa."
+   ],
+   "descrizione_righe_px": [
+    112,
+    110,
+    106,
+    37
+   ],
+   "msg_0749": [
+    "Un vento ripugnante.\n",
+    "Può aumentare tutte\n",
+    "le statistiche di chi\n",
+    "la usa.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Ventutintu",
+    "msg_0751": "VENTUTINTU",
+    "msg_0749": [
+     "Un vento ripugnante.\n",
+     "Può aumentare tutte\n",
+     "le statistiche di chi\n",
+     "la usa.\n"
+    ]
+   }
+  },
+  {
+   "n": 467,
+   "simbolo": "MOVE_SHADOW_FORCE",
+   "originale": "Shadow Force",
+   "nome": "Ummiraforza",
+   "lingua": "scn",
+   "glossario": "G39-0105",
+   "caratteri": 11,
+   "px": 62,
+   "maiuscolo": "UMMIRAFORZA",
+   "maiuscolo_px": 66,
+   "dati": {
+    "tipo": "TYPE_GHOST",
+    "classe": "fisica",
+    "potenza": 120,
+    "precisione": 100,
+    "pp": 5,
+    "effetto": 272,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Sparisce e al secondo",
+    "turno colpisce il",
+    "nemico, anche se si",
+    "protegge."
+   ],
+   "descrizione_righe_px": [
+    115,
+    88,
+    101,
+    53
+   ],
+   "msg_0749": [
+    "Sparisce e al secondo\n",
+    "turno colpisce il\n",
+    "nemico, anche se si\n",
+    "protegge.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Ummiraforza",
+    "msg_0751": "UMMIRAFORZA",
+    "msg_0749": [
+     "Sparisce e al secondo\n",
+     "turno colpisce il\n",
+     "nemico, anche se si\n",
+     "protegge.\n"
+    ]
+   }
+  }
+ ],
+ "glossario_aggiunte": [
+  {
+   "id": "G39-0001",
+   "forma": "Vutu",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "vutu"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 361,
+    "originale": "Healing Wish",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "voto, ex voto",
+   "origine": "architetto 3.9",
+   "nota": "Il voto fatto al santo: chi la usa si sacrifica per il compagno che entra.",
+   "caratteri": 4,
+   "px": 24,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "VUTU",
+   "maiuscolo_px": 24
+  },
+  {
+   "id": "G39-0002",
+   "forma": "Salamuria",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "salamuria"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 362,
+    "originale": "Brine",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "salamoia",
+   "origine": "architetto 3.9",
+   "nota": "L’acqua salata delle conserve.",
+   "caratteri": 9,
+   "px": 49,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "SALAMURIA",
+   "maiuscolo_px": 54
+  },
+  {
+   "id": "G39-0003",
+   "forma": "Cugghiuta",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "cugghiuta"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 363,
+    "originale": "Natural Gift",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "raccolta",
+   "origine": "architetto 3.9",
+   "nota": "Da «cògghiri», raccogliere (vicino a «arricugghiri», MCP): attacca col frutto raccolto.",
+   "caratteri": 9,
+   "px": 51,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "CUGGHIUTA",
+   "maiuscolo_px": 54
+  },
+  {
+   "id": "G39-0004",
+   "forma": "Fintata",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "fintata"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 364,
+    "originale": "Feint",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "finta, colpo di finta",
+   "origine": "architetto 3.9",
+   "nota": "Da «fintu», finto, come Chiantufintu (313).",
+   "caratteri": 7,
+   "px": 39,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "FINTATA",
+   "maiuscolo_px": 42
+  },
+  {
+   "id": "G39-0005",
+   "forma": "Scippata",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "scippata"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 365,
+    "originale": "Pluck",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "strappata",
+   "origine": "architetto 3.9",
+   "nota": "Da «scippari» (MCP), strappare con forza. Scippu (168) ruba lo strumento; la specie n. 461 si chiama «Scippaturi».",
+   "caratteri": 8,
+   "px": 45,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "SCIPPATA",
+   "maiuscolo_px": 48
+  },
+  {
+   "id": "G39-0006",
+   "forma": "Ditata",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "ditata"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 367,
+    "originale": "Acupressure",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "pressione col dito",
+   "origine": "architetto 3.9",
+   "nota": "Da «ditu», dito (variante di «jiditu», MCP).",
+   "caratteri": 6,
+   "px": 33,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "DITATA",
+   "maiuscolo_px": 36
+  },
+  {
+   "id": "G39-0007",
+   "forma": "Scattaferru",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "scattaferru"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 368,
+    "originale": "Metal Burst",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "scoppio di ferro",
+   "origine": "architetto 3.9",
+   "nota": "«scattari» (MCP), scoppiare di rabbia trattenuta + «ferru» (R-MOS-06), come Pelliferru (334).",
+   "caratteri": 11,
+   "px": 65,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "SCATTAFERRU",
+   "maiuscolo_px": 66
+  },
+  {
+   "id": "G39-0008",
+   "forma": "Vutata",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "vutata"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 369,
+    "originale": "U-turn",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "voltata, giro",
+   "origine": "architetto 3.9",
+   "nota": "Da «vutari», voltare: attacca e torna indietro.",
+   "caratteri": 6,
+   "px": 36,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "VUTATA",
+   "maiuscolo_px": 36
+  },
+  {
+   "id": "G39-0009",
+   "forma": "Azzuffata",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "azzuffata"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 370,
+    "originale": "Close Combat",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "zuffa, mischia",
+   "origine": "architetto 3.9",
+   "nota": "Da «azzuffàrisi», azzuffarsi.",
+   "caratteri": 9,
+   "px": 52,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "AZZUFFATA",
+   "maiuscolo_px": 54
+  },
+  {
+   "id": "G39-0010",
+   "forma": "Scuntata",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "scuntata"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 371,
+    "originale": "Payback",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "scontata, pagata",
+   "origine": "architetto 3.9",
+   "nota": "Da «scuntari», scontare: il colpo subito si paga subito. Scuntru (36) è un’altra parola.",
+   "caratteri": 8,
+   "px": 48,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "SCUNTATA",
+   "maiuscolo_px": 48
+  },
+  {
+   "id": "G39-0011",
+   "forma": "Ncarcata",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "ncarcata"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 372,
+    "originale": "Assurance",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "calcata, rincarata",
+   "origine": "architetto 3.9",
+   "nota": "Da «ncarcari», calcare la mano: infierisce su chi è già ferito.",
+   "caratteri": 8,
+   "px": 48,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "NCARCATA",
+   "maiuscolo_px": 48
+  },
+  {
+   "id": "G39-0012",
+   "forma": "Sigillu",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "sigillu"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 373,
+    "originale": "Embargo",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "sigillo",
+   "origine": "architetto 3.9",
+   "nota": "Il sigillo che chiude gli strumenti.",
+   "caratteri": 7,
+   "px": 32,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "SIGILLU",
+   "maiuscolo_px": 42
+  },
+  {
+   "id": "G39-0013",
+   "forma": "Lanzata",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "lanzata"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 374,
+    "originale": "Fling",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "lancio",
+   "origine": "architetto 3.9",
+   "nota": "Da «lanzari», lanciare, come Lanzajacciu (333).",
+   "caratteri": 7,
+   "px": 42,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "LANZATA",
+   "maiuscolo_px": 42
+  },
+  {
+   "id": "G39-0014",
+   "forma": "Passamali",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "passamali"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 375,
+    "originale": "Psycho Shift",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "passa il male",
+   "origine": "architetto 3.9",
+   "nota": "«passari» + «mali», male: il male passa all’altro.",
+   "caratteri": 9,
+   "px": 49,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "PASSAMALI",
+   "maiuscolo_px": 54
+  },
+  {
+   "id": "G39-0015",
+   "forma": "Briscula",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "briscula"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 376,
+    "originale": "Trump Card",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "briscola, la carta che vince",
+   "origine": "architetto 3.9",
+   "nota": "La briscola giocata per ultima.",
+   "caratteri": 8,
+   "px": 43,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "BRISCULA",
+   "maiuscolo_px": 48
+  },
+  {
+   "id": "G39-0016",
+   "forma": "Nenticura",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "nenticura"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 377,
+    "originale": "Heal Block",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "niente cure",
+   "origine": "architetto 3.9",
+   "nota": "«nenti», niente + «cura».",
+   "caratteri": 9,
+   "px": 51,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "NENTICURA",
+   "maiuscolo_px": 54
+  },
+  {
+   "id": "G39-0017",
+   "forma": "Sprimuta",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "sprimuta"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 378,
+    "originale": "Wring Out",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "spremuta",
+   "origine": "architetto 3.9",
+   "nota": "Da «sprèmiri», spremere.",
+   "caratteri": 8,
+   "px": 45,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "SPRIMUTA",
+   "maiuscolo_px": 48
+  },
+  {
+   "id": "G39-0018",
+   "forma": "Mmersu",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "mmersu"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 379,
+    "originale": "Power Trick",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "rovescio, al contrario",
+   "origine": "architetto 3.9",
+   "nota": "«a la mmersa», alla rovescia: Attacco e Difesa si scambiano.",
+   "caratteri": 6,
+   "px": 36,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "MMERSU",
+   "maiuscolo_px": 36
+  },
+  {
+   "id": "G39-0019",
+   "forma": "Stummacata",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "stummacata"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 380,
+    "originale": "Gastro Acid",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "rigurgito di stomaco",
+   "origine": "architetto 3.9",
+   "nota": "Da «stòmmacu», stomaco.",
+   "caratteri": 10,
+   "px": 60,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "STUMMACATA",
+   "maiuscolo_px": 60
+  },
+  {
+   "id": "G39-0020",
+   "forma": "Scongiuru",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "scongiuru"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 381,
+    "originale": "Lucky Chant",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "scongiuro",
+   "origine": "architetto 3.9",
+   "nota": "Lo scongiuro contro la sfortuna.",
+   "caratteri": 9,
+   "px": 51,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "SCONGIURU",
+   "maiuscolo_px": 54
+  },
+  {
+   "id": "G39-0021",
+   "forma": "Scavarcata",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "scavarcata"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 382,
+    "originale": "Me First",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "scavalcata",
+   "origine": "architetto 3.9",
+   "nota": "Da «scavarcari», scavalcare: passa davanti al nemico.",
+   "caratteri": 10,
+   "px": 60,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "SCAVARCATA",
+   "maiuscolo_px": 60
+  },
+  {
+   "id": "G39-0022",
+   "forma": "Arripitu",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "arripitu"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 383,
+    "originale": "Copycat",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "ripetizione",
+   "origine": "architetto 3.9",
+   "nota": "Da «arripetiri», ripetere. Cupiata (102) copia una mossa del nemico e la tiene.",
+   "caratteri": 8,
+   "px": 42,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "ARRIPITU",
+   "maiuscolo_px": 48
+  },
+  {
+   "id": "G39-0023",
+   "forma": "Canciaforza",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "canciaforza"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 384,
+    "originale": "Power Swap",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "scambia la forza",
+   "origine": "architetto 3.9",
+   "nota": "«canciari» (MCP), cambiare + «forza». Famiglia «Cancia-» con Canciascutu (385) e Canciacori (391); Canciu (160) viene dalla stessa voce.",
+   "caratteri": 11,
+   "px": 62,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "CANCIAFORZA",
+   "maiuscolo_px": 66
+  },
+  {
+   "id": "G39-0024",
+   "forma": "Canciascutu",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "canciascutu"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 385,
+    "originale": "Guard Swap",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "scambia lo scudo",
+   "origine": "architetto 3.9",
+   "nota": "«canciari» + «scutu», scudo (famiglia «Cancia-»). La specie n. 410 si chiama «Scutu»: qui è una parte del composto.",
+   "caratteri": 11,
+   "px": 63,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "CANCIASCUTU",
+   "maiuscolo_px": 66
+  },
+  {
+   "id": "G39-0025",
+   "forma": "Castiu",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "castiu"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 386,
+    "originale": "Punishment",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "castigo",
+   "origine": "architetto 3.9",
+   "nota": "Castigo.",
+   "caratteri": 6,
+   "px": 33,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "CASTIU",
+   "maiuscolo_px": 36
+  },
+  {
+   "id": "G39-0026",
+   "forma": "Ultimucorpu",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "ultimucorpu"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 387,
+    "originale": "Last Resort",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "ultimo colpo",
+   "origine": "architetto 3.9",
+   "nota": "«ultimu» + «corpu» (MCP), colpo, come Corpu (1).",
+   "caratteri": 11,
+   "px": 61,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "ULTIMUCORPU",
+   "maiuscolo_px": 66
+  },
+  {
+   "id": "G39-0027",
+   "forma": "Malasimenza",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "malasimenza"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 388,
+    "originale": "Worry Seed",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "mala semenza",
+   "origine": "architetto 3.9",
+   "nota": "«mala» + «simenza», semenza: il seme delle preoccupazioni. La specie n. 191 si chiama «Simenza»; Simenzata (331) è un’altra mossa.",
+   "caratteri": 11,
+   "px": 61,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "MALASIMENZA",
+   "maiuscolo_px": 66
+  },
+  {
+   "id": "G39-0028",
+   "forma": "Appustata",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "appustata"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 389,
+    "originale": "Sucker Punch",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "appostamento",
+   "origine": "architetto 3.9",
+   "nota": "Da «appustàrisi», appostarsi: colpisce chi sta per attaccare.",
+   "caratteri": 9,
+   "px": 54,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "APPUSTATA",
+   "maiuscolo_px": 54
+  },
+  {
+   "id": "G39-0029",
+   "forma": "Chiovavilenu",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "chiovavilenu"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 390,
+    "originale": "Toxic Spikes",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "chiodi di veleno",
+   "origine": "architetto 3.9",
+   "nota": "«chiova», chiodi, come Chiova (191) + «vilenu», veleno, come Zannavilenu (305).",
+   "caratteri": 12,
+   "px": 64,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "CHIOVAVILENU",
+   "maiuscolo_px": 72
+  },
+  {
+   "id": "G39-0030",
+   "forma": "Canciacori",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "canciacori"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 391,
+    "originale": "Heart Swap",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "scambia il cuore",
+   "origine": "architetto 3.9",
+   "nota": "«canciari» + «cori», cuore (famiglia «Cancia-»). La specie n. 481 si chiama «Cori»: qui è una parte del composto.",
+   "caratteri": 10,
+   "px": 54,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "CANCIACORI",
+   "maiuscolo_px": 60
+  },
+  {
+   "id": "G39-0031",
+   "forma": "Aneddacqua",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "aneddacqua"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 392,
+    "originale": "Aqua Ring",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "anello d’acqua",
+   "origine": "architetto 3.9",
+   "nota": "«aneddu», anello + «acqua».",
+   "caratteri": 10,
+   "px": 60,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "ANEDDACQUA",
+   "maiuscolo_px": 60
+  },
+  {
+   "id": "G39-0032",
+   "forma": "Sulluvata",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "sulluvata"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 393,
+    "originale": "Magnet Rise",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "sollevata",
+   "origine": "architetto 3.9",
+   "nota": "Da «sulluvari», sollevare.",
+   "caratteri": 9,
+   "px": 50,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "SULLUVATA",
+   "maiuscolo_px": 54
+  },
+  {
+   "id": "G39-0033",
+   "forma": "Focuscuntru",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "focuscuntru"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 394,
+    "originale": "Flare Blitz",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "scontro di fuoco",
+   "origine": "architetto 3.9",
+   "nota": "«focu» + «scuntru», scontro, come Tronuscuntru (344).",
+   "caratteri": 11,
+   "px": 66,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "FOCUSCUNTRU",
+   "maiuscolo_px": 66
+  },
+  {
+   "id": "G39-0034",
+   "forma": "Parmata",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "parmata"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 395,
+    "originale": "Force Palm",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "colpo di palmo",
+   "origine": "architetto 3.9",
+   "nota": "Da «parmu», palmo della mano. Manati (292) e Timpulata (3) sono altri colpi a mano aperta.",
+   "caratteri": 7,
+   "px": 42,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "PARMATA",
+   "maiuscolo_px": 42
+  },
+  {
+   "id": "G39-0035",
+   "forma": "Aurabadda",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "aurabadda"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 396,
+    "originale": "Aura Sphere",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "palla d’aura",
+   "origine": "architetto 3.9",
+   "nota": "«aura» + «badda», palla (famiglia «-badda», R-MOS-06).",
+   "caratteri": 9,
+   "px": 54,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "AURABADDA",
+   "maiuscolo_px": 54
+  },
+  {
+   "id": "G39-0036",
+   "forma": "Lustrapetra",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "lustrapetra"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 397,
+    "originale": "Rock Polish",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "lucida la pietra",
+   "origine": "architetto 3.9",
+   "nota": "«lustrari», lucidare + «petra», pietra. La specie n. 120 si chiama «Lustrinu».",
+   "caratteri": 11,
+   "px": 66,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "LUSTRAPETRA",
+   "maiuscolo_px": 66
+  },
+  {
+   "id": "G39-0037",
+   "forma": "Puncivilenu",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "puncivilenu"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 398,
+    "originale": "Poison Jab",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "puntura di veleno",
+   "origine": "architetto 3.9",
+   "nota": "«pùnciri», pungere, come Punciuta (40) + «vilenu» (famiglia di Zannavilenu e Cudavilenu).",
+   "caratteri": 11,
+   "px": 58,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "PUNCIVILENU",
+   "maiuscolo_px": 66
+  },
+  {
+   "id": "G39-0038",
+   "forma": "Scurupulsu",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "scurupulsu"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 399,
+    "originale": "Dark Pulse",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "polso del buio",
+   "origine": "architetto 3.9",
+   "nota": "«scuru», buio + «pulsu», battito, come Acquapulsu (352).",
+   "caratteri": 10,
+   "px": 58,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "SCURUPULSU",
+   "maiuscolo_px": 60
+  },
+  {
+   "id": "G39-0039",
+   "forma": "Tagghianotti",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "tagghianotti"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 400,
+    "originale": "Night Slash",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "taglia la notte",
+   "origine": "architetto 3.9",
+   "nota": "«tagghiari» + «notti», notte: famiglia di Tagghiatesta (12) e Tagghiaventu (314).",
+   "caratteri": 12,
+   "px": 66,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "TAGGHIANOTTI",
+   "maiuscolo_px": 72
+  },
+  {
+   "id": "G39-0040",
+   "forma": "Cudacqua",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "cudacqua"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 401,
+    "originale": "Aqua Tail",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "coda d’acqua",
+   "origine": "architetto 3.9",
+   "nota": "«cuda», coda + «acqua»: famiglia di Cudaferru (231), Cudaluci (294) e Cudavilenu (342).",
+   "caratteri": 8,
+   "px": 48,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "CUDACQUA",
+   "maiuscolo_px": 48
+  },
+  {
+   "id": "G39-0041",
+   "forma": "Ciciribumma",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "ciciribumma"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 402,
+    "originale": "Seed Bomb",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "bomba di ceci",
+   "origine": "architetto 3.9",
+   "nota": "«cìciri» (MCP), ceci + «bumma», bomba, come Ovubumma (121) e Murcabumma (188): i semi duri che si sgranocchiano in strada.",
+   "caratteri": 11,
+   "px": 57,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "CICIRIBUMMA",
+   "maiuscolo_px": 66
+  },
+  {
+   "id": "G39-0042",
+   "forma": "Tagghiacelu",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "tagghiacelu"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 403,
+    "originale": "Air Slash",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "taglia il cielo",
+   "origine": "architetto 3.9",
+   "nota": "«tagghiari» + «celu», cielo (famiglia «Tagghia-»).",
+   "caratteri": 11,
+   "px": 61,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "TAGGHIACELU",
+   "maiuscolo_px": 66
+  },
+  {
+   "id": "G39-0043",
+   "forma": "Furficiata",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "furficiata"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 404,
+    "originale": "X-Scissor",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "sforbiciata",
+   "origine": "architetto 3.9",
+   "nota": "Da «fùrfici», forbici. La specie n. 212 si chiama «Furficiuni».",
+   "caratteri": 10,
+   "px": 53,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "FURFICIATA",
+   "maiuscolo_px": 60
+  },
+  {
+   "id": "G39-0044",
+   "forma": "Zuzzurìu",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "zuzzurìu"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 405,
+    "originale": "Bug Buzz",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "ronzio",
+   "origine": "architetto 3.9",
+   "nota": "Voce imitativa del ronzio degli insetti.",
+   "caratteri": 8,
+   "px": 46,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "ZUZZURÌU",
+   "maiuscolo_px": 48
+  },
+  {
+   "id": "G39-0045",
+   "forma": "Dracupulsu",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "dracupulsu"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 406,
+    "originale": "Dragon Pulse",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "polso del drago",
+   "origine": "architetto 3.9",
+   "nota": "«dracu» (R-MOS-06) + «pulsu», come Acquapulsu (352) e Scurupulsu (399).",
+   "caratteri": 10,
+   "px": 58,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "DRACUPULSU",
+   "maiuscolo_px": 60
+  },
+  {
+   "id": "G39-0046",
+   "forma": "Dracucursa",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "dracucursa"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 407,
+    "originale": "Dragon Rush",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "corsa del drago",
+   "origine": "architetto 3.9",
+   "nota": "«dracu» (R-MOS-06) + «cursa», corsa, come Cursa (245).",
+   "caratteri": 10,
+   "px": 60,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "DRACUCURSA",
+   "maiuscolo_px": 60
+  },
+  {
+   "id": "G39-0047",
+   "forma": "Smiraldata",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "smiraldata"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 408,
+    "originale": "Power Gem",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "colpo di smeraldo",
+   "origine": "architetto 3.9",
+   "nota": "Da «smiraldu», smeraldo.",
+   "caratteri": 10,
+   "px": 55,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "SMIRALDATA",
+   "maiuscolo_px": 60
+  },
+  {
+   "id": "G39-0048",
+   "forma": "Sucapugnu",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "sucapugnu"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 409,
+    "originale": "Drain Punch",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "pugno che succhia",
+   "origine": "architetto 3.9",
+   "nota": "«sucari», succhiare, come Sucata (72) e Sucatuna (202) + «pugnu» (R-MOS-06).",
+   "caratteri": 9,
+   "px": 54,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "SUCAPUGNU",
+   "maiuscolo_px": 54
+  },
+  {
+   "id": "G39-0049",
+   "forma": "Unnavacanti",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "unnavacanti"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 410,
+    "originale": "Vacuum Wave",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "onda vuota",
+   "origine": "architetto 3.9",
+   "nota": "«unna», onda + «vacanti» (MCP), vuoto.",
+   "caratteri": 11,
+   "px": 63,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "UNNAVACANTI",
+   "maiuscolo_px": 66
+  },
+  {
+   "id": "G39-0050",
+   "forma": "Mirabadda",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "mirabadda"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 411,
+    "originale": "Focus Blast",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "palla mirata",
+   "origine": "architetto 3.9",
+   "nota": "«mira» + «badda» (famiglia «-badda»), come Mirapugnu (264).",
+   "caratteri": 9,
+   "px": 51,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "MIRABADDA",
+   "maiuscolo_px": 54
+  },
+  {
+   "id": "G39-0051",
+   "forma": "Naturabadda",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "naturabadda"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 412,
+    "originale": "Energy Ball",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "palla della natura",
+   "origine": "architetto 3.9",
+   "nota": "«natura» + «badda» (famiglia «-badda»), come Forzanatura (267).",
+   "caratteri": 11,
+   "px": 66,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "NATURABADDA",
+   "maiuscolo_px": 66
+  },
+  {
+   "id": "G39-0052",
+   "forma": "Scapicoddu",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "scapicoddu"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 413,
+    "originale": "Brave Bird",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "a rompicollo",
+   "origine": "architetto 3.9",
+   "nota": "«a scapicoddu», a precipizio, a rotta di collo.",
+   "caratteri": 10,
+   "px": 57,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "SCAPICODDU",
+   "maiuscolo_px": 60
+  },
+  {
+   "id": "G39-0053",
+   "forma": "Forzaterra",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "forzaterra"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 414,
+    "originale": "Earth Power",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "forza della terra",
+   "origine": "architetto 3.9",
+   "nota": "«forza» + «terra», come Forzanatura (267).",
+   "caratteri": 10,
+   "px": 60,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "FORZATERRA",
+   "maiuscolo_px": 60
+  },
+  {
+   "id": "G39-0054",
+   "forma": "Barattu",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "barattu"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 415,
+    "originale": "Switcheroo",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "baratto",
+   "origine": "architetto 3.9",
+   "nota": "Lo scambio lesto. Trucchettu (271) fa lo stesso.",
+   "caratteri": 7,
+   "px": 42,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "BARATTU",
+   "maiuscolo_px": 42
+  },
+  {
+   "id": "G39-0055",
+   "forma": "Scuntrazzu",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "scuntrazzu"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 416,
+    "originale": "Giga Impact",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "scontro brutale",
+   "origine": "architetto 3.9",
+   "nota": "Peggiorativo di «scuntru», come Scuntru (36).",
+   "caratteri": 10,
+   "px": 60,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "SCUNTRAZZU",
+   "maiuscolo_px": 60
+  },
+  {
+   "id": "G39-0056",
+   "forma": "Cumplottu",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "cumplottu"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 417,
+    "originale": "Nasty Plot",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "complotto",
+   "origine": "architetto 3.9",
+   "nota": "Il complotto tramato di nascosto.",
+   "caratteri": 9,
+   "px": 52,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "CUMPLOTTU",
+   "maiuscolo_px": 54
+  },
+  {
+   "id": "G39-0057",
+   "forma": "Lampupugnu",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "lampupugnu"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 418,
+    "originale": "Bullet Punch",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "pugno lampo",
+   "origine": "architetto 3.9",
+   "nota": "«lampu», lampo, come Lampu (84) + «pugnu» (R-MOS-06).",
+   "caratteri": 10,
+   "px": 60,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "LAMPUPUGNU",
+   "maiuscolo_px": 60
+  },
+  {
+   "id": "G39-0058",
+   "forma": "Allavancata",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "allavancata"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 419,
+    "originale": "Avalanche",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "precipitata, valanga",
+   "origine": "architetto 3.9",
+   "nota": "Da «allavancari» (MCP), precipitare rovinosamente. Lavanca (90) è un’altra mossa.",
+   "caratteri": 11,
+   "px": 62,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "ALLAVANCATA",
+   "maiuscolo_px": 66
+  },
+  {
+   "id": "G39-0059",
+   "forma": "Lestujacciu",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "lestujacciu"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 420,
+    "originale": "Ice Shard",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "ghiaccio lesto",
+   "origine": "architetto 3.9",
+   "nota": "«lestu», svelto, come Lestupugnu (183) e Lestuvolu (332) + «jacciu», ghiaccio.",
+   "caratteri": 11,
+   "px": 62,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "LESTUJACCIU",
+   "maiuscolo_px": 66
+  },
+  {
+   "id": "G39-0060",
+   "forma": "Ummiragranfa",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "ummiragranfa"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 421,
+    "originale": "Shadow Claw",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "artiglio d’ombra",
+   "origine": "architetto 3.9",
+   "nota": "«ùmmira», ombra + «granfa», artiglio: famiglie di Ummirapugnu (325) e Dracugranfa (337).",
+   "caratteri": 12,
+   "px": 68,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "UMMIRAGRANFA",
+   "maiuscolo_px": 72
+  },
+  {
+   "id": "G39-0061",
+   "forma": "Zannatronu",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "zannatronu"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 422,
+    "originale": "Thunder Fang",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "zanna di tuono",
+   "origine": "architetto 3.9",
+   "nota": "«zanna» + «tronu», tuono: famiglia «Zanna-» con Zannajacciu (423), Zannafocu (424) e Zannavilenu (305).",
+   "caratteri": 10,
+   "px": 60,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "ZANNATRONU",
+   "maiuscolo_px": 60
+  },
+  {
+   "id": "G39-0062",
+   "forma": "Zannajacciu",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "zannajacciu"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 423,
+    "originale": "Ice Fang",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "zanna di ghiaccio",
+   "origine": "architetto 3.9",
+   "nota": "«zanna» + «jacciu», ghiaccio (famiglia «Zanna-»).",
+   "caratteri": 11,
+   "px": 62,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "ZANNAJACCIU",
+   "maiuscolo_px": 66
+  },
+  {
+   "id": "G39-0063",
+   "forma": "Zannafocu",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "zannafocu"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 424,
+    "originale": "Fire Fang",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "zanna di fuoco",
+   "origine": "architetto 3.9",
+   "nota": "«zanna» + «focu», fuoco (famiglia «Zanna-»).",
+   "caratteri": 9,
+   "px": 53,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "ZANNAFOCU",
+   "maiuscolo_px": 54
+  },
+  {
+   "id": "G39-0064",
+   "forma": "Ummiralesta",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "ummiralesta"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 425,
+    "originale": "Shadow Sneak",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "ombra lesta",
+   "origine": "architetto 3.9",
+   "nota": "«ùmmira», ombra + «lesta», svelta (famiglie «Ummira-» e «Lestu-»).",
+   "caratteri": 11,
+   "px": 61,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "UMMIRALESTA",
+   "maiuscolo_px": 66
+  },
+  {
+   "id": "G39-0065",
+   "forma": "Zancabumma",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "zancabumma"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 426,
+    "originale": "Mud Bomb",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "bomba di fango",
+   "origine": "architetto 3.9",
+   "nota": "«zancu», fango, come Zancata (341) + «bumma», bomba, come Murcabumma (188).",
+   "caratteri": 10,
+   "px": 60,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "ZANCABUMMA",
+   "maiuscolo_px": 60
+  },
+  {
+   "id": "G39-0066",
+   "forma": "Tagghiamenti",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "tagghiamenti"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 427,
+    "originale": "Psycho Cut",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "taglio della mente",
+   "origine": "architetto 3.9",
+   "nota": "«tagghiari» + «menti», mente (famiglia «Tagghia-»).",
+   "caratteri": 12,
+   "px": 66,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "TAGGHIAMENTI",
+   "maiuscolo_px": 72
+  },
+  {
+   "id": "G39-0067",
+   "forma": "Tistapaci",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "tistapaci"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 428,
+    "originale": "Zen Headbutt",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "testa in pace",
+   "origine": "architetto 3.9",
+   "nota": "«testa» + «paci», pace: la testata data con lo spirito calmo. Tistata (130) è un’altra mossa; la specie n. 111 si chiama «Tistuni».",
+   "caratteri": 9,
+   "px": 48,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "TISTAPACI",
+   "maiuscolo_px": 54
+  },
+  {
+   "id": "G39-0068",
+   "forma": "Lustrata",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "lustrata"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 429,
+    "originale": "Mirror Shot",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "lucidata",
+   "origine": "architetto 3.9",
+   "nota": "Da «lustrari», lucidare: il lampo del corpo lucidato.",
+   "caratteri": 8,
+   "px": 48,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "LUSTRATA",
+   "maiuscolo_px": 48
+  },
+  {
+   "id": "G39-0069",
+   "forma": "Ferruluci",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "ferruluci"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 430,
+    "originale": "Flash Cannon",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "luce di ferro",
+   "origine": "architetto 3.9",
+   "nota": "«ferru» (R-MOS-06) + «luci», luce, come Cudaluci (294).",
+   "caratteri": 9,
+   "px": 49,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "FERRULUCI",
+   "maiuscolo_px": 54
+  },
+  {
+   "id": "G39-0070",
+   "forma": "Annittata",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "annittata"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 432,
+    "originale": "Defog",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "ripulita",
+   "origine": "architetto 3.9",
+   "nota": "Da «annittari», variante di «annititari» (MCP), pulire a fondo.",
+   "caratteri": 9,
+   "px": 51,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "ANNITTATA",
+   "maiuscolo_px": 54
+  },
+  {
+   "id": "G39-0071",
+   "forma": "Suttasupra",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "suttasupra"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 433,
+    "originale": "Trick Room",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "sottosopra",
+   "origine": "architetto 3.9",
+   "nota": "«sutta», sotto + «supra», sopra: tutto alla rovescia.",
+   "caratteri": 10,
+   "px": 60,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "SUTTASUPRA",
+   "maiuscolo_px": 60
+  },
+  {
+   "id": "G39-0072",
+   "forma": "Dracustidda",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "dracustidda"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 434,
+    "originale": "Draco Meteor",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "stella del drago",
+   "origine": "architetto 3.9",
+   "nota": "«dracu» (R-MOS-06) + «stidda» (MCP), stella, come Stiddapugnu (309).",
+   "caratteri": 11,
+   "px": 63,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "DRACUSTIDDA",
+   "maiuscolo_px": 66
+  },
+  {
+   "id": "G39-0073",
+   "forma": "Saittata",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "saittata"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 435,
+    "originale": "Discharge",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "colpo di saetta",
+   "origine": "architetto 3.9",
+   "nota": "Da «saitta», saetta. La specie n. 26 si chiama «Saitta»: qui è il colpo.",
+   "caratteri": 8,
+   "px": 45,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "SAITTATA",
+   "maiuscolo_px": 48
+  },
+  {
+   "id": "G39-0074",
+   "forma": "Lavicata",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "lavicata"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 436,
+    "originale": "Lava Plume",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "getto di lava",
+   "origine": "architetto 3.9",
+   "nota": "Da «làvicu», lavico, come la pietra dell’Etna.",
+   "caratteri": 8,
+   "px": 45,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "LAVICATA",
+   "maiuscolo_px": 48
+  },
+  {
+   "id": "G39-0075",
+   "forma": "Fogghiaventu",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "fogghiaventu"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 437,
+    "originale": "Leaf Storm",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "vento di foglie",
+   "origine": "architetto 3.9",
+   "nota": "«fogghia» (R-MOS-06) + «ventu», come Tagghiaventu (314). La specie n. 254 si chiama «Fogghiazza».",
+   "caratteri": 12,
+   "px": 69,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "FOGGHIAVENTU",
+   "maiuscolo_px": 72
+  },
+  {
+   "id": "G39-0076",
+   "forma": "Zuttazza",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "zuttazza"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 438,
+    "originale": "Power Whip",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "frustata brutale",
+   "origine": "architetto 3.9",
+   "nota": "Peggiorativo di «zotta» (MCP), frusta, come Zotta (22).",
+   "caratteri": 8,
+   "px": 48,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "ZUTTAZZA",
+   "maiuscolo_px": 48
+  },
+  {
+   "id": "G39-0077",
+   "forma": "Mazzacani",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "mazzacani"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 439,
+    "originale": "Rock Wrecker",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "macigno",
+   "origine": "architetto 3.9",
+   "nota": "«mazzacani», grosso sasso da tirare.",
+   "caratteri": 9,
+   "px": 51,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "MAZZACANI",
+   "maiuscolo_px": 54
+  },
+  {
+   "id": "G39-0078",
+   "forma": "Cruciavilenu",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "cruciavilenu"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 440,
+    "originale": "Cross Poison",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "croce di veleno",
+   "origine": "architetto 3.9",
+   "nota": "«cruci», croce, come Cruciata (238) + «vilenu», veleno.",
+   "caratteri": 12,
+   "px": 64,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "CRUCIAVILENU",
+   "maiuscolo_px": 72
+  },
+  {
+   "id": "G39-0079",
+   "forma": "Murcazza",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "murcazza"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 441,
+    "originale": "Gunk Shot",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "sudiciume",
+   "origine": "architetto 3.9",
+   "nota": "Peggiorativo di «murca», morchia, come Murca (124) e Murcabumma (188).",
+   "caratteri": 8,
+   "px": 48,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "MURCAZZA",
+   "maiuscolo_px": 48
+  },
+  {
+   "id": "G39-0080",
+   "forma": "Tistaferru",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "tistaferru"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 442,
+    "originale": "Iron Head",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "testa di ferro",
+   "origine": "architetto 3.9",
+   "nota": "«testa» + «ferru» (R-MOS-06), come Pelliferru (334).",
+   "caratteri": 10,
+   "px": 56,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "TISTAFERRU",
+   "maiuscolo_px": 60
+  },
+  {
+   "id": "G39-0081",
+   "forma": "Ferrubumma",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "ferrubumma"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 443,
+    "originale": "Magnet Bomb",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "bomba di ferro",
+   "origine": "architetto 3.9",
+   "nota": "«ferru» + «bumma», bomba, come Ovubumma (121).",
+   "caratteri": 10,
+   "px": 60,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "FERRUBUMMA",
+   "maiuscolo_px": 60
+  },
+  {
+   "id": "G39-0082",
+   "forma": "Puntapetra",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "puntapetra"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 444,
+    "originale": "Stone Edge",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "punta di pietra",
+   "origine": "architetto 3.9",
+   "nota": "«punta» + «petra», pietra, come Fossapetra (317).",
+   "caratteri": 10,
+   "px": 60,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "PUNTAPETRA",
+   "maiuscolo_px": 60
+  },
+  {
+   "id": "G39-0083",
+   "forma": "Ammagata",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "ammagata"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 445,
+    "originale": "Captivate",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "ammaliata",
+   "origine": "architetto 3.9",
+   "nota": "Da «ammagari» (MCP), ammaliare. La specie n. 429 si chiama «Ammagatura»: qui è l’effetto.",
+   "caratteri": 8,
+   "px": 48,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "AMMAGATA",
+   "maiuscolo_px": 48
+  },
+  {
+   "id": "G39-0084",
+   "forma": "Petruzzi",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "petruzzi"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 446,
+    "originale": "Stealth Rock",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "pietruzze",
+   "origine": "architetto 3.9",
+   "nota": "Plurale di «petruzza», pietruzza, come Petrazzi (350).",
+   "caratteri": 8,
+   "px": 45,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "PETRUZZI",
+   "maiuscolo_px": 48
+  },
+  {
+   "id": "G39-0085",
+   "forma": "Ruppu",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "ruppu"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 447,
+    "originale": "Grass Knot",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "nodo",
+   "origine": "architetto 3.9",
+   "nota": "Il nodo d’erba in cui il nemico inciampa.",
+   "caratteri": 5,
+   "px": 30,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "RUPPU",
+   "maiuscolo_px": 30
+  },
+  {
+   "id": "G39-0086",
+   "forma": "Parrata",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "parrata"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 448,
+    "originale": "Chatter",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "parlata, declamazione",
+   "origine": "architetto 3.9",
+   "nota": "Variante «parrata» di «parratina» (MCP), la parlata declamata dei pupi.",
+   "caratteri": 7,
+   "px": 42,
+   "fonte": "MCP",
+   "lemma_mcp": "parratina",
+   "limite": "L-08",
+   "maiuscolo": "PARRATA",
+   "maiuscolo_px": 42
+  },
+  {
+   "id": "G39-0087",
+   "forma": "Judiziu",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "judiziu"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 449,
+    "originale": "Judgment",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "giudizio",
+   "origine": "architetto 3.9",
+   "nota": "Il giudizio finale.",
+   "caratteri": 7,
+   "px": 36,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "JUDIZIU",
+   "maiuscolo_px": 42
+  },
+  {
+   "id": "G39-0088",
+   "forma": "Rusicata",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "rusicata"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 450,
+    "originale": "Bug Bite",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "rosicchiata",
+   "origine": "architetto 3.9",
+   "nota": "Da «rusicari», rosicchiare.",
+   "caratteri": 8,
+   "px": 45,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "RUSICATA",
+   "maiuscolo_px": 48
+  },
+  {
+   "id": "G39-0089",
+   "forma": "Tronuraggiu",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "tronuraggiu"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 451,
+    "originale": "Charge Beam",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "raggio di tuono",
+   "origine": "architetto 3.9",
+   "nota": "«tronu», tuono, come Tronu (87) + «raggiu», raggio, come Raggiazza (200).",
+   "caratteri": 11,
+   "px": 63,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "TRONURAGGIU",
+   "maiuscolo_px": 66
+  },
+  {
+   "id": "G39-0090",
+   "forma": "Mazzalignu",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "mazzalignu"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 452,
+    "originale": "Wood Hammer",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "mazza di legno",
+   "origine": "architetto 3.9",
+   "nota": "«mazza» + «lignu», legno, come Ossumazza (125) e Vrazzumazza (359).",
+   "caratteri": 10,
+   "px": 55,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "MAZZALIGNU",
+   "maiuscolo_px": 60
+  },
+  {
+   "id": "G39-0091",
+   "forma": "Lestacqua",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "lestacqua"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 453,
+    "originale": "Aqua Jet",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "acqua lesta",
+   "origine": "architetto 3.9",
+   "nota": "«lesta», svelta + «acqua» (famiglia «Lestu-»).",
+   "caratteri": 9,
+   "px": 54,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "LESTACQUA",
+   "maiuscolo_px": 54
+  },
+  {
+   "id": "G39-0092",
+   "forma": "Sciamuarmi",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "sciamuarmi"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 454,
+    "originale": "Attack Order",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "sciame in armi",
+   "origine": "architetto 3.9",
+   "nota": "«sciamu», sciame + «armi». Famiglia «Sciamu-» con Sciamuscutu (455) e Sciamucura (456), le tre mosse della regina degli sciami. La specie n. 6 si chiama «Sciammuni».",
+   "caratteri": 10,
+   "px": 54,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "SCIAMUARMI",
+   "maiuscolo_px": 60
+  },
+  {
+   "id": "G39-0093",
+   "forma": "Sciamuscutu",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "sciamuscutu"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 455,
+    "originale": "Defend Order",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "sciame scudo",
+   "origine": "architetto 3.9",
+   "nota": "«sciamu» + «scutu», scudo (famiglia «Sciamu-»), come Canciascutu (385).",
+   "caratteri": 11,
+   "px": 63,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "SCIAMUSCUTU",
+   "maiuscolo_px": 66
+  },
+  {
+   "id": "G39-0094",
+   "forma": "Sciamucura",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "sciamucura"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 456,
+    "originale": "Heal Order",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "sciame che cura",
+   "origine": "architetto 3.9",
+   "nota": "«sciamu» + «cura» (famiglia «Sciamu-»).",
+   "caratteri": 10,
+   "px": 57,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "SCIAMUCURA",
+   "maiuscolo_px": 60
+  },
+  {
+   "id": "G39-0095",
+   "forma": "Rumpitesta",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "rumpitesta"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 457,
+    "originale": "Head Smash",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "rompitesta",
+   "origine": "architetto 3.9",
+   "nota": "«rùmpiri», rompere + «testa».",
+   "caratteri": 10,
+   "px": 57,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "RUMPITESTA",
+   "maiuscolo_px": 60
+  },
+  {
+   "id": "G39-0096",
+   "forma": "Duicorpi",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "duicorpi"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 458,
+    "originale": "Double Hit",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "due colpi",
+   "origine": "architetto 3.9",
+   "nota": "«dui», due + «corpi», colpi, come Duicauci (24) e Duipunciuti (41).",
+   "caratteri": 8,
+   "px": 42,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "DUICORPI",
+   "maiuscolo_px": 48
+  },
+  {
+   "id": "G39-0097",
+   "forma": "Rugghiutempu",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "rugghiutempu"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 459,
+    "originale": "Roar of Time",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "ruggito del tempo",
+   "origine": "architetto 3.9",
+   "nota": "«rugghiu», ruggito + «tempu». La specie n. 351 si chiama «Tempu»: qui è una parte del composto.",
+   "caratteri": 12,
+   "px": 69,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "RUGGHIUTEMPU",
+   "maiuscolo_px": 72
+  },
+  {
+   "id": "G39-0098",
+   "forma": "Sfardaspaziu",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "sfardaspaziu"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 460,
+    "originale": "Spacial Rend",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "squarcia lo spazio",
+   "origine": "architetto 3.9",
+   "nota": "«sfardari», strappare + «spaziu». La specie n. 484 si chiama «Spaziu».",
+   "caratteri": 12,
+   "px": 68,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "SFARDASPAZIU",
+   "maiuscolo_px": 72
+  },
+  {
+   "id": "G39-0099",
+   "forma": "Ballaluna",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "ballaluna"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 461,
+    "originale": "Lunar Dance",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "danza della luna",
+   "origine": "architetto 3.9",
+   "nota": "«ballari» + «luna» (MCP): famiglia dei balli con Ballaspati (14) e Ballapinni (297).",
+   "caratteri": 9,
+   "px": 48,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "BALLALUNA",
+   "maiuscolo_px": 54
+  },
+  {
+   "id": "G39-0100",
+   "forma": "Strinciuni",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "strinciuni"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 462,
+    "originale": "Crush Grip",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "stretta brutale",
+   "origine": "architetto 3.9",
+   "nota": "Accrescitivo di «strinciuta», stretta, come Strinciuta (11).",
+   "caratteri": 10,
+   "px": 51,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "STRINCIUNI",
+   "maiuscolo_px": 60
+  },
+  {
+   "id": "G39-0101",
+   "forma": "Tirribìliu",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "tirribìliu"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 463,
+    "originale": "Magma Storm",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "finimondo, tumulto",
+   "origine": "architetto 3.9",
+   "nota": "Il finimondo di fuoco.",
+   "caratteri": 10,
+   "px": 47,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "TIRRIBÌLIU",
+   "maiuscolo_px": 60
+  },
+  {
+   "id": "G39-0102",
+   "forma": "Notticupa",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "notticupa"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 464,
+    "originale": "Dark Void",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "notte cupa",
+   "origine": "architetto 3.9",
+   "nota": "«notti», notte + «cupa».",
+   "caratteri": 9,
+   "px": 51,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "NOTTICUPA",
+   "maiuscolo_px": 54
+  },
+  {
+   "id": "G39-0103",
+   "forma": "Scoppiaciuri",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "scoppiaciuri"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 465,
+    "originale": "Seed Flare",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "scoppio di fiori",
+   "origine": "architetto 3.9",
+   "nota": "«scuppiari», scoppiare + «ciuri», fiori.",
+   "caratteri": 12,
+   "px": 63,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "SCOPPIACIURI",
+   "maiuscolo_px": 72
+  },
+  {
+   "id": "G39-0104",
+   "forma": "Ventutintu",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "ventutintu"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 466,
+    "originale": "Ominous Wind",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "vento cattivo",
+   "origine": "architetto 3.9",
+   "nota": "«ventu» + «tintu» (MCP), cattivo, malvagio.",
+   "caratteri": 10,
+   "px": 57,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "VENTUTINTU",
+   "maiuscolo_px": 60
+  },
+  {
+   "id": "G39-0105",
+   "forma": "Ummiraforza",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "ummiraforza"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 467,
+    "originale": "Shadow Force",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "forza d’ombra",
+   "origine": "architetto 3.9",
+   "nota": "«ùmmira», ombra + «forza» (famiglia «Ummira-»).",
+   "caratteri": 11,
+   "px": 62,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "UMMIRAFORZA",
+   "maiuscolo_px": 66
+  }
+ ],
+ "riepilogo_mosse_1_467": {
+  "mosse": 467,
+  "numeri_coperti": "1–467, ognuno una volta",
+  "nomi_distinti": 467,
+  "nomi_siciliani_nuovi": 435,
+  "nomi_nuovi_per_blocco": {
+   "3.6": 108,
+   "3.7": 109,
+   "3.8": 113,
+   "3.9": 105
+  },
+  "nomi_nuovi_per_fonte": {
+   "MCP": 32,
+   "architetto": 403
+  },
+  "nomi_dal_glossario_3_0": 15,
+  "nomi_italiani_della_trama": 17,
+  "deviazioni": [
+   "D-19 (3.8)"
+  ],
+  "maiuscolo_piu_largo_px": 72,
+  "riga_di_descrizione_piu_larga_px": 120
+ },
+ "note_per_blocchi_successivi": [
+  "3.10–3.12 (strumenti): le descrizioni delle mosse usano le parole «Bacca» (363, 365, 450) e «Lastra» (449) come nomi generici delle categorie di strumenti: se i blocchi degli strumenti le rinominano, devono dare anche le descrizioni delle mosse da riscrivere. Resta aperta la numerazione delle MN (nota del 3.8: ITEM_HM05 = Whirlpool/Garòfalu, ITEM_HM06 = Rock Smash/Martiddata nel motore; Acchianata è ITEM_HM08). I nomi delle MT e delle MN si scrivono col nome di Trinacria della mossa insegnata (R-NOM).",
+  "3.13: oltre a statistiche e tipi di R-MOS-03 e R-MOS-09, le descrizioni del 3.9 usano «abilità», il nome dell’abilità Insonnia (Malasimenza, 388) e «Allenatore» (Sigillu, 373).",
+  "Modulo 6: Ventoincoda è la mossa degli stormi del Prestanome dei parchi eolici (M-TP-03, B-TP-02, con Turbine); Acchianata si sblocca a M-EN-03 per il post-game; Sciamuarmi, Sciamuscutu e Sciamucura sono le mosse di Vespiquen, che il Re delle Liste Civiche schiera alla Lega (M-EN-04).",
+  "Modulo 7: applicazione dei tre banchi per indice, come per i blocchi 3.6–3.8; poi trinacria_glossary_check.py names --applied → NAMES_OK e trinacria_moves_check.py check … --repo . --completo → MOSSE_OK."
+ ],
+ "strumento": {
+  "file": "tools/trinacria_moves_check.py (nel repository: tools/trinacria/trinacria_moves_check.py, Modulo 7.2)",
+  "novita": "Nessun codice nuovo. Con i quattro blocchi 3.6–3.9 presenti, il collaudo li controlla insieme e attiva M09 (copertura 1–467, nomi distinti), come previsto dal 3.6.",
+  "comandi": {
+   "collaudo": "python -I tools/trinacria_moves_check.py --selftest → SELFTEST_OK",
+   "controllo": "python -I tools/trinacria_moves_check.py check docs/MODULO_3/3.6_MOSSE_1-120.json docs/MODULO_3/3.7_MOSSE_121-240.json docs/MODULO_3/3.8_MOSSE_241-360.json docs/MODULO_3/3.9_MOSSE_361-467.json [--repo <pokeheartgold>] --completo → MOSSE_OK"
+  }
+ },
+ "controllo": {
+  "mosse": 107,
+  "nomi_dal_glossario_3_0": 1,
+  "nomi_italiani_della_trama": 1,
+  "deviazioni": [],
+  "nomi_nuovi": 105,
+  "nomi_nuovi_per_fonte": {
+   "MCP": 1,
+   "architetto": 104
+  },
+  "descrizioni": 107,
+  "righe_delle_descrizioni": 434,
+  "descrizioni_per_righe": {
+   "5": 21,
+   "meno di 5": 86
+  },
+  "riga_piu_larga_px": 120,
+  "maiuscolo_piu_largo_px": 72,
+  "collisioni_con_le_specie_risolte": 0,
+  "verifiche_superate": [
+   "python -I tools/trinacria_moves_check.py --selftest → SELFTEST_OK",
+   "python -I tools/trinacria_moves_check.py check 3.6 + 3.7 + 3.8 + 3.9 --repo F:/Progetti/pokeheartgold --completo → MOSSE_OK (467 mosse)",
+   "python -I tools/trinacria_glossary_check.py glossary 3.0 + 3.1–3.5 + 3.6–3.9 --repo F:/Progetti/pokeheartgold → GLOSSARY_OK",
+   "python -I tools/trinacria_glossary_check.py --selftest → SELFTEST_OK"
+  ]
+ },
+ "riga_finale": "BLOCCO COMPLETO: 3.9 — 107 mosse (105 nomi nuovi: MCP 1, architetto 104; 1 dal Glossario 3.0; 1 nome italiano della trama), 107 descrizioni D-02 (434 righe, la più larga 120 px), maiuscoli entro 72 px, dati di waza_tbl ricopiati, nessuna deviazione; mosse 1–467 complete (467 nomi distinti, M09 superato)"
+}
