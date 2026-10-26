@@ -1,6 +1,6 @@
 # Pokémon Trinacria — Trama espansa, sottotrame e missioni secondarie
 
-**Versione:** 1.6 · 18/10/2026 · autore del progetto: **atrisorb**
+**Versione:** 1.7 · 26/10/2026 · autore del progetto: **atrisorb**
 **Fonte:** `F:\Progetti\pokeheartgold\docs\trinacria_spec\` (PLOT_TO_BE_ENRICHED.md, STORY_STATE_MACHINE.json, LLM_MASTER_INSTRUCTIONS.md, SCRIPT_GENERATION_TEMPLATE.md). Questo documento le **estende**: dove le specifiche sono vaghe o in contraddizione, la decisione presa qui è vincolante per i Moduli 2–7 (registro §0).
 
 Il documento è il «canone narrativo». Non contiene ancora le battute: le scrive il Modulo 6, comune per comune, a partire da qui. I nomi siciliani di Pokémon, mosse, strumenti e classi citati sono quelli del Glossario bloccato (`docs/MODULO_3/3.0_REGOLE_E_GLOSSARIO.json`); quelli mancanti li fissano i blocchi successivi del Modulo 3. Se una forma della trama è diversa da quella del Glossario, vale il Glossario.
@@ -11,6 +11,7 @@ Il documento è il «canone narrativo». Non contiene ancora le battute: le scri
 **Novità della versione 1.4:** R-10.6 allineata al registro `docs/MODULO_2/2.5_TRAINERS_SPRITES_FLY_SEQ.json`: nomi reali delle classi (`TRAINERCLASS_*`, 7 slot del Team Rocket) e degli slot musicali di «U Sistema». Il registro fissa anche gli ID allenatore dei personaggi della trama (Segretari, boss, Cambiavoti, Guastafeste dei comizi, Campioni, Mistretta, alleati e pretoriani di M-EN-05, Ritrovi, Maria, Fantasmi). Punto aperto: Maria (C-05) non ha un Ritrovo (P-01 elenca sette giorni per sette compagni); i suoi ID 712–714 restano riservati.
 **Novità della versione 1.5:** nomi allineati al Glossario bloccato del blocco `3.0` (sezione `deviazioni_dalle_specifiche`), che li ha accorciati per i limiti dei buffer o li ha decisi dove la trama li rimandava al Modulo 3: MN 6 Mulinello → `Garòfalu`, MN 7 Cascata → `Ciumara`, MN 8 Scalaroccia → `Acchianata` (R-03); Ho-Oh `FeniceEtnea` → `FeniceEtna`; Lugia `ScillaCariddi` → `Colapisci`; `GranitaConzu` → `GranitaCafè`; `SH 300 Scassatu` → `SH Scassatu`; `CiucculataModica` → `Ciucculatta`; classi `FigghiuDiPapà` → `Figghiu Papà`, `Parcheggiaturi` → `Pustiggiat.`, `CollettuBian.` → `Coll. Biancu` (R-10.6, nomi a schermo; i simboli `TRAINERCLASS_*` non cambiano); il Tropius di Maria si scrive `Carrubba`. I soprannomi dei compagni restano solo nei dialoghi (`Faragghiuni` è il Golem di Turi, la specie è `Ciclopu`; `PaniCaMeusa` è lo Snorlax di Totò, la specie è `Manzuni`). Codici, mappe, flag e variabili non cambiano.
 **Novità della versione 1.6:** nuova decisione **R-10.7** dal blocco `3.1` del Modulo 3 (`docs/MODULO_3/3.1_POKEMON_1-100.json` e `docs/MODULO_3/3.1_PIANO_INCONTRI.json`): il piano degli incontri di tutta l'isola fissa dove vive ogni specie e aggiunge alla trama i regali, gli statici, i fossili, lo scambio di via Etnea, le tre canne, la Pensione di Comiso e il tutor di Bottintesta che il Modulo 6 deve scrivere; i luoghi della memoria (R-05.4) non hanno Pokémon selvatici; le evoluzioni per scambio diventano evoluzioni da soli. Codici, mappe, flag e variabili non cambiano.
+**Novità della versione 1.7:** dal blocco `3.8` del Modulo 3 (`docs/MODULO_3/3.8_MOSSE_241-360.json`, deviazione **D-19**): la mossa Sunny Day, che E-SR-01 citava come «Giorno di Sole», si scrive `Giornodisole`, grafia attaccata del nome italiano ufficiale, perché il maiuscolo «GIORNO DI SOLE» misura 80 px e sfora il limite di 72 px dei nomi delle mosse (L-08). Nient’altro cambia.
 
 ---
 
@@ -464,7 +465,7 @@ Nei luoghi della memoria (Capaci e Isola delle Femmine, Cinisi, Pozzallo, Gibell
 
 ### Meme ed easter egg
 
-E-SR-01 La statua di Archimede a Ortigia: un NPC spiega che gli «specchi ustori» erano in realtà una schiera di `Alakazam` e `Magmar` con `Giorno di Sole` + `Solarraggio`, chiede «Eureka?» e regala una `Pietra` se si risponde «Sì». · E-SR-02 Il cartello del Ponte (`ST-09`) in piazza Pancali. · E-SR-03 Il turista milanese a Marzamemi col suo `Snubbull` con la pettorina firmata che ordina «una granita al pistacchio di Bronte, ma senza zucchero, senza pistacchio e cruelty-free per il mio Pokémon». · E-SR-04 L'`Ampharos` in cima al faro di Capo Passero che lampeggia in codice Morse «MUNNIZZA».
+E-SR-01 La statua di Archimede a Ortigia: un NPC spiega che gli «specchi ustori» erano in realtà una schiera di `Alakazam` e `Magmar` con `Giornodisole` + `Solarraggio`, chiede «Eureka?» e regala una `Pietra` se si risponde «Sì». · E-SR-02 Il cartello del Ponte (`ST-09`) in piazza Pancali. · E-SR-03 Il turista milanese a Marzamemi col suo `Snubbull` con la pettorina firmata che ordina «una granita al pistacchio di Bronte, ma senza zucchero, senza pistacchio e cruelty-free per il mio Pokémon». · E-SR-04 L'`Ampharos` in cima al faro di Capo Passero che lampeggia in codice Morse «MUNNIZZA».
 
 ---
 

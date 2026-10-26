@@ -1,0 +1,805 @@
+{
+ "nota": "File di prova del collaudo di tools/trinacria_moves_check.py: ogni voce dopo la prima ha un errore voluto. M01 n.12 nome di 14 lettere (84 px in maiuscolo); M02 n.2 maiuscolo con uno spazio in più; M03 n.3 apostrofo dritto e riga di 25 caratteri; M04 n.4 senza voce nel Glossario; M05 n.5 ripetuta; M06 n.7 msg_0750 diverso dal nome; M07 n.11 col nome della specie n. 127 Tinagghia; M08 n.10 potenza 45 invece di 40 (serve --repo); M09 il collaudo usa --completo e il file ha 11 voci (10 mosse diverse); M10 n.18 (Turbine, citata dalla trama) con un nome siciliano.",
+ "errori_attesi": [
+  "M01",
+  "M02",
+  "M03",
+  "M04",
+  "M05",
+  "M06",
+  "M07",
+  "M08",
+  "M09",
+  "M10"
+ ],
+ "mosse": [
+  {
+   "n": 1,
+   "simbolo": "MOVE_POUND",
+   "originale": "Pound",
+   "nome": "Corpu",
+   "lingua": "scn",
+   "glossario": "G36-0001",
+   "caratteri": 5,
+   "px": 30,
+   "maiuscolo": "CORPU",
+   "maiuscolo_px": 30,
+   "dati": {
+    "tipo": "TYPE_NORMAL",
+    "classe": "fisica",
+    "potenza": 40,
+    "precisione": 100,
+    "pp": 35,
+    "effetto": 0,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Colpisce il nemico con",
+    "la coda, una zampa o",
+    "quello che capita."
+   ],
+   "descrizione_righe_px": [
+    113,
+    109,
+    96
+   ],
+   "msg_0749": [
+    "Colpisce il nemico con\n",
+    "la coda, una zampa o\n",
+    "quello che capita.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Corpu",
+    "msg_0751": "CORPU",
+    "msg_0749": [
+     "Colpisce il nemico con\n",
+     "la coda, una zampa o\n",
+     "quello che capita.\n"
+    ]
+   }
+  },
+  {
+   "n": 12,
+   "simbolo": "MOVE_GUILLOTINE",
+   "originale": "Guillotine",
+   "nome": "Tagghiatestuni",
+   "lingua": "scn",
+   "glossario": "G36-0011",
+   "caratteri": 12,
+   "px": 69,
+   "maiuscolo": "TAGGHIATESTUNI",
+   "maiuscolo_px": 72,
+   "dati": {
+    "tipo": "TYPE_NORMAL",
+    "classe": "fisica",
+    "potenza": 1,
+    "precisione": 30,
+    "pp": 5,
+    "effetto": 38,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Un attacco feroce con",
+    "le chele. Se colpisce,",
+    "il nemico va subito KO."
+   ],
+   "descrizione_righe_px": [
+    119,
+    115,
+    118
+   ],
+   "msg_0749": [
+    "Un attacco feroce con\n",
+    "le chele. Se colpisce,\n",
+    "il nemico va subito KO.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Tagghiatestuni",
+    "msg_0751": "TAGGHIATESTUNI",
+    "msg_0749": [
+     "Un attacco feroce con\n",
+     "le chele. Se colpisce,\n",
+     "il nemico va subito KO.\n"
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "simbolo": "MOVE_KARATE_CHOP",
+   "originale": "Karate Chop",
+   "nome": "Mannarata",
+   "lingua": "scn",
+   "glossario": "G36-0002",
+   "caratteri": 9,
+   "px": 54,
+   "maiuscolo": "MANNARATA ",
+   "maiuscolo_px": 54,
+   "dati": {
+    "tipo": "TYPE_FIGHTING",
+    "classe": "fisica",
+    "potenza": 50,
+    "precisione": 100,
+    "pp": 25,
+    "effetto": 43,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Un colpo di taglio",
+    "secco, come di scure.",
+    "È facile che sia un",
+    "brutto colpo."
+   ],
+   "descrizione_righe_px": [
+    92,
+    115,
+    97,
+    73
+   ],
+   "msg_0749": [
+    "Un colpo di taglio\n",
+    "secco, come di scure.\n",
+    "È facile che sia un\n",
+    "brutto colpo.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Mannarata",
+    "msg_0751": "MANNARATA ",
+    "msg_0749": [
+     "Un colpo di taglio\n",
+     "secco, come di scure.\n",
+     "È facile che sia un\n",
+     "brutto colpo.\n"
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "simbolo": "MOVE_DOUBLE_SLAP",
+   "originale": "DoubleSlap",
+   "nome": "Timpulata",
+   "lingua": "scn",
+   "glossario": "G36-0003",
+   "caratteri": 9,
+   "px": 49,
+   "maiuscolo": "TIMPULATA",
+   "maiuscolo_px": 54,
+   "dati": {
+    "tipo": "TYPE_NORMAL",
+    "classe": "fisica",
+    "potenza": 15,
+    "precisione": 85,
+    "pp": 10,
+    "effetto": 29,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Schiaffeggia l'avversario",
+    "avanti e indietro da",
+    "due a cinque volte di",
+    "fila."
+   ],
+   "descrizione_righe_px": [
+    112,
+    105,
+    110,
+    23
+   ],
+   "msg_0749": [
+    "Schiaffeggia l'avversario\n",
+    "avanti e indietro da\n",
+    "due a cinque volte di\n",
+    "fila.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Timpulata",
+    "msg_0751": "TIMPULATA",
+    "msg_0749": [
+     "Schiaffeggia l'avversario\n",
+     "avanti e indietro da\n",
+     "due a cinque volte di\n",
+     "fila.\n"
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "simbolo": "MOVE_COMET_PUNCH",
+   "originale": "Comet Punch",
+   "nome": "Pugniceddi",
+   "lingua": "scn",
+   "glossario": "G36-0004",
+   "caratteri": 10,
+   "px": 54,
+   "maiuscolo": "PUGNICEDDI",
+   "maiuscolo_px": 60,
+   "dati": {
+    "tipo": "TYPE_NORMAL",
+    "classe": "fisica",
+    "potenza": 18,
+    "precisione": 85,
+    "pp": 15,
+    "effetto": 29,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Una raffica di pugni",
+    "che colpisce da due a",
+    "cinque volte di fila."
+   ],
+   "descrizione_righe_px": [
+    103,
+    113,
+    105
+   ],
+   "msg_0749": [
+    "Una raffica di pugni\n",
+    "che colpisce da due a\n",
+    "cinque volte di fila.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Pugniceddi",
+    "msg_0751": "PUGNICEDDI",
+    "msg_0749": [
+     "Una raffica di pugni\n",
+     "che colpisce da due a\n",
+     "cinque volte di fila.\n"
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "simbolo": "MOVE_MEGA_PUNCH",
+   "originale": "Mega Punch",
+   "nome": "Pugnuni",
+   "lingua": "scn",
+   "glossario": "G36-0005",
+   "caratteri": 7,
+   "px": 39,
+   "maiuscolo": "PUGNUNI",
+   "maiuscolo_px": 42,
+   "dati": {
+    "tipo": "TYPE_NORMAL",
+    "classe": "fisica",
+    "potenza": 80,
+    "precisione": 85,
+    "pp": 20,
+    "effetto": 0,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Un pugno sferrato con",
+    "tutta la forza dei",
+    "muscoli."
+   ],
+   "descrizione_righe_px": [
+    119,
+    96,
+    42
+   ],
+   "msg_0749": [
+    "Un pugno sferrato con\n",
+    "tutta la forza dei\n",
+    "muscoli.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Pugnuni",
+    "msg_0751": "PUGNUNI",
+    "msg_0749": [
+     "Un pugno sferrato con\n",
+     "tutta la forza dei\n",
+     "muscoli.\n"
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "simbolo": "MOVE_MEGA_PUNCH",
+   "originale": "Mega Punch",
+   "nome": "Pugnuni",
+   "lingua": "scn",
+   "glossario": "G36-0005",
+   "caratteri": 7,
+   "px": 39,
+   "maiuscolo": "PUGNUNI",
+   "maiuscolo_px": 42,
+   "dati": {
+    "tipo": "TYPE_NORMAL",
+    "classe": "fisica",
+    "potenza": 80,
+    "precisione": 85,
+    "pp": 20,
+    "effetto": 0,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Un pugno sferrato con",
+    "tutta la forza dei",
+    "muscoli."
+   ],
+   "descrizione_righe_px": [
+    119,
+    96,
+    42
+   ],
+   "msg_0749": [
+    "Un pugno sferrato con\n",
+    "tutta la forza dei\n",
+    "muscoli.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Pugnuni",
+    "msg_0751": "PUGNUNI",
+    "msg_0749": [
+     "Un pugno sferrato con\n",
+     "tutta la forza dei\n",
+     "muscoli.\n"
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "simbolo": "MOVE_FIRE_PUNCH",
+   "originale": "Fire Punch",
+   "nome": "Focupugnu",
+   "lingua": "scn",
+   "glossario": "G36-0006",
+   "caratteri": 9,
+   "px": 54,
+   "maiuscolo": "FOCUPUGNU",
+   "maiuscolo_px": 54,
+   "dati": {
+    "tipo": "TYPE_FIRE",
+    "classe": "fisica",
+    "potenza": 75,
+    "precisione": 100,
+    "pp": 15,
+    "effetto": 4,
+    "probabilita_effetto": 10,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Un pugno infuocato.",
+    "Può anche scottare il",
+    "nemico."
+   ],
+   "descrizione_righe_px": [
+    105,
+    115,
+    38
+   ],
+   "msg_0749": [
+    "Un pugno infuocato.\n",
+    "Può anche scottare il\n",
+    "nemico.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Fuocupugnu",
+    "msg_0751": "FOCUPUGNU",
+    "msg_0749": [
+     "Un pugno infuocato.\n",
+     "Può anche scottare il\n",
+     "nemico.\n"
+    ]
+   }
+  },
+  {
+   "n": 11,
+   "simbolo": "MOVE_VICE_GRIP",
+   "originale": "ViceGrip",
+   "nome": "Tinagghia",
+   "lingua": "scn",
+   "glossario": "G36-0010",
+   "caratteri": 10,
+   "px": 54,
+   "maiuscolo": "TINAGGHIA",
+   "maiuscolo_px": 60,
+   "dati": {
+    "tipo": "TYPE_NORMAL",
+    "classe": "fisica",
+    "potenza": 55,
+    "precisione": 100,
+    "pp": 30,
+    "effetto": 0,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Grandi chele",
+    "afferrano il nemico e",
+    "lo stringono."
+   ],
+   "descrizione_righe_px": [
+    65,
+    110,
+    70
+   ],
+   "msg_0749": [
+    "Grandi chele\n",
+    "afferrano il nemico e\n",
+    "lo stringono.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Tinagghia",
+    "msg_0751": "TINAGGHIA",
+    "msg_0749": [
+     "Grandi chele\n",
+     "afferrano il nemico e\n",
+     "lo stringono.\n"
+    ]
+   }
+  },
+  {
+   "n": 10,
+   "simbolo": "MOVE_SCRATCH",
+   "originale": "Scratch",
+   "nome": "Granfata",
+   "lingua": "scn",
+   "glossario": "G36-0009",
+   "caratteri": 8,
+   "px": 47,
+   "maiuscolo": "GRANFATA",
+   "maiuscolo_px": 48,
+   "dati": {
+    "tipo": "TYPE_NORMAL",
+    "classe": "fisica",
+    "potenza": 45,
+    "precisione": 100,
+    "pp": 35,
+    "effetto": 0,
+    "probabilita_effetto": 0,
+    "priorita": 0
+   },
+   "descrizione": [
+    "Artigli duri e affilati",
+    "graffiano il nemico."
+   ],
+   "descrizione_righe_px": [
+    111,
+    102
+   ],
+   "msg_0749": [
+    "Artigli duri e affilati\n",
+    "graffiano il nemico.\n"
+   ],
+   "banchi": {
+    "msg_0750": "Granfata",
+    "msg_0751": "GRANFATA",
+    "msg_0749": [
+     "Artigli duri e affilati\n",
+     "graffiano il nemico.\n"
+    ]
+   }
+  },
+  {
+   "n": 18,
+   "simbolo": "MOVE_WHIRLWIND",
+   "originale": "Whirlwind",
+   "nome": "Ventazzu",
+   "lingua": "scn",
+   "glossario": "G36-9999",
+   "nome_della_trama": "Nome italiano ufficiale: la trama lo cita in M-TP (pale eoliche di Trapani).",
+   "caratteri": 7,
+   "px": 39,
+   "maiuscolo": "VENTAZZU",
+   "maiuscolo_px": 42,
+   "dati": {
+    "tipo": "TYPE_NORMAL",
+    "classe": "stato",
+    "potenza": 0,
+    "precisione": 100,
+    "pp": 20,
+    "effetto": 28,
+    "probabilita_effetto": 0,
+    "priorita": -6
+   },
+   "descrizione": [
+    "Spazza via il nemico e",
+    "lo sostituisce con un",
+    "altro della squadra.",
+    "Coi selvatici chiude la",
+    "lotta."
+   ],
+   "descrizione_righe_px": [
+    113,
+    112,
+    109,
+    116,
+    33
+   ],
+   "msg_0749": [
+    "Spazza via il nemico e\n",
+    "lo sostituisce con un\n",
+    "altro della squadra.\n",
+    "Coi selvatici chiude la\n",
+    "lotta."
+   ],
+   "banchi": {
+    "msg_0750": "Ventazzu",
+    "msg_0751": "VENTAZZU",
+    "msg_0749": [
+     "Spazza via il nemico e\n",
+     "lo sostituisce con un\n",
+     "altro della squadra.\n",
+     "Coi selvatici chiude la\n",
+     "lotta."
+    ]
+   }
+  }
+ ],
+ "glossario_aggiunte": [
+  {
+   "id": "G36-0001",
+   "forma": "Corpu",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "corpu"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 1,
+    "originale": "Pound",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "colpo assestato con vigore",
+   "origine": "architetto 3.6",
+   "nota": null,
+   "caratteri": 5,
+   "px": 30,
+   "fonte": "MCP",
+   "lemma_mcp": "corpu",
+   "limite": "L-08",
+   "maiuscolo": "CORPU",
+   "maiuscolo_px": 30
+  },
+  {
+   "id": "G36-0011",
+   "forma": "Tagghiatesta",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "tagghiatesta"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 12,
+    "originale": "Guillotine",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "tagliatesta",
+   "origine": "architetto 3.6",
+   "nota": "«tagghiari» + «testa».",
+   "caratteri": 12,
+   "px": 69,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "TAGGHIATESTA",
+   "maiuscolo_px": 72
+  },
+  {
+   "id": "G36-0002",
+   "forma": "Mannarata",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "mannarata"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 2,
+    "originale": "Karate Chop",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "colpo di mannara, la scure",
+   "origine": "architetto 3.6",
+   "nota": "Da «mannara», scure: il colpo di taglio della mano.",
+   "caratteri": 9,
+   "px": 54,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "MANNARATA",
+   "maiuscolo_px": 54
+  },
+  {
+   "id": "G36-0003",
+   "forma": "Timpulata",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "timpulata"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 3,
+    "originale": "DoubleSlap",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "sonoro ceffone a mano aperta",
+   "origine": "architetto 3.6",
+   "nota": null,
+   "caratteri": 9,
+   "px": 49,
+   "fonte": "MCP",
+   "lemma_mcp": "timpulata",
+   "limite": "L-08",
+   "maiuscolo": "TIMPULATA",
+   "maiuscolo_px": 54
+  },
+  {
+   "id": "G36-0005",
+   "forma": "Pugnuni",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "pugnuni"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 5,
+    "originale": "Mega Punch",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "pugno enorme",
+   "origine": "architetto 3.6",
+   "nota": "Accrescitivo di «pugnu».",
+   "caratteri": 7,
+   "px": 39,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "PUGNUNI",
+   "maiuscolo_px": 42
+  },
+  {
+   "id": "G36-0006",
+   "forma": "Focupugnu",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "focupugnu"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 7,
+    "originale": "Fire Punch",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "pugno di fuoco",
+   "origine": "architetto 3.6",
+   "nota": "Composto come l’italiano Fuocopugno: «focu» + «pugnu».",
+   "caratteri": 9,
+   "px": 54,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "FOCUPUGNU",
+   "maiuscolo_px": 54
+  },
+  {
+   "id": "G36-0010",
+   "forma": "Tinagghia",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "tinagghia"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 11,
+    "originale": "ViceGrip",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "stretta",
+   "origine": "architetto 3.6",
+   "nota": "Da «strinciri», stringere. «Tinagghia» è già la specie n. 127.",
+   "caratteri": 10,
+   "px": 54,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "TINAGGHIA",
+   "maiuscolo_px": 60
+  },
+  {
+   "id": "G36-0009",
+   "forma": "Granfata",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "granfata"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 10,
+    "originale": "Scratch",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "artigliata",
+   "origine": "architetto 3.6",
+   "nota": "Da «granfa», artiglio.",
+   "caratteri": 8,
+   "px": 47,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "GRANFATA",
+   "maiuscolo_px": 48
+  },
+  {
+   "id": "G36-9999",
+   "forma": "Ventazzu",
+   "categoria": "mossa",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "ventazzu"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0750",
+    "indice": 18,
+    "originale": "Whirlwind",
+    "copia_maiuscola": "msg_0751"
+   },
+   "significato": "ventaccio",
+   "origine": "file di prova",
+   "nota": null,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-08",
+   "maiuscolo": "VENTAZZU"
+  }
+ ]
+}
