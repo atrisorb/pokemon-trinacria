@@ -2,8 +2,9 @@
  "modulo": "MODULO 2 — GLOBAL_CONSTANTS_REGISTRY",
  "blocco": "2.4",
  "titolo": "Flag, variabili, registro degli NPC e strumento di controllo",
- "versione": "1.0",
+ "versione": "1.1",
  "data": "2026-10-18",
+ "correzioni_1_1": "26/10/2026 (trama v1.9, R-06 e P-01): campo «consenso» a 0 per le 11 missioni principali che non danno più +3 (M-CT-06, M-CT-07, M-CT-09, M-SR-03, M-RG-03, M-CL-02, M-AG-01, M-AG-04, M-ME-04, M-ME-05, M-PA-03) e per i 16 boss secondari che si affrontano dentro una missione principale (B-CT-01, B-CT-02, B-CT-03, B-CT-04, B-SR-01, B-SR-03, B-RG-01, B-RG-02, B-CL-02, B-AG-01, B-AG-04, B-TP-02, B-ME-01, B-ME-02, B-ME-03, B-PA-02); sezione «consenso» ricalcolata (36 prima di Palermo, 46 prima della Lega). FLAG_P_01: i Ritrovi sono 7 (Maria non ne ha uno), quindi l’allenatore 712 non c’è più tra quelli da battere. Numeri, simboli e mappe non cambiano.",
  "progetto": "Pokémon Trinacria — autore e copyright: atrisorb",
  "file": "F:\\Progetti\\pokémon-sicilia\\docs\\MODULO_2\\2.4_FLAGS_VARS.json",
  "lettore": "LLM esecutore. Ogni valore è deciso: si copia, non si sceglie.",
@@ -199,7 +200,7 @@
      "MAP_CT_ETNA_MONTI_ROSSI",
      "MAP_CT_ETNA_CRATERI_SILVESTRI"
     ],
-    "consenso": 3,
+    "consenso": 0,
     "alias": [],
     "variabile": null
    },
@@ -216,7 +217,7 @@
      "MAP_CT_BRONTE",
      "MAP_CT_BRONTE_SCIARA"
     ],
-    "consenso": 3,
+    "consenso": 0,
     "alias": [],
     "variabile": null
    },
@@ -254,7 +255,7 @@
      "MAP_CT_CATANIA_TERMINAL_A_ATRIO",
      "MAP_CT_CATANIA_TERMINAL_A_GATE"
     ],
-    "consenso": 3,
+    "consenso": 0,
     "alias": [
      "FLAG_SAC_VIP_LOUNGE_PEC_SENT"
     ],
@@ -557,7 +558,7 @@
     "mappe": [
      "MAP_CT_CATANIA_SAN_CRISTOFORO"
     ],
-    "consenso": 1,
+    "consenso": 0,
     "alias": [],
     "variabile": null
    },
@@ -573,7 +574,7 @@
     "mappe": [
      "MAP_CT_CATANIA_PALAZZO_CEMENTO_P09_P10"
     ],
-    "consenso": 1,
+    "consenso": 0,
     "alias": [],
     "variabile": null
    },
@@ -589,7 +590,7 @@
     "mappe": [
      "MAP_CT_ETNA_CRATERI_SILVESTRI"
     ],
-    "consenso": 1,
+    "consenso": 0,
     "alias": [],
     "variabile": null
    },
@@ -605,7 +606,7 @@
     "mappe": [
      "MAP_CT_BRONTE_SCIARA"
     ],
-    "consenso": 1,
+    "consenso": 0,
     "alias": [],
     "variabile": null
    },
@@ -789,7 +790,7 @@
      "MAP_SR_MARZAMEMI",
      "MAP_SR_MARZAMEMI_TONNARA"
     ],
-    "consenso": 3,
+    "consenso": 0,
     "alias": [
      "FLAG_MARZAMEMI_VIP_BUSTED"
     ],
@@ -1074,7 +1075,7 @@
     "mappe": [
      "MAP_SR_POLO_SALA_CONTROLLO_TORCIA"
     ],
-    "consenso": 1,
+    "consenso": 0,
     "alias": [],
     "variabile": null
    },
@@ -1106,7 +1107,7 @@
     "mappe": [
      "MAP_SR_MARZAMEMI_TONNARA"
     ],
-    "consenso": 1,
+    "consenso": 0,
     "alias": [],
     "variabile": null
    },
@@ -1229,7 +1230,7 @@
      "MAP_RG_COMISO_BASE_NATO_HANGAR",
      "MAP_RG_COMISO_BASE_NATO_PISTA"
     ],
-    "consenso": 3,
+    "consenso": 0,
     "alias": [
      "FLAG_COMISO_SAC_GHOST_AIRPORT"
     ],
@@ -1451,7 +1452,7 @@
     "mappe": [
      "MAP_RG_MERCATO_PIAZZALE"
     ],
-    "consenso": 1,
+    "consenso": 0,
     "alias": [],
     "variabile": null
    },
@@ -1467,7 +1468,7 @@
     "mappe": [
      "MAP_RG_COMISO_BASE_NATO_HANGAR"
     ],
-    "consenso": 1,
+    "consenso": 0,
     "alias": [],
     "variabile": null
    },
@@ -1583,7 +1584,7 @@
      "MAP_STRADA_SS417_CALTAGIRONE_GELA",
      "MAP_STRADA_SS117BIS_GELA_NISCEMI"
     ],
-    "consenso": 3,
+    "consenso": 0,
     "alias": [],
     "variabile": null
    },
@@ -1865,7 +1866,7 @@
     "mappe": [
      "MAP_CL_NISCEMI_MUOS_PARABOLE"
     ],
-    "consenso": 1,
+    "consenso": 0,
     "alias": [],
     "variabile": null
    },
@@ -1964,7 +1965,7 @@
      "MAP_STRADA_SS115_GELA_LICATA",
      "MAP_STRADA_SS189_SUTERA_AGRIGENTO"
     ],
-    "consenso": 3,
+    "consenso": 0,
     "alias": [],
     "variabile": null
    },
@@ -2023,7 +2024,7 @@
      "MAP_AG_LAMPEDUSA_DEPOSITI",
      "MAP_AG_LAMPEDUSA_PORTA_D_EUROPA"
     ],
-    "consenso": 3,
+    "consenso": 0,
     "alias": [
      "FLAG_LAMPEDUSA_ARC"
     ],
@@ -2283,7 +2284,7 @@
     "mappe": [
      "MAP_AG_IPOGEI_CISTERNA"
     ],
-    "consenso": 1,
+    "consenso": 0,
     "alias": [],
     "variabile": null
    },
@@ -2331,7 +2332,7 @@
     "mappe": [
      "MAP_AG_LAMPEDUSA_DEPOSITI"
     ],
-    "consenso": 1,
+    "consenso": 0,
     "alias": [],
     "variabile": null
    },
@@ -2751,7 +2752,7 @@
     "mappe": [
      "MAP_TP_STAGNONE_LAGUNA"
     ],
-    "consenso": 1,
+    "consenso": 0,
     "alias": [],
     "variabile": null
    },
@@ -2914,7 +2915,7 @@
      "MAP_ME_MESSINA_CENTRO_POKEMON",
      "MAP_ME_ARCHIVI_STRETTO_ETERNA"
     ],
-    "consenso": 3,
+    "consenso": 0,
     "alias": [],
     "variabile": null
    },
@@ -2934,7 +2935,7 @@
      "MAP_ME_GIARDINI_NAXOS",
      "MAP_STRADA_A18_MESSINA_TAORMINA"
     ],
-    "consenso": 3,
+    "consenso": 0,
     "alias": [],
     "variabile": null
    },
@@ -3222,7 +3223,7 @@
     "mappe": [
      "MAP_ME_NEBRODI_PASCOLI_FANTASMA"
     ],
-    "consenso": 1,
+    "consenso": 0,
     "alias": [],
     "variabile": null
    },
@@ -3238,7 +3239,7 @@
     "mappe": [
      "MAP_ME_ARCHIVI_STRETTO_ETERNA"
     ],
-    "consenso": 1,
+    "consenso": 0,
     "alias": [],
     "variabile": null
    },
@@ -3254,7 +3255,7 @@
     "mappe": [
      "MAP_ME_TAORMINA_TEATRO_ANTICO"
     ],
-    "consenso": 1,
+    "consenso": 0,
     "alias": [],
     "variabile": null
    },
@@ -3395,7 +3396,7 @@
      "MAP_PA_PALERMO_BALLARO",
      "MAP_PA_PALERMO_CASA_TOTO"
     ],
-    "consenso": 3,
+    "consenso": 0,
     "alias": [],
     "variabile": "VAR_M_PA_03"
    },
@@ -3744,7 +3745,7 @@
     "mappe": [
      "MAP_PA_FICUZZA_VOLIERE_PIZZINI"
     ],
-    "consenso": 1,
+    "consenso": 0,
     "alias": [],
     "variabile": null
    },
@@ -4437,8 +4438,8 @@
     "codice": "P-01",
     "tipo": "post-game",
     "provincia": null,
-    "titolo": "Ritrovi con gli 8 compagni",
-    "evento": "tutti gli 8 Ritrovi vinti almeno una volta: allenatori 700, 703, 706, 709, 712, 715, 718, 721 sconfitti (lo imposta lo script del Ritrovo che completa la serie)",
+    "titolo": "Ritrovi con i 7 compagni",
+    "evento": "tutti i 7 Ritrovi vinti almeno una volta: allenatori 700, 703, 706, 709, 715, 718, 721 sconfitti (lo imposta lo script del Ritrovo che completa la serie; Maria, C-05, non ha un Ritrovo e 712 è riservato)",
     "mappe": [
      "MAP_CT_CATANIA_SAN_CRISTOFORO",
      "MAP_CT_CATANIA_LIBRINO",
@@ -13367,7 +13368,7 @@
      },
      {
       "valore": "+N",
-      "significato": "AddVar del campo «consenso» di ogni flag (missioni +3/+1 come nelle tabelle della trama, boss secondari +1, comizi +2), massimo 100"
+      "significato": "AddVar del campo «consenso» di ogni flag (trama R-06: +3 per le 9 missioni principali segnate nelle tabelle, +1 per le secondarie, +1 per i boss secondari fuori dalle missioni principali, +2 per i comizi), massimo 100"
      }
     ],
     "cancelli": [
@@ -17115,14 +17116,14 @@
  },
  "consenso": {
   "partenza": 1,
-  "missioni_principali": 60,
+  "missioni_principali": 27,
   "missioni_secondarie": 43,
-  "boss_secondari": 30,
+  "boss_secondari": 14,
   "comizi": 18,
-  "totale_massimo": 152,
-  "solo_principali_e_comizi_prima_di_Palermo": 66,
-  "solo_principali_e_comizi_prima_della_Lega": 79,
-  "nota": "Valori presi dalle tabelle della trama (colonna Esito/Ricompensa), non dal riepilogo di R-06: le tabelle danno +3 a 20 missioni principali (R-06 ne conta 9). Con le sole principali e i comizi il giocatore arriva a 66 prima di Palermo (cancello 40) e a 79 prima della Lega (cancello 49): i cancelli non obbligano a fare contenuto secondario. Da decidere nella trama se ridurre i +3 o alzare i cancelli; il registro segue le tabelle."
+  "totale_massimo": 103,
+  "solo_principali_e_comizi_prima_di_Palermo": 36,
+  "solo_principali_e_comizi_prima_della_Lega": 46,
+  "nota": "Trama v1.9, R-06: +3 solo a M-CT-05, M-SR-02, M-RG-02, M-CL-03, M-AG-02, M-TP-03, M-ME-01, M-PA-04, M-EN-02 (una principale per provincia); i 16 boss secondari che si affrontano dentro una missione principale valgono 0, gli altri 14 valgono +1. Con le sole principali e i comizi il giocatore arriva a 36 prima di Palermo (cancello 40) e a 46 prima della Lega (cancello 49): servono almeno 4 punti di contenuto secondario. Il totale supera 100, ma la variabile si ferma a 100 (R-VAR-04)."
  },
  "npc_registry": {
   "file": "data/trinacria/npc_registry.csv (in F:\\Progetti\\pokeheartgold)",

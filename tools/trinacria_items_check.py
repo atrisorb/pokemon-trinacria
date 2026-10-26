@@ -8,7 +8,8 @@ Uso (dalla cartella di F:\\Progetti\\pokémon-sicilia oppure da F:\\Progetti\\po
 
 Ultima riga stampata: STRUMENTI_OK / SELFTEST_OK (oppure *_FAILED).
 Ogni problema e' una riga "ERRORE <codice> <dove>: <messaggio>".
-Con --repo si controllano anche simboli, nomi inglesi, dati e negozi (S05, S11, S12) e si usa il font vero.
+Con --repo si controllano anche simboli, nomi inglesi, dati e negozi (S05, S11, S12), gli strumenti tenuti dai
+selvatici (S13) e le MT/MN (S14), e si usa il font vero.
 """
 import argparse
 import collections
@@ -31,8 +32,12 @@ ITEMS = 536
 EMPTY_SLOTS = range(113, 135)    # ITEM_UNUSED_113…134: restano «???» (R-STR-02)
 NAME_CHARS = re.compile(r"^[A-Za-z0-9àèéìòùâêîôûÀÈÉÌÒÙÂÊÎÔÛçëïüñ ’.\-]+$")  # R-GRA-11
 SYSTEM_CATEGORIES = ('specie', 'mossa', 'strumento', 'classe', 'abilita', 'tipo', 'natura', 'soprannome', 'dossier')
-# strumenti che la trama cita col nome italiano (R-STR-01): numero -> nome
+# strumenti che la trama cita col nome italiano (R-STR-01): numero -> nome; le MT e le MN tengono la sigla
+# italiana che la trama usa («MT», «MN»), R-STR-11 del 3.11
+TM01, HM01 = 328, 420
 TRAMA_IT = {43: 'Genovese'}
+TRAMA_IT.update({TM01 + i: 'MT%02d' % (i + 1) for i in range(92)})
+TRAMA_IT.update({HM01 + i: 'MN%02d' % (i + 1) for i in range(8)})
 # strumenti della trama che hanno la stessa parola di un soprannome (R-NOM-02): numero
 TRAMA_SOPRANNOMI = {33}
 # livello del bancone dei Centri (src/scrcmd_mart.c, ScrCmd_MartBuy) -> Dossier necessari
@@ -148,6 +153,7 @@ class Repo:
     """Simboli (include/constants/items.h), nomi inglesi (msg_0222) e dati (src/item.c + item_data.csv)."""
 
     def __init__(self, repo):
+        self.path = repo
         txt = open(os.path.join(repo, 'include', 'constants', 'items.h'), encoding='utf-8').read()
         txt = txt[txt.index('#define ITEM_NONE'):]
         self.symbols = {}
@@ -194,12 +200,66 @@ class Marts:
 # Blocchi degli strumenti
 
 
+class Wild:
+    """Strumenti tenuti dai Pokémon selvatici (R-STR-13 del 3.11): items di files/poketool/personal/personal.json
+    per le specie delle tabelle del piano 3.1 (gs_enc_data, Safari, bottintesta, sciami). Probabilità di
+    WildMonSetRandomHeldItem (src/pokemon.c): primo strumento 50, secondo 5, 100 se sono uguali."""
+
+    def __init__(self, repo, docs):
+        txt = open(os.path.join(repo, 'include', 'constants', 'species.h'), encoding='utf-8').read()
+        num = {s: int(n) for s, n in re.findall(r'#define\s+(SPECIES_\w+)\s+(\d+)\b', txt)}
+        pers = load_json(os.path.join(repo, 'files', 'poketool', 'personal', 'personal.json'))['baseStats']
+        plan = load_json(os.path.join(docs, 'MODULO_3', '3.1_PIANO_INCONTRI.json'))
+        wild = set()
+        for k in ('gs_enc_data', 'safari', 'bottintesta', 'sciami'):
+            wild |= set(re.findall(r'SPECIES_\w+', json.dumps(plan[k])))
+        self.by_item = {}
+        for s in sorted(wild, key=lambda x: num[x]):
+            a, b = pers[num[s]]['items']
+            pairs = [(a, 100)] if a == b else [(a, 50), (b, 5)]
+            for it, p in pairs:
+                if it != 'ITEM_NONE':
+                    self.by_item.setdefault(it, []).append({'specie': s, 'probabilita': p})
+
+    def where(self, n, repo):
+        return self.by_item.get(repo.symbols.get(n), [])
+
+
+class TMMoves:
+    """Mossa insegnata da ogni MT/MN (sTMHMMoves di src/item.c) e sua descrizione nei blocchi 3.6-3.9 (R-STR-11)."""
+
+    def __init__(self, repo, docs):
+        src = open(os.path.join(repo, 'src', 'item.c'), encoding='utf-8').read()
+        body = src[src.index('sTMHMMoves[]'):]
+        moves = re.findall(r'MOVE_\w+', body[:body.index('};')])
+        self.move = {TM01 + i: m for i, m in enumerate(moves)}
+        self.blocks = {}
+        for f in sorted(glob.glob(os.path.join(docs, 'MODULO_3', '3.[6-9]_MOSSE_*.json'))):
+            for e in load_json(f)['mosse']:
+                self.blocks[e['simbolo']] = e
+
+
+def wrap(text, font):
+    """Righe di D-03: parole intere, al massimo 41 caratteri e 215 px per riga."""
+    lines, cur = [], ''
+    for w in text.split(' '):
+        t = (cur + ' ' + w) if cur else w
+        if len(t) <= DESC_PROFILE[1] and font.px(t) <= DESC_PROFILE[2]:
+            cur = t
+        else:
+            lines.append(cur)
+            cur = w
+    lines.append(cur)
+    return lines
+
+
 def bank_0221(lines):
     """D-03: righe separate da «\\n», nessun separatore finale."""
     return [x + '\n' for x in lines[:-1]] + [lines[-1]]
 
 
-def check_items_list(items, fname, glossary, rep, font, repo=None, seen=None, marts=None, assignment=None):
+def check_items_list(items, fname, glossary, rep, font, repo=None, seen=None, marts=None, assignment=None,
+                     wild=None, tms=None):
     seen = {} if seen is None else seen
     by_index = {}
     system = collections.defaultdict(set)
@@ -269,16 +329,38 @@ def check_items_list(items, fname, glossary, rep, font, repo=None, seen=None, ma
         if marts is not None and assignment is not None and repo is not None:
             if ott.get('negozi') != marts.where(n, assignment, repo):
                 rep.err('S12', where, 'negozi diversi da src/scrcmd_mart.c e dal piano dei negozi')
-        if not ott.get('negozi') and not ott.get('altro'):
+        if not ott.get('negozi') and not ott.get('altro') and not ott.get('selvatici'):
             rep.err('S12', where, 'nessun modo di ottenerlo')
+        if wild is not None and 'selvatici' in ott:
+            got = [{'specie': x.get('specie'), 'probabilita': x.get('probabilita')} for x in ott['selvatici'] or []]
+            if got != wild.where(n, repo):
+                rep.err('S13', where, 'selvatici diversi da personal.json e dal piano 3.1: %s' % wild.where(n, repo))
+        if tms is not None and n in tms.move:
+            mv = tms.blocks.get(tms.move[n])
+            want = wrap(' '.join(mv['descrizione']), font) if mv else None
+            if (m.get('mossa') or {}).get('simbolo') != tms.move[n] or (mv and (m['mossa'].get('n') != mv['n'] or
+                                                                           m['mossa'].get('nome') != mv['nome'])):
+                rep.err('S14', where, 'mossa insegnata diversa da sTMHMMoves (%s) o dai blocchi delle mosse' % tms.move[n])
+            elif lines != want:
+                rep.err('S14', where, 'descrizione diversa da quella della mossa %s riscritta in D-03' % tms.move[n])
     return seen
 
 
-def check_items(paths, glossary, rep, font, repo=None, marts=None):
+def plan_assignment(plan):
+    return {int(x['indice']): x['mappa'] for x in plan['banconi_speciali']}
+
+
+def check_items(paths, glossary, rep, font, repo=None, marts=None, docs=None):
     seen = {}
     entries = []
     assignment = None
     blocks = []
+    # il piano dei negozi sta nel 3.10 (R-STR-06): vale anche quando si controlla un blocco successivo da solo
+    first = glob.glob(os.path.join(docs, 'MODULO_3', '3.10_STRUMENTI_*.json')) if docs else []
+    if first:
+        assignment = plan_assignment(load_json(first[0])['piano_negozi'])
+    wild = Wild(repo.path, docs) if repo is not None and docs else None
+    tms = TMMoves(repo.path, docs) if repo is not None and docs else None
     for p in paths:
         try:
             b = load_json(p)
@@ -287,9 +369,9 @@ def check_items(paths, glossary, rep, font, repo=None, marts=None):
             rep.err('S00', os.path.basename(p), 'file illeggibile o senza «strumenti» (%s)' % ex)
             continue
         if b.get('piano_negozi'):
-            assignment = {int(x['indice']): x['mappa'] for x in b['piano_negozi']['banconi_speciali']}
+            assignment = plan_assignment(b['piano_negozi'])
     for p, items in blocks:
-        check_items_list(items, os.path.basename(p), glossary, rep, font, repo, seen, marts, assignment)
+        check_items_list(items, os.path.basename(p), glossary, rep, font, repo, seen, marts, assignment, wild, tms)
         entries += items
     return entries
 
@@ -316,7 +398,7 @@ def run_check(args, rep):
     glossary = load_glossary(docs, args.files)
     repo = Repo(args.repo) if args.repo else None
     marts = Marts(args.repo) if args.repo else None
-    entries = check_items(args.files, glossary, rep, font, repo, marts)
+    entries = check_items(args.files, glossary, rep, font, repo, marts, docs)
     print('strumenti controllati: %d' % len(entries))
     if getattr(args, 'completo', False):
         check_complete(entries, rep)
@@ -344,7 +426,7 @@ def selftest():
     rep2 = Report(quiet=True)
     a.files, a.completo = [ko], True
     run_check(a, rep2)
-    expected = [c for c in load_json(ko)['errori_attesi'] if repo or c not in ('S05', 'S11', 'S12')]
+    expected = [c for c in load_json(ko)['errori_attesi'] if repo or c not in ('S05', 'S11', 'S12', 'S13', 'S14')]
     if rep2.codes() != sorted(expected):
         good = False
         print('collaudo: strumenti_prova_ko.json dà %s invece di %s' % (rep2.codes(), sorted(expected)))

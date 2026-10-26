@@ -2,8 +2,9 @@
  "modulo": "MODULO 2 — GLOBAL_CONSTANTS_REGISTRY",
  "blocco": "2.5",
  "titolo": "Classi allenatore, ID allenatori, sprite, punti di volo, medaglie e sequenze musicali",
- "versione": "1.0",
+ "versione": "1.1",
  "data": "2026-10-18",
+ "correzioni_1_1": "26/10/2026 (trama v1.9, P-01): la trama ora dice 7 Ritrovi e Maria (C-05) super-boss P-02; il punto aperto delle note è chiuso e la classe 90 (TRAINERCLASS_COMPAGNO_MARIA) non cita più i Ritrovi. ID 712–714 sempre riservati; numeri e simboli non cambiano.",
  "progetto": "Pokémon Trinacria — autore e copyright: atrisorb",
  "file": "F:\\Progetti\\pokémon-sicilia\\docs\\MODULO_2\\2.5_TRAINERS_SPRITES_FLY_SEQ.json",
  "lettore": "LLM esecutore. Ogni valore è deciso: si copia, non si sceglie.",
@@ -2495,7 +2496,7 @@
     "simbolo": "TRAINERCLASS_COMPAGNO_MARIA",
     "rinominata": true,
     "categoria": "COMPAGNO",
-    "ruolo": "C-05 Maria: Ritrovi del post-game (P-01) e alleato nella lotta in multi di M-EN-05 (la classe ha il dorso proprio)",
+    "ruolo": "C-05 Maria: super-boss del post-game (P-02, TRAINER_MARIA_TETTO) e alleato nella lotta in multi di M-EN-05 (la classe ha il dorso proprio)",
     "nome_trama": null,
     "allenatori_hg": 1,
     "genere_tabella": "TRAINER_FEMALE",
@@ -23976,7 +23977,7 @@
   "6.xx: allenatori fissi e pool di questo registro (R-TR-03…R-TR-08); M-EN-05 con le 8 righe MultiBattle (R-TR-09); i Cambiavoti consegnano il conteggio di ST-06 e i Guastafeste lottano nella mappa del comizio di ST-01.",
   "6.38: la Fiera usa i dati e i nomi propri della Frontiera (msg_0027: 300 Cheryl, 301 Mira, 302 Riley, 303 Marley, 304 Buck sono i compagni della Torre). Se nei dati della Frontiera questi compagni usano le classi 90–94, dopo il 4.4 avranno l’aspetto dei compagni di Trinacria: il 6.38 controlla la classe di ognuno e ne riscrive il nome in msg_0027 con quello del compagno della stessa classe.",
   "7.2: header nuovi e righe di #include («inclusioni»), file trainer_class.h e trainer_class_hg_compat.h, modifiche E1–E3; criterio BUILD_OK e strumento --docs/--repo → REGISTRY_OK.",
-  "Punto aperto per l’autore: la trama (P-01 e «Ore del post-game») parla di Ritrovi con 8 compagni, ma Maria non ha giorno né luogo. Il registro tiene riservati i numeri 712–714; se si decide un Ritrovo di Maria, basta assegnarli."
+  "Deciso nella trama v1.9 (P-01): i Ritrovi sono 7, Maria non ne ha uno ed è il super-boss P-02; i numeri 712–714 restano riservati."
  ],
  "controllo": {
   "classi": 129,

@@ -364,7 +364,8 @@ def check_registry(ctx, rep, repo_scan=None):
     # trama
     if os.path.isfile(ctx.trama_path):
         trama = open(ctx.trama_path, encoding='utf-8').read()
-        tcodes = set(CODE_RE.findall(trama)) | {'E-ST-09'}
+        # D-NN senza provincia sono le deviazioni dei blocchi del Modulo 3, non dungeon
+        tcodes = {c for c in CODE_RE.findall(trama) if not re.fullmatch(r'D-\d+', c)} | {'E-ST-09'}
         for c in sorted(tcodes - ctx.codes):
             rep.err('R05', c, 'codice della trama senza flag di completamento')
         for c in sorted(ctx.codes - tcodes):

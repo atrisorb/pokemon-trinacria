@@ -2,10 +2,11 @@
   "modulo": "MODULO 2 — GLOBAL_CONSTANTS_REGISTRY",
   "blocco": "2.3",
   "titolo": "Registro delle mappe di Messina (ME), Palermo (PA), Enna (EN), Rete Stradale (ROADS), Lega dell’ARS e Post-Game",
-  "versione": "1.2",
+  "versione": "1.3",
   "data": "2026-10-18",
   "correzioni_1_1": "18/10/2026 (blocco 2.4): 10 simboli di matrice HeartGold inesistenti corretti con quelli reali letti in src/data/map_headers.h — MAP_ME_ALISCAFO_EOLIE e MAP_ME_TRAGHETTO_STRETTO: map_matrix_0171_P01R0301 (cabina della nave S.S. Aqua, al posto di 0255_P01R0301); le 8 mappe della Lega usano la matrice del proprio slot (0150_R22R0101, 0148_T10R0101, 0165–0170_T10R0201…T10R0701, al posto di 0184–0191). Nessun altro campo cambia.",
   "correzioni_1_2": "18/10/2026 (blocco 2.5): SPAWN_FAST_SHIP non esiste in include/constants/spawns.h; la riga 29 di sSpawnMaps (spawn 30, Centro Pokémon della Route 10) è SPAWN_ROCK_TUNNEL. Cambiano l’alias di SPAWN_PIAZZA_ARMERINA e il testo di R-MAP-18; numeri e righe invariati.",
+  "correzioni_1_3": "26/10/2026 (trama v1.9): «registro_post_game_P01_P12.P-01_ritrovi_settimanali_compagni» aveva 8 righe con codici e mappe sbagliati (Maria come C-08 con un Ritrovo al tribunale). Ora ha i 7 Ritrovi della trama e del blocco 2.5 (Maria, C-05, è solo il super-boss P-02), con giorno, mappa e ID allenatore. Anche la riga P-02 citava una mappa che non esiste (MAP_CT_TRIBUNALE_TETTO, slot 298): è MAP_CT_CATANIA_PALAZZO_GIUSTIZIA (slot 413) del blocco 2.1, allenatore 724. In S-ME-05 (MAP_ME_TINDARI_SANTUARIO) il premio è ITEM_SOOTHE_BELL, non la Squama Cuore. Nessun altro campo cambia.",
   "progetto": "Pokémon Trinacria — autore e copyright: atrisorb",
   "file": "F:\\Progetti\\pokémon-sicilia\\docs\\MODULO_2\\2.3_MAPS_ME_PA_EN_ROADS.json",
   "lettore": "LLM esecutore. Ogni valore è deciso: si copia, non si sceglie.",
@@ -94,16 +95,15 @@
     },
     "registro_post_game_P01_P12": {
       "P-01_ritrovi_settimanali_compagni": [
-        {"compagno": "Turi (C-01)", "mappa": "MAP_CT_ACIREALE", "blocco": "2.1"},
-        {"compagno": "Orazio (C-02)", "mappa": "MAP_CT_CATANIA_OFFICINA", "blocco": "2.1"},
-        {"compagno": "Christian (C-03)", "mappa": "MAP_CT_CATANIA_PLAIA", "blocco": "2.1"},
-        {"compagno": "Chantal (C-04)", "mappa": "MAP_SR_ORTIGIA", "blocco": "2.1"},
-        {"compagno": "Totò (C-05)", "mappa": "MAP_PA_PALERMO_CASA_TOTO", "blocco": "2.3"},
-        {"compagno": "Calogero (C-06)", "mappa": "MAP_AG_LICATA", "blocco": "2.2"},
-        {"compagno": "Pippo (C-07)", "mappa": "MAP_ME_TORRE_FARO_GANZIRRI", "blocco": "2.3"},
-        {"compagno": "Maria (C-08)", "mappa": "MAP_CT_CATANIA_TRIBUNALE", "blocco": "2.1"}
+        {"compagno": "Turi (C-01), lunedì", "mappa": "MAP_CT_CATANIA_VERMUT", "blocco": "2.1", "allenatori": "700–702"},
+        {"compagno": "Orazio (C-02), martedì", "mappa": "MAP_CT_CATANIA_SAN_CRISTOFORO", "blocco": "2.1", "allenatori": "703–705"},
+        {"compagno": "Christian (C-03), sabato 22:00–04:00", "mappa": "MAP_CT_MISTERBIANCO_CUBBAR", "blocco": "2.1", "allenatori": "706–708"},
+        {"compagno": "Chantal (C-04), mercoledì", "mappa": "MAP_CT_CATANIA_LIBRINO", "blocco": "2.1", "allenatori": "709–711"},
+        {"compagno": "Totò (C-06), giovedì", "mappa": "MAP_PA_PALERMO_CASA_TOTO", "blocco": "2.3", "allenatori": "715–717"},
+        {"compagno": "Calogero (C-07), venerdì", "mappa": "MAP_AG_LICATA", "blocco": "2.2", "allenatori": "718–720"},
+        {"compagno": "Pippo (C-08), domenica", "mappa": "MAP_ME_TORRE_FARO_GANZIRRI", "blocco": "2.3", "allenatori": "721–723"}
       ],
-      "P-02_super_boss_finale_maria": {"mappa": "MAP_CT_TRIBUNALE_TETTO", "slot_id": 298, "blocco": "2.1", "livelli": "L95–100"},
+      "P-02_super_boss_finale_maria": {"mappa": "MAP_CT_CATANIA_PALAZZO_GIUSTIZIA", "slot_id": 413, "blocco": "2.1", "allenatore": 724, "livelli": "L95–100"},
       "P-03_P06_quattro_fantasmi_prima_repubblica": [
         {
           "fantasma": "1° Fantasma (P-03, allenatore 730)",
@@ -3508,7 +3508,7 @@
       "punto_di_volo": null,
       "area_dialettale": "ME_TIRRENICO",
       "contenuti_trama": [
-        "S-ME-05 (La Madonna Nera: consegnare le 5 conchiglie levigate dai Shellder di Marinello per ricevere la Squama Cuore)"
+        "S-ME-05 (La Madonna Nera: consegnare le 5 conchiglie levigate dai Shellder di Marinello per ricevere ITEM_SOOTHE_BELL, l’unica del gioco)"
       ],
       "note": "Interno monumentale del Santuario di Tindari nella cella est [33,0] di Patti.",
       "intestazione": {

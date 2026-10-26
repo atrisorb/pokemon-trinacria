@@ -2,9 +2,10 @@
   "modulo": "MODULO 2 — GLOBAL_CONSTANTS_REGISTRY",
   "blocco": "2.2",
   "titolo": "Registro delle mappe di Caltanissetta (CL), Agrigento (AG) e Trapani (TP)",
-  "versione": "1.1",
+  "versione": "1.2",
   "data": "2026-10-18",
   "correzioni_1_1": "18/10/2026 (blocco 2.5): Licata e Sciacca avevano i nomi HeartGold scambiati. Gli id erano giusti (MAP_AG_LICATA = 53 = MAP_LAVENDER, MAP_AG_SCIACCA = 54 = MAP_VERMILION): FLYPOINT_LICATA (4) sostituisce FLYPOINT_LAVENDER, FLAG_SYS_FLYPOINT_LICATA (0x9B4) sostituisce FLAG_SYS_FLYPOINT_LAVENDER, SPAWN_LICATA (17) sostituisce SPAWN_LAVENDER; FLYPOINT_SCIACCA (5), FLAG_SYS_FLYPOINT_SCIACCA (0x9B5) e SPAWN_SCIACCA (18) sostituiscono i nomi VERMILION. Cambiano solo i campi simbolo_hg_sostituito, flag_hg_sostituito e alias_hg di queste 10 righe; numeri, tabelle di volo e di spawn invariati.",
+  "correzioni_1_2": "26/10/2026 (trama v1.9): ITEM_SOOTHE_BELL si ottiene solo in S-ME-05 (Tindari); il premio di S-AG-06 nei contenuti_trama di MAP_AG_FAVARA è ITEM_SILK_SCARF. Nessun altro campo cambia.",
   "progetto": "Pokémon Trinacria — autore e copyright: atrisorb",
   "file": "F:\\Progetti\\pokémon-sicilia\\docs\\MODULO_2\\2.2_MAPS_CL_AG_TP.json",
   "lettore": "LLM esecutore. Ogni valore è deciso: si copia, non si sceglie.",
@@ -4028,7 +4029,7 @@
       "pokegear": {"mapsec": "MAPSEC_AG_FAVARA", "mapsec_id": 83, "nome": "Favara", "cella": [20, 10], "regione": "MAP_REGION_JOHTO"},
       "punto_di_volo": null,
       "contenuti_trama": [
-        "S-AG-06 («I Sette Cortili»: recupero dei tre Smeargle di un collettivo di giovani artisti nei cortili riqualificati di Favara; ricompensa ITEM_SOOTHE_BELL)",
+        "S-AG-06 («I Sette Cortili»: recupero dei tre Smeargle di un collettivo di giovani artisti nei cortili riqualificati di Favara; ricompensa ITEM_SILK_SCARF)",
         "S-AG-09 / ST-06 (Cambiavoti di Agrigento nei pressi della piazza di Favara col Pokémon spia)"
       ],
       "intestazione": {

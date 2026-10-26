@@ -49,8 +49,15 @@ def TESTI(c, strumenti, agg, dev, assegnati, mart, out):
         'modulo': 3,
         'blocco': '3.10',
         'titolo': 'Strumenti da #1 a #180',
-        'versione': '1.0',
+        'versione': '1.1',
         'data': '26/10/2026',
+        'novita_1_1': 'Allineamento con la trama v1.9: i premi che la trama lasciava al Modulo 3 hanno ora uno strumento '
+                      'preciso, scritto in «ottenimento.altro»: GranitaCafè (S-CT-03), Cannolu (S-PA-07), Cassata (S-AG-07), '
+                      'PetraFocu (S-CT-02, al posto di quella a terra a Nicolosi), PetraAcqua (S-ME-08, al posto di quella a '
+                      'terra in ME), PetraArba (S-SR-07, al posto di quella a terra a Pachino), FossiliCupula (premio di '
+                      'S-RG-05), OssuLifanti (S-TP-04 e S-EN-05, che la trama premiava con un «Fossile» che il piano 3.1 non '
+                      'prevede), le Bacche Pirsica (S-EN-04), Aranciu (S-SR-03) e Racina (S-AG-05). '
+                      'Nomi, descrizioni, dati e negozi non cambiano.',
         'progetto': 'Pokémon Trinacria',
         'file': 'docs/MODULO_3/3.10_STRUMENTI_1-180.json',
         'lettore': 'LLM esecutore e autore dei blocchi 3.11–3.13, 6.x (negozi, oggetti a terra e nascosti, regali, '

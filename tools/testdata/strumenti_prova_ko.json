@@ -12,7 +12,9 @@
   "S09",
   "S10",
   "S11",
-  "S12"
+  "S12",
+  "S13",
+  "S14"
  ],
  "strumenti": [
   {
@@ -502,6 +504,110 @@
     ]
    },
    "_errore": "S12: negozi diversi da src/scrcmd_mart.c"
+  },
+  {
+   "n": 328,
+   "simbolo": "ITEM_TM01",
+   "originale": "TM01",
+   "mossa": {
+    "n": 264,
+    "simbolo": "MOVE_FOCUS_PUNCH",
+    "nome": "Mirapugnu"
+   },
+   "nome": "MT01",
+   "lingua": "it",
+   "glossario": null,
+   "genere": "f",
+   "con_articolo": "una {COLOR 255}MT01{COLOR 0}",
+   "plurale": "MT01",
+   "caratteri": 4,
+   "px": 24,
+   "con_articolo_px": 46,
+   "plurale_px": 24,
+   "nome_della_trama": "Sigla italiana della trama («MT», R-STR-11): insegna la mossa 264 Mirapugnu (MOVE_FOCUS_PUNCH). La descrizione è quella della mossa nel blocco 3.8, riscritta nel profilo D-03.",
+   "dati": {
+    "prezzo": 3000,
+    "tasca": "POCKET_TMHMS",
+    "effetto_tenuto": "HOLD_EFFECT_NONE",
+    "parametro_effetto": 0
+   },
+   "descrizione": [
+    "Si concentra e sferra un pugno."
+   ],
+   "descrizione_righe_px": [
+    206,
+    153
+   ],
+   "ottenimento": {
+    "negozi": [],
+    "selvatici": [],
+    "altro": "A terra: 1 in CL (FLAG_TR_ITEM_CL_*)."
+   },
+   "banchi": {
+    "msg_0222": "MT01",
+    "msg_0223": "una {COLOR 255}MT01{COLOR 0}",
+    "msg_0224": "MT01",
+    "msg_0221": [
+     "Si concentra e sferra un pugno."
+    ]
+   },
+   "_errore": "S14: descrizione diversa da quella della mossa (Mirapugnu) riscritta in D-03"
+  },
+  {
+   "n": 329,
+   "simbolo": "ITEM_TM02",
+   "originale": "TM02",
+   "mossa": {
+    "n": 337,
+    "simbolo": "MOVE_DRAGON_CLAW",
+    "nome": "Dracugranfa"
+   },
+   "nome": "MT02",
+   "lingua": "it",
+   "glossario": null,
+   "genere": "f",
+   "con_articolo": "una {COLOR 255}MT02{COLOR 0}",
+   "plurale": "MT02",
+   "caratteri": 4,
+   "px": 24,
+   "con_articolo_px": 46,
+   "plurale_px": 24,
+   "nome_della_trama": "Sigla italiana della trama («MT», R-STR-11): insegna la mossa 337 Dracugranfa (MOVE_DRAGON_CLAW). La descrizione è quella della mossa nel blocco 3.8, riscritta nel profilo D-03.",
+   "dati": {
+    "prezzo": 3000,
+    "tasca": "POCKET_TMHMS",
+    "effetto_tenuto": "HOLD_EFFECT_NONE",
+    "parametro_effetto": 0
+   },
+   "descrizione": [
+    "Squarcia il nemico con artigli enormi e",
+    "aguzzi."
+   ],
+   "descrizione_righe_px": [
+    200,
+    38
+   ],
+   "ottenimento": {
+    "negozi": [],
+    "selvatici": [
+     {
+      "specie": "SPECIES_PIKACHU",
+      "probabilita": 5,
+      "nome": "Lampuzzu"
+     }
+    ],
+    "altro": "A terra: 1 in EN (FLAG_TR_ITEM_EN_*)."
+   },
+   "banchi": {
+    "msg_0222": "MT02",
+    "msg_0223": "una {COLOR 255}MT02{COLOR 0}",
+    "msg_0224": "MT02",
+    "msg_0221": [
+     "Squarcia il nemico con artigli enormi e\n",
+     "aguzzi."
+    ]
+   },
+   "_errore": "S13: nessun selvatico del piano tiene la MT02"
   }
  ],
  "piano_negozi": {
