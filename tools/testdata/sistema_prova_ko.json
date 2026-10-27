@@ -1,0 +1,313 @@
+{
+ "spiegazione": "Blocco 3.13 ridotto con errori voluti: ogni codice Y00-Y12 deve comparire (Y12 solo con il repository).",
+ "errori_attesi": [
+  "Y00",
+  "Y01",
+  "Y02",
+  "Y03",
+  "Y04",
+  "Y05",
+  "Y06",
+  "Y07",
+  "Y08",
+  "Y09",
+  "Y10",
+  "Y11",
+  "Y12"
+ ],
+ "abilita": [
+  {
+   "n": 0,
+   "simbolo": "ABILITY_NONE",
+   "originale": " -",
+   "nome": null,
+   "nota": "Nessuna abilità: resta « -» nei tre banchi.",
+   "banchi": {
+    "msg_0720": " -",
+    "msg_0721": " -",
+    "msg_0722": " -"
+   }
+  },
+  {
+   "n": 1,
+   "simbolo": "ABILITY_STENCH",
+   "originale": "Stinky",
+   "nome": "Tanfo",
+   "maiuscolo": "TANFO!",
+   "lingua": "it",
+   "caratteri": 5,
+   "px": 29,
+   "maiuscolo_px": 30,
+   "descrizione": [
+    "Il fetore tiene lontani i",
+    "Pokémon selvatici."
+   ],
+   "descrizione_righe_px": [
+    128,
+    97
+   ],
+   "banchi": {
+    "msg_0720": "Tanfo",
+    "msg_0721": "TANFO",
+    "msg_0722": [
+     "Il fetore tiene lontani i\n",
+     "Pokémon selvatici."
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "simbolo": "ABILITY_DRIZZLE",
+   "originale": "Drizzle",
+   "nome": "Pioviggine",
+   "maiuscolo": "PIOVISCHIO",
+   "lingua": "it",
+   "caratteri": 10,
+   "px": 51,
+   "maiuscolo_px": 60,
+   "descrizione": [
+    "Fa piovere quando",
+    "il Pokémon entra",
+    "in lotta."
+   ],
+   "descrizione_righe_px": [
+    106,
+    126
+   ],
+   "banchi": {
+    "msg_0720": "Piovischio",
+    "msg_0721": "PIOVISCHIO",
+    "msg_0722": [
+     "Fa piovere quando il\n",
+     "Pokémon entra in lotta."
+    ]
+   }
+  },
+  {
+   "n": 39,
+   "simbolo": "ABILITY_INNER_FOCUS",
+   "originale": "Inner Focus",
+   "nome": "Forzinterna",
+   "maiuscolo": "FORZINTERNA",
+   "lingua": "it",
+   "caratteri": 11,
+   "px": 63,
+   "maiuscolo_px": 66,
+   "nome_ufficiale": "Forza Interiore",
+   "deviazione": "D-23",
+   "descrizione": [
+    "La concentrazione gli",
+    "impedisce di tentennare."
+   ],
+   "descrizione_righe_px": [
+    114,
+    130
+   ],
+   "banchi": {
+    "msg_0720": "Forzinterna",
+    "msg_0721": "FORZINTERNA",
+    "msg_0722": [
+     "La concentrazione gli\n",
+     "impedisce di tentennare."
+    ]
+   }
+  }
+ ],
+ "tipi": [
+  {
+   "n": 0,
+   "originale": "NORMAL",
+   "nome": "Normal",
+   "lingua": "it",
+   "caratteri": 7,
+   "px": 40,
+   "banchi": {
+    "msg_0735": "Normal"
+   }
+  },
+  {
+   "n": 1,
+   "originale": "FIGHTING",
+   "nome": "Lotta",
+   "lingua": "it",
+   "caratteri": 5,
+   "px": 30,
+   "banchi": {
+    "msg_0735": "Lotta"
+   }
+  },
+  {
+   "n": 2,
+   "originale": "FLYING",
+   "nome": "Volante",
+   "lingua": "it",
+   "caratteri": 7,
+   "px": 40,
+   "banchi": {
+    "msg_0735": "Volante"
+   }
+  }
+ ],
+ "nature": [
+  {
+   "n": 0,
+   "originale": "Hardy",
+   "nome": "Faidda",
+   "lingua": "it",
+   "caratteri": 6,
+   "px": 33,
+   "banchi": {
+    "msg_0034": "Faidda"
+   }
+  },
+  {
+   "n": 1,
+   "originale": "Lonely",
+   "nome": "Schiva",
+   "lingua": "it",
+   "caratteri": 6,
+   "px": 33,
+   "banchi": {
+    "msg_0034": "Schiva"
+   }
+  }
+ ],
+ "classi": [
+  {
+   "n": 0,
+   "simbolo_hg": "TRAINERCLASS_PKMN_TRAINER_ETHAN",
+   "simbolo": "TRAINERCLASS_PKMN_TRAINER_ETHAN",
+   "categoria": "PROTAGONISTA",
+   "originale": "₧₦ Trainer",
+   "nome": "Allenatore",
+   "lingua": "it",
+   "glossario": null,
+   "genere": "m",
+   "numero": "s",
+   "con_articolo": "un Allenatore",
+   "caratteri": 10,
+   "px": 56,
+   "con_articolo_px": 72,
+   "ruolo": "il protagonista (classe del giocatore: lotte in collegamento, Frontiera, Albo d’Oro)",
+   "banchi": {
+    "msg_0730": "Allenatore",
+    "msg_0731": "un Allenatore"
+   },
+   "nota": "il protagonista"
+  },
+  {
+   "n": 2,
+   "simbolo_hg": "TRAINERCLASS_YOUNGSTER",
+   "simbolo": "TRAINERCLASS_YOUNGSTER",
+   "categoria": "COMUNE",
+   "originale": "Youngster",
+   "nome": "Figghiolu",
+   "lingua": "scn",
+   "glossario": "G313-0001",
+   "genere": "m",
+   "numero": "s",
+   "con_articolo": "uno Figghiolu",
+   "caratteri": 9,
+   "px": 46,
+   "con_articolo_px": 62,
+   "ruolo": "ragazzini di quartiere",
+   "banchi": {
+    "msg_0730": "Figghiolu",
+    "msg_0731": "un Figghiolu"
+   }
+  },
+  {
+   "n": 55,
+   "simbolo_hg": "TRAINERCLASS_TEAM_ROCKET",
+   "simbolo": "TRAINERCLASS_SCAGNOZZU",
+   "categoria": "U_SISTEMA",
+   "originale": "Team Rocket",
+   "nome": "Scagnozzu",
+   "lingua": "scn",
+   "glossario": "G30-0061",
+   "genere": "m",
+   "numero": "s",
+   "con_articolo": "uno Scagnozzu",
+   "caratteri": 9,
+   "px": 54,
+   "con_articolo_px": 76,
+   "ruolo": "livello 1 di «U Sistema»: braccio di strada (buttafuori, custodi infedeli degli acquedotti, pascolatori abusivi, guastafeste dei comizi, pretoriani di Piazza Armerina)",
+   "banchi": {
+    "msg_0730": "Scagnozzu",
+    "msg_0731": "uno Scagnozzu"
+   }
+  }
+ ],
+ "forme": [
+  {
+   "n": 116,
+   "originale": "West Sea",
+   "nome": "Mare Ovest",
+   "lingua": "it",
+   "nota": "Shellos e Gastrodon",
+   "caratteri": 10,
+   "px": 58,
+   "banchi": {
+    "msg_0802": "West Sea"
+   }
+  },
+  {
+   "n": 153,
+   "originale": "ROTOM",
+   "nome": "Rotom",
+   "lingua": "it",
+   "nota": "Rotom, forma base: nome della specie",
+   "caratteri": 5,
+   "px": 27,
+   "banchi": {
+    "msg_0802": "Rotom"
+   }
+  }
+ ],
+ "ricerca_tipi": [
+  {
+   "n": 63,
+   "originale": "Bug",
+   "tipo": 6,
+   "nome": "Coleottero",
+   "px": 39,
+   "banchi": {
+    "msg_0802": "Coleottero"
+   }
+  }
+ ],
+ "deviazioni_dalle_specifiche": [],
+ "glossario_aggiunte": [
+  {
+   "id": "G313-0002",
+   "forma": "Figghiolu",
+   "categoria": "classe",
+   "lingua": "scn",
+   "aree": [
+    "SIC"
+   ],
+   "vietata_in": [],
+   "forme": [
+    "figghiolu"
+   ],
+   "varianti_vietate": [],
+   "sostituisce": {
+    "banco": "msg_0730",
+    "indice": 2,
+    "simbolo": "TRAINERCLASS_YOUNGSTER",
+    "originale": "Youngster"
+   },
+   "genere": "m",
+   "con_articolo": "un Figghiolu",
+   "significato": "ragazzino di quartiere (figliolo)",
+   "origine": "architetto 3.13",
+   "nota": null,
+   "caratteri": 9,
+   "px": 46,
+   "fonte": "architetto",
+   "lemma_mcp": null,
+   "limite": "L-06",
+   "con_articolo_px": 62
+  }
+ ]
+}

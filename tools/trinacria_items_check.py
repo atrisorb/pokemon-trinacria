@@ -29,7 +29,7 @@ ART_LIMIT = (20, 90)             # L-04
 PLURAL_LIMIT = (20, 82)          # L-05
 DESC_PROFILE = (3, 41, 215)      # D-03: righe, caratteri per riga, px per riga
 ITEMS = 536
-EMPTY_SLOTS = range(113, 135)    # ITEM_UNUSED_113…134: restano «???» (R-STR-02)
+EMPTY_SLOTS = set(range(113, 135)) | {428}  # ITEM_UNUSED_113…134 e ITEM_EXPLORER_KIT: restano «???» (R-STR-02)
 NAME_CHARS = re.compile(r"^[A-Za-z0-9àèéìòùâêîôûÀÈÉÌÒÙÂÊÎÔÛçëïüñ ’.\-]+$")  # R-GRA-11
 SYSTEM_CATEGORIES = ('specie', 'mossa', 'strumento', 'classe', 'abilita', 'tipo', 'natura', 'soprannome', 'dossier')
 # strumenti che la trama cita col nome italiano (R-STR-01): numero -> nome; le MT e le MN tengono la sigla
@@ -38,6 +38,13 @@ TM01, HM01 = 328, 420
 TRAMA_IT = {43: 'Genovese'}
 TRAMA_IT.update({TM01 + i: 'MT%02d' % (i + 1) for i in range(92)})
 TRAMA_IT.update({HM01 + i: 'MN%02d' % (i + 1) for i in range(8)})
+# strumenti chiave della trama col nome italiano sugli slot di Sinnoh (R-STR-18 del 3.12): l'Amuleto di ST-12, gli Atti
+# di ST-02 e i faldoni di ST-07, uno per provincia con la sigla
+ATTI = {429: 'CT', 430: 'SR', 436: 'RG', 438: 'CL', 440: 'AG', 441: 'TP', 451: 'ME', 452: 'PA', 454: 'EN'}
+FALDONI = {457: 'CT', 459: 'SR', 460: 'RG', 461: 'CL', 462: 'AG', 463: 'TP', 467: 'ME', 473: 'PA', 533: 'EN'}
+TRAMA_IT[439] = 'Amuleto'
+TRAMA_IT.update({n: 'Atto ' + p for n, p in ATTI.items()})
+TRAMA_IT.update({n: 'Faldone ' + p for n, p in FALDONI.items()})
 # strumenti della trama che hanno la stessa parola di un soprannome (R-NOM-02): numero
 TRAMA_SOPRANNOMI = {33}
 # livello del bancone dei Centri (src/scrcmd_mart.c, ScrCmd_MartBuy) -> Dossier necessari
@@ -128,6 +135,8 @@ def with_article(name, gender):
     low = name.lower()
     vowel = low[:1] in 'aeiouàèéìòù'
     impure = (low[:1] == 's' and low[1:2] not in 'aeiouàèéìòù') or low[:1] in 'zxy' or low[:2] in ('gn', 'ps')
+    if re.match(r'[A-Z]{2,} ', name):  # sigla letta lettera per lettera («un SH Scassatu»: «esse acca»)
+        vowel, impure = name[0] in 'AEFHILMNORSUX', name[0] == 'Z'
     if gender == 'f':
         art = 'un’' if vowel else 'una '
     else:
@@ -282,7 +291,7 @@ def check_items_list(items, fname, glossary, rep, font, repo=None, seen=None, ma
             if n < len(repo.names) and repo.names[n] != m.get('originale'):
                 rep.err('S05', where, '«originale» %s diverso da msg_0222 (%s)' % (m.get('originale'), repo.names[n]))
         if (n in EMPTY_SLOTS) != bool(m.get('vuoto')):
-            rep.err('S10', where, 'gli slot 113-134 sono vuoti e restano «???», gli altri hanno un nome (R-STR-02)')
+            rep.err('S10', where, 'gli slot 113-134 e 428 sono vuoti e restano «???», gli altri hanno un nome (R-STR-02)')
             continue
         if m.get('vuoto'):
             if m.get('nome') is not None or m.get('glossario') is not None:
