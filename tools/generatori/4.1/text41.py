@@ -1,0 +1,316 @@
+"""Testi scritti a mano del blocco 4.1 (gen41.py li unisce alle tabelle calcolate)."""
+
+VERSIONE = '1.0'
+DATA = '27/10/2026'
+
+INTESTAZIONE = """# Modulo 4 · Blocco 4.1 — Inventario degli asset HeartGold, riusi e pipeline grafica
+
+**Versione:** {versione} · {data} · **Progetto:** Pokémon Trinacria (autore: atrisorb) · **Repository di destinazione:** `F:\\Progetti\\pokeheartgold`
+
+**File del blocco:**
+
+| File | Cosa contiene |
+|---|---|
+| `docs/MODULO_4/4.1_INVENTARIO_PIPELINE.md` | questo documento |
+| `docs/MODULO_4/4.1_INVENTARIO_ASSET.json` | inventario generato: i {n_fs} file del filesystem della ROM, le {n_aree} aree coi loro tileset, le {n_land} celle, i {n_sprite_tab} sprite di campo, i 493 Pokémon col loro sprite, le scene di «U Sistema», il Pokémon a seguito nelle {n_mappe} mappe di Trinacria e gli esiti delle prove |
+| `tools/trinacria_gfx.py` | lo strumento: legge e riscrive gli archivi, controlla PNG, celle e tileset nuovi, scrive gli IMD e prova `nitrogfx` e `g3dcvtr` |
+| `tools/generatori/4.1/` | generatore di questo documento e dell’inventario (`gen41.py`, `text41.py`) |
+
+Fonti lette nel repository: `heartgold.us/filesystem.csv`, `include/filesystem_files_def.h`, i `meson.build` di `files/`, `tools/nitrogfx/` (`main.c`, `gfx.c`, `util.c`), `tools/scripts/makeotherpoke.sh`, `src/data/map_headers.h`, `include/map_header.h`, `src/field/fieldmap.c`, `include/field_system.h`, `files/fielddata/mapmatrix/map_matrix/`, `asm/overlay_01_sprite_data.s` (tabella sprite → modello), `include/constants/sprites.h`, `include/constants/mmodel.h`, `include/constants/follow_mon_idx.h`, `src/follow_mon.c`, `files/fielddata/tsurepoke/tp_param.csv`, `src/field_take_photo.c`, `src/pokemon.c` (sprite degli allenatori), `files/fielddata/eventdata/zone_event/*.json`. Dal progetto: registri 2.1–2.5, blocchi 3.1–3.5 (nomi delle specie) e `3.1_PIANO_INCONTRI.json`, trama v1.9 (R-05.4, R-09.7, R-10.3, R-10.4). Dal progetto precedente `F:\\Progetti\\pokémon-trinacria` si riusano **solo** `tools/g3dcvtr/` e lo schema dell’IMD già provato in gioco (`design/pipeline_mappe.md` §6–§7), come vuole il Modulo 1 §2.1.
+"""
+
+IN_BREVE = """## 0. In breve
+
+- **Quasi tutta la grafica delle mappe non ha sorgenti.** Celle (`files/a/0/6/5`), dati d’area (`a/0/4/2`), tileset (`a/0/4/4`), texture e modelli degli edifici (`a/0/7/0`, `bm_field.narc`, `bm_room.narc`), sprite degli allenatori (`a/0/5/8`, `a/0/0/6`) sono archivi NARC binari che il build copia così come sono. Trinacria li **riscrive** con `tools/trinacria_gfx.py`: estrae le voci, cambia quelle che servono e rimette insieme l’archivio. Le immagini con sorgente PNG (Pokégear, titolo, anteprime delle grotte, finestra del nome della zona, Pokédex) si ridisegnano e il build le converte da solo.
+- **Strumento scelto: `tools/trinacria_gfx.py`**, scritto per Trinacria, solo libreria standard di Python (legge i PNG da sé, senza Pillow). Più due programmi esterni già usati nel progetto: `nitrogfx` (quello del repository, compilato dal build o da solo in WSL) per le immagini 2D e `g3dcvtr.exe` (convertitore NITRO-System, Windows) per i modelli e i tileset 3D.
+- **Collaudato sugli originali** (`python -I tools/trinacria_gfx.py --selftest` → `SELFTEST_OK`): {n_narc_bin} NARC binari ({n_voci} voci) riletti e riscritti identici; le {n_bin} copie binarie del repository identiche ai file della ROM originale; {n_land} celle divise e ricomposte identiche; {n_matrici} matrici; {n_nsbtx} NSBTX letti; {n_png} PNG controllati.
+- **Le due catene sono provate.** 2D: {n_nitro} prove su {n_nitro} — i PNG del repository convertiti con le opzioni del loro `meson.build` escono **identici** alle voci della ROM (anche compressi LZ), e gli NCGR degli allenatori (anche quelli cifrati) fanno NCGR → PNG → NCGR identici. 3D: l’IMD scritto dallo strumento diventa con `g3dcvtr` un NSBTX e un NSBMD che lo strumento rilegge e che entrano in una voce di cella.
+- **Regola delle texture per nome.** Il modello di una cella cerca texture e palette **per nome** nel tileset dell’area della mappa: controllato su tutte le {n_coppie} coppie mappa–modello di HeartGold ({n_difetti} difetti dell’originale, elencati nell’inventario). Le celle nuove non ne hanno nessuno (R-GFX-12, codice K20).
+- **Colori 555.** Il DS ha 5 bit per canale: nei PNG si usano solo i 32 valori che `nitrogfx` scrive (R-GFX-03). Tutti i PNG di HeartGold li rispettano già.
+- **Pokémon.** La grafica dei Pokémon non cambia (R-GFX-14). Il Pokémon a seguito ha già uno sprite per ognuna delle 493 specie ({n_follow_sprite} sprite con forme e femmine): non c’è niente da disegnare. Le scene di «U Sistema» e gli statici mettono Pokémon nelle mappe con le regole di HeartGold (R-GFX-15): {n_scene} righe d’inventario ({n_scene_r103} specie di R-10.3 e {n_statici} statici); {n_scene_static} usano uno sprite che HeartGold mette già negli eventi (statico o speciale), le altre lo sprite del Follower.
+- **Una modifica di codice** (E-GFX-01): il caso speciale di Diglett e Dugtrio nella Torre Campana di HeartGold cade su due mappe di Trinacria (Mistretta e il Bosco dei Nebrodi) e si toglie.
+"""
+
+STRUMENTO = """## 1. Lo strumento `tools/trinacria_gfx.py`
+
+Si lancia dalla cartella del progetto; `--repo` indica `F:\\Progetti\\pokeheartgold` (senza, lo strumento lo cerca in `TRINACRIA_REPO`, nella cartella corrente e accanto al progetto). Ogni problema è una riga `ERRORE <codice> <messaggio>`; un avviso è una riga `AVVISO <codice> <messaggio>` e non fa fallire. L’ultima riga è `GRAFICA_OK` oppure `GRAFICA_FAILED` (col collaudo: `SELFTEST_OK` / `SELFTEST_FAILED`).
+
+| Comando | Cosa fa |
+|---|---|
+| `--selftest [--rom R]` | collaudo completo (§3). Con il repository già modificato dai blocchi 4.2–4.4 serve `--rom` con la ROM originale: gli originali si riconoscono dallo SHA-1 |
+| `censimento [--rom R] [--out F.json]` | ogni file del filesystem: formato, voci dei NARC e loro contenuto; con `--rom` confronta byte per byte col file della ROM |
+| `narc unpack NARC DIR` · `narc pack DIR NARC` | voci `0000.bin`, `0001.bin`…; `pack` le rimette nello stesso ordine (riempimento `0xFF`, come HeartGold) |
+| `rom --rom R PERCORSO OUT` | copia un file della ROM (percorso del filesystem, per esempio `/a/0/5/8`) |
+| `landdata split VOCE DIR` · `landdata join DIR VOCE` | una cella di `a/0/6/5` divisa in `bgs.bin`, `permessi.bin`, `edifici.bin`, `modello.nsbmd`, `terreno.bdhc` e ricomposta (con i limiti K21) |
+| `permessi GRIGLIA LEGENDA OUT.bin` | i 2048 byte di permessi di una cella dalla griglia 32×32 e dalle colonne `tipo`, `collisione` della legenda |
+| `edifici CSV OUT.bin` | gli edifici di una cella dalle colonne `modello,x,y,z` (unità del mondo, §4.3) |
+| `cella VOCE.bin [--tileset T.nsbtx]` | limiti di una cella nuova (K21) e texture del modello presenti nel tileset (K20) |
+| `tileset T.nsbtx [--edifici E.nsbtx]` | limiti di un tileset nuovo e VRAM dell’area (K21) |
+| `area` | i {n_aree} dati d’area (`a/0/4/2`) |
+| `matrice FILE.bin` | una matrice: misure, nome, modelli per cella |
+| `nsbtx FILE` · `nsbtx NARC:VOCE` | texture (nome, formato, misure) e palette di un NSBTX; per un NSBMD i modelli e le texture che cita |
+| `png NUOVO.png [--come ORIGINALE.png] [--bpp 4|8] [--colori N]` | controllo di un PNG nuovo (R-GFX-02…07) |
+| `imd GRIGLIA LEGENDA TEXDIR OUT.imd` | IMD di una cella piatta 32×32 per `g3dcvtr` (R-GFX-10) |
+| `g3d IN.imd OUT (--modello|--texture)` | lancia `g3dcvtr.exe` (Windows) e rilegge il risultato |
+| `opzioni-ncgr FILE.NCGR` | le opzioni di `nitrogfx` che riscrivono quell’NCGR identico |
+| `nitrogfx --rom R --nitrogfx CMD [--wsl]` | le {n_nitro} prove della catena 2D (§3.2) |
+| `overworld [SPECIE …]` | sprite di campo di una specie (numero o `SPECIES_*`): sprite, forme, file, parametri del Follower |
+
+I PNG nuovi si possono scrivere anche senza Pillow con `png_write_indexed()` dello strumento (PNG indicizzato a 8 bit).
+"""
+
+AMBIENTE = """## 2. Ambiente e programmi esterni
+
+| Cosa | Dove | Note |
+|---|---|---|
+| `nitrogfx` | `F:\\Progetti\\pokeheartgold\\tools\\nitrogfx\\` (sorgente del repository); dopo il build di riferimento del Modulo 1 (M1-02) l’eseguibile è `build/tools/nitrogfx/nitrogfx` (WSL) | Se serve prima del build si compila da solo in WSL, senza toccare il repository: `gcc -Wall -Wextra -Werror -Wno-sign-compare -Wno-unused-result -std=gnu17 -DPNG_SKIP_SETJMP_CHECK $(pkg-config --cflags libpng zlib) -D_GNU_SOURCE=1 -O2 main.c convert_png.c gfx.c jasc_pal.c lz.c rl.c util.c font.c huff.c json.c cJSON.c -o ~/trn_gfx/nitrogfx $(pkg-config --libs libpng zlib)` dalla cartella `tools/nitrogfx` (provato il {data}: gcc 15.2, libpng 1.6.57) |
+| `g3dcvtr.exe` | `F:\\Progetti\\pokémon-trinacria\\tools\\g3dcvtr\\g3dcvtr.exe` con `xerces-c_2_5_0.dll` accanto (fuori da git, messo dall’utente il 13/10/2026) | SHA-256 `{g3d_sha}`; lo strumento rifiuta un eseguibile diverso (K18). Si lancia da Windows (Python di Windows o PowerShell), mai da WSL. Variabile `TRINACRIA_G3DCVTR` per un altro percorso dello stesso file |
+| Python | `python` di Windows (3.14) | lo strumento usa solo la libreria standard; Pillow (12.3, presente) serve solo agli script di disegno che lo vogliono |
+| ROM originale | `F:\\Progetti\\pokeheartgold\\build\\pokeheartgold.us.nds` del build di riferimento (M1-02), SHA-1 `4fcded0e2713dc03929845de631d0932ea2b5a37` | le prove di questo blocco hanno usato la copia identica `F:\\Progetti\\pokemon-trinacria-orig\\build\\pokeheartgold.us.nds` |
+
+**Shell.** I comandi che passano percorsi a WSL (`wsl -d Ubuntu -- …`, l’opzione `--wsl` dello strumento) si lanciano da **PowerShell**: Git Bash riscrive `/home/…` in `C:/Program Files/Git/home/…` e la prova fallisce con `No such file or directory` (successo anche qui). Le cartelle di lavoro di `g3dcvtr` hanno percorsi senza accenti; lo strumento usa la cartella temporanea di Windows.
+"""
+
+COLLAUDO = """## 3. Collaudo
+
+### 3.1 `--selftest`
+
+`python -I tools/trinacria_gfx.py --selftest` → `SELFTEST_OK` ({data}, circa 25 secondi, sul repository non modificato). Cosa controlla:
+
+| Prova | Esito |
+|---|---|
+{righe_selftest}
+
+### 3.2 Catena 2D (`nitrogfx`)
+
+`python -I tools/trinacria_gfx.py nitrogfx --rom <ROM originale> --nitrogfx ~/trn_gfx/nitrogfx --wsl` (da PowerShell) → `GRAFICA_OK`. Ogni riga converte un file del repository come fa il build e confronta il risultato con la voce della ROM originale.
+
+| PNG o NCGR | Uscita e opzioni | Voce della ROM | Esito |
+|---|---|---|---|
+{righe_nitro}
+
+Le opzioni delle immagini con sorgente PNG sono quelle del `meson.build` della cartella (le costanti sono in `files/meson.build`: `VERSION101_SOPC_NCGR_FLAGS`, `CLOBBER_SIZE_VERSION101_NCGR_FLAGS`…); quelle degli NCGR che stanno solo negli archivi binari si leggono dall’NCGR con `opzioni-ncgr` (tutti i {n_ncgr_tr} NCGR di `a/0/5/8` e `a/0/0/6` hanno una delle due serie della tabella).
+
+### 3.3 Catena 3D (`g3dcvtr`)
+
+Dentro `--selftest`, quando `g3dcvtr.exe` c’è: una cella di prova (8 righe di mare e 24 di erba, due texture 32×32 a 16 colori) → `imd` → `g3dcvtr -etex` e `-emdl` → {g3d_esito}. La forma dell’IMD (scala `pos_scale` 6, una casella = 16 unità, `box_test` con `pos_scale` 7) è quella che il progetto precedente ha visto **in gioco** il 14/10/2026 al posto di una stanza di HeartGold, con le texture giuste, la scala giusta e la riga 0 a nord (`F:\\Progetti\\pokémon-trinacria\\design\\screenshot\\4.0\\prova_imd_casa_1F.png`). Qui non c’è una ROM costruita: la prova a schermo di una cella di Trinacria è un TASK del 7.4.
+"""
+
+FORMATI = """## 4. Formati
+
+### 4.1 Riconoscere un file (R-GFX-01)
+
+I primi 4 byte dicono il formato; un file che comincia con `0x10` o `0x11` seguiti dalla lunghezza è compresso LZ (lo strumento lo apre per dire cosa c’è dentro: `LZ10:NCGR`).
+
+| Firma | Formato | Firma | Formato |
+|---|---|---|---|
+| `NARC` | archivio | `BMD0` | modello 3D (NSBMD) |
+| `RGCN` | tile (NCGR) | `BTX0` | texture 3D (NSBTX) |
+| `RLCN` | palette (NCLR) | `BCA0` / `BTA0` / `BTP0` / `BMA0` | animazioni 3D (NSBCA, NSBTA, NSBTP, NSBMA) |
+| `RCSN` | schermata (NSCR) | `BDHC` | altezze del terreno di una cella |
+| `RECN` | celle degli sprite (NCER) | `RNAN` | animazioni degli sprite (NANR) |
+
+### 4.2 NARC
+
+`NARC` `FFFE` `0100` u32 lunghezza, u16 `0x10`, u16 3; blocco `BTAF` (u16 numero di voci, poi inizio e fine di ogni voce), `BTNF` (16 byte: archivio senza nomi), `GMIF` (le voci, allineate a 4 byte e riempite con `0xFF`). `narc pack` riproduce byte per byte tutti i {n_narc_bin} NARC binari del repository.
+
+### 4.3 Cella (voce di `files/a/0/6/5`)
+
+```
+0x00 u32 permessi (sempre 2048)   0x04 u32 edifici (multiplo di 48)   0x08 u32 modello NSBMD   0x0C u32 BDHC
+0x10 u16 0x1234 (firma)            0x12 u16 n = byte delle piastre sonore
+0x14 n byte di piastre sonore, poi permessi, edifici, NSBMD, BDHC
+```
+
+- **Permessi:** 32 righe × 32 caselle da 2 byte (comportamento, collisione), da nord a sud e da ovest a est. I valori dei comportamenti sono in `include/constants/metatile_behavior.h`; collisione `0x00` percorribile, `0x80` bloccata.
+- **Edifici:** 48 byte l’uno, tutti campi da 4 byte: u32 indice del modello in `bm_field.narc` (esterni) o `bm_room.narc` (interni); posizione X, Y, Z in punto fisso 20.12 (valore × 4096), in unità del mondo con l’origine al centro della cella (una casella = 16: il centro della casella locale colonna *c*, riga *r* è x = 16·*c* − 248, z = 16·*r* − 248); tre rotazioni, **sempre 0** nei {n_edifici_hg} edifici di HeartGold; tre scale, sempre 1,0 (`0x1000`); 8 byte a zero. `edifici` scrive questa struttura da un CSV e la riscrive identica per tutti gli edifici di HeartGold; un edificio ruotato non si usa (il modello si disegna già girato).
+- **NSBMD:** il terreno della cella, un modello. Cita texture e palette **per nome** (R-GFX-12).
+- **BDHC:** le quote. {n_bdhc66} celle di HeartGold hanno un BDHC di 66 byte (una sola piastra); {n_bdhc_uguali} sono identiche a quello della voce 1, che le celle piatte nuove copiano (R-GFX-10).
+- **Piastre sonore:** i suoni d’ambiente del blocco 5.1 §10.6 (R-AUD-11); {n_suoni} celle di HeartGold ne hanno.
+
+### 4.4 Dati d’area (`files/a/0/4/2`, 8 byte per voce)
+
+u16 texture degli edifici (voce di `a/0/7/0`), u16 tileset della mappa (voce di `a/0/4/4`), u16 texture animate (`0xFFFF` = nessuna), u8 esterno (0/1), u8 luce. Il campo `areaDataBank` dell’intestazione della mappa (u8) sceglie la voce. Gli indici di tileset e texture sono controllati sugli originali (K05) e la regola delle texture per nome (§4.3) conferma il collegamento cella → area → tileset su {n_ok_coppie} coppie su {n_coppie}.
+
+### 4.5 Matrice (`files/fielddata/mapmatrix/map_matrix/*.bin`)
+
+u8 larghezza, u8 altezza, u8 con intestazioni, u8 con altitudini, u8 lunghezza del nome, nome ASCII; poi (se ci sono) larghezza×altezza u16 di intestazioni `MAP_*` e u8 di altitudini; poi larghezza×altezza u16 di celle (indice in `a/0/6/5`, `0xFFFF` vuota). Al massimo `MAP_MATRIX_MAX_SIZE` = 799 celle (Modulo 1 §4.7).
+
+### 4.6 Texture 3D (NSBTX e blocco `TEX0`)
+
+Formati delle texture: `palette4` (2 bit), `palette16` (4 bit), `palette256` (8 bit), `A3I5`, `A5I3`, `compresso4x4`, `diretto`. Nei tileset di HeartGold: {formati_tileset}. Misure più usate: {misure_tileset}. Ogni texture e ogni palette ha un nome di al massimo 16 byte.
+
+### 4.7 Sprite di campo (`files/data/mmodel/mmodel/`)
+
+{n_mmodel_tx} NSBTX (uno per sprite: i fotogrammi sono texture), {n_mmodel_md} NSBMD e {n_mmodel_js} tabelle JSON; il build ne fa `mmodel.narc` con le voci nell’ordine dei numeri dei file. La tabella `asm/overlay_01_sprite_data.s` lega ogni `SPRITE_*` (il valore `spriteId` degli eventi) a un `MMODEL_*` (la voce) e a due parametri di disegno: {n_sprite_tab} righe. All’apertura di una mappa il gioco precarica gli sprite della lista scelta da `moveModelBank` (4 bit dell’intestazione, liste in `a/0/9/2`: {n_preload} liste, al massimo {max_preload} sprite, `include/field_system.h`); gli altri si caricano quando servono. Trinacria tiene i `moveModelBank` di HeartGold (registri 2.1–2.3).
+
+### 4.8 Sprite degli allenatori (`a/0/5/8` fronte, `a/0/0/6` dorso)
+
+Cinque voci per classe (`src/pokemon.c`, `sub_02070D3C`): NCGR a celle 80×80 (opzioni `-clobbersize -version101 -mappingtype 64 -vram`), NCLR a 16 colori, NCER, NANR, e un NCGR «scansionato» e cifrato 160×80 (`-scanfronttoback`: la chiave sta nel file `<png>.key` che `nitrogfx` scrive leggendo l’NCGR e rilegge scrivendolo, come per i Pokémon in `tools/scripts/makeotherpoke.sh`). `a/0/5/8` ha {n_tr_front} classi, `a/0/0/6` {n_tr_back} dorsi. Li usa il 4.4.
+"""
+
+DOVE = """## 5. Dove sta la grafica
+
+| Gruppo | Dove | Forma nel repository | Come si cambia | Chi |
+|---|---|---|---|---|
+| Celle delle mappe | `files/a/0/6/5` ({n_land} voci) | NARC binario | `narc unpack` → `landdata split/join` → `narc pack`; celle nuove in coda | 4.2–4.3 |
+| Dati d’area | `files/a/0/4/2` ({n_aree} voci) | NARC binario | voci nuove in coda (`areaDataBank` arriva a 255) | 4.2–4.3 |
+| Tileset delle mappe | `files/a/0/4/4` ({n_tileset} NSBTX) | NARC binario | `imd` + `g3dcvtr -etex`; voci nuove in coda | 4.2–4.3 |
+| Texture degli edifici | `files/a/0/7/0` ({n_edifici_tex} voci, {n_vuote} vuote di 4 byte) | NARC binario | come i tileset | 4.2–4.3 |
+| Modelli degli edifici | `files/fielddata/build_model/bm_field.narc` ({n_bm_field} NSBMD), `bm_room.narc` ({n_bm_room}) | NARC binari | `g3dcvtr -emdl`; riuso dei modelli di HeartGold dove la trama non chiede altro | 4.2–4.3 |
+| Matrici | `files/fielddata/mapmatrix/map_matrix/` ({n_matrici} file) | binari, il build li impacchetta | celle dei modelli scritte coi numeri di `a/0/6/5` (`matrice` per leggerle) | 4.2–4.3 |
+| Animazioni delle mappe | `files/a/1/0/6` ({n_anim} voci NSBTA/NSBCA/NSBTP/NSBMA) | NARC binario | non cambiano | — |
+| Anteprime d’ingresso delle grotte | `files/fielddata/graphic/preview_graphic/preview_graphic/` ({n_preview} PNG, ordine in `preview_graphic.order`) | PNG → NCGR LZ + NCLR | PNG nuovi (R-GFX-02…08) | 4.2–4.3 |
+| Finestra del nome della zona | `files/data/gs_areawindow/` (9 PNG) | PNG → NCGR + NCLR | PNG nuovi se servono | 4.4 |
+| Pokégear | `files/application/pokegear/` (mappa, telefono, radio, impostazioni: {n_pgear} PNG) | PNG + NCLR/NSCR/NCER/NANR binari | PNG nuovi; NSCR via `nitrogfx` JSON | 4.4 |
+| Titolo | `files/demo/title/titledemo/` (5 PNG, NSBMD del logo, NCLR, NSCR) | misto | PNG; il logo 3D con `g3dcvtr -eboth` | 4.4 |
+| Schermata copyright | `files/demo/opening/gs_opening/` ({n_opening} file binari) | NCGR/NSCR/NCLR binari | NCGR → PNG → NCGR con `opzioni-ncgr` (Modulo 1 §9.1) | 4.4 |
+| Sprite di campo dei personaggi | `files/data/mmodel/mmodel/` + `asm/overlay_01_sprite_data.s` | NSBTX binari | sprite nuovi `SPRITE_TRN_*` del registro 2.5 | 4.4 |
+| Sprite degli allenatori in lotta | `files/a/0/5/8`, `files/a/0/0/6` | NARC binari | §4.8 | 4.4 |
+| Meteo (cenere dell’Etna) | `files/data/weather_sys.narc` ({n_weather} voci) | NARC binario | Modulo 1 §8.6 (M1-15) | Modulo 1 |
+| Font | `files/graphic/font/` | — | Modulo 1 §5 | Modulo 1 |
+| Pokémon: fronte, dorso, icone, impronte, sprite di campo | `files/poketool/pokegra/`, `icongra/`, `pokefoot/`, `files/data/mmodel/` | PNG con `.key`, NSBTX | **non cambiano** (R-GFX-14) | — |
+
+L’inventario JSON (`filesystem`) elenca tutti i {n_fs} file del filesystem con formato, voci, contenuto, costante `NARC_*` e i sorgenti che la usano.
+"""
+
+REGOLE = """## 6. Regole
+
+| Regola | Titolo | Contenuto |
+|---|---|---|
+| R-GFX-01 | Formato dai primi byte | Un file si riconosce dalla firma (§4.1), mai dal nome o dall’estensione: i file di `files/a/` non ne hanno. |
+| R-GFX-02 | Stessa forma | Un file grafico che ne sostituisce uno di HeartGold ha le stesse misure, la stessa profondità (4 o 8 bit), lo stesso numero di palette e la stessa mappatura dell’originale; cambiano solo pixel e colori. Così il codice del gioco non cambia. Controllo: `png NUOVO.png --come ORIGINALE.png` (K11, K12). |
+| R-GFX-03 | Colori 555 | Il DS ha 5 bit per canale (colore = R/8 + G/8·32 + B/8·1024, ordine BGR, bit 15 a zero). Nei PNG ogni componente è uno dei 32 valori che `nitrogfx` scrive leggendo una palette (x·255/31): {canon}. Un altro valore viene troncato a 5 bit senza avviso e due colori diversi nel PNG possono diventare uguali sul DS. Controllo K13. Tutti i {n_png} PNG di HeartGold rispettano la regola. |
+| R-GFX-04 | PNG indicizzati | Ogni PNG è indicizzato (palette, profondità 4 o 8 bit). In scala di grigi solo dove lo è l’originale ({n_png_grigi} PNG di HeartGold, per esempio `zukan_gra`). Controllo K10. |
+| R-GFX-05 | Indici della palette | A 4 bit si usano gli indici 0–15, a 8 bit 0–255. L’indice 0 è il colore trasparente degli sprite e degli strati sopra lo sfondo: lì non si disegna nulla che debba vedersi. Controllo K12. |
+| R-GFX-06 | Tile 8×8 | Larghezza e altezza sono multipli di 8. Controllo K15. |
+| R-GFX-07 | Colori doppi | Due indici usati con lo stesso colore DS sono un avviso (K14), non un errore: HeartGold ne ha {n_png_doppi} PNG. In un’immagine nuova sprecano un colore. |
+| R-GFX-08 | Conversione 2D | Solo `nitrogfx` del repository, con le opzioni del `meson.build` della cartella (immagini con PNG) o con quelle di `opzioni-ncgr` (NCGR dentro gli archivi binari). Il risultato non si ritocca a mano. Provato identico alla ROM in {n_nitro} casi (§3.2). |
+| R-GFX-09 | Archivi binari | Un archivio senza sorgenti si cambia solo con `narc unpack` → voce nuova → `narc pack`. Numero e ordine delle voci esistenti non cambiano: gli indici sono scritti nel codice e nelle tabelle. Le voci nuove (aree, tileset, celle, texture di edifici) vanno **in coda**. |
+| R-GFX-10 | Celle 3D | Una cella è 32×32 caselle, una casella 16 unità, l’origine al centro, la riga 0 a nord. Il terreno è piatto a quota 0 (rilievi disegnati e caselle bloccate); il modello si scrive con `imd` (un quadrato per casella, caselle uguali vicine fuse in rettangoli) e si converte con `g3dcvtr -emdl`; il BDHC è quello di 66 byte della voce 1 di `a/0/6/5`; le piastre sonore sono vuote salvo dove la trama le chiede (blocco 5.1 §10.6). Celle non piatte (scale, rampe) si fanno con i modelli degli edifici. |
+| R-GFX-11 | Nomi delle texture | Nomi di al massimo 13 caratteri fra `a–z`, `0–9` e `_`, unici in un tileset; la palette si chiama `<nome>_pl` (16 byte al massimo nel file). Le texture del tileset sono PNG indicizzati con lati potenza di 2 fra 8 e 1024 (in HeartGold quasi sempre 16×16 o 32×32) e al massimo 16 colori. Controllo K16, K17. |
+| R-GFX-12 | Texture per nome | Ogni nome di texture e di palette citato dal modello di una cella esiste nel tileset dell’area della mappa (`a/0/4/2` → `a/0/4/4`). Controllo: `cella VOCE.bin --tileset T.nsbtx` (K20). HeartGold ha {n_difetti} coppie mappa–modello che non la rispettano (sezione `difetti_texture_hg` dell’inventario): non si copiano. |
+| R-GFX-13 | Limiti | Un file nuovo resta dentro i massimi di HeartGold: tileset {lim_tileset_byte} byte e {lim_tileset_texture} texture; tileset + texture degli edifici di un’area {lim_area_vram} byte di VRAM; modello di una cella {lim_modello_cella} byte; {lim_edifici_cella} edifici per cella; BDHC {lim_bdhc_cella} byte; piastre sonore {lim_suoni_cella} byte. Il gioco carica già file di queste misure; oltre, il 4.2–4.3 divide la cella o il tileset. Controllo K21. |
+| R-GFX-14 | Pokémon invariati | Fronte, dorso, icone, impronte e sprite di campo dei Pokémon restano quelli di HeartGold: nessuna richiesta della scaletta li ridisegna, cambiano solo i nomi (Modulo 3). |
+| R-GFX-15 | Pokémon in scena | Un Pokémon messo in una mappa (evento o script) usa, nell’ordine: lo sprite speciale di HeartGold se c’è (`SPRITE_KABIGON` per il `Manzuni` addormentato, `SPRITE_HOU_OBJ01` per Ho-Oh, `SPRITE_LUG_OBJ01` per Lugia); altrimenti `SPRITE_FOLLOWER_MON_STATIC_<SPECIE>`, come fanno **tutti** gli eventi di HeartGold ({n_static} specie); altrimenti `SPRITE_FOLLOWER_MON_<SPECIE>` (stessa voce di modello e stessi parametri; HeartGold crea oggetti di mappa con questi sprite in `src/field_take_photo.c:471`). La forma e la femmina seguono la tabella `pokemon_overworld` dell’inventario. La prova a schermo di uno sprite non statico è un TASK del 7.4. |
+| R-GFX-16 | Pokémon a seguito | Il Follower usa gli sprite che il gioco sceglie da solo (`FollowMon_GetSpriteID`): niente da disegnare. Dove la mappa ha `MAP_FOLLOWMODE_HEIGHT_RESTRICT` le {n_alti} specie troppo alte (`too_tall` in `tp_param.csv`) restano nella Poké Ball; con `MAP_FOLLOWMODE_PREVENT` nessuna specie segue. I modi delle mappe sono quelli dei registri 2.1–2.3. |
+| R-GFX-17 | Script di disegno | Ogni immagine nuova nasce da uno script Python del blocco che la chiede, salvato nel progetto come i generatori (`tools/grafica/<blocco>/`, nello stesso commit del blocco), che scrive il PNG in modo riproducibile. Nessun elemento è copiato o ricalcato dalla grafica di HeartGold, salvo i file che R-GFX-14 tiene. |
+"""
+
+PIPELINE_2D = """## 7. Pipeline 2D, passo per passo
+
+**A. Immagine con sorgente PNG** (Pokégear, titolo, anteprime delle grotte, finestra del nome della zona):
+
+1. Trova il PNG originale e il suo `meson.build` (tabella del §5).
+2. Lo script di disegno (R-GFX-17) scrive il PNG nuovo con le stesse misure e la stessa palette di partenza: legge la palette dell’originale con `png_read()` dello strumento, sceglie i colori nella scala di R-GFX-03.
+3. `python -I tools/trinacria_gfx.py png NUOVO.png --come ORIGINALE.png` → `GRAFICA_OK`.
+4. Il PNG nuovo prende il nome e il posto dell’originale nel repository. Il build lo converte con le opzioni del `meson.build` (R-GFX-08): nient’altro da fare.
+
+**B. Immagine che sta solo in un archivio binario** (copyright, sprite degli allenatori, interfacce in `files/a/`):
+
+1. `python -I tools/trinacria_gfx.py narc unpack files/a/0/5/8 <cartella>` (o `rom --rom … /a/0/5/8` dall’originale).
+2. `python -I tools/trinacria_gfx.py opzioni-ncgr <cartella>/NNNN.bin` (rinominato `.NCGR`) → le opzioni.
+3. In WSL: `nitrogfx X.NCGR X.png -palette X.NCLR -width <tile>` (più `-scanfronttoback` se le opzioni lo hanno) e subito `nitrogfx X.png Y.NCGR <opzioni>`: Y dev’essere identico a X (prova di andata e ritorno, come il §3.2). Solo dopo si disegna.
+4. Lo script disegna sul PNG (stesse misure, stessi indici di palette); `png --come` → `GRAFICA_OK`; `nitrogfx X.png NNNN.bin <opzioni>`.
+5. `narc pack <cartella> files/a/0/5/8`, poi `censimento` per controllare numero e formato delle voci.
+
+**Palette (NCLR).** Da PNG: `nitrogfx X.png X.NCLR` con le opzioni del `meson.build` (per esempio `-bitdepth 8 -nopad` per le anteprime). Da palette JASC: `nitrogfx X.pal X.NCLR -bitdepth 4`. Da NCLR a JASC per leggerla: `nitrogfx X.NCLR X.pal`.
+"""
+
+PIPELINE_3D = """## 8. Pipeline 3D, passo per passo (celle, tileset, aree)
+
+1. **Texture.** Lo script del blocco (R-GFX-17) scrive le texture del tileset come PNG indicizzati (R-GFX-11) in una cartella, per esempio `tools/grafica/4.2/<area>/tex/`.
+2. **Griglia e legenda.** Per ogni cella: `griglia.txt` (32 righe di 32 caratteri, riga 0 a nord) e `legenda.csv` (colonne `carattere,texture,tipo,collisione,descrizione`; `texture` vuota = casella senza terreno, coperta da un edificio).
+3. **IMD.** `python -I tools/trinacria_gfx.py imd griglia.txt legenda.csv tex/ cella.imd`.
+4. **Modello.** `python -I tools/trinacria_gfx.py g3d cella.imd modello.nsbmd --modello` (Windows).
+5. **Tileset dell’area.** Un IMD con tutte le texture dell’area (una griglia che le usa tutte) → `g3d … tileset.nsbtx --texture`; `python -I tools/trinacria_gfx.py tileset tileset.nsbtx --edifici <texture degli edifici>` → `GRAFICA_OK` (R-GFX-13).
+6. **Cella.** Una cartella con: `permessi.bin` (`permessi griglia.txt legenda.csv permessi.bin`: le colonne `tipo` e `collisione` della legenda, numeri come `0x02` o `128`), `edifici.bin` (`edifici edifici.csv edifici.bin`, colonne `modello,x,y,z` in unità del mondo, §4.3), `modello.nsbmd`, `terreno.bdhc` (copia di quello della voce 1, `landdata split` della voce 1), `bgs.bin` (vuoto o le piastre sonore) → `landdata join <cartella> cella.bin` → `cella cella.bin --tileset tileset.nsbtx` → `GRAFICA_OK` (K20, K21).
+7. **Archivi.** Cella, tileset, texture degli edifici e dati d’area nuovi vanno in coda ai rispettivi NARC (`narc unpack` → copia delle voci nuove → `narc pack`), e la matrice riceve il numero della cella; l’intestazione della mappa riceve il numero dell’area (`areaDataBank`).
+8. **Prova.** `--selftest --rom <ROM originale>` deve restare `SELFTEST_OK` (gli originali si leggono dalla ROM); poi build e schermata (7.4).
+"""
+
+POKEMON = """## 9. Sprite di campo dei Pokémon
+
+### 9.1 Il Pokémon a seguito (R-10.4)
+
+Tutte le 493 specie hanno uno sprite di campo: {n_follow_sprite} sprite in tutto, perché {n_femmine} specie hanno la femmina diversa e {n_con_forme} hanno forme (Unown 28, Arceus 18, Rotom 6, Deoxys 4…). Ogni sprite ha la sua voce `mmodel_*.NSBTX` (controllo K08) e la sua riga in `tp_param.csv` (K09). Le {n_alti} specie troppo alte per le mappe `HEIGHT_RESTRICT` sono: {alti}. La tabella completa (sprite, forme, file, parametri `too_tall` e `hover` come li chiama il decomp) è la sezione `pokemon_overworld` dell’inventario.
+
+Nelle {n_mappe} mappe di Trinacria (registri 2.1–2.3): {follow_conteggi}. I luoghi della memoria (R-05.4) hanno il Pokémon a seguito in tutte le mappe esterne; tre interni sono `HEIGHT_RESTRICT` ({memoria_alti}): lì le {n_alti} specie alte restano nella Poké Ball, e il Modulo 6 scrive la reazione del Pokémon a seguito solo quando è visibile.
+
+### 9.2 La modifica E-GFX-01 (`src/follow_mon.c`)
+
+`FollowMon_GetPermissionBySpeciesAndMap` vieta Diglett e Dugtrio nelle mappe della Torre Campana di HeartGold (`FollowMon_DiglettPermissionCheck`: `MAP_BELL_TOWER_1F`…`10F` e `ROOF`). In Trinacria due di quegli slot sono {bell_maps}: il `Trisurci` (Dugtrio) e la sua forma piccola sparirebbero lì senza motivo. Il caso speciale si toglie; il resto della funzione non cambia:
+
+```c
+static BOOL FollowMon_DiglettPermissionCheck(int mapNo) {{
+    (void)mapNo;
+    return TRUE;
+}}
+```
+
+La esegue il 7.4 (criterio: build verde; a Mistretta un Dugtrio in testa alla squadra segue il protagonista).
+
+### 9.3 I Pokémon delle scene di «U Sistema» e gli statici
+
+Specie che la trama mette **nelle mappe** come oggetti: le 10 operazioni di R-10.3 e gli statici del piano degli incontri (`3.1_PIANO_INCONTRI.json`, `speciali` e `leggendari` col metodo «statico»). Lo sprite segue R-GFX-15; «Follower» vuol dire lo sprite `SPRITE_FOLLOWER_MON_<SPECIE>`, da provare a schermo nel 7.4.
+
+| N. | Specie | Nome in Trinacria | Dove la chiede la trama | Sprite | Tipo |
+|---|---|---|---|---|---|
+{righe_scene}
+
+{nota_scene}
+"""
+
+AREE = """## 10. Aree e tileset di HeartGold che Trinacria eredita oggi
+
+Le {n_mappe} mappe dei registri 2.1–2.3 hanno ancora l’`areaDataBank` dello slot HeartGold che sostituiscono: {n_aree_usate} aree diverse. Il 4.2–4.3 dà a ogni mappa la sua area nuova (in coda, R-GFX-09) col tileset siciliano; finché non lo fa, la mappa usa il tileset dell’area ereditata. Le aree più usate:
+
+| Area | Tileset (`a/0/4/4`) | Texture | Byte di VRAM (tileset + edifici) | Esterno | Mappe di Trinacria | Esempi di mappe HeartGold |
+|---|---|---|---|---|---|---|
+{righe_aree}
+
+Tutte le {n_aree} aree, con tileset, texture degli edifici, mappe HeartGold e mappe di Trinacria, sono nella sezione `aree` dell’inventario; le {n_land} celle con edifici, misure e mappe che le usano nella sezione `celle`.
+
+**Nebbia del polo petrolchimico (R-09.7).** Se nel 7.x il meteo 9 non mostra nebbia, Augusta, Priolo e il polo tornano al sole e la tinta gialla va nel tileset delle loro aree: è una variante di palette del tileset (stesse texture, colori spostati verso il giallo nella scala di R-GFX-03), scritta dal 4.2 insieme alle altre.
+"""
+
+CODICI = """## 11. Codici d’errore
+
+| Codice | Significato |
+|---|---|
+| K00 | file o repository mancante; originale già modificato senza `--rom` |
+| K01 | NARC illeggibile o riscritto diverso |
+| K02 | file del repository diverso da quello della ROM originale |
+| K03 | cella (`a/0/6/5`) malformata o ricomposta diversa |
+| K04 | matrice malformata o riscritta diversa |
+| K05 | dati d’area con un tileset o una texture inesistente |
+| K06 | NSBTX/NSBMD/NCGR illeggibile |
+| K07 | tabella degli sprite con una costante sconosciuta o un file mancante |
+| K08 | specie senza sprite di campo |
+| K09 | specie senza riga in `tp_param.csv` |
+| K10 | PNG non indicizzato (o in scala di grigi dove l’originale non lo è) |
+| K11 | PNG con misure diverse dall’originale |
+| K12 | indice di palette oltre il limite |
+| K13 | colore fuori dalla scala 555 |
+| K14 | (avviso) due indici con lo stesso colore DS |
+| K15 | misure non multiple di 8 |
+| K16 | IMD: griglia, legenda o texture sbagliate |
+| K17 | nome di texture non valido |
+| K18 | `g3dcvtr` mancante, diverso da quello provato o fallito |
+| K19 | `nitrogfx` fallito o risultato diverso dalla ROM |
+| K20 | texture o palette citata dal modello e assente nel tileset |
+| K21 | file nuovo oltre i limiti di R-GFX-13 |
+"""
+
+NOTE = """## 12. Note per gli altri blocchi
+
+- **4.2–4.3 (tileset e modelli).** Pipeline del §8; script di disegno in `tools/grafica/<blocco>/` (R-GFX-17) e generatore in `tools/generatori/<blocco>/`. Le aree, i tileset, le texture degli edifici e le celle nuove vanno in coda (R-GFX-09); ogni mappa dei registri riceve l’`areaDataBank` nuovo e ogni cella usata delle matrici il numero del modello nuovo. Le mappe del vento (`SEQ_TP_CRETTO_VENTO` e `SEQ_PA_CAPACI_MEMORIA`) non hanno la piastra `SEQ_SE_GS_KYOUHUU` (5.3 e 5.4). Le anteprime d’ingresso delle grotte sostituite seguono il §7 A. La tinta gialla del polo petrolchimico segue il §10.
+- **4.4 (UI, titolo, sprite).** Sprite degli allenatori: §4.8 e §7 B (cinque voci per classe, la quinta cifrata con `.key`). Copyright e titolo: §5 e Modulo 1 §9.1. Sprite di campo nuovi dei personaggi: voci nuove in `files/data/mmodel/mmodel/`, righe nuove in `asm/overlay_01_sprite_data.s` e costanti `SPRITE_TRN_*` come nel registro 2.5; il formato delle voci è quello del §4.7 (`nsbtx` per leggere uno sprite di HeartGold della stessa forma). L’icona del vagante nello slot 2 del Pokégear è ancora Latias (blocco 3.3).
+- **Modulo 6.** Scene coi Pokémon: R-GFX-15 e la tabella del §9.3 per `spriteId`; reazioni del Pokémon a seguito nei luoghi della memoria solo quando è visibile (§9.1).
+- **Modulo 7 (7.4).** TASK: copia di `tools/trinacria_gfx.py` nel repository (`tools/trinacria/`), `--selftest`, compilazione o build di `nitrogfx`, prova `nitrogfx` (§3.2) e `g3dcvtr` (§3.3); modifica E-GFX-01 (§9.2); a schermo: una cella nuova di Trinacria (texture, scala, nord in alto), una scena con uno sprite `SPRITE_FOLLOWER_MON_<SPECIE>` non statico (per esempio `Munnizza`), il Dugtrio a seguito a Mistretta, e uno sprite di allenatore ridisegnato in lotta.
+"""
+
+RIGA = """## 13. Riga di controllo
+
+`{riga}`
+"""
