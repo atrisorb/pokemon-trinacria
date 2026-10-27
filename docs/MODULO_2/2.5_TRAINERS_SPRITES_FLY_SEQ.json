@@ -2,9 +2,10 @@
  "modulo": "MODULO 2 — GLOBAL_CONSTANTS_REGISTRY",
  "blocco": "2.5",
  "titolo": "Classi allenatore, ID allenatori, sprite, punti di volo, medaglie e sequenze musicali",
- "versione": "1.1",
+ "versione": "1.2",
  "data": "2026-10-18",
  "correzioni_1_1": "26/10/2026 (trama v1.9, P-01): la trama ora dice 7 Ritrovi e Maria (C-05) super-boss P-02; il punto aperto delle note è chiuso e la classe 90 (TRAINERCLASS_COMPAGNO_MARIA) non cita più i Ritrovi. ID 712–714 sempre riservati; numeri e simboli non cambiano.",
+ "correzioni_1_2": "27/10/2026 (blocco 5.4): la scaletta chiede al 5.4 la musica del palco (M-EN-07), il pianoforte e violino in Do minore della dissolvenza (M-EN-08) e i titoli di coda, che non avevano uno slot. Tre righe nuove in «musiche.lotta» e in «file_trinacria_seq_h»: SEQ_TRN_PALCO = SEQ_GS_E_DENDOUIRI (1015), SEQ_TRN_DIMISSIONI = SEQ_GS_ENDING (1016), SEQ_TRN_FINE = SEQ_GS_ENDING2 (1017), gli slot che HeartGold suona nell’Albo d’Oro, nei titoli di coda e nella schermata «Fine». Musiche: 95 simboli (62 di campo + 33). Nessun altro numero cambia.",
  "progetto": "Pokémon Trinacria — autore e copyright: atrisorb",
  "file": "F:\\Progetti\\pokémon-sicilia\\docs\\MODULO_2\\2.5_TRAINERS_SPRITES_FLY_SEQ.json",
  "lettore": "LLM esecutore. Ogni valore è deciso: si copia, non si sceglie.",
@@ -23535,6 +23536,30 @@
     "gemello_gb_sounds": "SEQ_GS_P_EYE_MAIKO",
     "uso": "incontro: donne in costume tradizionale",
     "blocco_modulo_5": "5.2"
+   },
+   {
+    "simbolo": "SEQ_TRN_PALCO",
+    "slot_hg": "SEQ_GS_E_DENDOUIRI",
+    "valore": 1015,
+    "gemello_gb_sounds": "SEQ_GS_P_E_DENDOUIRI",
+    "uso": "il palco di Piazza Duomo, festa del nuovo Presidente (M-EN-07): lo script lo avvia con PlayBGM; HeartGold suona questo slot nell’Albo d’Oro (src/register_hall_of_fame.c, Sound_SetSceneAndPlayBGM), quindi anche quella schermata, se il Modulo 6 la tiene, suona la festa del palco",
+    "blocco_modulo_5": "5.4"
+   },
+   {
+    "simbolo": "SEQ_TRN_DIMISSIONI",
+    "slot_hg": "SEQ_GS_ENDING",
+    "valore": 1016,
+    "gemello_gb_sounds": "SEQ_GS_P_ENDING",
+    "uso": "dissolvenza e titoli di coda (M-EN-08): pianoforte solo, poi violino in Do minore; lo avvia la schermata dei crediti (src/credits/credits.c, Sound_SetSceneAndPlayBGM(0xe, 0x3f8)); non si ripete",
+    "blocco_modulo_5": "5.4"
+   },
+   {
+    "simbolo": "SEQ_TRN_FINE",
+    "slot_hg": "SEQ_GS_ENDING2",
+    "valore": 1017,
+    "gemello_gb_sounds": "SEQ_GS_P_ENDING2",
+    "uso": "schermata «Fine» dopo i titoli di coda (src/credits/credits.c, PlayBGM(SEQ_GS_ENDING2) dopo 380 fotogrammi): carillon",
+    "blocco_modulo_5": "5.4"
    }
   ],
   "slot_team_rocket": [
@@ -23672,6 +23697,9 @@
    "#define SEQ_TRN_INCONTRO_DIVISA            SEQ_GS_EYE_K_SHOUNEN",
    "#define SEQ_TRN_INCONTRO_MISTICO           SEQ_GS_EYE_BOUZU",
    "#define SEQ_TRN_INCONTRO_COSTUME           SEQ_GS_EYE_MAIKO",
+   "#define SEQ_TRN_PALCO                      SEQ_GS_E_DENDOUIRI",
+   "#define SEQ_TRN_DIMISSIONI                 SEQ_GS_ENDING",
+   "#define SEQ_TRN_FINE                       SEQ_GS_ENDING2",
    "",
    "#endif // POKEHEARTGOLD_TRINACRIA_SEQ_H",
    ""
@@ -24032,10 +24060,10 @@
   "medaglie_dossier": 9,
   "medaglie_kanto_non_usate": 7,
   "musiche_campo": 62,
-  "musiche_lotta": 30,
-  "simboli_seq_totali": 92,
+  "musiche_lotta": 33,
+  "simboli_seq_totali": 95,
   "modifiche_codice": 3,
   "problemi_del_generatore": []
  },
- "riga_finale": "BLOCCO COMPLETO: 2.5 — 129 classi allenatore (36 rinominate: U Sistema 7, siciliane 5, Segreterie 9, Lega 5, compagni 8, post-game 2), 738 ID allenatore (storia 1–699: 86 fissi + 613 nei pool di 10 gruppi; post-game 700–737: 21 Ritrovi, Maria, 4 Fantasmi, 12 riserve), 26 sprite di personaggi e 12 di classe, 191 Pokémon con sprite, 27 punti di volo e 30 righe di spawn ricopiati, 9 Dossier su 9 medaglie, 92 SEQ (62 di campo + 30 di lotta; 3 slot Team Rocket rimappati), 3 modifiche al codice; correzioni 2.2 v1.1 e 2.3 v1.2"
+ "riga_finale": "BLOCCO COMPLETO: 2.5 — 129 classi allenatore (36 rinominate: U Sistema 7, siciliane 5, Segreterie 9, Lega 5, compagni 8, post-game 2), 738 ID allenatore (storia 1–699: 86 fissi + 613 nei pool di 10 gruppi; post-game 700–737: 21 Ritrovi, Maria, 4 Fantasmi, 12 riserve), 26 sprite di personaggi e 12 di classe, 191 Pokémon con sprite, 27 punti di volo e 30 righe di spawn ricopiati, 9 Dossier su 9 medaglie, 95 SEQ (62 di campo + 33 di lotta; 3 slot Team Rocket rimappati), 3 modifiche al codice; correzioni 2.2 v1.1 e 2.3 v1.2"
 }

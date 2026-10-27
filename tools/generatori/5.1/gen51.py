@@ -351,7 +351,7 @@ md += ['## 10. Suoni da mantenere al 100%', '', '### 10.1 Cosa resta identico', 
        '| Jingle `SEQ_ME_*` | %d | `PlayFanfare`, `WaitFanfare` | A20 |' % len(me_names),
        '| Versi dei Pokémon | %d banchi `BANK_PV*`, %d archivi `WAVE_ARC_PV*`, sequenze `SEQ_PV*` | `PlayCry SPECIES_X, 0`, `WaitCry` (%d chiamate negli script di HeartGold) | A20 |' % (n_pv_bank, n_pv_arc, cry_uses),
        '| Banchi e archivi d’onda | %d e %d | — | A20 |' % (len([x for x in sd.entries['BANK'] if x]), len([x for x in sd.entries['WAVEARC'] if x])),
-       '| Musiche HeartGold fuori dal registro | %d | titolo, finale, bicicletta, Surf, Pokéathlon, radio… | A20 |' % (
+       '| Musiche HeartGold fuori dal registro | %d | titolo, bicicletta, Surf, Pokéathlon, radio… | A20 |' % (
            len(song_cache) - len(slots)),
        '', 'Il codice di HeartGold che suona effetti e jingle non cambia: i nomi `SEQ_*` restano quelli di `sndseq.h`.', '',
        '### 10.2 Jingle', '',

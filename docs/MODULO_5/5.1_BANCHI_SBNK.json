@@ -2,7 +2,7 @@
  "modulo": 5,
  "blocco": "5.1",
  "titolo": "Banchi SBNK, slot delle musiche e suoni da mantenere",
- "versione": "1.0",
+ "versione": "1.1",
  "data": "27/10/2026",
  "fonte": {
   "archivio": "files/data/sound/gs_sound_data.sdat",
@@ -7917,7 +7917,8 @@
     "SEQ_ME_STRETTO_MESSINA",
     "SEQ_PA_CAPACI_MEMORIA",
     "SEQ_PA_BALLARO_VUCCIRIA",
-    "SEQ_TRN_STRADE_ORIENTALI"
+    "SEQ_TRN_STRADE_ORIENTALI",
+    "SEQ_TRN_PALCO"
    ]
   },
   {
@@ -13786,7 +13787,10 @@
     "SEQ_GS_TITLE",
     "SEQ_GS_TITLE01"
    ],
-   "slot_del_registro": []
+   "slot_del_registro": [
+    "SEQ_TRN_DIMISSIONI",
+    "SEQ_TRN_FINE"
+   ]
   },
   {
    "banco": "BANK_BGM_ARCEUS",
@@ -15839,6 +15843,57 @@
    "polifonia": 10,
    "tracce": 10,
    "condivide_file_con": []
+  },
+  {
+   "simbolo": "SEQ_TRN_PALCO",
+   "slot": "SEQ_GS_E_DENDOUIRI",
+   "gemello": "SEQ_GS_P_E_DENDOUIRI",
+   "blocco": "5.4",
+   "uso": "il palco di Piazza Duomo, festa del nuovo Presidente (M-EN-07): lo script lo avvia con PlayBGM; HeartGold suona questo slot nell’Albo d’Oro (src/register_hall_of_fame.c, Sound_SetSceneAndPlayBGM), quindi anche quella schermata, se il Modulo 6 la tiene, suona la festa del palco",
+   "tipo": "lotta",
+   "valore": 1015,
+   "lettore": "PLAYER_FIELD",
+   "banco": "BANK_BGM_FIELD1",
+   "volume": 99,
+   "byte": 5540,
+   "ritornello": true,
+   "polifonia": 11,
+   "tracce": 11,
+   "condivide_file_con": []
+  },
+  {
+   "simbolo": "SEQ_TRN_DIMISSIONI",
+   "slot": "SEQ_GS_ENDING",
+   "gemello": "SEQ_GS_P_ENDING",
+   "blocco": "5.4",
+   "uso": "dissolvenza e titoli di coda (M-EN-08): pianoforte solo, poi violino in Do minore; lo avvia la schermata dei crediti (src/credits/credits.c, Sound_SetSceneAndPlayBGM(0xe, 0x3f8)); non si ripete",
+   "tipo": "lotta",
+   "valore": 1016,
+   "lettore": "PLAYER_BGM",
+   "banco": "BANK_BGM_OPEND",
+   "volume": 59,
+   "byte": 33924,
+   "ritornello": false,
+   "polifonia": 13,
+   "tracce": 11,
+   "condivide_file_con": []
+  },
+  {
+   "simbolo": "SEQ_TRN_FINE",
+   "slot": "SEQ_GS_ENDING2",
+   "gemello": "SEQ_GS_P_ENDING2",
+   "blocco": "5.4",
+   "uso": "schermata «Fine» dopo i titoli di coda (src/credits/credits.c, PlayBGM(SEQ_GS_ENDING2) dopo 380 fotogrammi): carillon",
+   "tipo": "lotta",
+   "valore": 1017,
+   "lettore": "PLAYER_BGM",
+   "banco": "BANK_BGM_OPEND",
+   "volume": 74,
+   "byte": 1520,
+   "ritornello": true,
+   "polifonia": 4,
+   "tracce": 4,
+   "condivide_file_con": []
   }
  ],
  "suoni": {
@@ -16700,5 +16755,5 @@
    }
   ]
  },
- "riga_finale": "BLOCCO COMPLETO: 5.1 — strumento tools/trinacria_audio.py (A00–A22) collaudato: archivio ricostruito identico, 1371 sequenze in andata e ritorno identiche, 136 gemelli e 1372 nomi verificati; 92 slot del registro (87 con gemello GB, 21 col file condiviso resi propri); 38 banchi musicali (60 programmi comuni, 186 propri); limiti 12 canali (4 PSG, 1 rumore), 15 500 byte di sequenza su PLAYER_FIELD; suoni mantenuti: 1006 effetti, 33 jingle, versi (494 archivi d’onda), con 57 effetti e 20 fanfare di campo, 16 suoni d’ambiente e la tavolozza di S-SR-02; 14 regole R-AUD; componi.py e prova_5_1.py → AUDIO_OK"
+ "riga_finale": "BLOCCO COMPLETO: 5.1 — strumento tools/trinacria_audio.py (A00–A22) collaudato: archivio ricostruito identico, 1371 sequenze in andata e ritorno identiche, 136 gemelli e 1372 nomi verificati; 95 slot del registro (90 con gemello GB, 21 col file condiviso resi propri); 38 banchi musicali (60 programmi comuni, 186 propri); limiti 12 canali (4 PSG, 1 rumore), 15 500 byte di sequenza su PLAYER_FIELD; suoni mantenuti: 1006 effetti, 33 jingle, versi (494 archivi d’onda), con 57 effetti e 20 fanfare di campo, 16 suoni d’ambiente e la tavolozza di S-SR-02; 14 regole R-AUD; componi.py e prova_5_1.py → AUDIO_OK"
 }

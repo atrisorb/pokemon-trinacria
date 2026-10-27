@@ -1,6 +1,6 @@
 """Testi scritti a mano del blocco 5.1 (gen51.py li unisce alle tabelle calcolate)."""
 
-VERSIONE = '1.0'
+VERSIONE = '1.1'
 DATA = '27/10/2026'
 
 INTESTAZIONE = """# Modulo 5 · Blocco 5.1 — Pipeline MIDI→SSEQ, banchi SBNK e suoni da mantenere
@@ -17,6 +17,8 @@ INTESTAZIONE = """# Modulo 5 · Blocco 5.1 — Pipeline MIDI→SSEQ, banchi SBNK
 | `tools/music/componi.py` | trasforma le partiture Python dei blocchi 5.2–5.4 in file MIDI e nel manifesto |
 | `tools/music/prova_5_1.py`, `tools/music/prova/SEQ_CT_CORSO_ITALIA.py` | script di prova della pipeline intera (la partitura è **solo di prova**) |
 | `tools/generatori/5.1/` | generatore di questo documento e del catalogo (`gen51.py`, `text51.py`) |
+
+**Novità della versione 1.1** (blocco 5.4): il registro 2.5 v1.2 ha tre slot in più per il finale (`SEQ_TRN_PALCO` = `SEQ_GS_E_DENDOUIRI`, `SEQ_TRN_DIMISSIONI` = `SEQ_GS_ENDING`, `SEQ_TRN_FINE` = `SEQ_GS_ENDING2`): le tabelle e i conteggi di questo documento e del catalogo sono rigenerati da `gen51.py`; le regole e lo strumento non cambiano.
 
 Fonti lette nel repository: `files/data/sound/gs_sound_data.sdat` (SHA-1 `{sha1}`), `files/data/sound/meson.build`, `include/constants/sndseq.h`, `include/sound.h`, `src/sound.c`, `asm/unk_02004A44.s` (tabella dei gemelli «suoni GB»), `src/field/field_control.c` (piastre sonore), `asm/macros/script.inc`, gli script di campo `files/fielddata/script/scr_seq/` e il registro `docs/MODULO_2/2.5_TRAINERS_SPRITES_FLY_SEQ.json` (sezione `musiche`)."""
 
