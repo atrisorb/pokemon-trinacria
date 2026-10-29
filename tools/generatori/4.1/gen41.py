@@ -41,9 +41,9 @@ NITRO = [
 ]
 NITRO_AR = [  # andata e ritorno NCGR -> PNG -> NCGR: (NARC, voce, PNG prodotto, opzioni)
     ('/a/0/5/8', 0, '80×80, 16 colori', '-clobbersize -version101 -mappingtype 64 -vram'),
-    ('/a/0/5/8', 4, '160×80, 16 colori', '-scanfronttoback'),
+    ('/a/0/5/8', 4, '160×80, 16 colori', '-encodebacktofront'),
     ('/a/0/0/6', 0, '80×640, 16 colori', '-clobbersize -version101 -mappingtype 64 -vram'),
-    ('/a/0/0/6', 4, '160×80, 16 colori', '-scanfronttoback'),
+    ('/a/0/0/6', 4, '160×80, 16 colori', '-encodebacktofront'),
 ]
 ROM_CONFRONTO = 'tutte uguali (censimento con --rom, 27/10/2026)'
 

@@ -1,6 +1,6 @@
 """Testi scritti a mano del blocco 4.1 (gen41.py li unisce alle tabelle calcolate)."""
 
-VERSIONE = '1.0'
+VERSIONE = '1.1'
 DATA = '27/10/2026'
 
 INTESTAZIONE = """# Modulo 4 · Blocco 4.1 — Inventario degli asset HeartGold, riusi e pipeline grafica
@@ -146,7 +146,7 @@ Formati delle texture: `palette4` (2 bit), `palette16` (4 bit), `palette256` (8 
 
 ### 4.8 Sprite degli allenatori (`a/0/5/8` fronte, `a/0/0/6` dorso)
 
-Cinque voci per classe (`src/pokemon.c`, `sub_02070D3C`): NCGR a celle 80×80 (opzioni `-clobbersize -version101 -mappingtype 64 -vram`), NCLR a 16 colori, NCER, NANR, e un NCGR «scansionato» e cifrato 160×80 (`-scanfronttoback`: la chiave sta nel file `<png>.key` che `nitrogfx` scrive leggendo l’NCGR e rilegge scrivendolo, come per i Pokémon in `tools/scripts/makeotherpoke.sh`). `a/0/5/8` ha {n_tr_front} classi, `a/0/0/6` {n_tr_back} dorsi. Li usa il 4.4.
+Cinque voci per classe (`src/pokemon.c`, `sub_02070D3C`): NCGR a celle 80×80 (opzioni `-clobbersize -version101 -mappingtype 64 -vram`), NCLR a 16 colori, NCER, NANR, e un NCGR «scansionato» e cifrato 160×80 (`-encodebacktofront`, dall’ultima parola alla prima come in Diamante e Perla — corretto nella v1.1 dal blocco 4.6: con `-scanfronttoback` la prova di andata e ritorno riesce lo stesso, ma l’immagine letta è rumore; la chiave sta nel file `<png>.key` che `nitrogfx` scrive leggendo l’NCGR e rilegge scrivendolo, come per i Pokémon in `tools/scripts/makeotherpoke.sh`). `a/0/5/8` ha {n_tr_front} classi, `a/0/0/6` {n_tr_back} dorsi. Li usa il 4.6.
 """
 
 DOVE = """## 5. Dove sta la grafica
@@ -210,7 +210,7 @@ PIPELINE_2D = """## 7. Pipeline 2D, passo per passo
 
 1. `python -I tools/trinacria_gfx.py narc unpack files/a/0/5/8 <cartella>` (o `rom --rom … /a/0/5/8` dall’originale).
 2. `python -I tools/trinacria_gfx.py opzioni-ncgr <cartella>/NNNN.bin` (rinominato `.NCGR`) → le opzioni.
-3. In WSL: `nitrogfx X.NCGR X.png -palette X.NCLR -width <tile>` (più `-scanfronttoback` se le opzioni lo hanno) e subito `nitrogfx X.png Y.NCGR <opzioni>`: Y dev’essere identico a X (prova di andata e ritorno, come il §3.2). Solo dopo si disegna.
+3. In WSL: `nitrogfx X.NCGR X.png -palette X.NCLR -width <tile>` (più `-encodebacktofront` se le opzioni lo hanno) e subito `nitrogfx X.png Y.NCGR <opzioni>`: Y dev’essere identico a X (prova di andata e ritorno, come il §3.2). Solo dopo si disegna.
 4. Lo script disegna sul PNG (stesse misure, stessi indici di palette); `png --come` → `GRAFICA_OK`; `nitrogfx X.png NNNN.bin <opzioni>`.
 5. `narc pack <cartella> files/a/0/5/8`, poi `censimento` per controllare numero e formato delle voci.
 

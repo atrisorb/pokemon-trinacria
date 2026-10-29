@@ -1,0 +1,2350 @@
+{
+ "modulo": 4,
+ "blocco": "4.6",
+ "titolo": "Immagini di lotta e transizioni",
+ "versione": "1.0",
+ "data": "28/10/2026",
+ "progetto": "Pokémon Trinacria (autore: atrisorb)",
+ "documento": "docs/MODULO_4/4.6_IMMAGINI_DI_LOTTA.md",
+ "lettore": "Modulo 6 (nomi degli allenatori nelle transizioni), blocco 4.7, Modulo 7 (7.2 modifica E-GFX-05, 7.4)",
+ "ruoli_palette": {
+  "0": "trasparente (colore dell’originale)",
+  "1": "contorno",
+  "2": "pelle",
+  "3": "pelle in ombra",
+  "4": "capelli",
+  "5": "capelli in ombra, sopracciglia, baffi",
+  "6": "vestito di sopra",
+  "7": "sopra in ombra",
+  "8": "vestito di sotto",
+  "9": "sotto in ombra",
+  "10": "scarpe",
+  "11": "bianco (camicia, occhi, buste)",
+  "12": "accento A (cravatta, pochette, sciarpa, rossetto, metà della Poké Ball)",
+  "13": "accento B (cappelli, borse, cartelline, telefono, occhiali piccoli)",
+  "14": "accento C (oro, bastone, tablet, fascia rifrangente)",
+  "15": "occhi e lenti scure"
+ },
+ "fronti": [
+  {
+   "classe": 0,
+   "simbolo": "TRAINERCLASS_PKMN_TRAINER_ETHAN",
+   "simbolo_hg": "TRAINERCLASS_PKMN_TRAINER_ETHAN",
+   "categoria": "PROTAGONISTA",
+   "scheda": "PROTAGONISTA_RAGAZZO",
+   "fotogrammi": 1,
+   "voci": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "pose": [
+    {
+     "L": "giu",
+     "R": "giu",
+     "fase": 0
+    }
+   ],
+   "espressione": "sorriso",
+   "transizione": null
+  },
+  {
+   "classe": 1,
+   "simbolo": "TRAINERCLASS_PKMN_TRAINER_LYRA",
+   "simbolo_hg": "TRAINERCLASS_PKMN_TRAINER_LYRA",
+   "categoria": "PROTAGONISTA",
+   "scheda": "PROTAGONISTA_RAGAZZA",
+   "fotogrammi": 1,
+   "voci": [
+    5,
+    6,
+    7,
+    8,
+    9
+   ],
+   "pose": [
+    {
+     "L": "giu",
+     "R": "giu",
+     "fase": 0
+    }
+   ],
+   "espressione": "sorriso",
+   "transizione": null
+  },
+  {
+   "classe": 32,
+   "simbolo": "TRAINERCLASS_FIGGHIU_DI_PAPA",
+   "simbolo_hg": "TRAINERCLASS_RICH_BOY",
+   "categoria": "SICILIANA",
+   "scheda": "SPRITE_TRN_FIGGHIU_DI_PAPA",
+   "fotogrammi": 1,
+   "voci": [
+    160,
+    161,
+    162,
+    163,
+    164
+   ],
+   "pose": [
+    {
+     "L": "giu",
+     "R": "giu",
+     "fase": 0
+    }
+   ],
+   "espressione": "ghigno",
+   "transizione": null
+  },
+  {
+   "classe": 41,
+   "simbolo": "TRAINERCLASS_ASSESSURI",
+   "simbolo_hg": "TRAINERCLASS_SCIENTIST",
+   "categoria": "SICILIANA",
+   "scheda": "SPRITE_TRN_ASSESSURI",
+   "fotogrammi": 1,
+   "voci": [
+    205,
+    206,
+    207,
+    208,
+    209
+   ],
+   "pose": [
+    {
+     "L": "giu",
+     "R": "telefono",
+     "fase": 0
+    }
+   ],
+   "espressione": "ghigno",
+   "transizione": null
+  },
+  {
+   "classe": 55,
+   "simbolo": "TRAINERCLASS_SCAGNOZZU",
+   "simbolo_hg": "TRAINERCLASS_TEAM_ROCKET",
+   "categoria": "U_SISTEMA",
+   "scheda": "SPRITE_TRN_SCAGNOZZU",
+   "fotogrammi": 1,
+   "voci": [
+    275,
+    276,
+    277,
+    278,
+    279
+   ],
+   "pose": [
+    {
+     "L": "giu",
+     "R": "giu",
+     "fase": 0
+    }
+   ],
+   "espressione": "ghigno",
+   "transizione": 39
+  },
+  {
+   "classe": 57,
+   "simbolo": "TRAINERCLASS_PARCHEGGIATURI",
+   "simbolo_hg": "TRAINERCLASS_ROUGHNECK",
+   "categoria": "SICILIANA",
+   "scheda": "SPRITE_TRN_PARCHEGGIATURI",
+   "fotogrammi": 1,
+   "voci": [
+    285,
+    286,
+    287,
+    288,
+    289
+   ],
+   "pose": [
+    {
+     "L": "giu",
+     "R": "giu",
+     "fase": 0
+    }
+   ],
+   "espressione": "ghigno",
+   "transizione": null
+  },
+  {
+   "classe": 58,
+   "simbolo": "TRAINERCLASS_BUDDACI",
+   "simbolo_hg": "TRAINERCLASS_CLOWN",
+   "categoria": "SICILIANA",
+   "scheda": "SPRITE_TRN_BUDDACI",
+   "fotogrammi": 1,
+   "voci": [
+    290,
+    291,
+    292,
+    293,
+    294
+   ],
+   "pose": [
+    {
+     "L": "giu",
+     "R": "giu",
+     "fase": 0
+    }
+   ],
+   "espressione": "ghigno",
+   "transizione": null
+  },
+  {
+   "classe": 62,
+   "simbolo": "TRAINERCLASS_INFILTRATA",
+   "simbolo_hg": "TRAINERCLASS_TEAM_ROCKET_F",
+   "categoria": "U_SISTEMA",
+   "scheda": "SPRITE_TRN_INFILTRATA",
+   "fotogrammi": 1,
+   "voci": [
+    310,
+    311,
+    312,
+    313,
+    314
+   ],
+   "pose": [
+    {
+     "L": "giu",
+     "R": "telefono",
+     "fase": 0
+    }
+   ],
+   "espressione": "ghigno",
+   "transizione": 39
+  },
+  {
+   "classe": 65,
+   "simbolo": "TRAINERCLASS_ZAUDDU",
+   "simbolo_hg": "TRAINERCLASS_BIKER",
+   "categoria": "SICILIANA",
+   "scheda": "SPRITE_TRN_ZAUDDU",
+   "fotogrammi": 1,
+   "voci": [
+    325,
+    326,
+    327,
+    328,
+    329
+   ],
+   "pose": [
+    {
+     "L": "giu",
+     "R": "giu",
+     "fase": 0
+    }
+   ],
+   "espressione": "ghigno",
+   "transizione": null
+  },
+  {
+   "classe": 66,
+   "simbolo": "TRAINERCLASS_SEGRETARIO_CT",
+   "simbolo_hg": "TRAINERCLASS_LEADER_FALKNER",
+   "categoria": "SEGRETERIA",
+   "scheda": "SPRITE_TRN_SEGRETARIO_CT",
+   "fotogrammi": 3,
+   "voci": [
+    330,
+    331,
+    332,
+    333,
+    334
+   ],
+   "pose": [
+    {
+     "L": "giu",
+     "R": "giu",
+     "fase": 0
+    },
+    {
+     "L": "indica",
+     "R": "fianchi",
+     "fase": 0
+    },
+    {
+     "L": "fianchi",
+     "R": "pugno",
+     "fase": 0
+    }
+   ],
+   "espressione": "ghigno",
+   "transizione": 12
+  },
+  {
+   "classe": 67,
+   "simbolo": "TRAINERCLASS_SEGRETARIO_SR",
+   "simbolo_hg": "TRAINERCLASS_LEADER_BUGSY",
+   "categoria": "SEGRETERIA",
+   "scheda": "SPRITE_TRN_SEGRETARIO_SR",
+   "fotogrammi": 3,
+   "voci": [
+    335,
+    336,
+    337,
+    338,
+    339
+   ],
+   "pose": [
+    {
+     "L": "giu",
+     "R": "giu",
+     "fase": 0
+    },
+    {
+     "L": "indica",
+     "R": "fianchi",
+     "fase": 0
+    },
+    {
+     "L": "fianchi",
+     "R": "pugno",
+     "fase": 0
+    }
+   ],
+   "espressione": "ghigno",
+   "transizione": 13
+  },
+  {
+   "classe": 70,
+   "simbolo": "TRAINERCLASS_SEGRETARIO_RG",
+   "simbolo_hg": "TRAINERCLASS_LEADER_WHITNEY",
+   "categoria": "SEGRETERIA",
+   "scheda": "SPRITE_TRN_SEGRETARIO_RG",
+   "fotogrammi": 3,
+   "voci": [
+    350,
+    351,
+    352,
+    353,
+    354
+   ],
+   "pose": [
+    {
+     "L": "giu",
+     "R": "giu",
+     "fase": 0
+    },
+    {
+     "L": "indica",
+     "R": "fianchi",
+     "fase": 0
+    },
+    {
+     "L": "fianchi",
+     "R": "pugno",
+     "fase": 0
+    }
+   ],
+   "espressione": "ghigno",
+   "transizione": 14
+  },
+  {
+   "classe": 72,
+   "simbolo": "TRAINERCLASS_SEGRETARIO_CL",
+   "simbolo_hg": "TRAINERCLASS_LEADER_MORTY",
+   "categoria": "SEGRETERIA",
+   "scheda": "SPRITE_TRN_SEGRETARIO_CL",
+   "fotogrammi": 3,
+   "voci": [
+    360,
+    361,
+    362,
+    363,
+    364
+   ],
+   "pose": [
+    {
+     "L": "giu",
+     "R": "giu",
+     "fase": 0
+    },
+    {
+     "L": "indica",
+     "R": "fianchi",
+     "fase": 0
+    },
+    {
+     "L": "fianchi",
+     "R": "pugno",
+     "fase": 0
+    }
+   ],
+   "espressione": "ghigno",
+   "transizione": 15
+  },
+  {
+   "classe": 73,
+   "simbolo": "TRAINERCLASS_SEGRETARIO_ME",
+   "simbolo_hg": "TRAINERCLASS_LEADER_PRYCE",
+   "categoria": "SEGRETERIA",
+   "scheda": "SPRITE_TRN_SEGRETARIO_ME",
+   "fotogrammi": 3,
+   "voci": [
+    365,
+    366,
+    367,
+    368,
+    369
+   ],
+   "pose": [
+    {
+     "L": "valigetta",
+     "R": "giu",
+     "fase": 0
+    },
+    {
+     "L": "valigetta",
+     "R": "pugno",
+     "fase": 0
+    },
+    {
+     "L": "valigetta",
+     "R": "fianchi",
+     "fase": 0
+    }
+   ],
+   "espressione": "ghigno",
+   "transizione": 18
+  },
+  {
+   "classe": 74,
+   "simbolo": "TRAINERCLASS_SEGRETARIO_TP",
+   "simbolo_hg": "TRAINERCLASS_LEADER_JASMINE",
+   "categoria": "SEGRETERIA",
+   "scheda": "SPRITE_TRN_SEGRETARIO_TP",
+   "fotogrammi": 3,
+   "voci": [
+    370,
+    371,
+    372,
+    373,
+    374
+   ],
+   "pose": [
+    {
+     "L": "giu",
+     "R": "giu",
+     "fase": 0
+    },
+    {
+     "L": "indica",
+     "R": "fianchi",
+     "fase": 0
+    },
+    {
+     "L": "fianchi",
+     "R": "pugno",
+     "fase": 0
+    }
+   ],
+   "espressione": "ghigno",
+   "transizione": 16
+  },
+  {
+   "classe": 75,
+   "simbolo": "TRAINERCLASS_SEGRETARIO_AG",
+   "simbolo_hg": "TRAINERCLASS_LEADER_CHUCK",
+   "categoria": "SEGRETERIA",
+   "scheda": "SPRITE_TRN_SEGRETARIO_AG",
+   "fotogrammi": 3,
+   "voci": [
+    375,
+    376,
+    377,
+    378,
+    379
+   ],
+   "pose": [
+    {
+     "L": "cartellina",
+     "R": "giu",
+     "fase": 0
+    },
+    {
+     "L": "cartellina",
+     "R": "pugno",
+     "fase": 0
+    },
+    {
+     "L": "cartellina",
+     "R": "fianchi",
+     "fase": 0
+    }
+   ],
+   "espressione": "ghigno",
+   "transizione": 17
+  },
+  {
+   "classe": 76,
+   "simbolo": "TRAINERCLASS_SEGRETARIO_PA",
+   "simbolo_hg": "TRAINERCLASS_LEADER_CLAIR",
+   "categoria": "SEGRETERIA",
+   "scheda": "SPRITE_TRN_SEGRETARIO_PA",
+   "fotogrammi": 3,
+   "voci": [
+    380,
+    381,
+    382,
+    383,
+    384
+   ],
+   "pose": [
+    {
+     "L": "giu",
+     "R": "giu",
+     "fase": 0
+    },
+    {
+     "L": "indica",
+     "R": "fianchi",
+     "fase": 0
+    },
+    {
+     "L": "fianchi",
+     "R": "pugno",
+     "fase": 0
+    }
+   ],
+   "espressione": "ghigno",
+   "transizione": 19
+  },
+  {
+   "classe": 86,
+   "simbolo": "TRAINERCLASS_PRESIDENTE",
+   "simbolo_hg": "TRAINERCLASS_CHAMPION",
+   "categoria": "LEGA",
+   "scheda": "SPRITE_TRN_MISTRETTA",
+   "fotogrammi": 3,
+   "voci": [
+    430,
+    431,
+    432,
+    433,
+    434
+   ],
+   "pose": [
+    {
+     "L": "giu",
+     "R": "giu",
+     "fase": 0
+    },
+    {
+     "L": "indica",
+     "R": "fianchi",
+     "fase": 0
+    },
+    {
+     "L": "fianchi",
+     "R": "pugno",
+     "fase": 0
+    }
+   ],
+   "espressione": "ghigno",
+   "transizione": 33
+  },
+  {
+   "classe": 87,
+   "simbolo": "TRAINERCLASS_CAMPIONE_ARS_1",
+   "simbolo_hg": "TRAINERCLASS_ELITE_FOUR_WILL",
+   "categoria": "LEGA",
+   "scheda": "SPRITE_TRN_CAMPIONE_ARS_1",
+   "fotogrammi": 3,
+   "voci": [
+    435,
+    436,
+    437,
+    438,
+    439
+   ],
+   "pose": [
+    {
+     "L": "giu",
+     "R": "bastone",
+     "fase": 0
+    },
+    {
+     "L": "indica",
+     "R": "bastone",
+     "fase": 0
+    },
+    {
+     "L": "fianchi",
+     "R": "bastone",
+     "fase": 0
+    }
+   ],
+   "espressione": "ghigno",
+   "transizione": 29
+  },
+  {
+   "classe": 88,
+   "simbolo": "TRAINERCLASS_CAMPIONE_ARS_2",
+   "simbolo_hg": "TRAINERCLASS_ELITE_FOUR_KAREN",
+   "categoria": "LEGA",
+   "scheda": "SPRITE_TRN_CAMPIONE_ARS_2",
+   "fotogrammi": 3,
+   "voci": [
+    440,
+    441,
+    442,
+    443,
+    444
+   ],
+   "pose": [
+    {
+     "L": "tablet",
+     "R": "tablet",
+     "fase": 0
+    },
+    {
+     "L": "indica",
+     "R": "giu",
+     "fase": 0
+    },
+    {
+     "L": "fianchi",
+     "R": "pugno",
+     "fase": 0
+    }
+   ],
+   "espressione": "ghigno",
+   "transizione": 32
+  },
+  {
+   "classe": 89,
+   "simbolo": "TRAINERCLASS_CAMPIONE_ARS_3",
+   "simbolo_hg": "TRAINERCLASS_ELITE_FOUR_KOGA",
+   "categoria": "LEGA",
+   "scheda": "SPRITE_TRN_CAMPIONE_ARS_3",
+   "fotogrammi": 3,
+   "voci": [
+    445,
+    446,
+    447,
+    448,
+    449
+   ],
+   "pose": [
+    {
+     "L": "giu",
+     "R": "giu",
+     "fase": 0
+    },
+    {
+     "L": "indica",
+     "R": "fianchi",
+     "fase": 0
+    },
+    {
+     "L": "fianchi",
+     "R": "pugno",
+     "fase": 0
+    }
+   ],
+   "espressione": "ghigno",
+   "transizione": 30
+  },
+  {
+   "classe": 90,
+   "simbolo": "TRAINERCLASS_COMPAGNO_MARIA",
+   "simbolo_hg": "TRAINERCLASS_PKMN_TRAINER_CHERYL",
+   "categoria": "COMPAGNO",
+   "scheda": "SPRITE_TRN_MARIA",
+   "fotogrammi": 1,
+   "voci": [
+    450,
+    451,
+    452,
+    453,
+    454
+   ],
+   "pose": [
+    {
+     "L": "cartellina",
+     "R": "giu",
+     "fase": 0
+    }
+   ],
+   "espressione": "sorriso",
+   "transizione": null
+  },
+  {
+   "classe": 91,
+   "simbolo": "TRAINERCLASS_COMPAGNO_ORAZIO",
+   "simbolo_hg": "TRAINERCLASS_PKMN_TRAINER_RILEY",
+   "categoria": "COMPAGNO",
+   "scheda": "SPRITE_TRN_ORAZIO",
+   "fotogrammi": 1,
+   "voci": [
+    455,
+    456,
+    457,
+    458,
+    459
+   ],
+   "pose": [
+    {
+     "L": "giu",
+     "R": "giu",
+     "fase": 0
+    }
+   ],
+   "espressione": "sorriso",
+   "transizione": null
+  },
+  {
+   "classe": 92,
+   "simbolo": "TRAINERCLASS_COMPAGNO_CHANTAL",
+   "simbolo_hg": "TRAINERCLASS_PKMN_TRAINER_BUCK",
+   "categoria": "COMPAGNO",
+   "scheda": "SPRITE_TRN_CHANTAL",
+   "fotogrammi": 1,
+   "voci": [
+    460,
+    461,
+    462,
+    463,
+    464
+   ],
+   "pose": [
+    {
+     "L": "giu",
+     "R": "telefono",
+     "fase": 0
+    }
+   ],
+   "espressione": "sorriso",
+   "transizione": null
+  },
+  {
+   "classe": 93,
+   "simbolo": "TRAINERCLASS_COMPAGNO_TURI",
+   "simbolo_hg": "TRAINERCLASS_PKMN_TRAINER_MIRA",
+   "categoria": "COMPAGNO",
+   "scheda": "SPRITE_TRN_TURI",
+   "fotogrammi": 1,
+   "voci": [
+    465,
+    466,
+    467,
+    468,
+    469
+   ],
+   "pose": [
+    {
+     "L": "giu",
+     "R": "giu",
+     "fase": 0
+    }
+   ],
+   "espressione": "sorriso",
+   "transizione": null
+  },
+  {
+   "classe": 94,
+   "simbolo": "TRAINERCLASS_COMPAGNO_PIPPO",
+   "simbolo_hg": "TRAINERCLASS_PKMN_TRAINER_MARLEY",
+   "categoria": "COMPAGNO",
+   "scheda": "SPRITE_TRN_PIPPO",
+   "fotogrammi": 1,
+   "voci": [
+    470,
+    471,
+    472,
+    473,
+    474
+   ],
+   "pose": [
+    {
+     "L": "giu",
+     "R": "giu",
+     "fase": 0
+    }
+   ],
+   "espressione": "sorriso",
+   "transizione": null
+  },
+  {
+   "classe": 109,
+   "simbolo": "TRAINERCLASS_MAGISTRATA",
+   "simbolo_hg": "TRAINERCLASS_PKMN_TRAINER_RED",
+   "categoria": "POSTGAME",
+   "scheda": "SPRITE_TRN_MARIA",
+   "fotogrammi": 3,
+   "voci": [
+    545,
+    546,
+    547,
+    548,
+    549
+   ],
+   "pose": [
+    {
+     "L": "cartellina",
+     "R": "giu",
+     "fase": 0
+    },
+    {
+     "L": "cartellina",
+     "R": "pugno",
+     "fase": 0
+    },
+    {
+     "L": "cartellina",
+     "R": "fianchi",
+     "fase": 0
+    }
+   ],
+   "espressione": "severo",
+   "transizione": 46
+  },
+  {
+   "classe": 110,
+   "simbolo": "TRAINERCLASS_SEGRETARIO_EN",
+   "simbolo_hg": "TRAINERCLASS_LEADER_BLUE",
+   "categoria": "SEGRETERIA",
+   "scheda": "SPRITE_TRN_SEGRETARIO_EN",
+   "fotogrammi": 3,
+   "voci": [
+    550,
+    551,
+    552,
+    553,
+    554
+   ],
+   "pose": [
+    {
+     "L": "cartellina",
+     "R": "giu",
+     "fase": 0
+    },
+    {
+     "L": "cartellina",
+     "R": "pugno",
+     "fase": 0
+    },
+    {
+     "L": "cartellina",
+     "R": "fianchi",
+     "fase": 0
+    }
+   ],
+   "espressione": "ghigno",
+   "transizione": 27
+  },
+  {
+   "classe": 112,
+   "simbolo": "TRAINERCLASS_CAMPIONE_ARS_4",
+   "simbolo_hg": "TRAINERCLASS_ELITE_FOUR_BRUNO",
+   "categoria": "LEGA",
+   "scheda": "SPRITE_TRN_CAMPIONE_ARS_4",
+   "fotogrammi": 3,
+   "voci": [
+    560,
+    561,
+    562,
+    563,
+    564
+   ],
+   "pose": [
+    {
+     "L": "giu",
+     "R": "giu",
+     "fase": 0
+    },
+    {
+     "L": "indica",
+     "R": "fianchi",
+     "fase": 0
+    },
+    {
+     "L": "fianchi",
+     "R": "pugno",
+     "fase": 0
+    }
+   ],
+   "espressione": "ghigno",
+   "transizione": 31
+  },
+  {
+   "classe": 113,
+   "simbolo": "TRAINERCLASS_PORTABORSE",
+   "simbolo_hg": "TRAINERCLASS_SCIENTIST_GS",
+   "categoria": "U_SISTEMA",
+   "scheda": "SPRITE_TRN_PORTABORSE",
+   "fotogrammi": 1,
+   "voci": [
+    565,
+    566,
+    567,
+    568,
+    569
+   ],
+   "pose": [
+    {
+     "L": "valigetta",
+     "R": "giu",
+     "fase": 0
+    }
+   ],
+   "espressione": "ghigno",
+   "transizione": null
+  },
+  {
+   "classe": 114,
+   "simbolo": "TRAINERCLASS_CAMBIAVOTI",
+   "simbolo_hg": "TRAINERCLASS_EXECUTIVE_ARIANA",
+   "categoria": "U_SISTEMA",
+   "scheda": "SPRITE_TRN_CAMBIAVOTI",
+   "fotogrammi": 1,
+   "voci": [
+    570,
+    571,
+    572,
+    573,
+    574
+   ],
+   "pose": [
+    {
+     "L": "giu",
+     "R": "buste",
+     "fase": 0
+    }
+   ],
+   "espressione": "ghigno",
+   "transizione": 43
+  },
+  {
+   "classe": 116,
+   "simbolo": "TRAINERCLASS_CASSIERI",
+   "simbolo_hg": "TRAINERCLASS_EXECUTIVE_ARCHER",
+   "categoria": "U_SISTEMA",
+   "scheda": "SPRITE_TRN_CASSIERI",
+   "fotogrammi": 1,
+   "voci": [
+    580,
+    581,
+    582,
+    583,
+    584
+   ],
+   "pose": [
+    {
+     "L": "valigetta",
+     "R": "giu",
+     "fase": 0
+    }
+   ],
+   "espressione": "ghigno",
+   "transizione": 42
+  },
+  {
+   "classe": 117,
+   "simbolo": "TRAINERCLASS_CAPORALI",
+   "simbolo_hg": "TRAINERCLASS_EXECUTIVE_PROTON",
+   "categoria": "U_SISTEMA",
+   "scheda": "SPRITE_TRN_CAPORALI",
+   "fotogrammi": 1,
+   "voci": [
+    585,
+    586,
+    587,
+    588,
+    589
+   ],
+   "pose": [
+    {
+     "L": "giu",
+     "R": "telefono",
+     "fase": 0
+    }
+   ],
+   "espressione": "ghigno",
+   "transizione": 41
+  },
+  {
+   "classe": 118,
+   "simbolo": "TRAINERCLASS_COLLETTU_BIANCU",
+   "simbolo_hg": "TRAINERCLASS_EXECUTIVE_PETREL",
+   "categoria": "U_SISTEMA",
+   "scheda": "SPRITE_TRN_COLLETTU_BIANCU",
+   "fotogrammi": 1,
+   "voci": [
+    590,
+    591,
+    592,
+    593,
+    594
+   ],
+   "pose": [
+    {
+     "L": "tablet",
+     "R": "tablet",
+     "fase": 0
+    }
+   ],
+   "espressione": "ghigno",
+   "transizione": 40
+  },
+  {
+   "classe": 123,
+   "simbolo": "TRAINERCLASS_COMPAGNO_CALOGERO",
+   "simbolo_hg": "TRAINERCLASS_PKMN_TRAINER_LANCE",
+   "categoria": "COMPAGNO",
+   "scheda": "SPRITE_TRN_CALOGERO",
+   "fotogrammi": 8,
+   "voci": [
+    615,
+    616,
+    617,
+    618,
+    619
+   ],
+   "pose": [
+    {
+     "L": "giu",
+     "R": "lancio",
+     "fase": 0
+    },
+    {
+     "L": "giu",
+     "R": "lancio",
+     "fase": 1
+    },
+    {
+     "L": "giu",
+     "R": "lancio",
+     "fase": 2
+    },
+    {
+     "L": "giu",
+     "R": "lancio",
+     "fase": 3
+    },
+    {
+     "L": "giu",
+     "R": "lancio",
+     "fase": 4
+    },
+    {
+     "L": "giu",
+     "R": "lancio",
+     "fase": 5
+    },
+    {
+     "L": "giu",
+     "R": "lancio",
+     "fase": 6
+    },
+    {
+     "L": "giu",
+     "R": "lancio",
+     "fase": 7
+    }
+   ],
+   "espressione": "sorriso",
+   "transizione": null
+  },
+  {
+   "classe": 124,
+   "simbolo": "TRAINERCLASS_FANTASMA",
+   "simbolo_hg": "TRAINERCLASS_ROCKET_BOSS",
+   "categoria": "POSTGAME",
+   "scheda": "SPRITE_TRN_FANTASMA",
+   "fotogrammi": 3,
+   "voci": [
+    620,
+    621,
+    622,
+    623,
+    624
+   ],
+   "pose": [
+    {
+     "L": "giu",
+     "R": "giu",
+     "fase": 0
+    },
+    {
+     "L": "indica",
+     "R": "fianchi",
+     "fase": 0
+    },
+    {
+     "L": "fianchi",
+     "R": "pugno",
+     "fase": 0
+    }
+   ],
+   "espressione": "serio",
+   "transizione": 44
+  },
+  {
+   "classe": 125,
+   "simbolo": "TRAINERCLASS_COMPAGNO_CHRISTIAN",
+   "simbolo_hg": "TRAINERCLASS_PKMN_TRAINER_LUCAS_DP",
+   "categoria": "COMPAGNO",
+   "scheda": "SPRITE_TRN_CHRISTIAN",
+   "fotogrammi": 1,
+   "voci": [
+    625,
+    626,
+    627,
+    628,
+    629
+   ],
+   "pose": [
+    {
+     "L": "giu",
+     "R": "giu",
+     "fase": 0
+    }
+   ],
+   "espressione": "sorriso",
+   "transizione": null
+  },
+  {
+   "classe": 127,
+   "simbolo": "TRAINERCLASS_COMPAGNO_TOTO",
+   "simbolo_hg": "TRAINERCLASS_PKMN_TRAINER_LUCAS_PT",
+   "categoria": "COMPAGNO",
+   "scheda": "SPRITE_TRN_TOTO",
+   "fotogrammi": 1,
+   "voci": [
+    635,
+    636,
+    637,
+    638,
+    639
+   ],
+   "pose": [
+    {
+     "L": "giu",
+     "R": "giu",
+     "fase": 0
+    }
+   ],
+   "espressione": "sorriso",
+   "transizione": null
+  }
+ ],
+ "dorsi": [
+  {
+   "dorso": 0,
+   "simbolo": "TRAINER_BACKPIC_ETHAN",
+   "classe": "TRAINERCLASS_PKMN_TRAINER_ETHAN",
+   "scheda": "PROTAGONISTA_RAGAZZO",
+   "fotogrammi": 8,
+   "fasi": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "voci": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "dorso": 1,
+   "simbolo": "TRAINER_BACKPIC_LYRA",
+   "classe": "TRAINERCLASS_PKMN_TRAINER_LYRA",
+   "scheda": "PROTAGONISTA_RAGAZZA",
+   "fotogrammi": 8,
+   "fasi": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "voci": [
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  {
+   "dorso": 3,
+   "simbolo": "TRAINER_BACKPIC_LANCE",
+   "classe": "TRAINERCLASS_COMPAGNO_CALOGERO",
+   "scheda": "SPRITE_TRN_CALOGERO",
+   "fotogrammi": 8,
+   "fasi": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "voci": [
+    15,
+    16,
+    17,
+    18,
+    19
+   ]
+  },
+  {
+   "dorso": 4,
+   "simbolo": "TRAINER_BACKPIC_CHERYL",
+   "classe": "TRAINERCLASS_COMPAGNO_MARIA",
+   "scheda": "SPRITE_TRN_MARIA",
+   "fotogrammi": 5,
+   "fasi": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "voci": [
+    20,
+    21,
+    22,
+    23,
+    24
+   ]
+  },
+  {
+   "dorso": 5,
+   "simbolo": "TRAINER_BACKPIC_RILEY",
+   "classe": "TRAINERCLASS_COMPAGNO_ORAZIO",
+   "scheda": "SPRITE_TRN_ORAZIO",
+   "fotogrammi": 5,
+   "fasi": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "voci": [
+    25,
+    26,
+    27,
+    28,
+    29
+   ]
+  },
+  {
+   "dorso": 6,
+   "simbolo": "TRAINER_BACKPIC_BUCK",
+   "classe": "TRAINERCLASS_COMPAGNO_CHANTAL",
+   "scheda": "SPRITE_TRN_CHANTAL",
+   "fotogrammi": 5,
+   "fasi": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "voci": [
+    30,
+    31,
+    32,
+    33,
+    34
+   ]
+  },
+  {
+   "dorso": 7,
+   "simbolo": "TRAINER_BACKPIC_MIRA",
+   "classe": "TRAINERCLASS_COMPAGNO_TURI",
+   "scheda": "SPRITE_TRN_TURI",
+   "fotogrammi": 5,
+   "fasi": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "voci": [
+    35,
+    36,
+    37,
+    38,
+    39
+   ]
+  },
+  {
+   "dorso": 8,
+   "simbolo": "TRAINER_BACKPIC_MARLEY",
+   "classe": "TRAINERCLASS_COMPAGNO_PIPPO",
+   "scheda": "SPRITE_TRN_PIPPO",
+   "fotogrammi": 5,
+   "fasi": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "voci": [
+    40,
+    41,
+    42,
+    43,
+    44
+   ]
+  },
+  {
+   "dorso": 9,
+   "simbolo": "TRAINER_BACKPIC_LUCAS_DP",
+   "classe": "TRAINERCLASS_COMPAGNO_CHRISTIAN",
+   "scheda": "SPRITE_TRN_CHRISTIAN",
+   "fotogrammi": 8,
+   "fasi": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "voci": [
+    45,
+    46,
+    47,
+    48,
+    49
+   ]
+  },
+  {
+   "dorso": 12,
+   "simbolo": "TRAINER_BACKPIC_LUCAS_PT",
+   "classe": "TRAINERCLASS_COMPAGNO_TOTO",
+   "scheda": "SPRITE_TRN_TOTO",
+   "fotogrammi": 8,
+   "fasi": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "voci": [
+    60,
+    61,
+    62,
+    63,
+    64
+   ]
+  },
+  {
+   "dorso": 15,
+   "simbolo": "TRAINER_BACKPIC_ETHAN_2",
+   "classe": "TRAINERCLASS_PKMN_TRAINER_ETHAN",
+   "scheda": "PROTAGONISTA_RAGAZZO",
+   "fotogrammi": 8,
+   "fasi": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "voci": [
+    75,
+    76,
+    77,
+    78,
+    79
+   ]
+  },
+  {
+   "dorso": 16,
+   "simbolo": "TRAINER_BACKPIC_LYRA_2",
+   "classe": "TRAINERCLASS_PKMN_TRAINER_LYRA",
+   "scheda": "PROTAGONISTA_RAGAZZA",
+   "fotogrammi": 8,
+   "fasi": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "voci": [
+    80,
+    81,
+    82,
+    83,
+    84
+   ]
+  }
+ ],
+ "ritratti": [
+  {
+   "voci": [
+    131,
+    132,
+    133,
+    134
+   ],
+   "ncgr": 132,
+   "nclr": 131,
+   "tabella": "asm/overlay_115.s",
+   "etichetta": "ov115_02260388",
+   "tipo": "lega",
+   "classe_hg": "TRAINERCLASS_ELITE_FOUR_WILL",
+   "classe": "TRAINERCLASS_CAMPIONE_ARS_1",
+   "scheda": "SPRITE_TRN_CAMPIONE_ARS_1",
+   "transizione": 29,
+   "espressione": "ghigno",
+   "id_hg": 245,
+   "id_trinacria": 524,
+   "nome": "Tanino",
+   "membri": 1
+  },
+  {
+   "voci": [
+    135,
+    136,
+    137,
+    138
+   ],
+   "ncgr": 136,
+   "nclr": 135,
+   "tabella": "asm/overlay_115.s",
+   "etichetta": "ov115_02260390",
+   "tipo": "lega",
+   "classe_hg": "TRAINERCLASS_ELITE_FOUR_KOGA",
+   "classe": "TRAINERCLASS_CAMPIONE_ARS_3",
+   "scheda": "SPRITE_TRN_CAMPIONE_ARS_3",
+   "transizione": 30,
+   "espressione": "ghigno",
+   "id_hg": 247,
+   "id_trinacria": 526,
+   "nome": null,
+   "membri": 1
+  },
+  {
+   "voci": [
+    139,
+    140,
+    141,
+    142
+   ],
+   "ncgr": 140,
+   "nclr": 139,
+   "tabella": "asm/overlay_115.s",
+   "etichetta": "ov115_02260398",
+   "tipo": "lega",
+   "classe_hg": "TRAINERCLASS_ELITE_FOUR_BRUNO",
+   "classe": "TRAINERCLASS_CAMPIONE_ARS_4",
+   "scheda": "SPRITE_TRN_CAMPIONE_ARS_4",
+   "transizione": 31,
+   "espressione": "ghigno",
+   "id_hg": 418,
+   "id_trinacria": 527,
+   "nome": null,
+   "membri": 1
+  },
+  {
+   "voci": [
+    143,
+    144,
+    145,
+    146
+   ],
+   "ncgr": 144,
+   "nclr": 143,
+   "tabella": "asm/overlay_115.s",
+   "etichetta": "ov115_022603A0",
+   "tipo": "lega",
+   "classe_hg": "TRAINERCLASS_ELITE_FOUR_KAREN",
+   "classe": "TRAINERCLASS_CAMPIONE_ARS_2",
+   "scheda": "SPRITE_TRN_CAMPIONE_ARS_2",
+   "transizione": 32,
+   "espressione": "ghigno",
+   "id_hg": 246,
+   "id_trinacria": 525,
+   "nome": null,
+   "membri": 1
+  },
+  {
+   "voci": [
+    147,
+    148,
+    149,
+    150
+   ],
+   "ncgr": 148,
+   "nclr": 147,
+   "tabella": "asm/overlay_115.s",
+   "etichetta": "ov115_022603A8",
+   "tipo": "lega",
+   "classe_hg": "TRAINERCLASS_CHAMPION",
+   "classe": "TRAINERCLASS_PRESIDENTE",
+   "scheda": "SPRITE_TRN_MISTRETTA",
+   "transizione": 33,
+   "espressione": "ghigno",
+   "id_hg": 244,
+   "id_trinacria": 552,
+   "nome": "Lollò",
+   "membri": 1
+  },
+  {
+   "voci": [
+    63,
+    64,
+    65,
+    66
+   ],
+   "ncgr": 64,
+   "nclr": 63,
+   "tabella": "asm/overlay_115.s",
+   "etichetta": "ov115_022603B0",
+   "tipo": "capo",
+   "classe_hg": "TRAINERCLASS_LEADER_FALKNER",
+   "classe": "TRAINERCLASS_SEGRETARIO_CT",
+   "scheda": "SPRITE_TRN_SEGRETARIO_CT",
+   "transizione": 12,
+   "espressione": "ghigno",
+   "id_hg": 20,
+   "id_trinacria": 1,
+   "nome": "Calì",
+   "membri": 1
+  },
+  {
+   "voci": [
+    67,
+    68,
+    69,
+    70
+   ],
+   "ncgr": 68,
+   "nclr": 67,
+   "tabella": "asm/overlay_115.s",
+   "etichetta": "ov115_022603C4",
+   "tipo": "capo",
+   "classe_hg": "TRAINERCLASS_LEADER_BUGSY",
+   "classe": "TRAINERCLASS_SEGRETARIO_SR",
+   "scheda": "SPRITE_TRN_SEGRETARIO_SR",
+   "transizione": 13,
+   "espressione": "ghigno",
+   "id_hg": 21,
+   "id_trinacria": 99,
+   "nome": "Spataro",
+   "membri": 1
+  },
+  {
+   "voci": [
+    71,
+    72,
+    73,
+    74
+   ],
+   "ncgr": 72,
+   "nclr": 71,
+   "tabella": "asm/overlay_115.s",
+   "etichetta": "ov115_022603D8",
+   "tipo": "capo",
+   "classe_hg": "TRAINERCLASS_LEADER_WHITNEY",
+   "classe": "TRAINERCLASS_SEGRETARIO_RG",
+   "scheda": "SPRITE_TRN_SEGRETARIO_RG",
+   "transizione": 14,
+   "espressione": "ghigno",
+   "id_hg": 30,
+   "id_trinacria": 149,
+   "nome": "Biagio",
+   "membri": 1
+  },
+  {
+   "voci": [
+    75,
+    76,
+    77,
+    78
+   ],
+   "ncgr": 76,
+   "nclr": 75,
+   "tabella": "asm/overlay_115.s",
+   "etichetta": "ov115_022603EC",
+   "tipo": "capo",
+   "classe_hg": "TRAINERCLASS_LEADER_MORTY",
+   "classe": "TRAINERCLASS_SEGRETARIO_CL",
+   "scheda": "SPRITE_TRN_SEGRETARIO_CL",
+   "transizione": 15,
+   "espressione": "ghigno",
+   "id_hg": 31,
+   "id_trinacria": 198,
+   "nome": "Lillo",
+   "membri": 1
+  },
+  {
+   "voci": [
+    79,
+    80,
+    81,
+    82
+   ],
+   "ncgr": 80,
+   "nclr": 79,
+   "tabella": "asm/overlay_115.s",
+   "etichetta": "ov115_02260400",
+   "tipo": "capo",
+   "classe_hg": "TRAINERCLASS_LEADER_JASMINE",
+   "classe": "TRAINERCLASS_SEGRETARIO_TP",
+   "scheda": "SPRITE_TRN_SEGRETARIO_TP",
+   "transizione": 16,
+   "espressione": "ghigno",
+   "id_hg": 33,
+   "id_trinacria": 297,
+   "nome": "Asaro",
+   "membri": 1
+  },
+  {
+   "voci": [
+    83,
+    84,
+    85,
+    86
+   ],
+   "ncgr": 84,
+   "nclr": 83,
+   "tabella": "asm/overlay_115.s",
+   "etichetta": "ov115_02260414",
+   "tipo": "capo",
+   "classe_hg": "TRAINERCLASS_LEADER_CHUCK",
+   "classe": "TRAINERCLASS_SEGRETARIO_AG",
+   "scheda": "SPRITE_TRN_SEGRETARIO_AG",
+   "transizione": 17,
+   "espressione": "ghigno",
+   "id_hg": 34,
+   "id_trinacria": 246,
+   "nome": "Iacono",
+   "membri": 1
+  },
+  {
+   "voci": [
+    87,
+    88,
+    89,
+    90
+   ],
+   "ncgr": 88,
+   "nclr": 87,
+   "tabella": "asm/overlay_115.s",
+   "etichetta": "ov115_02260428",
+   "tipo": "capo",
+   "classe_hg": "TRAINERCLASS_LEADER_PRYCE",
+   "classe": "TRAINERCLASS_SEGRETARIO_ME",
+   "scheda": "SPRITE_TRN_SEGRETARIO_ME",
+   "transizione": 18,
+   "espressione": "ghigno",
+   "id_hg": 32,
+   "id_trinacria": 352,
+   "nome": "Natale",
+   "membri": 1
+  },
+  {
+   "voci": [
+    91,
+    92,
+    93,
+    94
+   ],
+   "ncgr": 92,
+   "nclr": 91,
+   "tabella": "asm/overlay_115.s",
+   "etichetta": "ov115_0226043C",
+   "tipo": "capo",
+   "classe_hg": "TRAINERCLASS_LEADER_CLAIR",
+   "classe": "TRAINERCLASS_SEGRETARIO_PA",
+   "scheda": "SPRITE_TRN_SEGRETARIO_PA",
+   "transizione": 19,
+   "espressione": "ghigno",
+   "id_hg": 35,
+   "id_trinacria": 412,
+   "nome": "Scaduto",
+   "membri": 1
+  },
+  {
+   "voci": [
+    123,
+    124,
+    125,
+    126
+   ],
+   "ncgr": 124,
+   "nclr": 123,
+   "tabella": "asm/overlay_115.s",
+   "etichetta": "ov115_022604DC",
+   "tipo": "capo",
+   "classe_hg": "TRAINERCLASS_LEADER_BLUE",
+   "classe": "TRAINERCLASS_SEGRETARIO_EN",
+   "scheda": "SPRITE_TRN_SEGRETARIO_EN",
+   "transizione": 27,
+   "espressione": "ghigno",
+   "id_hg": 261,
+   "id_trinacria": 488,
+   "nome": "La Rosa",
+   "membri": 1
+  },
+  {
+   "voci": [
+    222,
+    223,
+    224,
+    225
+   ],
+   "ncgr": 223,
+   "nclr": 222,
+   "tabella": "asm/overlay_117.s",
+   "etichetta": "_0225FACC",
+   "tipo": "esecutivo",
+   "classe_hg": "TRAINERCLASS_EXECUTIVE_PETREL",
+   "classe": "TRAINERCLASS_COLLETTU_BIANCU",
+   "scheda": "SPRITE_TRN_COLLETTU_BIANCU",
+   "transizione": 40,
+   "espressione": "ghigno",
+   "id_hg": 488,
+   "id_trinacria": 0,
+   "nome": null,
+   "membri": 6
+  },
+  {
+   "voci": [
+    226,
+    227,
+    228,
+    229
+   ],
+   "ncgr": 227,
+   "nclr": 226,
+   "tabella": "asm/overlay_117.s",
+   "etichetta": "ov117_0225FAD4",
+   "tipo": "esecutivo",
+   "classe_hg": "TRAINERCLASS_EXECUTIVE_PROTON",
+   "classe": "TRAINERCLASS_CAPORALI",
+   "scheda": "SPRITE_TRN_CAPORALI",
+   "transizione": 41,
+   "espressione": "ghigno",
+   "id_hg": 486,
+   "id_trinacria": 0,
+   "nome": null,
+   "membri": 4
+  },
+  {
+   "voci": [
+    230,
+    231,
+    232,
+    233
+   ],
+   "ncgr": 231,
+   "nclr": 230,
+   "tabella": "asm/overlay_117.s",
+   "etichetta": "ov117_0225FADC",
+   "tipo": "esecutivo",
+   "classe_hg": "TRAINERCLASS_EXECUTIVE_ARCHER",
+   "classe": "TRAINERCLASS_CASSIERI",
+   "scheda": "SPRITE_TRN_CASSIERI",
+   "transizione": 42,
+   "espressione": "ghigno",
+   "id_hg": 485,
+   "id_trinacria": 0,
+   "nome": null,
+   "membri": 3
+  },
+  {
+   "voci": [
+    234,
+    235,
+    236,
+    237
+   ],
+   "ncgr": 235,
+   "nclr": 234,
+   "tabella": "asm/overlay_117.s",
+   "etichetta": "ov117_0225FAE4",
+   "tipo": "esecutivo",
+   "classe_hg": "TRAINERCLASS_EXECUTIVE_ARIANA",
+   "classe": "TRAINERCLASS_CAMBIAVOTI",
+   "scheda": "SPRITE_TRN_CAMBIAVOTI",
+   "transizione": 43,
+   "espressione": "ghigno",
+   "id_hg": 479,
+   "id_trinacria": 0,
+   "nome": null,
+   "membri": 9
+  },
+  {
+   "voci": [
+    238,
+    239,
+    240,
+    241
+   ],
+   "ncgr": 239,
+   "nclr": 238,
+   "tabella": "asm/overlay_117.s",
+   "etichetta": "ov117_0225FAEC",
+   "tipo": "esecutivo",
+   "classe_hg": "TRAINERCLASS_ROCKET_BOSS",
+   "classe": "TRAINERCLASS_FANTASMA",
+   "scheda": "SPRITE_TRN_FANTASMA",
+   "transizione": 44,
+   "espressione": "serio",
+   "id_hg": 700,
+   "id_trinacria": 0,
+   "nome": null,
+   "membri": 4
+  },
+  {
+   "voci": [
+    211,
+    208,
+    209,
+    210
+   ],
+   "ncgr": 208,
+   "nclr": 211,
+   "tabella": "asm/overlay_115.s",
+   "etichetta": "ov115_0225F978",
+   "tipo": "protagonista",
+   "classe_hg": null,
+   "classe": "protagonista",
+   "scheda": "PROTAGONISTA_RAGAZZO",
+   "transizione": "29–33 (Campioni dell’ARS e Presidente)",
+   "espressione": "sorriso",
+   "id_hg": null,
+   "id_trinacria": null,
+   "nome": null,
+   "membri": null
+  },
+  {
+   "voci": [
+    211,
+    212,
+    213,
+    214
+   ],
+   "ncgr": 212,
+   "nclr": 211,
+   "tabella": "asm/overlay_115.s",
+   "etichetta": "ov115_0225F978",
+   "tipo": "protagonista",
+   "classe_hg": null,
+   "classe": "protagonista",
+   "scheda": "PROTAGONISTA_RAGAZZA",
+   "transizione": "29–33 (Campioni dell’ARS e Presidente)",
+   "espressione": "sorriso",
+   "id_hg": null,
+   "id_trinacria": null,
+   "nome": null,
+   "membri": null
+  }
+ ],
+ "timbri": [
+  {
+   "ncgr": 156,
+   "ncer": 158,
+   "misura": "64×64",
+   "uso": "transizione 39 (Scagnozzu, Infiltrata): sprite ripetuto sei volte (asm/overlay_117.s, ov117_0225F020)"
+  },
+  {
+   "ncgr": 153,
+   "ncer": 155,
+   "misura": "128×128",
+   "uso": "«R» grande, voci 153–155 (nessun uso trovato nel codice: si cambia lo stesso)"
+  },
+  {
+   "ncgr": 216,
+   "nscr": [
+    217,
+    218,
+    219,
+    220,
+    221
+   ],
+   "nclr": 215,
+   "misura": "5 schermate 256×256",
+   "uso": "sfondo delle transizioni 40–44 (asm/overlay_117.s, ov117_0225F524)",
+   "tile": 126,
+   "su": 256,
+   "cornice_r": [
+    69,
+    35,
+    187,
+    148
+   ],
+   "centro": [
+    128.5,
+    92.0
+   ],
+   "raggio": 60.0
+  }
+ ],
+ "fasi_dorso": [
+  {
+   "fase": 0,
+   "gomito": [
+    62,
+    63
+   ],
+   "mano": [
+    63,
+    75
+   ],
+   "palla": true
+  },
+  {
+   "fase": 1,
+   "gomito": [
+    65,
+    60
+   ],
+   "mano": [
+    58,
+    70
+   ],
+   "palla": true
+  },
+  {
+   "fase": 2,
+   "gomito": [
+    69,
+    45
+   ],
+   "mano": [
+    65,
+    30
+   ],
+   "palla": true
+  },
+  {
+   "fase": 3,
+   "gomito": [
+    69,
+    36
+   ],
+   "mano": [
+    74,
+    22
+   ],
+   "palla": true
+  },
+  {
+   "fase": 4,
+   "gomito": [
+    71,
+    41
+   ],
+   "mano": [
+    79,
+    33
+   ],
+   "palla": false
+  },
+  {
+   "fase": 5,
+   "gomito": [
+    69,
+    52
+   ],
+   "mano": [
+    76,
+    59
+   ],
+   "palla": false
+  },
+  {
+   "fase": 6,
+   "gomito": [
+    67,
+    56
+   ],
+   "mano": [
+    72,
+    66
+   ],
+   "palla": false
+  },
+  {
+   "fase": 7,
+   "gomito": [
+    67,
+    54
+   ],
+   "mano": [
+    74,
+    61
+   ],
+   "palla": false
+  }
+ ],
+ "pose": [
+  {
+   "posa": "fermo",
+   "descrizione": "in piedi, braccia lungo i fianchi, o con l’oggetto della scheda: valigetta, cartellina, tablet, telefono all’orecchio, buste, bastone"
+  },
+  {
+   "posa": "indica",
+   "descrizione": "braccio teso verso sinistra, verso il giocatore, con l’indice"
+  },
+  {
+   "posa": "fianchi",
+   "descrizione": "mano sul fianco"
+  },
+  {
+   "posa": "pugno",
+   "descrizione": "pugno alzato accanto alla testa"
+  },
+  {
+   "posa": "lancio 0–7",
+   "descrizione": "lancio della Poké Ball di fronte (solo la classe di Calogero, 8 fotogrammi come l’originale): palla in mano, carica, braccio alto, sopra la testa, rilascio, accompagnamento, chiusura"
+  }
+ ],
+ "modifica_codice": [
+  {
+   "id": "E-GFX-05 ov115_02260388",
+   "file": "asm/overlay_115.s",
+   "cerca": "ov115_02260388: ; 0x02260388\n\t.byte 0x83, 0x00, 0x2F, 0x20, 0x57, 0x00, 0xF5, 0x00",
+   "sostituisci": "ov115_02260388: ; 0x02260388\n\t.byte 0x83, 0x00, 0x2F, 0x20, 0x57, 0x00, 0x0C, 0x02"
+  },
+  {
+   "id": "E-GFX-05 ov115_02260390",
+   "file": "asm/overlay_115.s",
+   "cerca": "ov115_02260390: ; 0x02260390\n\t.byte 0x87, 0x00, 0x33, 0x20, 0x59, 0x00, 0xF7, 0x00",
+   "sostituisci": "ov115_02260390: ; 0x02260390\n\t.byte 0x87, 0x00, 0x33, 0x20, 0x59, 0x00, 0x0E, 0x02"
+  },
+  {
+   "id": "E-GFX-05 ov115_02260398",
+   "file": "asm/overlay_115.s",
+   "cerca": "ov115_02260398: ; 0x02260398\n\t.byte 0x8B, 0x00, 0x34, 0x20, 0x70, 0x00, 0xA2, 0x01",
+   "sostituisci": "ov115_02260398: ; 0x02260398\n\t.byte 0x8B, 0x00, 0x34, 0x20, 0x70, 0x00, 0x0F, 0x02"
+  },
+  {
+   "id": "E-GFX-05 ov115_022603A0",
+   "file": "asm/overlay_115.s",
+   "cerca": "ov115_022603A0: ; 0x022603A0\n\t.byte 0x8F, 0x00, 0x35, 0x20, 0x58, 0x00, 0xF6, 0x00",
+   "sostituisci": "ov115_022603A0: ; 0x022603A0\n\t.byte 0x8F, 0x00, 0x35, 0x20, 0x58, 0x00, 0x0D, 0x02"
+  },
+  {
+   "id": "E-GFX-05 ov115_022603A8",
+   "file": "asm/overlay_115.s",
+   "cerca": "ov115_022603A8: ; 0x022603A8\n\t.byte 0x93, 0x00, 0x36, 0x09, 0x56, 0x00, 0xF4, 0x00",
+   "sostituisci": "ov115_022603A8: ; 0x022603A8\n\t.byte 0x93, 0x00, 0x36, 0x09, 0x56, 0x00, 0x28, 0x02"
+  },
+  {
+   "id": "E-GFX-05 ov115_022603B0",
+   "file": "asm/overlay_115.s",
+   "cerca": "ov115_022603B0: ; 0x022603B0\n\t.byte 0x00, 0x60, 0x0D, 0x00, 0x14, 0x00, 0x00, 0x00, 0x42, 0x00, 0x01, 0x00, 0x3F, 0x40, 0x41, 0x42\n\t.byte 0x15, 0x14, 0x16, 0x00",
+   "sostituisci": "ov115_022603B0: ; 0x022603B0\n\t.byte 0x00, 0x60, 0x0D, 0x00, 0x01, 0x00, 0x00, 0x00, 0x42, 0x00, 0x01, 0x00, 0x3F, 0x40, 0x41, 0x42\n\t.byte 0x15, 0x14, 0x16, 0x00"
+  },
+  {
+   "id": "E-GFX-05 ov115_022603C4",
+   "file": "asm/overlay_115.s",
+   "cerca": "ov115_022603C4: ; 0x022603C4\n\t.byte 0x00, 0x60, 0x0D, 0x00, 0x15, 0x00, 0x00, 0x00, 0x43, 0x00, 0x01, 0x00\n\t.byte 0x43, 0x44, 0x45, 0x46, 0x18, 0x17, 0x19, 0x00",
+   "sostituisci": "ov115_022603C4: ; 0x022603C4\n\t.byte 0x00, 0x60, 0x0D, 0x00, 0x63, 0x00, 0x00, 0x00, 0x43, 0x00, 0x01, 0x00\n\t.byte 0x43, 0x44, 0x45, 0x46, 0x18, 0x17, 0x19, 0x00"
+  },
+  {
+   "id": "E-GFX-05 ov115_022603D8",
+   "file": "asm/overlay_115.s",
+   "cerca": "ov115_022603D8: ; 0x022603D8\n\t.byte 0x00, 0x60, 0x0D, 0x00, 0x1E, 0x00, 0x00, 0x00\n\t.byte 0x46, 0x00, 0x00, 0x00, 0x47, 0x48, 0x49, 0x4A, 0x1B, 0x1A, 0x1C, 0x00",
+   "sostituisci": "ov115_022603D8: ; 0x022603D8\n\t.byte 0x00, 0x60, 0x0D, 0x00, 0x95, 0x00, 0x00, 0x00\n\t.byte 0x46, 0x00, 0x00, 0x00, 0x47, 0x48, 0x49, 0x4A, 0x1B, 0x1A, 0x1C, 0x00"
+  },
+  {
+   "id": "E-GFX-05 ov115_022603EC",
+   "file": "asm/overlay_115.s",
+   "cerca": "ov115_022603EC: ; 0x022603EC\n\t.byte 0x00, 0x60, 0x0D, 0x00\n\t.byte 0x1F, 0x00, 0x00, 0x00, 0x48, 0x00, 0x01, 0x00, 0x4B, 0x4C, 0x4D, 0x4E, 0x1E, 0x1D, 0x1F, 0x00",
+   "sostituisci": "ov115_022603EC: ; 0x022603EC\n\t.byte 0x00, 0x60, 0x0D, 0x00\n\t.byte 0xC6, 0x00, 0x00, 0x00, 0x48, 0x00, 0x01, 0x00, 0x4B, 0x4C, 0x4D, 0x4E, 0x1E, 0x1D, 0x1F, 0x00"
+  },
+  {
+   "id": "E-GFX-05 ov115_02260400",
+   "file": "asm/overlay_115.s",
+   "cerca": "ov115_02260400: ; 0x02260400\n\t.byte 0x00, 0x60, 0x0D, 0x00, 0x21, 0x00, 0x00, 0x00, 0x4A, 0x00, 0x01, 0x00, 0x4F, 0x50, 0x51, 0x52\n\t.byte 0x21, 0x20, 0x22, 0x00",
+   "sostituisci": "ov115_02260400: ; 0x02260400\n\t.byte 0x00, 0x60, 0x0D, 0x00, 0x29, 0x01, 0x00, 0x00, 0x4A, 0x00, 0x01, 0x00, 0x4F, 0x50, 0x51, 0x52\n\t.byte 0x21, 0x20, 0x22, 0x00"
+  },
+  {
+   "id": "E-GFX-05 ov115_02260414",
+   "file": "asm/overlay_115.s",
+   "cerca": "ov115_02260414: ; 0x02260414\n\t.byte 0x00, 0x60, 0x0D, 0x00, 0x22, 0x00, 0x00, 0x00, 0x4B, 0x00, 0x01, 0x00\n\t.byte 0x53, 0x54, 0x55, 0x56, 0x24, 0x23, 0x25, 0x00",
+   "sostituisci": "ov115_02260414: ; 0x02260414\n\t.byte 0x00, 0x60, 0x0D, 0x00, 0xF6, 0x00, 0x00, 0x00, 0x4B, 0x00, 0x01, 0x00\n\t.byte 0x53, 0x54, 0x55, 0x56, 0x24, 0x23, 0x25, 0x00"
+  },
+  {
+   "id": "E-GFX-05 ov115_02260428",
+   "file": "asm/overlay_115.s",
+   "cerca": "ov115_02260428: ; 0x02260428\n\t.byte 0x00, 0x60, 0x0D, 0x00, 0x20, 0x00, 0x00, 0x00\n\t.byte 0x49, 0x00, 0x01, 0x00, 0x57, 0x58, 0x59, 0x5A, 0x27, 0x26, 0x28, 0x00",
+   "sostituisci": "ov115_02260428: ; 0x02260428\n\t.byte 0x00, 0x60, 0x0D, 0x00, 0x60, 0x01, 0x00, 0x00\n\t.byte 0x49, 0x00, 0x01, 0x00, 0x57, 0x58, 0x59, 0x5A, 0x27, 0x26, 0x28, 0x00"
+  },
+  {
+   "id": "E-GFX-05 ov115_0226043C",
+   "file": "asm/overlay_115.s",
+   "cerca": "ov115_0226043C: ; 0x0226043C\n\t.byte 0x00, 0x60, 0x0D, 0x00\n\t.byte 0x23, 0x00, 0x00, 0x00, 0x4C, 0x00, 0x01, 0x00, 0x5B, 0x5C, 0x5D, 0x5E, 0x2A, 0x29, 0x2B, 0x00",
+   "sostituisci": "ov115_0226043C: ; 0x0226043C\n\t.byte 0x00, 0x60, 0x0D, 0x00\n\t.byte 0x9C, 0x01, 0x00, 0x00, 0x4C, 0x00, 0x01, 0x00, 0x5B, 0x5C, 0x5D, 0x5E, 0x2A, 0x29, 0x2B, 0x00"
+  },
+  {
+   "id": "E-GFX-05 ov115_022604DC",
+   "file": "asm/overlay_115.s",
+   "cerca": "ov115_022604DC: ; 0x022604DC\n\t.byte 0x00, 0x60, 0x0D, 0x00\n\t.byte 0x05, 0x01, 0x00, 0x00, 0x6E, 0x00, 0x01, 0x00, 0x7B, 0x7C, 0x7D, 0x7E, 0x2A, 0x29, 0x2B, 0x00",
+   "sostituisci": "ov115_022604DC: ; 0x022604DC\n\t.byte 0x00, 0x60, 0x0D, 0x00\n\t.byte 0xE8, 0x01, 0x00, 0x00, 0x6E, 0x00, 0x01, 0x00, 0x7B, 0x7C, 0x7D, 0x7E, 0x2A, 0x29, 0x2B, 0x00"
+  },
+  {
+   "id": "E-GFX-05 _0225FACC",
+   "file": "asm/overlay_117.s",
+   "cerca": "_0225FACC:\n\t.byte 0xDE, 0xDF, 0xE0, 0xE1\n\t.byte 0xE8, 0x01, 0x00, 0x00",
+   "sostituisci": "_0225FACC:\n\t.byte 0xDE, 0xDF, 0xE0, 0xE1\n\t.byte 0x00, 0x00, 0x00, 0x00"
+  },
+  {
+   "id": "E-GFX-05 ov117_0225FAD4",
+   "file": "asm/overlay_117.s",
+   "cerca": "ov117_0225FAD4: ; 0x0225FAD4\n\t.byte 0xE2, 0xE3, 0xE4, 0xE5, 0xE6, 0x01, 0x00, 0x00",
+   "sostituisci": "ov117_0225FAD4: ; 0x0225FAD4\n\t.byte 0xE2, 0xE3, 0xE4, 0xE5, 0x00, 0x00, 0x00, 0x00"
+  },
+  {
+   "id": "E-GFX-05 ov117_0225FADC",
+   "file": "asm/overlay_117.s",
+   "cerca": "ov117_0225FADC: ; 0x0225FADC\n\t.byte 0xE6, 0xE7, 0xE8, 0xE9\n\t.byte 0xE5, 0x01, 0x00, 0x00",
+   "sostituisci": "ov117_0225FADC: ; 0x0225FADC\n\t.byte 0xE6, 0xE7, 0xE8, 0xE9\n\t.byte 0x00, 0x00, 0x00, 0x00"
+  },
+  {
+   "id": "E-GFX-05 ov117_0225FAE4",
+   "file": "asm/overlay_117.s",
+   "cerca": "ov117_0225FAE4: ; 0x0225FAE4\n\t.byte 0xEA, 0xEB, 0xEC, 0xED, 0xDF, 0x01, 0x00, 0x00",
+   "sostituisci": "ov117_0225FAE4: ; 0x0225FAE4\n\t.byte 0xEA, 0xEB, 0xEC, 0xED, 0x00, 0x00, 0x00, 0x00"
+  },
+  {
+   "id": "E-GFX-05 ov117_0225FAEC",
+   "file": "asm/overlay_117.s",
+   "cerca": "ov117_0225FAEC: ; 0x0225FAEC\n\t.byte 0xEE, 0xEF, 0xF0, 0xF1\n\t.byte 0xBC, 0x02, 0x00, 0x00",
+   "sostituisci": "ov117_0225FAEC: ; 0x0225FAEC\n\t.byte 0xEE, 0xEF, 0xF0, 0xF1\n\t.byte 0x00, 0x00, 0x00, 0x00"
+  }
+ ],
+ "file": [
+  {
+   "destinazione": "files/a/0/5/8",
+   "sorgente": "file/files/a/0/5/8",
+   "sha1_hg": "8c2d084a49e190b19f9111c944f88bf341bd930e",
+   "sha1_nuovo": "79ee901de1a7307fcd0a6a27387f4a307109af92",
+   "byte": 1663908,
+   "voci_cambiate": 114,
+   "voci": 645
+  },
+  {
+   "destinazione": "files/a/0/0/6",
+   "sorgente": "file/files/a/0/0/6",
+   "sha1_hg": "bfc7fd85c7255b8502d54722ea14b3c7ffd85a6e",
+   "sha1_nuovo": "52fd34de8be1d9731e810b2e03ac36be77229805",
+   "byte": 523924,
+   "voci_cambiate": 36,
+   "voci": 85
+  },
+  {
+   "destinazione": "files/a/1/0/9",
+   "sorgente": "file/files/a/1/0/9",
+   "sha1_hg": "869346a675860badf9a05bd9726f6e9649ccc1c7",
+   "sha1_nuovo": "5ea808cecc77c832e8d387a62aae0a41086ff52d",
+   "byte": 407244,
+   "voci_cambiate": 48,
+   "voci": 242
+  }
+ ],
+ "prova_forma": {
+  "files/a/0/5/8": {
+   "identici": 125,
+   "provati": 125,
+   "voci": 129,
+   "metà_scansione": {
+    "sx=f0, dx vuota": 94,
+    "sx?, dx vuota": 3,
+    "sx=f0, dx=f1": 26,
+    "sx?, dx=f1": 1,
+    "sx=f0, dx?": 1
+   }
+  },
+  "files/a/0/0/6": {
+   "identici": 17,
+   "provati": 17,
+   "voci": 17,
+   "metà_scansione": {
+    "sx=f0, dx=f1": 17
+   }
+  }
+ },
+ "prova_applica": {
+  "righe": [
+   "4.6: 3 file sostituiti, 0 blocchi di testo, 19 sostituzioni di codice in 2 file"
+  ],
+  "file_scritti": 5
+ },
+ "anteprime": [
+  {
+   "png": "anteprime/fronti_1.png",
+   "righe": [
+    "TRAINERCLASS_PKMN_TRAINER_ETHAN",
+    "TRAINERCLASS_PKMN_TRAINER_LYRA",
+    "TRAINERCLASS_FIGGHIU_DI_PAPA",
+    "TRAINERCLASS_ASSESSURI",
+    "TRAINERCLASS_SCAGNOZZU",
+    "TRAINERCLASS_PARCHEGGIATURI",
+    "TRAINERCLASS_BUDDACI",
+    "TRAINERCLASS_INFILTRATA",
+    "TRAINERCLASS_ZAUDDU",
+    "TRAINERCLASS_SEGRETARIO_CT",
+    "TRAINERCLASS_SEGRETARIO_SR",
+    "TRAINERCLASS_SEGRETARIO_RG",
+    "TRAINERCLASS_SEGRETARIO_CL"
+   ]
+  },
+  {
+   "png": "anteprime/fronti_2.png",
+   "righe": [
+    "TRAINERCLASS_SEGRETARIO_ME",
+    "TRAINERCLASS_SEGRETARIO_TP",
+    "TRAINERCLASS_SEGRETARIO_AG",
+    "TRAINERCLASS_SEGRETARIO_PA",
+    "TRAINERCLASS_PRESIDENTE",
+    "TRAINERCLASS_CAMPIONE_ARS_1",
+    "TRAINERCLASS_CAMPIONE_ARS_2",
+    "TRAINERCLASS_CAMPIONE_ARS_3",
+    "TRAINERCLASS_COMPAGNO_MARIA",
+    "TRAINERCLASS_COMPAGNO_ORAZIO",
+    "TRAINERCLASS_COMPAGNO_CHANTAL",
+    "TRAINERCLASS_COMPAGNO_TURI",
+    "TRAINERCLASS_COMPAGNO_PIPPO"
+   ]
+  },
+  {
+   "png": "anteprime/fronti_3.png",
+   "righe": [
+    "TRAINERCLASS_MAGISTRATA",
+    "TRAINERCLASS_SEGRETARIO_EN",
+    "TRAINERCLASS_CAMPIONE_ARS_4",
+    "TRAINERCLASS_PORTABORSE",
+    "TRAINERCLASS_CAMBIAVOTI",
+    "TRAINERCLASS_CASSIERI",
+    "TRAINERCLASS_CAPORALI",
+    "TRAINERCLASS_COLLETTU_BIANCU",
+    "TRAINERCLASS_COMPAGNO_CALOGERO",
+    "TRAINERCLASS_FANTASMA",
+    "TRAINERCLASS_COMPAGNO_CHRISTIAN",
+    "TRAINERCLASS_COMPAGNO_TOTO"
+   ]
+  },
+  {
+   "png": "anteprime/dorsi.png",
+   "righe": [
+    "TRAINER_BACKPIC_ETHAN",
+    "TRAINER_BACKPIC_LYRA",
+    "TRAINER_BACKPIC_LANCE",
+    "TRAINER_BACKPIC_CHERYL",
+    "TRAINER_BACKPIC_RILEY",
+    "TRAINER_BACKPIC_BUCK",
+    "TRAINER_BACKPIC_MIRA",
+    "TRAINER_BACKPIC_MARLEY",
+    "TRAINER_BACKPIC_LUCAS_DP",
+    "TRAINER_BACKPIC_LUCAS_PT",
+    "TRAINER_BACKPIC_ETHAN_2",
+    "TRAINER_BACKPIC_LYRA_2"
+   ]
+  },
+  {
+   "png": "anteprime/ritratti_1.png",
+   "righe": [
+    "SPRITE_TRN_CAMPIONE_ARS_1 (132)",
+    "SPRITE_TRN_CAMPIONE_ARS_3 (136)",
+    "SPRITE_TRN_CAMPIONE_ARS_4 (140)",
+    "SPRITE_TRN_CAMPIONE_ARS_2 (144)",
+    "SPRITE_TRN_MISTRETTA (148)",
+    "SPRITE_TRN_SEGRETARIO_CT (64)",
+    "SPRITE_TRN_SEGRETARIO_SR (68)",
+    "SPRITE_TRN_SEGRETARIO_RG (72)",
+    "SPRITE_TRN_SEGRETARIO_CL (76)",
+    "SPRITE_TRN_SEGRETARIO_TP (80)",
+    "SPRITE_TRN_SEGRETARIO_AG (84)"
+   ]
+  },
+  {
+   "png": "anteprime/ritratti_2.png",
+   "righe": [
+    "SPRITE_TRN_SEGRETARIO_ME (88)",
+    "SPRITE_TRN_SEGRETARIO_PA (92)",
+    "SPRITE_TRN_SEGRETARIO_EN (124)",
+    "SPRITE_TRN_COLLETTU_BIANCU (223)",
+    "SPRITE_TRN_CAPORALI (227)",
+    "SPRITE_TRN_CASSIERI (231)",
+    "SPRITE_TRN_CAMBIAVOTI (235)",
+    "SPRITE_TRN_FANTASMA (239)",
+    "PROTAGONISTA_RAGAZZO (208)",
+    "PROTAGONISTA_RAGAZZA (212)"
+   ]
+  },
+  {
+   "png": "anteprime/schermata_217.png",
+   "righe": [
+    "NSCR 217"
+   ]
+  },
+  {
+   "png": "anteprime/schermata_218.png",
+   "righe": [
+    "NSCR 218"
+   ]
+  },
+  {
+   "png": "anteprime/schermata_219.png",
+   "righe": [
+    "NSCR 219"
+   ]
+  },
+  {
+   "png": "anteprime/schermata_220.png",
+   "righe": [
+    "NSCR 220"
+   ]
+  },
+  {
+   "png": "anteprime/schermata_221.png",
+   "righe": [
+    "NSCR 221"
+   ]
+  },
+  {
+   "png": "anteprime/timbri.png",
+   "righe": [
+    "sprite 156 prima e dopo",
+    "sprite 153 prima e dopo"
+   ]
+  }
+ ],
+ "riga_finale": "BLOCCO COMPLETO: 4.6 — immagini di lotta ridisegnate col figurino a script (stesse schede del 4.5): 38 immagini frontali (36 classi del registro 2.5 e il protagonista ragazzo e ragazza), 12 dorsi (8 compagni e il protagonista, anche nelle lotte in collegamento), 21 ritratti delle transizioni (9 Segretari, 4 Campioni dell’ARS, Mistretta, 5 classi di «U Sistema», protagonista), il timbro di «U Sistema» al posto della «R» (2 sprite, 5 schermate); prova di forma 125+17 immagini identiche; modifica E-GFX-05 (19 ID allenatore nelle tabelle delle transizioni); applica --blocchi 4.6 provato; regole R-GFX-38…41; 4.1 v1.1 (cifratura -encodebacktofront); medaglie, Scheda Allenatore e icone del Pokégear spostate al 4.7"
+}

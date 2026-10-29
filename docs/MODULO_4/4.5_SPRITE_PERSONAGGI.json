@@ -1,0 +1,2162 @@
+{
+ "modulo": 4,
+ "blocco": "4.5",
+ "titolo": "Sprite di campo dei personaggi",
+ "versione": "1.0",
+ "data": "28/10/2026",
+ "progetto": "Pokémon Trinacria (autore: atrisorb)",
+ "documento": "docs/MODULO_4/4.5_SPRITE_PERSONAGGI.md",
+ "lettore": "Modulo 6 (spriteId degli eventi: SPRITE_TRN_*), blocco 4.6 (immagini di lotta), Modulo 7 (7.4)",
+ "ruoli_palette": {
+  "0": "trasparente (colore dell’originale)",
+  "1": "contorno",
+  "2": "pelle",
+  "3": "pelle in ombra",
+  "4": "capelli",
+  "5": "capelli in ombra, baffi e barba",
+  "6": "vestito di sopra",
+  "7": "sopra in ombra, maniche di profilo",
+  "8": "vestito di sotto",
+  "9": "sotto in ombra",
+  "10": "scarpe",
+  "11": "bianco (camicia, occhi)",
+  "12": "accento A (cravatta, pochette, sciarpa, rossetto)",
+  "13": "accento B (cappelli, borse, occhiali, bici)",
+  "14": "accento C (oro, attrezzi, ruote, canna)",
+  "15": "occhi e lenti scure"
+ },
+ "personaggi": [
+  {
+   "gruppo": "personaggi",
+   "simbolo": "SPRITE_TRN_TURI",
+   "slot": "SPRITE_SEVEN4",
+   "mmodel": "MMODEL_SEVEN4",
+   "numero": 65,
+   "file": "files/data/mmodel/mmodel/mmodel_00000065.NSBTX",
+   "chi": "Turi (C-01)",
+   "codice": "C-01",
+   "capelli": "ricci",
+   "sopra": "maglia",
+   "sotto": "pantaloni",
+   "accessori": [
+    "barba"
+   ],
+   "pancia": 0,
+   "perche": "maglietta arancione come gli agrumi del padre, jeans, ricci e barba",
+   "texture": "seven4"
+  },
+  {
+   "gruppo": "personaggi",
+   "simbolo": "SPRITE_TRN_ORAZIO",
+   "slot": "SPRITE_SEVEN2",
+   "mmodel": "MMODEL_SEVEN2",
+   "numero": 63,
+   "file": "files/data/mmodel/mmodel/mmodel_00000063.NSBTX",
+   "chi": "Orazio (C-02)",
+   "codice": "C-02",
+   "capelli": "rasati",
+   "sopra": "tuta_lavoro",
+   "sotto": "tuta",
+   "accessori": [
+    "cintura"
+   ],
+   "pancia": 0,
+   "perche": "tuta blu da meccanico dell’officina di via Plebiscito",
+   "texture": "seven2"
+  },
+  {
+   "gruppo": "personaggi",
+   "simbolo": "SPRITE_TRN_CHRISTIAN",
+   "slot": "SPRITE_MINAKI",
+   "mmodel": "MMODEL_MINAKI",
+   "numero": 187,
+   "file": "files/data/mmodel/mmodel/mmodel_00000187.NSBTX",
+   "chi": "Christian (C-03)",
+   "codice": "C-03",
+   "capelli": "ciuffo",
+   "sopra": "felpa",
+   "sotto": "pantaloni",
+   "accessori": [
+    "cuffie",
+    "collana"
+   ],
+   "pancia": 0,
+   "perche": "felpa nera, cuffie rosse da DJ della movida, ciuffo col gel",
+   "texture": "minaki"
+  },
+  {
+   "gruppo": "personaggi",
+   "simbolo": "SPRITE_TRN_CHANTAL",
+   "slot": "SPRITE_SEVEN3",
+   "mmodel": "MMODEL_SEVEN3",
+   "numero": 64,
+   "file": "files/data/mmodel/mmodel/mmodel_00000064.NSBTX",
+   "chi": "Chantal (C-04)",
+   "codice": "C-04",
+   "capelli": "lunghi",
+   "sopra": "maglia",
+   "sotto": "pantaloni",
+   "accessori": [
+    "telefono",
+    "rossetto"
+   ],
+   "pancia": 0,
+   "perche": "capelli rosa, maglietta fucsia, leggings e telefono per i video",
+   "texture": "seven3"
+  },
+  {
+   "gruppo": "personaggi",
+   "simbolo": "SPRITE_TRN_MARIA",
+   "slot": "SPRITE_SEVEN1",
+   "mmodel": "MMODEL_SEVEN1",
+   "numero": 62,
+   "file": "files/data/mmodel/mmodel/mmodel_00000062.NSBTX",
+   "chi": "Maria (C-05, anche P-02)",
+   "codice": "C-05",
+   "capelli": "caschetto",
+   "sopra": "tailleur",
+   "sotto": "pantaloni",
+   "accessori": [
+    "occhiali",
+    "cartellina"
+   ],
+   "pancia": 0,
+   "perche": "la PM: tailleur antracite, caschetto nero, occhiali e fascicolo",
+   "texture": "seven1"
+  },
+  {
+   "gruppo": "personaggi",
+   "simbolo": "SPRITE_TRN_TOTO",
+   "slot": "SPRITE_DAIGO",
+   "mmodel": "MMODEL_DAIGO",
+   "numero": 59,
+   "file": "files/data/mmodel/mmodel/mmodel_00000059.NSBTX",
+   "chi": "Totò (C-06)",
+   "codice": "C-06",
+   "capelli": "pettinati",
+   "sopra": "giacca",
+   "sotto": "pantaloni",
+   "accessori": [
+    "cravatta",
+    "baffi",
+    "bottoni_oro"
+   ],
+   "pancia": 1,
+   "perche": "commesso dell’ARS: giacca blu coi bottoni dorati, baffi grigi",
+   "texture": "daigo"
+  },
+  {
+   "gruppo": "personaggi",
+   "simbolo": "SPRITE_TRN_CALOGERO",
+   "slot": "SPRITE_GANTETSU",
+   "mmodel": "MMODEL_GANTETSU",
+   "numero": 223,
+   "file": "files/data/mmodel/mmodel/mmodel_00000223.NSBTX",
+   "chi": "Calogero (C-07)",
+   "codice": "C-07",
+   "capelli": "corti",
+   "sopra": "canotta",
+   "sotto": "pantaloni",
+   "accessori": [
+    "paglia",
+    "baffi"
+   ],
+   "pancia": 0,
+   "perche": "contadino e pescatore di Licata: cappello di paglia, canottiera, pelle bruciata dal sole",
+   "texture": "gantetsu"
+  },
+  {
+   "gruppo": "personaggi",
+   "simbolo": "SPRITE_TRN_PIPPO",
+   "slot": "SPRITE_SEVEN5",
+   "mmodel": "MMODEL_SEVEN5",
+   "numero": 66,
+   "file": "files/data/mmodel/mmodel/mmodel_00000066.NSBTX",
+   "chi": "Pippo (C-08)",
+   "codice": "C-08",
+   "capelli": "calvo",
+   "sopra": "righe",
+   "sotto": "pantaloni",
+   "accessori": [
+    "berretto_lana",
+    "barba"
+   ],
+   "pancia": 0,
+   "perche": "da 35 anni al pilone di Torre Faro: maglia a righe, berretto di lana, barba bianca",
+   "texture": "seven5"
+  },
+  {
+   "gruppo": "personaggi",
+   "simbolo": "SPRITE_TRN_GRAZIELLA",
+   "slot": "SPRITE_GSMAMA",
+   "mmodel": "MMODEL_GSMAMA",
+   "numero": 159,
+   "file": "files/data/mmodel/mmodel/mmodel_00000159.NSBTX",
+   "chi": "Graziella, la madre del protagonista",
+   "codice": "M-CT-01",
+   "capelli": "cotonati",
+   "sopra": "abito",
+   "sotto": "gonna",
+   "accessori": [
+    "perle",
+    "rossetto"
+   ],
+   "pancia": 0,
+   "perche": "la madre: piega cotonata, abito petrolio e filo di perle",
+   "texture": "gsmama"
+  },
+  {
+   "gruppo": "personaggi",
+   "simbolo": "SPRITE_TRN_PROF_STRANO",
+   "slot": "SPRITE_OOKIDO",
+   "mmodel": "MMODEL_OOKIDO",
+   "numero": 160,
+   "file": "files/data/mmodel/mmodel/mmodel_00000160.NSBTX",
+   "chi": "Prof. Alfio Strano (Atlante Biopolitico)",
+   "codice": "M-CT-02",
+   "capelli": "calvo",
+   "sopra": "giacca",
+   "sotto": "pantaloni",
+   "accessori": [
+    "barba",
+    "occhiali",
+    "cravatta"
+   ],
+   "pancia": 0,
+   "perche": "zoologo in pensione: giacca di tweed, barba bianca, occhiali",
+   "texture": "ookido"
+  },
+  {
+   "gruppo": "personaggi",
+   "simbolo": "SPRITE_TRN_NUNZIO",
+   "slot": "SPRITE_MASAKI",
+   "mmodel": "MMODEL_MASAKI",
+   "numero": 181,
+   "file": "files/data/mmodel/mmodel/mmodel_00000181.NSBTX",
+   "chi": "Nunzio, fratello di Orazio",
+   "codice": "P-10",
+   "capelli": "corti",
+   "sopra": "tuta_lavoro",
+   "sotto": "tuta",
+   "accessori": [
+    "baffi",
+    "cintura"
+   ],
+   "pancia": 1,
+   "perche": "il fratello di Orazio: tuta verde da officina, baffi, più robusto",
+   "texture": "masaki"
+  },
+  {
+   "gruppo": "personaggi",
+   "simbolo": "SPRITE_TRN_MISTRETTA",
+   "slot": "SPRITE_WATARU",
+   "mmodel": "MMODEL_WATARU",
+   "numero": 158,
+   "file": "files/data/mmodel/mmodel/mmodel_00000158.NSBTX",
+   "chi": "On. Raffaele «Don Lollò» Mistretta",
+   "codice": "M-EN-06",
+   "capelli": "pettinati",
+   "sopra": "giacca",
+   "sotto": "pantaloni",
+   "accessori": [
+    "cravatta",
+    "pochette"
+   ],
+   "pancia": 1,
+   "perche": "l’On. Mistretta: doppiopetto blu notte, cravatta rossa, capelli grigi tirati indietro",
+   "texture": "wataru"
+  },
+  {
+   "gruppo": "personaggi",
+   "simbolo": "SPRITE_TRN_FANTASMA",
+   "slot": "SPRITE_SAKAKI",
+   "mmodel": "MMODEL_SAKAKI",
+   "numero": 225,
+   "file": "files/data/mmodel/mmodel/mmodel_00000225.NSBTX",
+   "chi": "i 4 Fantasmi della Prima Repubblica (stesso sprite)",
+   "codice": "P-03",
+   "capelli": "corti",
+   "sopra": "cappotto",
+   "sotto": "pantaloni",
+   "accessori": [
+    "fedora",
+    "occhiali_sole"
+   ],
+   "pancia": 0,
+   "perche": "i Fantasmi della Prima Repubblica: cappotto e cappello grigi, pelle pallida, occhiali scuri",
+   "texture": "sakaki"
+  },
+  {
+   "gruppo": "personaggi",
+   "simbolo": "SPRITE_TRN_SEGRETARIO_CT",
+   "slot": "SPRITE_GSLEADER1",
+   "mmodel": "MMODEL_GSLEADER1",
+   "numero": 146,
+   "file": "files/data/mmodel/mmodel/mmodel_00000146.NSBTX",
+   "chi": "Dott. Ignazio Calì, Segretario di CT",
+   "codice": "M-CT-08",
+   "capelli": "riporto",
+   "sopra": "camice",
+   "sotto": "pantaloni",
+   "accessori": [
+    "occhiali",
+    "stetoscopio"
+   ],
+   "pancia": 1,
+   "perche": "Dott. Calì, il Ras delle cliniche convenzionate: camice bianco sopra il completo, stetoscopio",
+   "texture": "gsleader1"
+  },
+  {
+   "gruppo": "personaggi",
+   "simbolo": "SPRITE_TRN_SEGRETARIO_SR",
+   "slot": "SPRITE_GSLEADER2",
+   "mmodel": "MMODEL_GSLEADER2",
+   "numero": 147,
+   "file": "files/data/mmodel/mmodel/mmodel_00000147.NSBTX",
+   "chi": "Comm. Corrado Spataro, Segretario di SR",
+   "codice": "M-SR-05",
+   "capelli": "corti",
+   "sopra": "giacca",
+   "sotto": "pantaloni",
+   "accessori": [
+    "capitano",
+    "barba",
+    "bottoni_oro"
+   ],
+   "pancia": 0,
+   "perche": "Comm. Spataro, «U Baruni dû Portu»: blazer blu coi bottoni d’oro e berretto da armatore",
+   "texture": "gsleader2"
+  },
+  {
+   "gruppo": "personaggi",
+   "simbolo": "SPRITE_TRN_SEGRETARIO_RG",
+   "slot": "SPRITE_GSLEADER3",
+   "mmodel": "MMODEL_GSLEADER3",
+   "numero": 148,
+   "file": "files/data/mmodel/mmodel/mmodel_00000148.NSBTX",
+   "chi": "Cav. Biagio Occhipinti, Segretario di RG",
+   "codice": "M-RG-04",
+   "capelli": "calvo",
+   "sopra": "polo",
+   "sotto": "pantaloni",
+   "accessori": [
+    "collana",
+    "occhiali_sole"
+   ],
+   "pancia": 1,
+   "perche": "Cav. Occhipinti, re dei TIR dell’ortofrutta: polo verde, catena d’oro, occhiali da sole",
+   "texture": "gsleader3"
+  },
+  {
+   "gruppo": "personaggi",
+   "simbolo": "SPRITE_TRN_SEGRETARIO_CL",
+   "slot": "SPRITE_GSLEADER4",
+   "mmodel": "MMODEL_GSLEADER4",
+   "numero": 149,
+   "file": "files/data/mmodel/mmodel/mmodel_00000149.NSBTX",
+   "chi": "Ing. Calogero Lo Monaco, Segretario di CL",
+   "codice": "M-CL-04",
+   "capelli": "corti",
+   "sopra": "giacca",
+   "sotto": "pantaloni",
+   "accessori": [
+    "casco",
+    "cravatta",
+    "occhiali"
+   ],
+   "pancia": 0,
+   "perche": "Ing. Lo Monaco, commissario da 22 anni: completo grigio e casco bianco da collaudo",
+   "texture": "gsleader4"
+  },
+  {
+   "gruppo": "personaggi",
+   "simbolo": "SPRITE_TRN_SEGRETARIO_AG",
+   "slot": "SPRITE_GSLEADER5",
+   "mmodel": "MMODEL_GSLEADER5",
+   "numero": 150,
+   "file": "files/data/mmodel/mmodel/mmodel_00000150.NSBTX",
+   "chi": "Geom. Gerlando Iacono, Segretario di AG",
+   "codice": "M-AG-05",
+   "capelli": "corti",
+   "sopra": "camicia",
+   "sotto": "pantaloni",
+   "accessori": [
+    "casco",
+    "baffi",
+    "cartellina"
+   ],
+   "pancia": 1,
+   "perche": "Geom. Iacono, il re del cemento: camicia azzurra, casco giallo e progetti sotto il braccio",
+   "texture": "gsleader5"
+  },
+  {
+   "gruppo": "personaggi",
+   "simbolo": "SPRITE_TRN_SEGRETARIO_TP",
+   "slot": "SPRITE_GSLEADER6",
+   "mmodel": "MMODEL_GSLEADER6",
+   "numero": 151,
+   "file": "files/data/mmodel/mmodel/mmodel_00000151.NSBTX",
+   "chi": "Avv. Vito Asaro, Segretario di TP",
+   "codice": "M-TP-04",
+   "capelli": "pettinati",
+   "sopra": "giacca",
+   "sotto": "pantaloni",
+   "accessori": [
+    "cravatta",
+    "barba",
+    "occhiali"
+   ],
+   "pancia": 0,
+   "perche": "Avv. Asaro, «Gran Maestro» della loggia dei parchi eolici: abito nero, cravatta viola",
+   "texture": "gsleader6"
+  },
+  {
+   "gruppo": "personaggi",
+   "simbolo": "SPRITE_TRN_SEGRETARIO_ME",
+   "slot": "SPRITE_GSLEADER7",
+   "mmodel": "MMODEL_GSLEADER7",
+   "numero": 152,
+   "file": "files/data/mmodel/mmodel/mmodel_00000152.NSBTX",
+   "chi": "Dott. Natale Sturiale, Segretario di ME",
+   "codice": "M-ME-06",
+   "capelli": "pettinati",
+   "sopra": "giacca",
+   "sotto": "pantaloni",
+   "accessori": [
+    "cravatta",
+    "occhiali",
+    "valigetta"
+   ],
+   "pancia": 0,
+   "perche": "Dott. Sturiale, AD delle partecipate: completo grigio chiaro e valigetta",
+   "texture": "gsleader7"
+  },
+  {
+   "gruppo": "personaggi",
+   "simbolo": "SPRITE_TRN_SEGRETARIO_PA",
+   "slot": "SPRITE_GSLEADER8",
+   "mmodel": "MMODEL_GSLEADER8",
+   "numero": 153,
+   "file": "files/data/mmodel/mmodel/mmodel_00000153.NSBTX",
+   "chi": "On. Totò Scaduto, Segretario di PA",
+   "codice": "M-PA-05",
+   "capelli": "pettinati",
+   "sopra": "giacca",
+   "sotto": "pantaloni",
+   "accessori": [
+    "cravatta",
+    "baffi",
+    "collana",
+    "occhiali_sole"
+   ],
+   "pancia": 1,
+   "perche": "On. Totò Scaduto, il collettore della Conca d’Oro: giacca bordeaux, cravatta gialla, catena",
+   "texture": "gsleader8"
+  },
+  {
+   "gruppo": "personaggi",
+   "simbolo": "SPRITE_TRN_SEGRETARIO_EN",
+   "slot": "SPRITE_GSLEADER16",
+   "mmodel": "MMODEL_GSLEADER16",
+   "numero": 169,
+   "file": "files/data/mmodel/mmodel/mmodel_00000169.NSBTX",
+   "chi": "Dott. Filippo La Rosa, Segretario di EN",
+   "codice": "M-EN-03",
+   "capelli": "calvo",
+   "sopra": "camicia",
+   "sotto": "pantaloni",
+   "accessori": [
+    "gilet",
+    "cravatta",
+    "occhiali",
+    "cartellina"
+   ],
+   "pancia": 0,
+   "perche": "Dott. La Rosa, presidente della Commissione Elettorale: gilet, occhiali, registro dei timbri",
+   "texture": "gsleader16"
+  },
+  {
+   "gruppo": "personaggi",
+   "simbolo": "SPRITE_TRN_CAMPIONE_ARS_1",
+   "slot": "SPRITE_GSBIGFOUR1",
+   "mmodel": "MMODEL_GSBIGFOUR1",
+   "numero": 154,
+   "file": "files/data/mmodel/mmodel/mmodel_00000154.NSBTX",
+   "chi": "Don Tanino, il Gattopardo della Prima Repubblica",
+   "codice": "M-EN-04",
+   "capelli": "pettinati",
+   "sopra": "giacca",
+   "sotto": "pantaloni",
+   "accessori": [
+    "cravatta",
+    "baffi",
+    "bastone"
+   ],
+   "pancia": 0,
+   "perche": "Don Tanino, il Gattopardo: abito crema, baffi bianchi, bastone",
+   "texture": "gsbigfour1"
+  },
+  {
+   "gruppo": "personaggi",
+   "simbolo": "SPRITE_TRN_CAMPIONE_ARS_2",
+   "slot": "SPRITE_GSBIGFOUR4",
+   "mmodel": "MMODEL_GSBIGFOUR4",
+   "numero": 157,
+   "file": "files/data/mmodel/mmodel/mmodel_00000157.NSBTX",
+   "chi": "L’Assessora Tecnica venuta dal Nord",
+   "codice": "M-EN-04",
+   "capelli": "caschetto",
+   "sopra": "tailleur",
+   "sotto": "pantaloni",
+   "accessori": [
+    "occhiali",
+    "tablet"
+   ],
+   "pancia": 0,
+   "perche": "l’Assessora Tecnica venuta dal Nord: tailleur grigio, caschetto biondo, tablet",
+   "texture": "gsbigfour4"
+  },
+  {
+   "gruppo": "personaggi",
+   "simbolo": "SPRITE_TRN_CAMPIONE_ARS_3",
+   "slot": "SPRITE_GSBIGFOUR2",
+   "mmodel": "MMODEL_GSBIGFOUR2",
+   "numero": 155,
+   "file": "files/data/mmodel/mmodel/mmodel_00000155.NSBTX",
+   "chi": "Il Re delle Liste Civiche e dei Trasformisti",
+   "codice": "M-EN-04",
+   "capelli": "pettinati",
+   "sopra": "giacca",
+   "sotto": "pantaloni",
+   "accessori": [],
+   "pancia": 0,
+   "perche": "il Re delle Liste Civiche e dei Trasformisti: giacca metà blu e metà arancione",
+   "texture": "gsbigfour2"
+  },
+  {
+   "gruppo": "personaggi",
+   "simbolo": "SPRITE_TRN_CAMPIONE_ARS_4",
+   "slot": "SPRITE_GSBIGFOUR3",
+   "mmodel": "MMODEL_GSBIGFOUR3",
+   "numero": 156,
+   "file": "files/data/mmodel/mmodel/mmodel_00000156.NSBTX",
+   "chi": "Il Cardinale delle Opere Pubbliche e dei Rifiuti",
+   "codice": "M-EN-04",
+   "capelli": "riporto",
+   "sopra": "cappotto",
+   "sotto": "pantaloni",
+   "accessori": [
+    "sciarpa",
+    "occhiali"
+   ],
+   "pancia": 1,
+   "perche": "il «Cardinale» delle Opere Pubbliche e dei Rifiuti: cappotto nero e sciarpa porpora",
+   "texture": "gsbigfour3"
+  },
+  {
+   "gruppo": "classi",
+   "simbolo": "SPRITE_TRN_SCAGNOZZU",
+   "slot": "SPRITE_ROCKETM",
+   "mmodel": "MMODEL_ROCKETM",
+   "numero": 174,
+   "file": "files/data/mmodel/mmodel/mmodel_00000174.NSBTX",
+   "chi": "TRAINERCLASS_SCAGNOZZU",
+   "codice": "",
+   "capelli": "rasati",
+   "sopra": "camicia",
+   "sotto": "pantaloni",
+   "accessori": [
+    "auricolare",
+    "occhiali_sole",
+    "collana"
+   ],
+   "pancia": 0,
+   "perche": "buttafuori e scagnozzo: camicia nera, auricolare, occhiali scuri",
+   "texture": "rocketm"
+  },
+  {
+   "gruppo": "classi",
+   "simbolo": "SPRITE_TRN_INFILTRATA",
+   "slot": "SPRITE_ROCKETW",
+   "mmodel": "MMODEL_ROCKETW",
+   "numero": 173,
+   "file": "files/data/mmodel/mmodel/mmodel_00000173.NSBTX",
+   "chi": "TRAINERCLASS_INFILTRATA",
+   "codice": "",
+   "capelli": "coda",
+   "sopra": "giacca",
+   "sotto": "pantaloni",
+   "accessori": [
+    "occhiali_sole",
+    "telefono"
+   ],
+   "pancia": 0,
+   "perche": "giacca nera, coda, telefono: ascolta e riferisce",
+   "texture": "rocketw"
+  },
+  {
+   "gruppo": "classi",
+   "simbolo": "SPRITE_TRN_CAMBIAVOTI",
+   "slot": "SPRITE_RKANBUW",
+   "mmodel": "MMODEL_RKANBUW",
+   "numero": 175,
+   "file": "files/data/mmodel/mmodel/mmodel_00000175.NSBTX",
+   "chi": "TRAINERCLASS_CAMBIAVOTI",
+   "codice": "",
+   "capelli": "cotonati",
+   "sopra": "abito",
+   "sotto": "gonna",
+   "accessori": [
+    "buste",
+    "collana",
+    "rossetto"
+   ],
+   "pancia": 0,
+   "perche": "la capobastone davanti al seggio: abito vistoso, buste coi cinquanta euro",
+   "texture": "rkanbuw"
+  },
+  {
+   "gruppo": "classi",
+   "simbolo": "SPRITE_TRN_CASSIERI",
+   "slot": "SPRITE_RKANBUM",
+   "mmodel": "MMODEL_RKANBUM",
+   "numero": 176,
+   "file": "files/data/mmodel/mmodel/mmodel_00000176.NSBTX",
+   "chi": "TRAINERCLASS_CASSIERI",
+   "codice": "",
+   "capelli": "riporto",
+   "sopra": "giacca",
+   "sotto": "pantaloni",
+   "accessori": [
+    "occhiali",
+    "cravatta",
+    "valigetta"
+   ],
+   "pancia": 0,
+   "perche": "il ragioniere del pizzo: completo grigio, occhiali, valigetta delle buste",
+   "texture": "rkanbum"
+  },
+  {
+   "gruppo": "classi",
+   "simbolo": "SPRITE_TRN_CAPORALI",
+   "slot": "SPRITE_RKANBUM3",
+   "mmodel": "MMODEL_RKANBUM3",
+   "numero": 245,
+   "file": "files/data/mmodel/mmodel/mmodel_00000245.NSBTX",
+   "chi": "TRAINERCLASS_CAPORALI",
+   "codice": "",
+   "capelli": "corti",
+   "sopra": "maglia",
+   "sotto": "pantaloni",
+   "accessori": [
+    "casco",
+    "alta_visibilita",
+    "telefono"
+   ],
+   "pancia": 0,
+   "perche": "capo-cantiere: casco e maglia arancioni con la fascia rifrangente, ricetrasmittente",
+   "texture": "rkanbum3"
+  },
+  {
+   "gruppo": "classi",
+   "simbolo": "SPRITE_TRN_COLLETTU_BIANCU",
+   "slot": "SPRITE_RKANBUM2",
+   "mmodel": "MMODEL_RKANBUM2",
+   "numero": 244,
+   "file": "files/data/mmodel/mmodel/mmodel_00000244.NSBTX",
+   "chi": "TRAINERCLASS_COLLETTU_BIANCU",
+   "codice": "",
+   "capelli": "pettinati",
+   "sopra": "camicia",
+   "sotto": "pantaloni",
+   "accessori": [
+    "cravatta",
+    "tablet"
+   ],
+   "pancia": 0,
+   "perche": "il colletto bianco: camicia bianca, cravatta blu, tablet coi bilanci",
+   "texture": "rkanbum2"
+  },
+  {
+   "gruppo": "classi",
+   "simbolo": "SPRITE_TRN_PORTABORSE",
+   "slot": "SPRITE_GSASSISTANTM",
+   "mmodel": "MMODEL_GSASSISTANTM",
+   "numero": 136,
+   "file": "files/data/mmodel/mmodel/mmodel_00000136.NSBTX",
+   "chi": "TRAINERCLASS_PORTABORSE",
+   "codice": "",
+   "capelli": "corti",
+   "sopra": "giacca",
+   "sotto": "pantaloni",
+   "accessori": [
+    "occhiali",
+    "cravatta",
+    "valigetta"
+   ],
+   "pancia": 0,
+   "perche": "il portaborse: giacca blu, occhiali, la borsa dell’onorevole",
+   "texture": "gsassistantm"
+  },
+  {
+   "gruppo": "classi",
+   "simbolo": "SPRITE_TRN_FIGGHIU_DI_PAPA",
+   "slot": "SPRITE_GORGGEOUSM",
+   "mmodel": "MMODEL_GORGGEOUSM",
+   "numero": 27,
+   "file": "files/data/mmodel/mmodel/mmodel_00000027.NSBTX",
+   "chi": "TRAINERCLASS_FIGGHIU_DI_PAPA",
+   "codice": "",
+   "capelli": "ciuffo",
+   "sopra": "polo",
+   "sotto": "pantaloni",
+   "accessori": [
+    "occhiali_sole",
+    "maglione"
+   ],
+   "pancia": 0,
+   "perche": "polo rosa, maglione sulle spalle, occhiali da sole, mocassini",
+   "texture": "gorggeousm"
+  },
+  {
+   "gruppo": "classi",
+   "simbolo": "SPRITE_TRN_PARCHEGGIATURI",
+   "slot": "SPRITE_BADMAN",
+   "mmodel": "MMODEL_BADMAN",
+   "numero": 36,
+   "file": "files/data/mmodel/mmodel/mmodel_00000036.NSBTX",
+   "chi": "TRAINERCLASS_PARCHEGGIATURI",
+   "codice": "",
+   "capelli": "corti",
+   "sopra": "canotta",
+   "sotto": "pantaloni",
+   "accessori": [
+    "berretto",
+    "borsello",
+    "fischietto"
+   ],
+   "pancia": 0,
+   "perche": "il parcheggiatore abusivo: cappellino, canottiera, borsello a tracolla, fischietto",
+   "texture": "badman"
+  },
+  {
+   "gruppo": "classi",
+   "simbolo": "SPRITE_TRN_ASSESSURI",
+   "slot": "SPRITE_SUIT",
+   "mmodel": "MMODEL_SUIT",
+   "numero": 226,
+   "file": "files/data/mmodel/mmodel/mmodel_00000226.NSBTX",
+   "chi": "TRAINERCLASS_ASSESSURI",
+   "codice": "",
+   "capelli": "pettinati",
+   "sopra": "giacca",
+   "sotto": "pantaloni",
+   "accessori": [
+    "cravatta",
+    "telefono"
+   ],
+   "pancia": 1,
+   "perche": "l’assessore: completo blu, cravatta verde, sempre al telefono",
+   "texture": "suit"
+  },
+  {
+   "gruppo": "classi",
+   "simbolo": "SPRITE_TRN_ZAUDDU",
+   "slot": "SPRITE_GANG",
+   "mmodel": "MMODEL_GANG",
+   "numero": 179,
+   "file": "files/data/mmodel/mmodel/mmodel_00000179.NSBTX",
+   "chi": "TRAINERCLASS_ZAUDDU",
+   "codice": "",
+   "capelli": "rasati",
+   "sopra": "felpa",
+   "sotto": "pantaloni",
+   "accessori": [
+    "berretto_rovescio",
+    "collana"
+   ],
+   "pancia": 0,
+   "perche": "il bulletto: felpa grigia, cappellino al contrario, catenina",
+   "texture": "gang"
+  },
+  {
+   "gruppo": "classi",
+   "simbolo": "SPRITE_TRN_BUDDACI",
+   "slot": "SPRITE_SEAMAN_2",
+   "mmodel": "MMODEL_SEAMAN_2",
+   "numero": 144,
+   "file": "files/data/mmodel/mmodel/mmodel_00000144.NSBTX",
+   "chi": "TRAINERCLASS_BUDDACI",
+   "codice": "",
+   "capelli": "corti",
+   "sopra": "righe",
+   "sotto": "pantaloni",
+   "accessori": [
+    "berretto_lana",
+    "barba"
+   ],
+   "pancia": 1,
+   "perche": "lo spaccone del porto: maglia a righe, berretto di lana, barba",
+   "texture": "seaman"
+  }
+ ],
+ "protagonista": {
+  "schede": {
+   "ragazzo": {
+    "capelli": "pettinati",
+    "sopra": "giacca",
+    "sotto": "pantaloni",
+    "accessori": [
+     "pochette"
+    ],
+    "perche": "giacca blu da laureato LUISS sopra la camicia bianca, pantaloni chiari, pochette rossa",
+    "chi": "Protagonista (ragazzo), 28 anni, Catania «bene» di Corso Italia"
+   },
+   "ragazza": {
+    "capelli": "coda",
+    "sopra": "giacca",
+    "sotto": "pantaloni",
+    "accessori": [
+     "pochette",
+     "rossetto"
+    ],
+    "perche": "stessi vestiti del ragazzo; capelli lunghi raccolti in una coda con l’elastico rosso, rossetto",
+    "chi": "Protagonista (ragazza), 28 anni, Catania «bene» di Corso Italia"
+   }
+  },
+  "sprite": [
+   {
+    "genere": "ragazzo",
+    "mmodel": "MMODEL_HERO",
+    "numero": 69,
+    "file": "files/data/mmodel/mmodel/mmodel_00000069.NSBTX",
+    "tabella": "eroe32",
+    "fotogrammi": 32,
+    "unici": 24,
+    "uso": "cammina e corre",
+    "sprite": [
+     "SPRITE_HERO"
+    ]
+   },
+   {
+    "genere": "ragazzo",
+    "mmodel": "MMODEL_HERO_2",
+    "numero": 213,
+    "file": "files/data/mmodel/mmodel/mmodel_00000213.NSBTX",
+    "tabella": "eroe32",
+    "fotogrammi": 32,
+    "unici": 24,
+    "uso": "seconda copia di HeartGold, stessa tabella",
+    "sprite": [
+     "SPRITE_HERO_2"
+    ]
+   },
+   {
+    "genere": "ragazzo",
+    "mmodel": "MMODEL_CYCLEHERO",
+    "numero": 71,
+    "file": "files/data/mmodel/mmodel/mmodel_00000071.NSBTX",
+    "tabella": "bici24",
+    "fotogrammi": 24,
+    "unici": 22,
+    "uso": "in bicicletta (`SH Scassatu`), salto dai gradini",
+    "sprite": [
+     "SPRITE_CYCLEHERO"
+    ]
+   },
+   {
+    "genere": "ragazzo",
+    "mmodel": "MMODEL_SWIMHERO",
+    "numero": 73,
+    "file": "files/data/mmodel/mmodel/mmodel_00000073.NSBTX",
+    "tabella": "surf4",
+    "fotogrammi": 4,
+    "unici": 4,
+    "uso": "seduto sul Pokémon in `Aliscafu` (Surf)",
+    "sprite": [
+     "SPRITE_SWIMHERO"
+    ]
+   },
+   {
+    "genere": "ragazzo",
+    "mmodel": "MMODEL_FISHINGHERO",
+    "numero": 79,
+    "file": "files/data/mmodel/mmodel/mmodel_00000079.NSBTX",
+    "tabella": "pesca16",
+    "fotogrammi": 16,
+    "unici": 16,
+    "uso": "pesca con le canne",
+    "sprite": [
+     "SPRITE_FISHINGHERO"
+    ]
+   },
+   {
+    "genere": "ragazzo",
+    "mmodel": "MMODEL_LADDERHERO",
+    "numero": 81,
+    "file": "files/data/mmodel/mmodel/mmodel_00000081.NSBTX",
+    "tabella": "scala6",
+    "fotogrammi": 6,
+    "unici": 6,
+    "uso": "sale e scende le scale a pioli",
+    "sprite": [
+     "SPRITE_LADDERHERO"
+    ]
+   },
+   {
+    "genere": "ragazzo",
+    "mmodel": "MMODEL_SAVEHERO",
+    "numero": 87,
+    "file": "files/data/mmodel/mmodel/mmodel_00000087.NSBTX",
+    "tabella": "salva2",
+    "fotogrammi": 2,
+    "unici": 2,
+    "uso": "mentre salva",
+    "sprite": [
+     "SPRITE_SAVEHERO"
+    ]
+   },
+   {
+    "genere": "ragazzo",
+    "mmodel": "MMODEL_BANZAIHERO",
+    "numero": 89,
+    "file": "files/data/mmodel/mmodel/mmodel_00000089.NSBTX",
+    "tabella": "banzai12",
+    "fotogrammi": 12,
+    "unici": 6,
+    "uso": "braccia alzate (adatto al palco di M-EN-07)",
+    "sprite": [
+     "SPRITE_BANZAIHERO"
+    ]
+   },
+   {
+    "genere": "ragazzo",
+    "mmodel": "MMODEL_SHAKEHERO",
+    "numero": 207,
+    "file": "files/data/mmodel/mmodel/mmodel_00000207.NSBTX",
+    "tabella": "spinta8",
+    "fotogrammi": 8,
+    "unici": 8,
+    "uso": "`Bottintesta` sugli alberi",
+    "sprite": [
+     "SPRITE_SHAKEHERO"
+    ]
+   },
+   {
+    "genere": "ragazza",
+    "mmodel": "MMODEL_HEROINE",
+    "numero": 70,
+    "file": "files/data/mmodel/mmodel/mmodel_00000070.NSBTX",
+    "tabella": "eroe32",
+    "fotogrammi": 32,
+    "unici": 24,
+    "uso": "cammina e corre",
+    "sprite": [
+     "SPRITE_HEROINE"
+    ]
+   },
+   {
+    "genere": "ragazza",
+    "mmodel": "MMODEL_HEROINE_2",
+    "numero": 214,
+    "file": "files/data/mmodel/mmodel/mmodel_00000214.NSBTX",
+    "tabella": "eroe32",
+    "fotogrammi": 32,
+    "unici": 24,
+    "uso": "seconda copia di HeartGold, stessa tabella",
+    "sprite": [
+     "SPRITE_HEROINE_2"
+    ]
+   },
+   {
+    "genere": "ragazza",
+    "mmodel": "MMODEL_CYCLEHEROINE",
+    "numero": 72,
+    "file": "files/data/mmodel/mmodel/mmodel_00000072.NSBTX",
+    "tabella": "bici24",
+    "fotogrammi": 24,
+    "unici": 20,
+    "uso": "in bicicletta (`SH Scassatu`), salto dai gradini",
+    "sprite": [
+     "SPRITE_CYCLEHEROINE"
+    ]
+   },
+   {
+    "genere": "ragazza",
+    "mmodel": "MMODEL_SWIMHEROINE",
+    "numero": 74,
+    "file": "files/data/mmodel/mmodel/mmodel_00000074.NSBTX",
+    "tabella": "surf4",
+    "fotogrammi": 4,
+    "unici": 4,
+    "uso": "seduto sul Pokémon in `Aliscafu` (Surf)",
+    "sprite": [
+     "SPRITE_SWIMHEROINE"
+    ]
+   },
+   {
+    "genere": "ragazza",
+    "mmodel": "MMODEL_FISH_HEROINE",
+    "numero": 80,
+    "file": "files/data/mmodel/mmodel/mmodel_00000080.NSBTX",
+    "tabella": "pesca16",
+    "fotogrammi": 16,
+    "unici": 16,
+    "uso": "pesca con le canne",
+    "sprite": [
+     "SPRITE_FISH_HEROINE"
+    ]
+   },
+   {
+    "genere": "ragazza",
+    "mmodel": "MMODEL_LADDERHEROINE",
+    "numero": 82,
+    "file": "files/data/mmodel/mmodel/mmodel_00000082.NSBTX",
+    "tabella": "scala6",
+    "fotogrammi": 6,
+    "unici": 6,
+    "uso": "sale e scende le scale a pioli",
+    "sprite": [
+     "SPRITE_LADDERHEROINE"
+    ]
+   },
+   {
+    "genere": "ragazza",
+    "mmodel": "MMODEL_SAVEHEROINE",
+    "numero": 88,
+    "file": "files/data/mmodel/mmodel/mmodel_00000088.NSBTX",
+    "tabella": "salva2",
+    "fotogrammi": 2,
+    "unici": 2,
+    "uso": "mentre salva",
+    "sprite": [
+     "SPRITE_SAVEHEROINE"
+    ]
+   },
+   {
+    "genere": "ragazza",
+    "mmodel": "MMODEL_BANZAIHEROINE",
+    "numero": 90,
+    "file": "files/data/mmodel/mmodel/mmodel_00000090.NSBTX",
+    "tabella": "banzai12",
+    "fotogrammi": 12,
+    "unici": 6,
+    "uso": "braccia alzate (adatto al palco di M-EN-07)",
+    "sprite": [
+     "SPRITE_BANZAIHEROINE"
+    ]
+   },
+   {
+    "genere": "ragazza",
+    "mmodel": "MMODEL_SHAKEHEROINE",
+    "numero": 208,
+    "file": "files/data/mmodel/mmodel/mmodel_00000208.NSBTX",
+    "tabella": "spinta8",
+    "fotogrammi": 8,
+    "unici": 8,
+    "uso": "`Bottintesta` sugli alberi",
+    "sprite": [
+     "SPRITE_SHAKEHEROINE"
+    ]
+   }
+  ],
+  "restano_di_heartgold": [
+   "MMODEL_RHERO",
+   "MMODEL_RHEROINE",
+   "MMODEL_RBANZAIHERO",
+   "MMODEL_PKTHHERO",
+   "MMODEL_PKTHHEROINE",
+   "MMODEL_STATUEHERO",
+   "MMODEL_STATUEHEROINE",
+   "MMODEL_SAVERHERO",
+   "MMODEL_SAVERHEROINE",
+   "MMODEL_POKEHERO",
+   "MMODEL_POKEHEROINE",
+   "MMODEL_SPHERO",
+   "MMODEL_SPHEROINE",
+   "MMODEL_WATERHERO",
+   "MMODEL_WATERHEROINE"
+  ]
+ },
+ "tabelle_fotogrammi": {
+  "cammina16": {
+   "1": {
+    "dir": "su",
+    "tipo": "fermo",
+    "fase": 0
+   },
+   "2": {
+    "dir": "su",
+    "tipo": "passo",
+    "fase": 0
+   },
+   "3": {
+    "dir": "su",
+    "tipo": "fermo",
+    "fase": 0
+   },
+   "4": {
+    "dir": "su",
+    "tipo": "passo",
+    "fase": 1
+   },
+   "5": {
+    "dir": "giu",
+    "tipo": "fermo",
+    "fase": 0
+   },
+   "6": {
+    "dir": "giu",
+    "tipo": "passo",
+    "fase": 0
+   },
+   "7": {
+    "dir": "giu",
+    "tipo": "fermo",
+    "fase": 0
+   },
+   "8": {
+    "dir": "giu",
+    "tipo": "passo",
+    "fase": 1
+   },
+   "9": {
+    "dir": "sx",
+    "tipo": "fermo",
+    "fase": 0
+   },
+   "10": {
+    "dir": "sx",
+    "tipo": "passo",
+    "fase": 0
+   },
+   "11": {
+    "dir": "sx",
+    "tipo": "fermo",
+    "fase": 0
+   },
+   "12": {
+    "dir": "sx",
+    "tipo": "passo",
+    "fase": 1
+   },
+   "13": {
+    "dir": "dx",
+    "tipo": "fermo",
+    "fase": 0
+   },
+   "14": {
+    "dir": "dx",
+    "tipo": "passo",
+    "fase": 0
+   },
+   "15": {
+    "dir": "dx",
+    "tipo": "fermo",
+    "fase": 0
+   },
+   "16": {
+    "dir": "dx",
+    "tipo": "passo",
+    "fase": 1
+   }
+  },
+  "eroe32": {
+   "1": {
+    "dir": "su",
+    "tipo": "fermo",
+    "fase": 0
+   },
+   "2": {
+    "dir": "su",
+    "tipo": "passo",
+    "fase": 0
+   },
+   "3": {
+    "dir": "su",
+    "tipo": "fermo",
+    "fase": 0
+   },
+   "4": {
+    "dir": "su",
+    "tipo": "passo",
+    "fase": 1
+   },
+   "5": {
+    "dir": "giu",
+    "tipo": "fermo",
+    "fase": 0
+   },
+   "6": {
+    "dir": "giu",
+    "tipo": "passo",
+    "fase": 0
+   },
+   "7": {
+    "dir": "giu",
+    "tipo": "fermo",
+    "fase": 0
+   },
+   "8": {
+    "dir": "giu",
+    "tipo": "passo",
+    "fase": 1
+   },
+   "9": {
+    "dir": "sx",
+    "tipo": "fermo",
+    "fase": 0
+   },
+   "10": {
+    "dir": "sx",
+    "tipo": "passo",
+    "fase": 0
+   },
+   "11": {
+    "dir": "sx",
+    "tipo": "fermo",
+    "fase": 0
+   },
+   "12": {
+    "dir": "sx",
+    "tipo": "passo",
+    "fase": 1
+   },
+   "13": {
+    "dir": "dx",
+    "tipo": "fermo",
+    "fase": 0
+   },
+   "14": {
+    "dir": "dx",
+    "tipo": "passo",
+    "fase": 0
+   },
+   "15": {
+    "dir": "dx",
+    "tipo": "fermo",
+    "fase": 0
+   },
+   "16": {
+    "dir": "dx",
+    "tipo": "passo",
+    "fase": 1
+   },
+   "17": {
+    "dir": "su",
+    "tipo": "corsa_fermo",
+    "fase": 0
+   },
+   "18": {
+    "dir": "su",
+    "tipo": "corsa",
+    "fase": 0
+   },
+   "19": {
+    "dir": "su",
+    "tipo": "corsa_fermo",
+    "fase": 0
+   },
+   "20": {
+    "dir": "su",
+    "tipo": "corsa",
+    "fase": 1
+   },
+   "21": {
+    "dir": "giu",
+    "tipo": "corsa_fermo",
+    "fase": 0
+   },
+   "22": {
+    "dir": "giu",
+    "tipo": "corsa",
+    "fase": 0
+   },
+   "23": {
+    "dir": "giu",
+    "tipo": "corsa_fermo",
+    "fase": 0
+   },
+   "24": {
+    "dir": "giu",
+    "tipo": "corsa",
+    "fase": 1
+   },
+   "25": {
+    "dir": "sx",
+    "tipo": "corsa_fermo",
+    "fase": 0
+   },
+   "26": {
+    "dir": "sx",
+    "tipo": "corsa",
+    "fase": 0
+   },
+   "27": {
+    "dir": "sx",
+    "tipo": "corsa_fermo",
+    "fase": 0
+   },
+   "28": {
+    "dir": "sx",
+    "tipo": "corsa",
+    "fase": 1
+   },
+   "29": {
+    "dir": "dx",
+    "tipo": "corsa_fermo",
+    "fase": 0
+   },
+   "30": {
+    "dir": "dx",
+    "tipo": "corsa",
+    "fase": 0
+   },
+   "31": {
+    "dir": "dx",
+    "tipo": "corsa_fermo",
+    "fase": 0
+   },
+   "32": {
+    "dir": "dx",
+    "tipo": "corsa",
+    "fase": 1
+   }
+  },
+  "bici24": {
+   "1": {
+    "dir": "su",
+    "tipo": "bici",
+    "fase": 0
+   },
+   "2": {
+    "dir": "su",
+    "tipo": "bici",
+    "fase": 1
+   },
+   "3": {
+    "dir": "su",
+    "tipo": "bici",
+    "fase": 0
+   },
+   "4": {
+    "dir": "su",
+    "tipo": "bici",
+    "fase": 2
+   },
+   "5": {
+    "dir": "giu",
+    "tipo": "bici",
+    "fase": 0
+   },
+   "6": {
+    "dir": "giu",
+    "tipo": "bici",
+    "fase": 1
+   },
+   "7": {
+    "dir": "giu",
+    "tipo": "bici",
+    "fase": 0
+   },
+   "8": {
+    "dir": "giu",
+    "tipo": "bici",
+    "fase": 2
+   },
+   "9": {
+    "dir": "sx",
+    "tipo": "bici",
+    "fase": 0
+   },
+   "10": {
+    "dir": "sx",
+    "tipo": "bici",
+    "fase": 1
+   },
+   "11": {
+    "dir": "sx",
+    "tipo": "bici",
+    "fase": 0
+   },
+   "12": {
+    "dir": "sx",
+    "tipo": "bici",
+    "fase": 2
+   },
+   "13": {
+    "dir": "dx",
+    "tipo": "bici",
+    "fase": 0
+   },
+   "14": {
+    "dir": "dx",
+    "tipo": "bici",
+    "fase": 1
+   },
+   "15": {
+    "dir": "dx",
+    "tipo": "bici",
+    "fase": 0
+   },
+   "16": {
+    "dir": "dx",
+    "tipo": "bici",
+    "fase": 2
+   },
+   "17": {
+    "dir": "sx",
+    "tipo": "bici_salto",
+    "fase": 0
+   },
+   "18": {
+    "dir": "sx",
+    "tipo": "bici_salto",
+    "fase": 1
+   },
+   "19": {
+    "dir": "dx",
+    "tipo": "bici_salto",
+    "fase": 0
+   },
+   "20": {
+    "dir": "dx",
+    "tipo": "bici_salto",
+    "fase": 1
+   },
+   "21": {
+    "dir": "su",
+    "tipo": "bici_salto",
+    "fase": 0
+   },
+   "22": {
+    "dir": "giu",
+    "tipo": "bici_salto",
+    "fase": 0
+   },
+   "23": {
+    "dir": "giu",
+    "tipo": "bici_salto",
+    "fase": 1
+   },
+   "24": {
+    "dir": "su",
+    "tipo": "bici_salto",
+    "fase": 1
+   }
+  },
+  "surf4": {
+   "1": {
+    "dir": "su",
+    "tipo": "surf",
+    "fase": 0
+   },
+   "2": {
+    "dir": "giu",
+    "tipo": "surf",
+    "fase": 0
+   },
+   "3": {
+    "dir": "sx",
+    "tipo": "surf",
+    "fase": 0
+   },
+   "4": {
+    "dir": "dx",
+    "tipo": "surf",
+    "fase": 0
+   }
+  },
+  "pesca16": {
+   "1": {
+    "dir": "su",
+    "tipo": "pesca",
+    "fase": 0
+   },
+   "2": {
+    "dir": "su",
+    "tipo": "pesca",
+    "fase": 1
+   },
+   "3": {
+    "dir": "su",
+    "tipo": "pesca",
+    "fase": 2
+   },
+   "4": {
+    "dir": "su",
+    "tipo": "pesca",
+    "fase": 3
+   },
+   "5": {
+    "dir": "giu",
+    "tipo": "pesca",
+    "fase": 0
+   },
+   "6": {
+    "dir": "giu",
+    "tipo": "pesca",
+    "fase": 1
+   },
+   "7": {
+    "dir": "giu",
+    "tipo": "pesca",
+    "fase": 2
+   },
+   "8": {
+    "dir": "giu",
+    "tipo": "pesca",
+    "fase": 3
+   },
+   "9": {
+    "dir": "sx",
+    "tipo": "pesca",
+    "fase": 0
+   },
+   "10": {
+    "dir": "sx",
+    "tipo": "pesca",
+    "fase": 1
+   },
+   "11": {
+    "dir": "sx",
+    "tipo": "pesca",
+    "fase": 2
+   },
+   "12": {
+    "dir": "sx",
+    "tipo": "pesca",
+    "fase": 3
+   },
+   "13": {
+    "dir": "dx",
+    "tipo": "pesca",
+    "fase": 0
+   },
+   "14": {
+    "dir": "dx",
+    "tipo": "pesca",
+    "fase": 1
+   },
+   "15": {
+    "dir": "dx",
+    "tipo": "pesca",
+    "fase": 2
+   },
+   "16": {
+    "dir": "dx",
+    "tipo": "pesca",
+    "fase": 3
+   }
+  },
+  "scala6": {
+   "1": {
+    "dir": "su",
+    "tipo": "scala",
+    "fase": 0
+   },
+   "2": {
+    "dir": "su",
+    "tipo": "scala",
+    "fase": 1
+   },
+   "3": {
+    "dir": "su",
+    "tipo": "scala",
+    "fase": 2
+   },
+   "4": {
+    "dir": "giu",
+    "tipo": "scala",
+    "fase": 0
+   },
+   "5": {
+    "dir": "giu",
+    "tipo": "scala",
+    "fase": 1
+   },
+   "6": {
+    "dir": "giu",
+    "tipo": "scala",
+    "fase": 2
+   }
+  },
+  "salva2": {
+   "1": {
+    "dir": "giu",
+    "tipo": "salva",
+    "fase": 0
+   },
+   "2": {
+    "dir": "giu",
+    "tipo": "salva",
+    "fase": 1
+   }
+  },
+  "banzai12": {
+   "1": {
+    "dir": "sx",
+    "tipo": "fermo",
+    "fase": 0
+   },
+   "2": {
+    "dir": "sx",
+    "tipo": "banzai",
+    "fase": 1
+   },
+   "3": {
+    "dir": "su",
+    "tipo": "banzai",
+    "fase": 0
+   },
+   "4": {
+    "dir": "su",
+    "tipo": "banzai",
+    "fase": 1
+   },
+   "5": {
+    "dir": "su",
+    "tipo": "banzai",
+    "fase": 3
+   },
+   "6": {
+    "dir": "su",
+    "tipo": "banzai",
+    "fase": 2
+   },
+   "7": {
+    "dir": "su",
+    "tipo": "banzai",
+    "fase": 3
+   },
+   "8": {
+    "dir": "su",
+    "tipo": "banzai",
+    "fase": 1
+   },
+   "9": {
+    "dir": "su",
+    "tipo": "banzai",
+    "fase": 0
+   },
+   "10": {
+    "dir": "sx",
+    "tipo": "banzai",
+    "fase": 1
+   },
+   "11": {
+    "dir": "sx",
+    "tipo": "fermo",
+    "fase": 0
+   },
+   "12": {
+    "dir": "su",
+    "tipo": "banzai",
+    "fase": 2
+   }
+  },
+  "spinta8": {
+   "1": {
+    "dir": "su",
+    "tipo": "spinta",
+    "fase": 0
+   },
+   "2": {
+    "dir": "su",
+    "tipo": "spinta",
+    "fase": 1
+   },
+   "3": {
+    "dir": "giu",
+    "tipo": "spinta",
+    "fase": 0
+   },
+   "4": {
+    "dir": "giu",
+    "tipo": "spinta",
+    "fase": 1
+   },
+   "5": {
+    "dir": "sx",
+    "tipo": "spinta",
+    "fase": 0
+   },
+   "6": {
+    "dir": "sx",
+    "tipo": "spinta",
+    "fase": 1
+   },
+   "7": {
+    "dir": "dx",
+    "tipo": "spinta",
+    "fase": 0
+   },
+   "8": {
+    "dir": "dx",
+    "tipo": "spinta",
+    "fase": 1
+   }
+  }
+ },
+ "file": [
+  {
+   "destinazione": "files/data/mmodel/mmodel/mmodel_00000065.NSBTX",
+   "sorgente": "file/files/data/mmodel/mmodel/mmodel_00000065.NSBTX",
+   "sha1_hg": "9acd8e18e97a08b5abcb508a6a61db211d626f2c",
+   "sha1_nuovo": "bcd31e9604bd3fe54bf4e47b16a0bf3f5e4e7f01",
+   "byte": 6760,
+   "nota": "SPRITE_TRN_TURI (Turi (C-01))"
+  },
+  {
+   "destinazione": "files/data/mmodel/mmodel/mmodel_00000063.NSBTX",
+   "sorgente": "file/files/data/mmodel/mmodel/mmodel_00000063.NSBTX",
+   "sha1_hg": "51a9688a10111752ca247b052250e4536f1d3a61",
+   "sha1_nuovo": "4bafc6b400d8dda341faa1ecc466eecb517a09ab",
+   "byte": 6760,
+   "nota": "SPRITE_TRN_ORAZIO (Orazio (C-02))"
+  },
+  {
+   "destinazione": "files/data/mmodel/mmodel/mmodel_00000187.NSBTX",
+   "sorgente": "file/files/data/mmodel/mmodel/mmodel_00000187.NSBTX",
+   "sha1_hg": "d6add91b8f3ca8263ee94de6e703fe15b959df4b",
+   "sha1_nuovo": "8b889fce62586d3deb23465b957f953b7aa8aed4",
+   "byte": 6760,
+   "nota": "SPRITE_TRN_CHRISTIAN (Christian (C-03))"
+  },
+  {
+   "destinazione": "files/data/mmodel/mmodel/mmodel_00000064.NSBTX",
+   "sorgente": "file/files/data/mmodel/mmodel/mmodel_00000064.NSBTX",
+   "sha1_hg": "2d7e29e2121db1a14a81e038dd26deb0df0fac3f",
+   "sha1_nuovo": "be5516519ee864563958af235db474dbd27cb054",
+   "byte": 6760,
+   "nota": "SPRITE_TRN_CHANTAL (Chantal (C-04))"
+  },
+  {
+   "destinazione": "files/data/mmodel/mmodel/mmodel_00000062.NSBTX",
+   "sorgente": "file/files/data/mmodel/mmodel/mmodel_00000062.NSBTX",
+   "sha1_hg": "121f2514803fa35cdf95df9a3bc1d80d0597f554",
+   "sha1_nuovo": "3845e0fbd6155481236670dc0cb999062344b0d2",
+   "byte": 6760,
+   "nota": "SPRITE_TRN_MARIA (Maria (C-05, anche P-02))"
+  },
+  {
+   "destinazione": "files/data/mmodel/mmodel/mmodel_00000059.NSBTX",
+   "sorgente": "file/files/data/mmodel/mmodel/mmodel_00000059.NSBTX",
+   "sha1_hg": "a5ddf948221dd2429b013ff4adf5f4e6ba350597",
+   "sha1_nuovo": "00288a3df80e8c8de1616591f78a7c93690555d5",
+   "byte": 6760,
+   "nota": "SPRITE_TRN_TOTO (Totò (C-06))"
+  },
+  {
+   "destinazione": "files/data/mmodel/mmodel/mmodel_00000223.NSBTX",
+   "sorgente": "file/files/data/mmodel/mmodel/mmodel_00000223.NSBTX",
+   "sha1_hg": "2cea422634de61bacfd21f9b8e3e8f5b47f29cae",
+   "sha1_nuovo": "35cb0398dda689c72862173f70780f82ae9ad8b8",
+   "byte": 6760,
+   "nota": "SPRITE_TRN_CALOGERO (Calogero (C-07))"
+  },
+  {
+   "destinazione": "files/data/mmodel/mmodel/mmodel_00000066.NSBTX",
+   "sorgente": "file/files/data/mmodel/mmodel/mmodel_00000066.NSBTX",
+   "sha1_hg": "615d0c1acffe5a24a749db2674f4d03c21bb2a93",
+   "sha1_nuovo": "27d42656759572d981091e98f6a48ee47dd968b0",
+   "byte": 8296,
+   "nota": "SPRITE_TRN_PIPPO (Pippo (C-08))"
+  },
+  {
+   "destinazione": "files/data/mmodel/mmodel/mmodel_00000159.NSBTX",
+   "sorgente": "file/files/data/mmodel/mmodel/mmodel_00000159.NSBTX",
+   "sha1_hg": "3acc84d0ae4c351b588aa4d6cbcf86f5fd11fde4",
+   "sha1_nuovo": "64f3c20dcb187abaece1971a588665c7d00dbb15",
+   "byte": 6760,
+   "nota": "SPRITE_TRN_GRAZIELLA (Graziella, la madre del protagonista)"
+  },
+  {
+   "destinazione": "files/data/mmodel/mmodel/mmodel_00000160.NSBTX",
+   "sorgente": "file/files/data/mmodel/mmodel/mmodel_00000160.NSBTX",
+   "sha1_hg": "e8f804da0b51eaf2c9feb00b788665c09e2de5b0",
+   "sha1_nuovo": "f3ba2ff1fa148da0f37eacdedba72c87ef15e7b2",
+   "byte": 6760,
+   "nota": "SPRITE_TRN_PROF_STRANO (Prof. Alfio Strano (Atlante Biopolitico))"
+  },
+  {
+   "destinazione": "files/data/mmodel/mmodel/mmodel_00000181.NSBTX",
+   "sorgente": "file/files/data/mmodel/mmodel/mmodel_00000181.NSBTX",
+   "sha1_hg": "f8c21d68a1584e900cf439879c3662effbe2c2f0",
+   "sha1_nuovo": "75682be6d6d47c4c70c254167f71c0519e77de31",
+   "byte": 6760,
+   "nota": "SPRITE_TRN_NUNZIO (Nunzio, fratello di Orazio)"
+  },
+  {
+   "destinazione": "files/data/mmodel/mmodel/mmodel_00000158.NSBTX",
+   "sorgente": "file/files/data/mmodel/mmodel/mmodel_00000158.NSBTX",
+   "sha1_hg": "f3d77e808309643e59cf10e686e64ef3c5acadfa",
+   "sha1_nuovo": "ea5633efeffe04a41f6970f66a66fa0fa3de4011",
+   "byte": 6760,
+   "nota": "SPRITE_TRN_MISTRETTA (On. Raffaele «Don Lollò» Mistretta)"
+  },
+  {
+   "destinazione": "files/data/mmodel/mmodel/mmodel_00000225.NSBTX",
+   "sorgente": "file/files/data/mmodel/mmodel/mmodel_00000225.NSBTX",
+   "sha1_hg": "7ff1a66f6dfe5cd704aad25912358990cf32a0fc",
+   "sha1_nuovo": "8d9c06c68d7679bc595a371585cb8eaa11002b55",
+   "byte": 6760,
+   "nota": "SPRITE_TRN_FANTASMA (i 4 Fantasmi della Prima Repubblica (stesso sprite))"
+  },
+  {
+   "destinazione": "files/data/mmodel/mmodel/mmodel_00000146.NSBTX",
+   "sorgente": "file/files/data/mmodel/mmodel/mmodel_00000146.NSBTX",
+   "sha1_hg": "89996c07a13f279bf3a15c53353879cca509e68d",
+   "sha1_nuovo": "acbd54f56f81c01bad1329e71db9543fd9567a90",
+   "byte": 6760,
+   "nota": "SPRITE_TRN_SEGRETARIO_CT (Dott. Ignazio Calì, Segretario di CT)"
+  },
+  {
+   "destinazione": "files/data/mmodel/mmodel/mmodel_00000147.NSBTX",
+   "sorgente": "file/files/data/mmodel/mmodel/mmodel_00000147.NSBTX",
+   "sha1_hg": "8bd08872b27f419a4f8541dc91e9980273db4e5d",
+   "sha1_nuovo": "db1db6f565fd7e46666ee03ddfbb9e43dfa7054a",
+   "byte": 6760,
+   "nota": "SPRITE_TRN_SEGRETARIO_SR (Comm. Corrado Spataro, Segretario di SR)"
+  },
+  {
+   "destinazione": "files/data/mmodel/mmodel/mmodel_00000148.NSBTX",
+   "sorgente": "file/files/data/mmodel/mmodel/mmodel_00000148.NSBTX",
+   "sha1_hg": "62a3b4fcf2b27ad08377faed078a3419b6e098fd",
+   "sha1_nuovo": "2b10360fcb6ca2cc7189efc4084d93dca2efe5dd",
+   "byte": 6760,
+   "nota": "SPRITE_TRN_SEGRETARIO_RG (Cav. Biagio Occhipinti, Segretario di RG)"
+  },
+  {
+   "destinazione": "files/data/mmodel/mmodel/mmodel_00000149.NSBTX",
+   "sorgente": "file/files/data/mmodel/mmodel/mmodel_00000149.NSBTX",
+   "sha1_hg": "60c58188660407ce55ae60fb14e5f90c2a554417",
+   "sha1_nuovo": "98ff932241650514fe0c5561ccf340442a2f42cd",
+   "byte": 6760,
+   "nota": "SPRITE_TRN_SEGRETARIO_CL (Ing. Calogero Lo Monaco, Segretario di CL)"
+  },
+  {
+   "destinazione": "files/data/mmodel/mmodel/mmodel_00000150.NSBTX",
+   "sorgente": "file/files/data/mmodel/mmodel/mmodel_00000150.NSBTX",
+   "sha1_hg": "d9265a03ea54f51cb217f5dd3ce54b99f6ef89a0",
+   "sha1_nuovo": "c1a85f1781e7275ca5fd6b58f1353e257f74d523",
+   "byte": 6760,
+   "nota": "SPRITE_TRN_SEGRETARIO_AG (Geom. Gerlando Iacono, Segretario di AG)"
+  },
+  {
+   "destinazione": "files/data/mmodel/mmodel/mmodel_00000151.NSBTX",
+   "sorgente": "file/files/data/mmodel/mmodel/mmodel_00000151.NSBTX",
+   "sha1_hg": "dc71d4dea83a13c82ec31055b821c6854b737895",
+   "sha1_nuovo": "ad503b71921461f1768a673fab9bf7f6333b226d",
+   "byte": 6760,
+   "nota": "SPRITE_TRN_SEGRETARIO_TP (Avv. Vito Asaro, Segretario di TP)"
+  },
+  {
+   "destinazione": "files/data/mmodel/mmodel/mmodel_00000152.NSBTX",
+   "sorgente": "file/files/data/mmodel/mmodel/mmodel_00000152.NSBTX",
+   "sha1_hg": "186b07952729ce145a0ff23cc08dfca4f8b1e38a",
+   "sha1_nuovo": "6f794abb0199964816415bf859148612fbca5227",
+   "byte": 6760,
+   "nota": "SPRITE_TRN_SEGRETARIO_ME (Dott. Natale Sturiale, Segretario di ME)"
+  },
+  {
+   "destinazione": "files/data/mmodel/mmodel/mmodel_00000153.NSBTX",
+   "sorgente": "file/files/data/mmodel/mmodel/mmodel_00000153.NSBTX",
+   "sha1_hg": "e4633aa3ba443fa735ca3493ef97616de86eb172",
+   "sha1_nuovo": "b181951697271071cba4bf56d6022ea877d9f322",
+   "byte": 6760,
+   "nota": "SPRITE_TRN_SEGRETARIO_PA (On. Totò Scaduto, Segretario di PA)"
+  },
+  {
+   "destinazione": "files/data/mmodel/mmodel/mmodel_00000169.NSBTX",
+   "sorgente": "file/files/data/mmodel/mmodel/mmodel_00000169.NSBTX",
+   "sha1_hg": "fde553c704df68f5dd6a014390b239f181faa9fe",
+   "sha1_nuovo": "f914bb1647e31eafbac02c3d5d217e26a3c6a044",
+   "byte": 6760,
+   "nota": "SPRITE_TRN_SEGRETARIO_EN (Dott. Filippo La Rosa, Segretario di EN)"
+  },
+  {
+   "destinazione": "files/data/mmodel/mmodel/mmodel_00000154.NSBTX",
+   "sorgente": "file/files/data/mmodel/mmodel/mmodel_00000154.NSBTX",
+   "sha1_hg": "752c5266cafe616309d93aff6bf2b7c3fd2a29d8",
+   "sha1_nuovo": "35d435e07e836cfc899d4b41a6d3825c808ae508",
+   "byte": 6760,
+   "nota": "SPRITE_TRN_CAMPIONE_ARS_1 (Don Tanino, il Gattopardo della Prima Repubblica)"
+  },
+  {
+   "destinazione": "files/data/mmodel/mmodel/mmodel_00000157.NSBTX",
+   "sorgente": "file/files/data/mmodel/mmodel/mmodel_00000157.NSBTX",
+   "sha1_hg": "b84a22b1ac3af05d4e36b070c5dbcc3579e8c3cb",
+   "sha1_nuovo": "d31c32b1b1a4a9bece9d84231ad8ac9567ba090e",
+   "byte": 6760,
+   "nota": "SPRITE_TRN_CAMPIONE_ARS_2 (L’Assessora Tecnica venuta dal Nord)"
+  },
+  {
+   "destinazione": "files/data/mmodel/mmodel/mmodel_00000155.NSBTX",
+   "sorgente": "file/files/data/mmodel/mmodel/mmodel_00000155.NSBTX",
+   "sha1_hg": "9b6ef4476ddbe47d41b77bef8c41ec278f38f766",
+   "sha1_nuovo": "812f7651c8d91656dc60927758c08439ac1ec4d2",
+   "byte": 6760,
+   "nota": "SPRITE_TRN_CAMPIONE_ARS_3 (Il Re delle Liste Civiche e dei Trasformisti)"
+  },
+  {
+   "destinazione": "files/data/mmodel/mmodel/mmodel_00000156.NSBTX",
+   "sorgente": "file/files/data/mmodel/mmodel/mmodel_00000156.NSBTX",
+   "sha1_hg": "0d1797bb2bfd3a2e82b53287b838babcf8db0b23",
+   "sha1_nuovo": "8b999b0e8d1878a8a704638bbea15ebdb350d939",
+   "byte": 6760,
+   "nota": "SPRITE_TRN_CAMPIONE_ARS_4 (Il Cardinale delle Opere Pubbliche e dei Rifiuti)"
+  },
+  {
+   "destinazione": "files/data/mmodel/mmodel/mmodel_00000174.NSBTX",
+   "sorgente": "file/files/data/mmodel/mmodel/mmodel_00000174.NSBTX",
+   "sha1_hg": "c0bb9031fa54f244385189df23646a575cf33039",
+   "sha1_nuovo": "692dd0689b0fe1aa94ff53ca61d4218c693e6d90",
+   "byte": 6760,
+   "nota": "SPRITE_TRN_SCAGNOZZU (TRAINERCLASS_SCAGNOZZU)"
+  },
+  {
+   "destinazione": "files/data/mmodel/mmodel/mmodel_00000173.NSBTX",
+   "sorgente": "file/files/data/mmodel/mmodel/mmodel_00000173.NSBTX",
+   "sha1_hg": "1ae31321726db4cf8b2cc1d3203572ea761e7ef2",
+   "sha1_nuovo": "32b94ddc49d2d1b9a53572e0b13ca5bd168429ed",
+   "byte": 6760,
+   "nota": "SPRITE_TRN_INFILTRATA (TRAINERCLASS_INFILTRATA)"
+  },
+  {
+   "destinazione": "files/data/mmodel/mmodel/mmodel_00000175.NSBTX",
+   "sorgente": "file/files/data/mmodel/mmodel/mmodel_00000175.NSBTX",
+   "sha1_hg": "6a9e371b307d19280f6531a92073f14323b2b616",
+   "sha1_nuovo": "c6b8121f05003b44b668b2f0682816151a88693c",
+   "byte": 6760,
+   "nota": "SPRITE_TRN_CAMBIAVOTI (TRAINERCLASS_CAMBIAVOTI)"
+  },
+  {
+   "destinazione": "files/data/mmodel/mmodel/mmodel_00000176.NSBTX",
+   "sorgente": "file/files/data/mmodel/mmodel/mmodel_00000176.NSBTX",
+   "sha1_hg": "fd6e3b23a45eb8903e4b715495ac1512927580be",
+   "sha1_nuovo": "1ad6097fd7e2318c0e63348c1892b11024b34fb2",
+   "byte": 6760,
+   "nota": "SPRITE_TRN_CASSIERI (TRAINERCLASS_CASSIERI)"
+  },
+  {
+   "destinazione": "files/data/mmodel/mmodel/mmodel_00000245.NSBTX",
+   "sorgente": "file/files/data/mmodel/mmodel/mmodel_00000245.NSBTX",
+   "sha1_hg": "8b731488a572b60777076fdedc51a25d209e8b97",
+   "sha1_nuovo": "e8477106ae70b9e95471b4dd2ec52d247e021fb5",
+   "byte": 6760,
+   "nota": "SPRITE_TRN_CAPORALI (TRAINERCLASS_CAPORALI)"
+  },
+  {
+   "destinazione": "files/data/mmodel/mmodel/mmodel_00000244.NSBTX",
+   "sorgente": "file/files/data/mmodel/mmodel/mmodel_00000244.NSBTX",
+   "sha1_hg": "00bf0bbdf07c0f65872bc8e8e7271d34abf2ae46",
+   "sha1_nuovo": "6ebd4abb340f357565e1f57bfa1c38cf4dbbeb16",
+   "byte": 6760,
+   "nota": "SPRITE_TRN_COLLETTU_BIANCU (TRAINERCLASS_COLLETTU_BIANCU)"
+  },
+  {
+   "destinazione": "files/data/mmodel/mmodel/mmodel_00000136.NSBTX",
+   "sorgente": "file/files/data/mmodel/mmodel/mmodel_00000136.NSBTX",
+   "sha1_hg": "39f661009baedc0d4bc73605f880bbca3be32017",
+   "sha1_nuovo": "18a274f92af8115e3148b87f4111577716647f9a",
+   "byte": 6760,
+   "nota": "SPRITE_TRN_PORTABORSE (TRAINERCLASS_PORTABORSE)"
+  },
+  {
+   "destinazione": "files/data/mmodel/mmodel/mmodel_00000027.NSBTX",
+   "sorgente": "file/files/data/mmodel/mmodel/mmodel_00000027.NSBTX",
+   "sha1_hg": "9f3f4cc4ed6c83394b44ea226eca309e004407bc",
+   "sha1_nuovo": "9856838d918a3fd858f9e047d269d4d80084077b",
+   "byte": 6760,
+   "nota": "SPRITE_TRN_FIGGHIU_DI_PAPA (TRAINERCLASS_FIGGHIU_DI_PAPA)"
+  },
+  {
+   "destinazione": "files/data/mmodel/mmodel/mmodel_00000036.NSBTX",
+   "sorgente": "file/files/data/mmodel/mmodel/mmodel_00000036.NSBTX",
+   "sha1_hg": "9884ad842a6616c4458b9495b951a97656849bb2",
+   "sha1_nuovo": "cf9938985ad5fc82425e3c6805c2bb0149dd53cc",
+   "byte": 6760,
+   "nota": "SPRITE_TRN_PARCHEGGIATURI (TRAINERCLASS_PARCHEGGIATURI)"
+  },
+  {
+   "destinazione": "files/data/mmodel/mmodel/mmodel_00000226.NSBTX",
+   "sorgente": "file/files/data/mmodel/mmodel/mmodel_00000226.NSBTX",
+   "sha1_hg": "d289b350a2327f23a93ebbee5e0d32e681261422",
+   "sha1_nuovo": "a03666fe9f7fa18ff4fcf87b68c2f2c10151f98f",
+   "byte": 6760,
+   "nota": "SPRITE_TRN_ASSESSURI (TRAINERCLASS_ASSESSURI)"
+  },
+  {
+   "destinazione": "files/data/mmodel/mmodel/mmodel_00000179.NSBTX",
+   "sorgente": "file/files/data/mmodel/mmodel/mmodel_00000179.NSBTX",
+   "sha1_hg": "ba47f6c5ef3fc1b7f8dd7152a6cb1a02e6d4821a",
+   "sha1_nuovo": "f57c12dcf493f6274f302305e736ccc70c63466c",
+   "byte": 6760,
+   "nota": "SPRITE_TRN_ZAUDDU (TRAINERCLASS_ZAUDDU)"
+  },
+  {
+   "destinazione": "files/data/mmodel/mmodel/mmodel_00000144.NSBTX",
+   "sorgente": "file/files/data/mmodel/mmodel/mmodel_00000144.NSBTX",
+   "sha1_hg": "6a9f24d15d49f2b751044fd21945b43f21bbae79",
+   "sha1_nuovo": "76a94dcbd90f83f379916d4984b90f5980ba4e7b",
+   "byte": 6760,
+   "nota": "SPRITE_TRN_BUDDACI (TRAINERCLASS_BUDDACI)"
+  },
+  {
+   "destinazione": "files/data/mmodel/mmodel/mmodel_00000069.NSBTX",
+   "sorgente": "file/files/data/mmodel/mmodel/mmodel_00000069.NSBTX",
+   "sha1_hg": "9e277081f9abfbe75700cc08d05bd61efcdff9d2",
+   "sha1_nuovo": "961434fcf50654b0bfda23de796bc72803cc9e54",
+   "byte": 13352,
+   "nota": "protagonista (ragazzo): cammina e corre"
+  },
+  {
+   "destinazione": "files/data/mmodel/mmodel/mmodel_00000213.NSBTX",
+   "sorgente": "file/files/data/mmodel/mmodel/mmodel_00000213.NSBTX",
+   "sha1_hg": "3c68debdba16458fa20684b1bab57ca255bd1f76",
+   "sha1_nuovo": "961434fcf50654b0bfda23de796bc72803cc9e54",
+   "byte": 13352,
+   "nota": "protagonista (ragazzo): seconda copia di HeartGold, stessa tabella"
+  },
+  {
+   "destinazione": "files/data/mmodel/mmodel/mmodel_00000071.NSBTX",
+   "sorgente": "file/files/data/mmodel/mmodel/mmodel_00000071.NSBTX",
+   "sha1_hg": "ce3001c0e08f9137576f7da6b83d7986ea2ba96f",
+   "sha1_nuovo": "df78ea949f30a8cbf43fd8a3cb598ca344aeadd6",
+   "byte": 12104,
+   "nota": "protagonista (ragazzo): in bicicletta (`SH Scassatu`), salto dai gradini"
+  },
+  {
+   "destinazione": "files/data/mmodel/mmodel/mmodel_00000073.NSBTX",
+   "sorgente": "file/files/data/mmodel/mmodel/mmodel_00000073.NSBTX",
+   "sha1_hg": "ba815bf7d94cea5cb145ad450e5f992b068646aa",
+   "sha1_nuovo": "7dd97a62e948e1065da6fb19fbaa1816f8a40640",
+   "byte": 2328,
+   "nota": "protagonista (ragazzo): seduto sul Pokémon in `Aliscafu` (Surf)"
+  },
+  {
+   "destinazione": "files/data/mmodel/mmodel/mmodel_00000079.NSBTX",
+   "sorgente": "file/files/data/mmodel/mmodel/mmodel_00000079.NSBTX",
+   "sha1_hg": "157b0f88c66dcd9d60235826b0403d49fd79372e",
+   "sha1_nuovo": "af122f27fa141b58300bbb1e80b3dc54ecb57646",
+   "byte": 8808,
+   "nota": "protagonista (ragazzo): pesca con le canne"
+  },
+  {
+   "destinazione": "files/data/mmodel/mmodel/mmodel_00000081.NSBTX",
+   "sorgente": "file/files/data/mmodel/mmodel/mmodel_00000081.NSBTX",
+   "sha1_hg": "e034b5b9edb4d1e8def412f3bd3e37b98090f4cd",
+   "sha1_nuovo": "00101858fb4110eabc0c3928633a3de2041f1615",
+   "byte": 3408,
+   "nota": "protagonista (ragazzo): sale e scende le scale a pioli"
+  },
+  {
+   "destinazione": "files/data/mmodel/mmodel/mmodel_00000087.NSBTX",
+   "sorgente": "file/files/data/mmodel/mmodel/mmodel_00000087.NSBTX",
+   "sha1_hg": "fb14aabf051155055baf59388326db9dff1521c2",
+   "sha1_nuovo": "c7a4d10cdaa5d9168328e9ca760421bf7bfe2e78",
+   "byte": 1248,
+   "nota": "protagonista (ragazzo): mentre salva"
+  },
+  {
+   "destinazione": "files/data/mmodel/mmodel/mmodel_00000089.NSBTX",
+   "sorgente": "file/files/data/mmodel/mmodel/mmodel_00000089.NSBTX",
+   "sha1_hg": "aefed6eff6b9e403776be83c001d43ec6f57b559",
+   "sha1_nuovo": "38d8ede6a034a9859ccbdf20f5214b30747fb7c8",
+   "byte": 3576,
+   "nota": "protagonista (ragazzo): braccia alzate (adatto al palco di M-EN-07)"
+  },
+  {
+   "destinazione": "files/data/mmodel/mmodel/mmodel_00000207.NSBTX",
+   "sorgente": "file/files/data/mmodel/mmodel/mmodel_00000207.NSBTX",
+   "sha1_hg": "d819b870dd151b9a72219a85d97de65b9ae2bef8",
+   "sha1_nuovo": "7f3d5a0850280ebb2bc6255d2b7f8093b26cbc64",
+   "byte": 4488,
+   "nota": "protagonista (ragazzo): `Bottintesta` sugli alberi"
+  },
+  {
+   "destinazione": "files/data/mmodel/mmodel/mmodel_00000070.NSBTX",
+   "sorgente": "file/files/data/mmodel/mmodel/mmodel_00000070.NSBTX",
+   "sha1_hg": "55918f6004ace1e26772fe042c27719e3543a460",
+   "sha1_nuovo": "ec8f130d60878426ff9a116e3e019cabd2f3bd2b",
+   "byte": 13352,
+   "nota": "protagonista (ragazza): cammina e corre"
+  },
+  {
+   "destinazione": "files/data/mmodel/mmodel/mmodel_00000214.NSBTX",
+   "sorgente": "file/files/data/mmodel/mmodel/mmodel_00000214.NSBTX",
+   "sha1_hg": "c6b80cfba1d3dbd907cbdd72f3276957ca02a8d3",
+   "sha1_nuovo": "ec8f130d60878426ff9a116e3e019cabd2f3bd2b",
+   "byte": 13352,
+   "nota": "protagonista (ragazza): seconda copia di HeartGold, stessa tabella"
+  },
+  {
+   "destinazione": "files/data/mmodel/mmodel/mmodel_00000072.NSBTX",
+   "sorgente": "file/files/data/mmodel/mmodel/mmodel_00000072.NSBTX",
+   "sha1_hg": "2a2e3267cbb0bd0e6f8ee43e66710076989c492e",
+   "sha1_nuovo": "1c7338168cfed5a9a23dd2c5527014c9afa24cd4",
+   "byte": 11080,
+   "nota": "protagonista (ragazza): in bicicletta (`SH Scassatu`), salto dai gradini"
+  },
+  {
+   "destinazione": "files/data/mmodel/mmodel/mmodel_00000074.NSBTX",
+   "sorgente": "file/files/data/mmodel/mmodel/mmodel_00000074.NSBTX",
+   "sha1_hg": "a2e005fedd5a8e4261a6c0ffbd52e4f05155a3c5",
+   "sha1_nuovo": "be6e6718969685e3a4953881c2397e22b37fdd6b",
+   "byte": 2328,
+   "nota": "protagonista (ragazza): seduto sul Pokémon in `Aliscafu` (Surf)"
+  },
+  {
+   "destinazione": "files/data/mmodel/mmodel/mmodel_00000080.NSBTX",
+   "sorgente": "file/files/data/mmodel/mmodel/mmodel_00000080.NSBTX",
+   "sha1_hg": "169e6230b974275238511e657f7ca8e47ba4a87a",
+   "sha1_nuovo": "7ea2eb35374974fe8805e9b2b1ccb63d2960e1e4",
+   "byte": 8808,
+   "nota": "protagonista (ragazza): pesca con le canne"
+  },
+  {
+   "destinazione": "files/data/mmodel/mmodel/mmodel_00000082.NSBTX",
+   "sorgente": "file/files/data/mmodel/mmodel/mmodel_00000082.NSBTX",
+   "sha1_hg": "46233d3a6770eefa554de0e27ee26f635178403e",
+   "sha1_nuovo": "19566301bae33d4cb45c68f03c643dd19d77b59b",
+   "byte": 3408,
+   "nota": "protagonista (ragazza): sale e scende le scale a pioli"
+  },
+  {
+   "destinazione": "files/data/mmodel/mmodel/mmodel_00000088.NSBTX",
+   "sorgente": "file/files/data/mmodel/mmodel/mmodel_00000088.NSBTX",
+   "sha1_hg": "a4c748f7d7d9b27e7423bed99bbb203bc001f8f3",
+   "sha1_nuovo": "faf7e908baa18dce6e6fe1dd8efe9bf02549c6a9",
+   "byte": 1248,
+   "nota": "protagonista (ragazza): mentre salva"
+  },
+  {
+   "destinazione": "files/data/mmodel/mmodel/mmodel_00000090.NSBTX",
+   "sorgente": "file/files/data/mmodel/mmodel/mmodel_00000090.NSBTX",
+   "sha1_hg": "bf1f2a703c24113c2211e8ae9f13a7958bee8e49",
+   "sha1_nuovo": "0ec93bb21ae7ea82611b54ae3806ed0ace5b1070",
+   "byte": 3576,
+   "nota": "protagonista (ragazza): braccia alzate (adatto al palco di M-EN-07)"
+  },
+  {
+   "destinazione": "files/data/mmodel/mmodel/mmodel_00000208.NSBTX",
+   "sorgente": "file/files/data/mmodel/mmodel/mmodel_00000208.NSBTX",
+   "sha1_hg": "280acd3cc9ee8d2fa9d9a6b6b8ca8075d2a18cfa",
+   "sha1_nuovo": "24d23995fa64c99dc19ee82f8546eb27f308f18a",
+   "byte": 4488,
+   "nota": "protagonista (ragazza): `Bottintesta` sugli alberi"
+  }
+ ],
+ "prova_forma": {
+  "identici": 230,
+  "provati": 230
+ },
+ "prova_applica": {
+  "righe": [
+   "4.5: 56 file sostituiti, 0 blocchi di testo, 0 sostituzioni di codice in 0 file"
+  ],
+  "file_scritti": 56
+ },
+ "riga_finale": "BLOCCO COMPLETO: 4.5 — sprite di campo ridisegnati con un manichino a script: 38 personaggi e classi del registro 2.5 (26 personaggi, 12 classi di «U Sistema»: 16 fotogrammi ciascuno) e 18 sprite del protagonista (ragazzo e ragazza, 9 famiglie: cammina, corre, bici, surf, pesca, scala, salvataggio, braccia alzate, Bottintesta); 56 NSBTX riscritti a forma invariata (prova: 230 su 230 identici); applica --blocchi 4.5 provato; regole R-GFX-34…37; immagini di lotta, medaglie e icone del Pokégear spostate al 4.6"
+}

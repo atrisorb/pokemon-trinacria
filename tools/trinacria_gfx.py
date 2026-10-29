@@ -30,9 +30,9 @@ Comandi:
                                        prova della catena 2D: PNG del repository → NCGR
                                        con le opzioni del meson.build, confrontato con la ROM
   overworld [SPECIE ...]               sprite di campo dei Pokémon (Follower e scene)
-  applica --blocchi 4.2 [4.3] [--build DIR] [--rom R] [--prova DIR] [--polo-giallo]
+  applica --blocchi 4.2 [4.3] [4.4] [4.5] [4.6] [--build DIR] [--rom R] [--prova DIR] [--polo-giallo]
                                        porta nel repository i manifesti dei blocchi grafici
-                                       (build/grafica/<blocco>/manifesto.json, blocco 4.2)
+                                       (build/grafica/<blocco>/manifesto.json, blocchi 4.2–4.6)
 Senza --repo si cerca il repository di HeartGold (TRINACRIA_REPO, cartella corrente,
 F:\\Progetti\\pokeheartgold). Ultima riga: GRAFICA_OK / GRAFICA_FAILED (SELFTEST_OK /
 SELFTEST_FAILED); ogni problema è una riga "ERRORE <codice> <messaggio>".
@@ -1327,9 +1327,11 @@ def ncgr_flags(b):
     if vram:
         flags.append('-vram')
     if scanned:
-        # cifrato come gli sprite dei Pokémon (tools/scripts/makeotherpoke.sh): la chiave va nel file
-        # <png>.key che nitrogfx scrive leggendo l'NCGR e rilegge scrivendolo
-        flags.append('-scanfronttoback')
+        # cifrato dall'ultima parola alla prima, come in Diamante e Perla (blocco 4.6: le immagini degli
+        # allenatori di a/0/5/8 e a/0/0/6 si leggono giuste solo così; -scanfronttoback dà un'immagine di rumore
+        # pur riscrivendo un NCGR identico). La chiave va nel file <png>.key che nitrogfx scrive leggendo
+        # l'NCGR e rilegge scrivendolo
+        flags.append('-encodebacktofront')
     return flags
 
 
@@ -1358,7 +1360,7 @@ def nitrogfx_round_trip(rom, cmd, use_wsl, prove=None):
         if width is None:
             width = u16(ncgr, 16 + 10)   # larghezza in tile scritta nell'NCGR (senza -clobbersize)
         try:
-            scan = ['-scanfronttoback'] if '-scanfronttoback' in flags else []
+            scan = ['-encodebacktofront'] if '-encodebacktofront' in flags else []
             nitrogfx_run(cmd, [base + '.NCGR', base + '.png', '-palette', base + '.NCLR', '-width', str(width)] + scan,
                          use_wsl)
             nitrogfx_run(cmd, [base + '.png', base + '_2.NCGR'] + flags, use_wsl)
@@ -1753,6 +1755,61 @@ def applica(repo, blocchi, build_dir, rom=None, prova=None, giallo=False):
     return errs, log
 
 
+def applica_file(repo, build_dir, blocco, prova=None):
+    """Manifesto di tipo «file» (blocchi 4.4 e 4.5): file sostituiti interi, blocchi di testo fra due segni e
+    sostituzioni esatte di codice. Ogni file da sostituire dev'essere ancora l'originale di HeartGold
+    (SHA-1 del manifesto) o già quello nuovo; ogni testo da cercare deve comparire una volta sola (K23).
+    Con `prova` scrive in quella cartella invece che nel repository. Restituisce (errori, righe)."""
+    errs, log = [], []
+    dest = prova or repo
+    bdir = os.path.join(build_dir, blocco)
+    man = json.load(open(os.path.join(bdir, 'manifesto.json'), encoding='utf-8'))
+    testi = {}
+
+    def leggi_testo(rel):
+        if rel not in testi:
+            testi[rel] = open(os.path.join(repo, *rel.split('/')), encoding='utf-8', newline='').read()
+        return testi[rel]
+    uscita = {}
+    for f in man['file']:
+        attuale = sha1(read(os.path.join(repo, *f['destinazione'].split('/'))))
+        if attuale not in (f['sha1_hg'], f['sha1_nuovo']):
+            errs.append(('K00', '%s: né l’originale di HeartGold né il file del blocco %s' % (f['destinazione'], blocco)))
+            continue
+        uscita[f['destinazione']] = read(os.path.join(bdir, *f['sorgente'].split('/')))
+    for bt in man.get('blocchi_testo', ()):
+        t = leggi_testo(bt['file'])
+        if t.count(bt['inizio']) != 1:
+            if t.count(bt['testo']) == 1:
+                continue        # già applicato
+            errs.append(('K23', '%s: inizio del blocco trovato %d volte' % (bt['file'], t.count(bt['inizio']))))
+            continue
+        a = t.index(bt['inizio'])
+        b = t.index(bt['fine'], a) + len(bt['fine'])
+        testi[bt['file']] = t[:a] + bt['testo'] + t[b:]
+    for so in man.get('sostituzioni', ()):
+        t = leggi_testo(so['file'])
+        if t.count(so['cerca']) == 1 and t.count(so['sostituisci']) == 0:
+            testi[so['file']] = t.replace(so['cerca'], so['sostituisci'])
+        elif t.count(so['sostituisci']) != 1:
+            errs.append(('K23', '%s (%s): testo da sostituire trovato %d volte' % (so['file'], so['id'], t.count(so['cerca']))))
+    if errs:
+        return errs, log
+    for rel, b in uscita.items():
+        p = os.path.join(dest, *rel.split('/'))
+        os.makedirs(os.path.dirname(p), exist_ok=True)
+        with open(p, 'wb') as fh:
+            fh.write(b)
+    for rel, t in testi.items():
+        p = os.path.join(dest, *rel.split('/'))
+        os.makedirs(os.path.dirname(p), exist_ok=True)
+        with open(p, 'w', encoding='utf-8', newline='') as fh:
+            fh.write(t)
+    log.append('%s: %d file sostituiti, %d blocchi di testo, %d sostituzioni di codice in %d file'
+               % (blocco, len(uscita), len(man.get('blocchi_testo', ())), len(man.get('sostituzioni', ())), len(testi)))
+    return errs, log
+
+
 def print_errs(errs):
     for c, m in errs:
         print('ERRORE %s %s' % (c, m))
@@ -1821,7 +1878,14 @@ def main(argv=None):
             print('%d voci in %s' % (len(names), args[2]))
         elif c == 'applica':
             build = a.build or os.path.join(PROJECT, 'build', 'grafica')
-            errs, log = applica(repo, a.blocchi or ['4.2'], build, Rom(a.rom) if a.rom else None, a.prova, a.polo_giallo)
+            blocchi = a.blocchi or ['4.2']
+            mappe = [b for b in blocchi if b in ('4.2', '4.3')]
+            errs, log = applica(repo, mappe, build, Rom(a.rom) if a.rom else None, a.prova, a.polo_giallo) if mappe else ([], [])
+            for b in blocchi:
+                if b not in mappe:
+                    e2, l2 = applica_file(repo, build, b, a.prova)
+                    errs += e2
+                    log += l2
             for line in log:
                 print(line)
         elif c == 'rom':
