@@ -1,6 +1,6 @@
 # Scaletta delle richieste per i Moduli 2–7
 
-**Versione:** 2.22 - 31/10/2026 · 28/10/2026
+**Versione:** 2.22 - 31/10/2026
 **Come si usa:** invia le richieste **una alla volta, nell'ordine**. Ogni richiesta produce **un file** (o un blocco di un file) in `F:\Progetti\pokémon-sicilia\docs\` e finisce con una riga di controllo `BLOCCO COMPLETO: <id> — <conteggi>`. Se la riga manca, il blocco è stato troncato: invia `Continua il blocco <id> dal punto esatto in cui si è interrotto, senza ripetere nulla.`
 
 Ogni blocco scritto a mano è dimensionato per stare in una sola risposta senza riassumere (circa 60–90 KB di testo). Il testo da incollare è nella colonna «Richiesta». I registri del Modulo 2 si possono **generare con uno script** che legge il repository e controlla la coerenza: in quel caso il limite non vale (il blocco 2.1 pesa circa 540 KB perché ogni mappa contiene l'intestazione completa) e la riga `BLOCCO COMPLETO` resta obbligatoria.
