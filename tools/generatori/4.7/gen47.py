@@ -1,81 +1,131 @@
-"""Generatore del blocco 4.6 (immagini di lotta e transizioni).
-Uso: python -I tools/generatori/4.6/gen46.py [--senza-costruzione]
+"""Generatore del blocco 4.7 (medaglie, Scheda Allenatore e icone del Pokegear).
 
-Rilancia tools/grafica/4.6/costruisci46.py (una decina di secondi), prova `trinacria_gfx.py applica --blocchi 4.6
---prova` in una cartella temporanea, poi scrive docs/MODULO_4/4.6_IMMAGINI_DI_LOTTA.md e
-docs/MODULO_4/4.6_IMMAGINI_DI_LOTTA.json dal manifesto. Testi fissi in text46.py.
+Uso: python -I tools/generatori/4.7/gen47.py
+
+Rilancia `tools/grafica/4.7/costruisci47.py` (pochi secondi), raccoglie il manifesto delle
+tre parti e scrive `docs/MODULO_4/4.7_MEDAGLIE_ICONE.md` e `.json`. I testi fissi stanno
+in text47.py.
 """
 import json
 import os
-import shutil
 import sys
-import tempfile
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 PROJ = os.path.normpath(os.path.join(HERE, '..', '..', '..'))
-G46 = os.path.join(PROJ, 'tools', 'grafica', '4.6')
-BUILD = os.path.join(PROJ, 'build', 'grafica', '4.6')
-OUT_MD = os.path.join(PROJ, 'docs', 'MODULO_4', '4.6_IMMAGINI_DI_LOTTA.md')
-OUT_JSON = os.path.join(PROJ, 'docs', 'MODULO_4', '4.6_IMMAGINI_DI_LOTTA.json')
+G47 = os.path.join(PROJ, 'tools', 'grafica', '4.7')
+OUT_MD = os.path.join(PROJ, 'docs', 'MODULO_4', '4.7_MEDAGLIE_ICONE.md')
+OUT_JSON = os.path.join(PROJ, 'docs', 'MODULO_4', '4.7_MEDAGLIE_ICONE.json')
 sys.stdout.reconfigure(errors='backslashreplace')
+
 sys.path.insert(0, HERE)
-sys.path.insert(0, G46)
+sys.path.insert(0, G47)
 sys.path.insert(0, os.path.join(PROJ, 'tools'))
-import trinacria_gfx as G  # noqa: E402
-import costruisci46  # noqa: E402
-import figura46 as F  # noqa: E402
-import schede46 as S  # noqa: E402
-import text46 as T  # noqa: E402
+sys.path.insert(0, os.path.join(PROJ, 'tools', 'grafica', '4.4'))
+sys.path.insert(0, os.path.join(PROJ, 'tools', 'grafica', '4.6'))
 
-errors = []
+import trinacria_gfx as G          # noqa: E402
+import medaglie47                  # noqa: E402
+import icone47                     # noqa: E402
+import costruisci47 as K           # noqa: E402
+import text47 as T                 # noqa: E402
 
+BUILD = os.path.join(PROJ, 'build', 'grafica', '4.7')
+ANTE = os.path.join(BUILD, 'anteprime')
 
-def err(m):
-    errors.append(m)
-    print('ERRORE', m)
-
-
-if '--senza-costruzione' not in sys.argv:
-    print('costruzione (tools/grafica/4.6/costruisci46.py)…')
-    if costruisci46.main([]) != 0:
-        err('costruisci46: GRAFICA_FAILED')
-man = json.load(open(os.path.join(BUILD, 'manifesto.json'), encoding='utf-8'))
-repo = G.find_repo(None)
-
-tmp = tempfile.mkdtemp(prefix='trn46_applica_')
-try:
-    e_ap, log_ap = G.applica_file(repo, os.path.dirname(BUILD), '4.6', tmp)
-    for c, m in e_ap:
-        err('applica %s %s' % (c, m))
-    scritti = sum(len(fs) for _, _, fs in os.walk(tmp))
-finally:
-    shutil.rmtree(tmp, ignore_errors=True)
-prova = dict(righe=log_ap, file_scritti=scritti)
-
-dati = {
-    'modulo': 4, 'blocco': '4.6', 'titolo': 'Immagini di lotta e transizioni',
-    'versione': '1.0', 'data': T.DATA, 'progetto': 'Pokémon Trinacria (autore: atrisorb)',
-    'documento': 'docs/MODULO_4/4.6_IMMAGINI_DI_LOTTA.md',
-    'lettore': 'Modulo 6 (nomi degli allenatori nelle transizioni), blocco 4.7, Modulo 7 (7.2 modifica E-GFX-05, 7.4)',
-    'ruoli_palette': T.RUOLI,
-    'fronti': man['fronti'], 'dorsi': man['dorsi'], 'ritratti': man['ritratti'], 'timbri': man['timbri'],
-    'fasi_dorso': [dict(fase=k, gomito=list(g), mano=list(m), palla=p) for k, (g, m, p) in enumerate(F.RETRO_FASI)],
-    'pose': [dict(posa=a, descrizione=b) for a, b in S.DESCRIZIONE_POSE],
-    'modifica_codice': man['sostituzioni'],
-    'file': man['file'],
-    'prova_forma': man['prova_forma'],
-    'prova_applica': prova,
-    'anteprime': man['anteprime'],
+NOMI = {
+    'liotru': ('Dossier Liotru', 'CT', 'elefante stilizzato su una base'),
+    'aretusa': ('Dossier Aretusa', 'SR', 'la fonte con l\'acqua che zampilla'),
+    'carrubba': ('Dossier Carrubba', 'RG', 'il baccello di carrubo coi semi'),
+    'pirrera': ('Dossier Pirrera', 'CL', 'i gradoni della cava'),
+    'telamuni': ('Dossier Telamuni', 'AG', 'il telamone, la colonna del tempio'),
+    'mulinu': ('Dossier Mulinu', 'TP', 'il mulino a vento con le pale'),
+    'pilunu': ('Dossier Pilunu', 'ME', 'i piloni dello Stretto'),
+    'geniu': ('Dossier Geniu', 'PA', 'l\'arco del Genio con la lampada'),
+    'cerere': ('Dossier Cerere', 'EN', 'la spiga di grano'),
 }
-riga = T.riga_finale(man)
-dati['riga_finale'] = riga
-with open(OUT_JSON, 'w', encoding='utf-8', newline='\n') as fh:
-    json.dump(dati, fh, ensure_ascii=False, indent=1)
-    fh.write('\n')
-md = T.documento(man, prova, riga)
-with open(OUT_MD, 'w', encoding='utf-8', newline='\n') as fh:
-    fh.write(md)
-print('%s (%d byte), %s (%d byte)' % (OUT_MD, len(md.encode('utf-8')), OUT_JSON, os.path.getsize(OUT_JSON)))
-print(riga)
-print('GENERATORE_FAILED' if errors else 'GENERATORE_OK')
-sys.exit(1 if errors else 0)
+
+
+def main(argv=None):
+    if K.main([]) != 0:
+        print('costruzione fallita: il documento non si scrive')
+        return 1
+
+    repo = K.repo_hg()
+    medaglie, _ = medaglie47.costruisci(repo, BUILD)
+    icone = icone47.costruisci(repo, BUILD)
+    ritratti, _ = K.ritratti_scheda()
+
+    for m in medaglie:
+        m['dossier'], m['provincia'], m['descrizione'] = NOMI[m['emblema']]
+
+    riga = T.riga_finale(len(medaglie), len(ritratti), icone['pixel_cambiati'])
+
+    md = [T.INTESTAZIONE.format(versione=T.VERSIONE, data=T.DATA), T.IN_BREVE,
+          T.COSTRUZIONE, T.FORMATI]
+    md.append(T.MEDAGLIE)
+    for m in medaglie:
+        md.append('| %d | %s | %s | `%s` | %d | %d | %s |\n' % (
+            m['slot'], m['dossier'], m['provincia'], m['alias'], m['slot'], m['voce'],
+            m['descrizione']))
+    md.append('\n')
+    md.append(T.ICONE.format(seg0=icone['slot_segnalino'][0], seg1=icone['slot_segnalino'][1],
+                             vag0=icone['slot_vagante'][0], vag1=icone['slot_vagante'][1]))
+    md.append(T.RITRATTI)
+    for r in ritratti:
+        md.append('| `%s` | %dx%d | `%s` |\n' % (r['scheda'], r['misure'][0], r['misure'][1],
+                                                os.path.relpath(r['file'], PROJ).replace('\\', '/')))
+    md.append('\n')
+    md.append(T.REGOLE)
+    md.append(T.PROVE)
+    md.append(T.APERTI)
+    md.append(T.CHIUSURA)
+    md.append('---\n\n`%s`\n' % riga)
+
+    os.makedirs(os.path.dirname(OUT_MD), exist_ok=True)
+    with open(OUT_MD, 'w', encoding='utf-8') as fh:
+        fh.write(''.join(md))
+
+    dati = {
+        'modulo': 4,
+        'blocco': '4.7',
+        'titolo': 'Medaglie, Scheda Allenatore e icone del Pokegear',
+        'versione': T.VERSIONE,
+        'data': T.DATA,
+        'progetto': 'Pokemon Trinacria',
+        'documento': 'docs/MODULO_4/4.7_MEDAGLIE_ICONE.md',
+        'lettore': 'Modulo 6 (consegna delle medaglie con GiveBadge), Modulo 7 (7.4, prova a schermo)',
+        'file': [
+            {'destinazione': 'files/a/0/4/9', 'byte': 335464,
+             'nota': 'sedici voci delle medaglie della Scheda Allenatore; il blocco ne riscrive nove'},
+            {'destinazione': icone['file'], 'byte': icone['byte'],
+             'sha1_hg': icone['sha1_hg'], 'sha1_nuovo': icone['sha1_nuovo'],
+             'nota': 'segnalino del protagonista e icona del vagante nello slot 2'},
+        ],
+        'medaglie': medaglie,
+        'icone': {k: v for k, v in icone.items() if k != 'sorgente'},
+        'ritratti_protagonista': ritratti,
+        'regole': [
+            {'id': 'R-GFX-42', 'testo': 'Le medaglie dei Dossier sono nove (voci 62-69 e 77 di a/0/4/9); ogni emblema riusa i colori gia presenti nella voce.'},
+            {'id': 'R-GFX-43', 'testo': 'Le sette medaglie di Kanto (slot 8-14) restano quelle di HeartGold: il gioco non le consegna.'},
+            {'id': 'R-GFX-44', 'testo': 'Il foglio delle icone del Pokegear si modifica solo per figura, lasciando forma e palette invariate.'},
+        ],
+        'prove': {'costruzione': 'GRAFICA_OK', 'medaglie': 'MEDAGLIE_OK', 'icone': 'ICONE_OK'},
+        'punti_aperti': [
+            'La voce esatta del ritratto nella Scheda Allenatore va confermata a schermo (7.4).',
+            'La posizione delle due figure del foglio delle icone va guardata a schermo (7.4).',
+            'Le sette medaglie di Kanto restano di HeartGold per R-GFX-43.',
+        ],
+        'riga_finale': riga,
+    }
+    with open(OUT_JSON, 'w', encoding='utf-8') as fh:
+        json.dump(dati, fh, ensure_ascii=False, indent=1)
+        fh.write('\n')
+
+    print('scritti %s e %s' % (os.path.basename(OUT_MD), os.path.basename(OUT_JSON)))
+    print(riga)
+    print('BLOCCO_47_OK')
+    return 0
+
+
+if __name__ == '__main__':
+    sys.exit(main())

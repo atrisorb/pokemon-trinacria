@@ -1,0 +1,203 @@
+{
+ "modulo": 4,
+ "blocco": "4.7",
+ "titolo": "Medaglie, Scheda Allenatore e icone del Pokegear",
+ "versione": "1.0",
+ "data": "31/10/2026",
+ "progetto": "Pokemon Trinacria",
+ "documento": "docs/MODULO_4/4.7_MEDAGLIE_ICONE.md",
+ "lettore": "Modulo 6 (consegna delle medaglie con GiveBadge), Modulo 7 (7.4, prova a schermo)",
+ "file": [
+  {
+   "destinazione": "files/a/0/4/9",
+   "byte": 335464,
+   "nota": "sedici voci delle medaglie della Scheda Allenatore; il blocco ne riscrive nove"
+  },
+  {
+   "destinazione": "files/application/pokegear/map/pgmap_gra/pgmap_gra_00000001.png",
+   "byte": 876,
+   "sha1_hg": "3651c807783809680a815a75e80b33dfce1d76f5",
+   "sha1_nuovo": "e43f259ef18fbe879009ce2628a4853dde0a506b",
+   "nota": "segnalino del protagonista e icona del vagante nello slot 2"
+  }
+ ],
+ "medaglie": [
+  {
+   "slot": 0,
+   "voce": 62,
+   "alias": "BADGE_DOSSIER_LIOTRU",
+   "emblema": "liotru",
+   "byte": 7104,
+   "sha1_hg": "9d86215d930c5bf9f0119c197c3975e441b9918d",
+   "sha1_nuovo": "a3f0b3ac642fc2c3faefa4627a4bff49c2d07f74",
+   "colori": 14,
+   "dossier": "Dossier Liotru",
+   "provincia": "CT",
+   "descrizione": "elefante stilizzato su una base"
+  },
+  {
+   "slot": 1,
+   "voce": 63,
+   "alias": "BADGE_DOSSIER_ARETUSA",
+   "emblema": "aretusa",
+   "byte": 7104,
+   "sha1_hg": "f17ecc2d9cc2245fcaa2c1398f1b6cb9c794db10",
+   "sha1_nuovo": "643d705edf8915484f84f3e5cb50587cde7f3627",
+   "colori": 15,
+   "dossier": "Dossier Aretusa",
+   "provincia": "SR",
+   "descrizione": "la fonte con l'acqua che zampilla"
+  },
+  {
+   "slot": 2,
+   "voce": 64,
+   "alias": "BADGE_DOSSIER_CARRUBBA",
+   "emblema": "carrubba",
+   "byte": 7104,
+   "sha1_hg": "fc5c912f316becbe4058a5ca3a6aa4f85a505c9d",
+   "sha1_nuovo": "a9e3a6112655cf32428386fa2d2f3c2aa62f324c",
+   "colori": 15,
+   "dossier": "Dossier Carrubba",
+   "provincia": "RG",
+   "descrizione": "il baccello di carrubo coi semi"
+  },
+  {
+   "slot": 3,
+   "voce": 65,
+   "alias": "BADGE_DOSSIER_PIRRERA",
+   "emblema": "pirrera",
+   "byte": 7104,
+   "sha1_hg": "df905578afb1124c3d61ae728edc56ec0eeec7e5",
+   "sha1_nuovo": "53d15231ed787c4f3a1445616009e34b8a336cac",
+   "colori": 15,
+   "dossier": "Dossier Pirrera",
+   "provincia": "CL",
+   "descrizione": "i gradoni della cava"
+  },
+  {
+   "slot": 4,
+   "voce": 66,
+   "alias": "BADGE_DOSSIER_TELAMUNI",
+   "emblema": "telamuni",
+   "byte": 7104,
+   "sha1_hg": "54b98c6aa85c8b7c5d481311fb6a24dce8e4b5b0",
+   "sha1_nuovo": "8febd7417e54f23fc3d57647852c0a614d40766f",
+   "colori": 15,
+   "dossier": "Dossier Telamuni",
+   "provincia": "AG",
+   "descrizione": "il telamone, la colonna del tempio"
+  },
+  {
+   "slot": 5,
+   "voce": 67,
+   "alias": "BADGE_DOSSIER_MULINU",
+   "emblema": "mulinu",
+   "byte": 7104,
+   "sha1_hg": "c2d1621dc4ba529f7f98900d1cb053e9c437f95f",
+   "sha1_nuovo": "1df5cc8f1e00c6ed9e0a0a1d560582f0e9722567",
+   "colori": 14,
+   "dossier": "Dossier Mulinu",
+   "provincia": "TP",
+   "descrizione": "il mulino a vento con le pale"
+  },
+  {
+   "slot": 6,
+   "voce": 68,
+   "alias": "BADGE_DOSSIER_PILUNU",
+   "emblema": "pilunu",
+   "byte": 7104,
+   "sha1_hg": "e662faad7f3bddf23e7eb56ad43d1ca0d84a025c",
+   "sha1_nuovo": "ff68820aa7962c5579455238610c0b877974ace7",
+   "colori": 15,
+   "dossier": "Dossier Pilunu",
+   "provincia": "ME",
+   "descrizione": "i piloni dello Stretto"
+  },
+  {
+   "slot": 7,
+   "voce": 69,
+   "alias": "BADGE_DOSSIER_GENIU",
+   "emblema": "geniu",
+   "byte": 7104,
+   "sha1_hg": "fd05957fb1727c88eef487af56c6c6d64e4031bf",
+   "sha1_nuovo": "76e66a14d7777872d3fae093ee3e8c3678204c99",
+   "colori": 15,
+   "dossier": "Dossier Geniu",
+   "provincia": "PA",
+   "descrizione": "l'arco del Genio con la lampada"
+  },
+  {
+   "slot": 15,
+   "voce": 77,
+   "alias": "BADGE_DOSSIER_CERERE",
+   "emblema": "cerere",
+   "byte": 7104,
+   "sha1_hg": "b612a34c98ba20c0f97a490a1959b2280c15e823",
+   "sha1_nuovo": "f388cbf24cfd3659047b75fd68920a54f059765d",
+   "colori": 15,
+   "dossier": "Dossier Cerere",
+   "provincia": "EN",
+   "descrizione": "la spiga di grano"
+  }
+ ],
+ "icone": {
+  "file": "files/application/pokegear/map/pgmap_gra/pgmap_gra_00000001.png",
+  "byte": 876,
+  "sha1_hg": "3651c807783809680a815a75e80b33dfce1d76f5",
+  "sha1_nuovo": "e43f259ef18fbe879009ce2628a4853dde0a506b",
+  "slot_segnalino": [
+   259,
+   287
+  ],
+  "slot_vagante": [
+   289,
+   320
+  ],
+  "pixel_cambiati": 335
+ },
+ "ritratti_protagonista": [
+  {
+   "scheda": "PROTAGONISTA_RAGAZZO",
+   "misure": [
+    96,
+    64
+   ],
+   "file": "F:\\Progetti\\pokémon-sicilia\\build\\grafica\\4.7\\anteprime\\scheda_protagonista_ragazzo.png",
+   "sha1": "119d648a3eb8d47c121d2e0515fad8f8f1bfdf4b"
+  },
+  {
+   "scheda": "PROTAGONISTA_RAGAZZA",
+   "misure": [
+    96,
+    64
+   ],
+   "file": "F:\\Progetti\\pokémon-sicilia\\build\\grafica\\4.7\\anteprime\\scheda_protagonista_ragazza.png",
+   "sha1": "eba1c465ff467c5585eeaf39f6fe9ceca798beb3"
+  }
+ ],
+ "regole": [
+  {
+   "id": "R-GFX-42",
+   "testo": "Le medaglie dei Dossier sono nove (voci 62-69 e 77 di a/0/4/9); ogni emblema riusa i colori gia presenti nella voce."
+  },
+  {
+   "id": "R-GFX-43",
+   "testo": "Le sette medaglie di Kanto (slot 8-14) restano quelle di HeartGold: il gioco non le consegna."
+  },
+  {
+   "id": "R-GFX-44",
+   "testo": "Il foglio delle icone del Pokegear si modifica solo per figura, lasciando forma e palette invariate."
+  }
+ ],
+ "prove": {
+  "costruzione": "GRAFICA_OK",
+  "medaglie": "MEDAGLIE_OK",
+  "icone": "ICONE_OK"
+ },
+ "punti_aperti": [
+  "La voce esatta del ritratto nella Scheda Allenatore va confermata a schermo (7.4).",
+  "La posizione delle due figure del foglio delle icone va guardata a schermo (7.4).",
+  "Le sette medaglie di Kanto restano di HeartGold per R-GFX-43."
+ ],
+ "riga_finale": "BLOCCO COMPLETO: 4.7 - 9 medaglie dei Dossier ridisegnate a script nelle voci 62-69 e 77 del NARC a/0/4/9 (slot BADGE_ZEPHYR..BADGE_EARTH, emblemi: Liotru, Aretusa, Carrubba, Pirrera, Telamuni, Mulinu, Pilunu, Geniu, Cerere; indici di palette 65-79 riusati, forma invariata), 7 medaglie di Kanto lasciate invariate (R-GFX-43); segnalino del protagonista e icona del vagante ridisegnati nel foglio pgmap_gra_00000001.png (righe 259-287 e 289-320, 335 pixel cambiati, forma 8x456 a 4 bit e palette invariate); 2 ritratti 96x64 del protagonista ragazzo e ragazza per la Scheda Allenatore dal figurino del 4.6; regole R-GFX-42.44"
+}
