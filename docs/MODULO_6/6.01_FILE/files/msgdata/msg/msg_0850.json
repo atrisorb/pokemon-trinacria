@@ -1,0 +1,285 @@
+{
+  "key": 46175,
+  "messages": [
+    {
+      "id": "msg_0850_00000",
+      "en_US": [
+        "Ben svegliato, {STRVAR_1 3, 0, 0}!\f",
+        "Sono le due del pomeriggio.\f",
+        "Lo hai sentito, no? Lo studio a\n",
+        "Milano.\f",
+        "A Milano, {STRVAR_1 3, 0, 0}. Capisci?\r"
+      ]
+    },
+    {
+      "id": "msg_0850_00001",
+      "en_US": [
+        "Ben svegliata, {STRVAR_1 3, 0, 0}!\f",
+        "Sono le due del pomeriggio.\f",
+        "Lo hai sentito, no? Lo studio a\n",
+        "Milano.\f",
+        "A Milano, {STRVAR_1 3, 0, 0}. Capisci?\r"
+      ]
+    },
+    {
+      "id": "msg_0850_00002",
+      "en_US": [
+        "Questo è il tuo zaino. Dentro ci ho\n",
+        "messo tre curricula e un fazzoletto.\f",
+        "Non si sa mai.\r"
+      ]
+    },
+    {
+      "id": "msg_0850_00003",
+      "en_US": [
+        "Questa è la tua tessera. C’è la tua\n",
+        "foto.\f",
+        "Ti ho fatto sistemare il ciuffo dal\n",
+        "fotografo.\r"
+      ]
+    },
+    {
+      "id": "msg_0850_00004",
+      "en_US": [
+        "Qui si salva tutto: i progressi, i\n",
+        "ricordi e anche la mia fiducia,\f",
+        "finché dura.\r"
+      ]
+    },
+    {
+      "id": "msg_0850_00005",
+      "en_US": [
+        "E queste sono le opzioni.\f",
+        "Tocca i tasti e capirai subito: hai\n",
+        "studiato tanto, no?\r"
+      ]
+    },
+    {
+      "id": "msg_0850_00006",
+      "en_US": [
+        "Ah, {STRVAR_1 3, 0, 0}, quasi dimenticavo!\f",
+        "Ti ho ricaricato il telefono: Turi\n",
+        "ha chiamato tre volte.\r"
+      ]
+    },
+    {
+      "id": "msg_0850_00007",
+      "en_US": "{STRVAR_1 3, 0, 0} riceve il Pokégear!\r"
+    },
+    {
+      "id": "msg_0850_00008",
+      "en_US": [
+        "Il Pokégear è il telefono che ogni\n",
+        "cittadino dovrebbe avere.\f",
+        "Chiama, mostra la mappa e, se hai\n",
+        "coraggio, anche il Sondaggio.\r"
+      ]
+    },
+    {
+      "id": "msg_0850_00009",
+      "en_US": "Ti ricordi come si telefona? {YESNO 0}"
+    },
+    {
+      "id": "msg_0850_00010",
+      "en_US": [
+        "Allora accendi il Pokégear e tocca\n",
+        "il tasto del telefono.\r"
+      ]
+    },
+    {
+      "id": "msg_0850_00011",
+      "en_US": [
+        "Tocca Pokégear sullo schermo\n",
+        "tattile.\f",
+        "Poi tocca il tasto del telefono.\r"
+      ]
+    },
+    {
+      "id": "msg_0850_00012",
+      "en_US": [
+        "I nomi si registrano da soli.\n",
+        "Scegline uno e chiama.\f",
+        "E ricordati: Turi ti aspetta al\n",
+        "Vermut, in via Gemmellaro."
+      ]
+    },
+    {
+      "id": "msg_0850_00013",
+      "en_US": [
+        "Turi ti aspetta al Vermut, in via\n",
+        "Gemmellaro.\f",
+        "Vai, almeno prendi aria."
+      ]
+    },
+    {
+      "id": "msg_0850_00014",
+      "en_US": [
+        "Allora te ne vai in giro per la\n",
+        "Sicilia…\f",
+        "Faccio una cosa: ogni volta che\n",
+        "guadagni, tengo da parte una quota.\f",
+        "In viaggio i soldi servono. Vuoi che\n",
+        "li custodisca io? {YESNO 0}"
+      ]
+    },
+    {
+      "id": "msg_0850_00015",
+      "en_US": [
+        "Voglio sostenerti, {STRVAR_1 3, 0, 0}, anche\n",
+        "col Dossier in tasca.\f",
+        "Ogni volta che guadagni, tengo da\n",
+        "parte una quota.\f",
+        "Vuoi che custodisca io i tuoi soldi?\n",
+        "{YESNO 0}"
+      ]
+    },
+    {
+      "id": "msg_0850_00016",
+      "en_US": [
+        "Va bene, ci penso io ai tuoi soldi.\f",
+        "Fai attenzione. I Pokémon sono\n",
+        "amici: se fate squadra, potete\f",
+        "tutto.\f",
+        "Ora vai!"
+      ]
+    },
+    {
+      "id": "msg_0850_00017",
+      "en_US": [
+        "Va bene, ma fai attenzione là fuori.\f",
+        "I Pokémon sono amici: se fate\n",
+        "squadra, potete tutto.\f",
+        "Ora vai!"
+      ]
+    },
+    {
+      "id": "msg_0850_00018",
+      "en_US": [
+        "Ciao! Eccoti a casa, Presidente. Ex.\f",
+        "Ti ho tenuto la camera in ordine.\f",
+        "O forse è una questione di soldi? {YESNO 0}"
+      ]
+    },
+    {
+      "id": "msg_0850_00019",
+      "en_US": "Fai quello che puoi."
+    },
+    {
+      "id": "msg_0850_00020",
+      "en_US": [
+        "Oh!\f",
+        "Non hai soldi da ritirare."
+      ]
+    },
+    {
+      "id": "msg_0850_00021",
+      "en_US": [
+        "I tuoi soldi sono al sicuro qui!\f",
+        "Pensa a te stesso."
+      ]
+    },
+    {
+      "id": "msg_0850_00022",
+      "en_US": [
+        "{STRVAR_1 3, 0, 0}!\f",
+        "Pensa bene a come li spendi!"
+      ]
+    },
+    {
+      "id": "msg_0850_00023",
+      "en_US": "Vuoi mettere da parte dei soldi? {YESNO 0}"
+    },
+    {
+      "id": "msg_0850_00024",
+      "en_US": [
+        "Oh!\f",
+        "Non ti restano soldi da mettere da\n",
+        "parte.\f",
+        "Non sprecarli in sciocchezze,\n",
+        "intesi?\f",
+        "So che sei ragionevole come me."
+      ]
+    },
+    {
+      "id": "msg_0850_00025",
+      "en_US": [
+        "Ho messo da parte tanti soldi.\f",
+        "Non posso tenerne altri."
+      ]
+    },
+    {
+      "id": "msg_0850_00026",
+      "en_US": [
+        "Hai già tanti soldi con te.\f",
+        "Non posso dartene altri."
+      ]
+    },
+    {
+      "id": "msg_0850_00027",
+      "en_US": "PRELEVA"
+    },
+    {
+      "id": "msg_0850_00028",
+      "en_US": "DEPOSITA"
+    },
+    {
+      "id": "msg_0850_00029",
+      "en_US": "CAMBIA"
+    },
+    {
+      "id": "msg_0850_00030",
+      "en_US": "ESCI"
+    },
+    {
+      "id": "msg_0850_00031",
+      "en_US": [
+        "In TV parlano ancora delle\n",
+        "dimissioni del Presidente.\f",
+        "Nessuno ha capito niente, tutti\n",
+        "hanno un’opinione."
+      ]
+    },
+    {
+      "id": "msg_0850_00032",
+      "en_US": [
+        "Arancini al ragù, specialità di\n",
+        "mamma.\f",
+        "A Catania sono maschili, che si\n",
+        "sappia."
+      ]
+    },
+    {
+      "id": "msg_0850_00033",
+      "en_US": [
+        "Un lavello lucidissimo.\f",
+        "Dalle tue dimissioni, mamma lo\n",
+        "pulisce due volte al giorno."
+      ]
+    },
+    {
+      "id": "msg_0850_00034",
+      "en_US": [
+        "Dentro il frigo: acqua, limonata e\n",
+        "un biglietto.\f",
+        "“Mangia, che sei magro.”"
+      ]
+    },
+    {
+      "id": "msg_0850_00035",
+      "en_US": [
+        "Il Puparu stira una camicia in\n",
+        "silenzio.\f",
+        "Ha smesso di guardare il\n",
+        "telegiornale."
+      ]
+    },
+    {
+      "id": "msg_0850_00036",
+      "en_US": [
+        "Il Leccu dorme sul divano.\f",
+        "Dalle tue dimissioni occupa il tuo\n",
+        "posto."
+      ]
+    }
+  ]
+}

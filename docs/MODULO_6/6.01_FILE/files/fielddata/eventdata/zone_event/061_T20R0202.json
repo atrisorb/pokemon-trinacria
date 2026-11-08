@@ -1,0 +1,47 @@
+{
+  "header": "fielddata/script/scr_seq/event_T20R0202.h",
+  "bgs": [
+    {
+      "scriptId": "_EV_scr_seq_T20R0202_000 + 1",
+      "type": 0,
+      "x": 6,
+      "z": 4,
+      "y": 0,
+      "dir": 0
+    },
+    {
+      "scriptId": "_EV_scr_seq_T20R0202_004 + 1",
+      "type": 0,
+      "x": 7,
+      "z": 4,
+      "y": 0,
+      "dir": 0
+    },
+    {
+      "scriptId": "_EV_scr_seq_T20R0202_001 + 1",
+      "type": 0,
+      "x": 8,
+      "z": 4,
+      "y": 0,
+      "dir": 0
+    },
+    {
+      "scriptId": "_EV_scr_seq_T20R0202_005 + 1",
+      "type": 0,
+      "x": 10,
+      "z": 4,
+      "y": 0,
+      "dir": 0
+    }
+  ],
+  "objects": [],
+  "warps": [
+    {
+      "x": 3,
+      "z": 4,
+      "header": "MAP_CT_CATANIA_CASA_PROTAGONISTA_1F",
+      "anchor": 1,
+      "y": 0
+    }
+  ]
+}

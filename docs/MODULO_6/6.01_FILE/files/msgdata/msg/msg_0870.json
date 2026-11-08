@@ -1,0 +1,163 @@
+{
+  "key": 24515,
+  "messages": [
+    {
+      "id": "msg_0870_00000",
+      "en_US": [
+        "Misterbianco, il Cubbar.\f",
+        "Le 3:30 del mattino. Il basso fa\n",
+        "tremare i bicchieri sul banco.\r"
+      ]
+    },
+    {
+      "id": "msg_0870_00001",
+      "en_US": [
+        "Accanto a tutti c’è un Pokémon.\f",
+        "Accanto a me, solo il bicchiere."
+      ]
+    },
+    {
+      "id": "msg_0870_00002",
+      "en_US": [
+        "Il mio Gattupardu sta benissimo,\n",
+        "{STRVAR_1 3, 0, 0}.\f",
+        "Mio padre, invece, ha perso metà\n",
+        "dello studio dopo le tue dimissioni.\f",
+        "Grazie."
+      ]
+    },
+    {
+      "id": "msg_0870_00003",
+      "en_US": [
+        "Papà ha riaperto un fascicolo che\n",
+        "dormiva da anni, {STRVAR_1 3, 0, 0}.\f",
+        "Dice che è merito delle tue\n",
+        "dimissioni. Il mio Novicudi approva."
+      ]
+    },
+    {
+      "id": "msg_0870_00004",
+      "en_US": [
+        "Dopo le tue dimissioni lo studio ha\n",
+        "tagliato i praticanti, {STRVAR_1 3, 0, 0}.\f",
+        "Il caffè non me lo offrono più.\n",
+        "Complimenti."
+      ]
+    },
+    {
+      "id": "msg_0870_00005",
+      "en_US": [
+        "{STRVAR_1 3, 0, 0}! Dopo le tue dimissioni la\n",
+        "gente balla di più.\f",
+        "Giuro: serate così piene non le\n",
+        "avevo mai viste."
+      ]
+    },
+    {
+      "id": "msg_0870_00006",
+      "en_US": [
+        "Mio padre dice che le tue dimissioni\n",
+        "hanno rallentato tutto, {STRVAR_1 3, 0, 0}.\f",
+        "Anche l’aperitivo."
+      ]
+    },
+    {
+      "id": "msg_0870_00007",
+      "en_US": [
+        "Dopo le tue dimissioni papà dice che\n",
+        "le cose cambiano.\f",
+        "Ha già cambiato sigla due volte,\n",
+        "{STRVAR_1 3, 0, 0}."
+      ]
+    },
+    {
+      "id": "msg_0870_00008",
+      "en_US": "Mbare, talìa cu c’è!\r"
+    },
+    {
+      "id": "msg_0870_00009",
+      "en_US": [
+        "Eri sparito, {STRVAR_1 3, 0, 0}. Ti cercavo da\n",
+        "un’ora.\f",
+        "Questa è la porta VIP: qui entra\n",
+        "solo chi conosce me.\r"
+      ]
+    },
+    {
+      "id": "msg_0870_00010",
+      "en_US": [
+        "Guardi il mio Subwoofer? Tranquillo,\n",
+        "non morde.\f",
+        "Fa solo tremare i bicchieri.\r"
+      ]
+    },
+    {
+      "id": "msg_0870_00011",
+      "en_US": [
+        "Senti, {STRVAR_1 3, 0, 0}: è tardi, hai una\n",
+        "faccia da giorno dopo.\f",
+        "Vai a casa e dormici sopra.\r"
+      ]
+    },
+    {
+      "id": "msg_0870_00012",
+      "en_US": "Dumani è dumani, mbare."
+    },
+    {
+      "id": "msg_0870_00013",
+      "en_US": [
+        "Vai, {STRVAR_1 3, 0, 0}. Ci rivediamo presto,\n",
+        "lo sento.\f",
+        "Il Subwoofer ha fiuto per queste\n",
+        "cose."
+      ]
+    },
+    {
+      "id": "msg_0870_00014",
+      "en_US": [
+        "Il Subwoofer di Christian vibra a\n",
+        "tempo di cassa.\f",
+        "Ogni tanto sbuffa e un bicchiere\n",
+        "trema."
+      ]
+    },
+    {
+      "id": "msg_0870_00015",
+      "en_US": [
+        "Il Gattupardu sbadiglia.\f",
+        "Dalle tue dimissioni anche lui\n",
+        "sembra più nervoso."
+      ]
+    },
+    {
+      "id": "msg_0870_00016",
+      "en_US": [
+        "Il Novicudi socchiude gli occhi.\f",
+        "Nove code, nove opinioni diverse\n",
+        "sulle tue dimissioni."
+      ]
+    },
+    {
+      "id": "msg_0870_00017",
+      "en_US": [
+        "Il Diavulazzu ringhia piano.\f",
+        "Dalle tue dimissioni la targhetta\n",
+        "del collare è cambiata due volte."
+      ]
+    },
+    {
+      "id": "msg_0870_00018",
+      "en_US": [
+        "Prima di uscire, due parole con\n",
+        "Christian all’ingresso VIP."
+      ]
+    },
+    {
+      "id": "msg_0870_00019",
+      "en_US": [
+        "Fuori comincia a schiarire.\f",
+        "La notte al Cubbar finisce qui."
+      ]
+    }
+  ]
+}

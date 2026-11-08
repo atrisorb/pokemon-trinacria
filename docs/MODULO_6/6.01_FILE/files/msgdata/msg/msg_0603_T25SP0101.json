@@ -1,0 +1,167 @@
+{
+  "key": 24515,
+  "messages": [
+    {
+      "id": "msg_0603_T25SP0101_00000",
+      "en_US": [
+        "Misterbianco, il Cubbar.\f",
+        "Le 3:30 del mattino. Il basso fa\n",
+        "tremare i bicchieri sul banco.\r"
+      ]
+    },
+    {
+      "id": "msg_0603_T25SP0101_00001",
+      "en_US": [
+        "Accanto a tutti c’è un Pokémon.\f",
+        "Accanto a me, solo il bicchiere."
+      ]
+    },
+    {
+      "id": "msg_0603_T25SP0101_00002",
+      "en_US": [
+        "Ti presento il mio Gattupardu,\n",
+        "{STRVAR_1 3, 0, 0}.\f",
+        "Pedigree certificato: costa quanto\n",
+        "un bilocale a Ognina.\f",
+        "Il tuo dov’è?"
+      ]
+    },
+    {
+      "id": "msg_0603_T25SP0101_00003",
+      "en_US": [
+        "Il mio Novicudi? Regalo di papà: è\n",
+        "magistrato, sai.\f",
+        "Dice che i Pokémon rari non si\n",
+        "discutono, {STRVAR_1 3, 0, 0}."
+      ]
+    },
+    {
+      "id": "msg_0603_T25SP0101_00004",
+      "en_US": [
+        "Faccio il praticante da tre anni,\n",
+        "{STRVAR_1 3, 0, 0}.\f",
+        "Rimborso spese: un caffè e un\n",
+        "grazie.\f",
+        "Il Pokémon me lo comprerò da\n",
+        "titolare."
+      ]
+    },
+    {
+      "id": "msg_0603_T25SP0101_00005",
+      "en_US": [
+        "Sei in lista, {STRVAR_1 3, 0, 0}? No?\n",
+        "Tranquillo.\f",
+        "Basta citare il mio nome\n",
+        "all’ingresso: il tavolo è mio."
+      ]
+    },
+    {
+      "id": "msg_0603_T25SP0101_00006",
+      "en_US": [
+        "Mio padre dice che la giustizia è\n",
+        "lenta ma arriva.\f",
+        "Mia madre dice che arriva dopo\n",
+        "l’aperitivo, {STRVAR_1 3, 0, 0}."
+      ]
+    },
+    {
+      "id": "msg_0603_T25SP0101_00007",
+      "en_US": [
+        "Mio padre fa l’imprenditore,\n",
+        "{STRVAR_1 3, 0, 0}. Non so bene cosa.\f",
+        "So che il Diavulazzu morde chi fa\n",
+        "troppe domande."
+      ]
+    },
+    {
+      "id": "msg_0603_T25SP0101_00008",
+      "en_US": "Mbare, talìa cu c’è!\r"
+    },
+    {
+      "id": "msg_0603_T25SP0101_00009",
+      "en_US": [
+        "Eri sparito, {STRVAR_1 3, 0, 0}. Ti cercavo da\n",
+        "un’ora.\f",
+        "Questa è la porta VIP: qui entra\n",
+        "solo chi conosce me.\r"
+      ]
+    },
+    {
+      "id": "msg_0603_T25SP0101_00010",
+      "en_US": [
+        "Guardi il mio Subwoofer? Tranquillo,\n",
+        "non morde.\f",
+        "Fa solo tremare i bicchieri.\r"
+      ]
+    },
+    {
+      "id": "msg_0603_T25SP0101_00011",
+      "en_US": [
+        "Senti, {STRVAR_1 3, 0, 0}: è tardi, hai una\n",
+        "faccia da giorno dopo.\f",
+        "Vai a casa e dormici sopra.\r"
+      ]
+    },
+    {
+      "id": "msg_0603_T25SP0101_00012",
+      "en_US": "Dumani è dumani, mbare."
+    },
+    {
+      "id": "msg_0603_T25SP0101_00013",
+      "en_US": [
+        "Vai, {STRVAR_1 3, 0, 0}. Ci rivediamo presto,\n",
+        "lo sento.\f",
+        "Il Subwoofer ha fiuto per queste\n",
+        "cose."
+      ]
+    },
+    {
+      "id": "msg_0603_T25SP0101_00014",
+      "en_US": [
+        "Il Subwoofer di Christian vibra a\n",
+        "tempo di cassa.\f",
+        "Ogni tanto sbuffa e un bicchiere\n",
+        "trema."
+      ]
+    },
+    {
+      "id": "msg_0603_T25SP0101_00015",
+      "en_US": [
+        "Il Gattupardu si lecca una zampa con\n",
+        "aria da salotto.\f",
+        "Ti ignora con grande eleganza."
+      ]
+    },
+    {
+      "id": "msg_0603_T25SP0101_00016",
+      "en_US": [
+        "Il Novicudi muove le nove code a\n",
+        "tempo di musica.\f",
+        "Le luci della pista fanno il resto."
+      ]
+    },
+    {
+      "id": "msg_0603_T25SP0101_00017",
+      "en_US": [
+        "Il Diavulazzu ringhia piano.\f",
+        "Il collare ha una targhetta\n",
+        "d’argento: nessun nome, solo un\f",
+        "numero."
+      ]
+    },
+    {
+      "id": "msg_0603_T25SP0101_00018",
+      "en_US": [
+        "Prima di uscire, due parole con\n",
+        "Christian all’ingresso VIP."
+      ]
+    },
+    {
+      "id": "msg_0603_T25SP0101_00019",
+      "en_US": [
+        "Fuori comincia a schiarire.\f",
+        "La notte al Cubbar finisce qui."
+      ]
+    }
+  ]
+}

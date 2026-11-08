@@ -1,0 +1,82 @@
+{
+  "key": 46163,
+  "messages": [
+    {
+      "id": "msg_0851_00000",
+      "en_US": [
+        "{STRVAR_1 3, 0, 0} accende il PC e controlla la\n",
+        "casella di posta."
+      ]
+    },
+    {
+      "id": "msg_0851_00001",
+      "en_US": [
+        "Nessuna mail nuova.\f",
+        "Solo tremila richieste di intervista\n",
+        "sulle tue dimissioni."
+      ]
+    },
+    {
+      "id": "msg_0851_00002",
+      "en_US": [
+        "Gli scaffali sono pieni di codici\n",
+        "LUISS.\f",
+        "Accanto, sei mesi di verbali di\n",
+        "Palazzo d’Orléans."
+      ]
+    },
+    {
+      "id": "msg_0851_00003",
+      "en_US": [
+        "Sulla scrivania c’è ancora la\n",
+        "lettera del Ministero.\f",
+        "“Non idoneo”. Eppure c’è stato un\n",
+        "Presidente."
+      ]
+    },
+    {
+      "id": "msg_0851_00004",
+      "en_US": [
+        "Il diploma del liceo Cutelli,\n",
+        "incorniciato dalla mamma.\f",
+        "Accanto, incorniciata, la nomina a\n",
+        "Presidente."
+      ]
+    },
+    {
+      "id": "msg_0851_00005",
+      "en_US": [
+        "Qualche ora prima.\f",
+        "Misterbianco, il Cubbar."
+      ]
+    },
+    {
+      "id": "msg_0851_00006",
+      "en_US": [
+        "Ore 14:00.\f",
+        "Corso Italia, camera tua.\r"
+      ]
+    },
+    {
+      "id": "msg_0851_00007",
+      "en_US": [
+        "La testa pesa ancora di basso e di\n",
+        "luci.\f",
+        "È già pomeriggio.\r"
+      ]
+    },
+    {
+      "id": "msg_0851_00008",
+      "en_US": [
+        "“{STRVAR_1 3, 0, 0}!!\f",
+        "Scendi subito!\f",
+        "Il figlio dell’avvocato Lombardo ha\n",
+        "già aperto lo studio a Milano!”\r"
+      ]
+    },
+    {
+      "id": "msg_0851_00009",
+      "en_US": "Ecco. La giornata è cominciata."
+    }
+  ]
+}

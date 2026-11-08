@@ -1,0 +1,81 @@
+{
+  "key": 46163,
+  "messages": [
+    {
+      "id": "msg_0546_T20R0202_00000",
+      "en_US": [
+        "{STRVAR_1 3, 0, 0} accende il PC e controlla la\n",
+        "casella di posta."
+      ]
+    },
+    {
+      "id": "msg_0546_T20R0202_00001",
+      "en_US": [
+        "Nessuna mail nuova.\f",
+        "I 41 curricula inviati non hanno\n",
+        "ancora risposto."
+      ]
+    },
+    {
+      "id": "msg_0546_T20R0202_00002",
+      "en_US": [
+        "Gli scaffali sono pieni di codici\n",
+        "LUISS: civile, penale, procedura.\f",
+        "Letti tutti. Serviti a poco."
+      ]
+    },
+    {
+      "id": "msg_0546_T20R0202_00003",
+      "en_US": [
+        "Sulla scrivania c’è una lettera col\n",
+        "timbro del Ministero.\f",
+        "Esito: “non idoneo”. Piegata in\n",
+        "quattro."
+      ]
+    },
+    {
+      "id": "msg_0546_T20R0202_00004",
+      "en_US": [
+        "Il diploma del liceo Cutelli,\n",
+        "incorniciato dalla mamma.\f",
+        "La cornice ha avuto più successo di\n",
+        "te."
+      ]
+    },
+    {
+      "id": "msg_0546_T20R0202_00005",
+      "en_US": [
+        "Qualche ora prima.\f",
+        "Misterbianco, il Cubbar."
+      ]
+    },
+    {
+      "id": "msg_0546_T20R0202_00006",
+      "en_US": [
+        "Ore 14:00.\f",
+        "Corso Italia, camera tua.\r"
+      ]
+    },
+    {
+      "id": "msg_0546_T20R0202_00007",
+      "en_US": [
+        "La testa pesa ancora di basso e di\n",
+        "luci.\f",
+        "È già pomeriggio.\r"
+      ]
+    },
+    {
+      "id": "msg_0546_T20R0202_00008",
+      "en_US": [
+        "“{STRVAR_1 3, 0, 0}!!\f",
+        "Scendi subito!\f",
+        "Il figlio dell’avvocato Lombardo ha\n",
+        "già aperto lo studio a Milano!”\r"
+      ]
+    },
+    {
+      "id": "msg_0546_T20R0202_00009",
+      "en_US": "Ecco. La giornata è cominciata."
+    }
+  ]
+}

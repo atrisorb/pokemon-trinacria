@@ -1,0 +1,1390 @@
+{
+ "modulo": "MODULO 6 - MASTER_SCRIPT_AND_DIALOGUE_BIBLE",
+ "blocco": "6.01",
+ "titolo": "Prologo: il Cubbar (M-CT-00) e la casa di Corso Italia (M-CT-01)",
+ "versione": "1.0",
+ "data": "2026-11-08",
+ "progetto": "Pokémon Trinacria - autore e copyright: atrisorb",
+ "file": "F:\\Progetti\\pokémon-sicilia\\docs\\MODULO_6\\6.01_PROLOGO.json",
+ "lettore": "LLM esecutore: i file di 6.01_FILE si copiano nel repository (Modulo 7, blocco 7.5); nessuna decisione.",
+ "fonti": [
+  "trama v1.9 (M-CT-00, M-CT-01)",
+  "registri 2.1, 2.4, 2.5",
+  "blocchi 3.x (Glossario)",
+  "4.2 (stanza del Cubbar)",
+  "4.4 (R-GFX-33)",
+  "pokeheartgold: asm/macros, scr_seq, zone_event, msg_0545/0546/0603"
+ ],
+ "cartella_file": "docs/MODULO_6/6.01_FILE",
+ "mappe": [
+  {
+   "simbolo": "MAP_CT_MISTERBIANCO_CUBBAR",
+   "codice_file_hg": "T25SP0101",
+   "banco_campagna": "msg_0603_T25SP0101",
+   "gemello": "msg_0870",
+   "n_messaggi": 20,
+   "n_script": 14,
+   "n_oggetti": 11,
+   "file_banco": "files/msgdata/msg/msg_0603_T25SP0101.json",
+   "file_gemello": "files/msgdata/msg/msg_0870.json",
+   "file_script": "files/fielddata/script/scr_seq/scr_seq_0910_T25SP0101.s",
+   "file_header_script": "files/fielddata/script/scr_seq/scr_seq_0683_T25SP0101_hdr.s",
+   "file_event_h": "files/fielddata/script/scr_seq/event_T25SP0101.h",
+   "file_eventi": "files/fielddata/eventdata/zone_event/488_T25SP0101.json"
+  },
+  {
+   "simbolo": "MAP_CT_CATANIA_CASA_PROTAGONISTA_2F",
+   "codice_file_hg": "T20R0202",
+   "banco_campagna": "msg_0546_T20R0202",
+   "gemello": "msg_0851",
+   "n_messaggi": 10,
+   "n_script": 6,
+   "n_oggetti": 0,
+   "file_banco": "files/msgdata/msg/msg_0546_T20R0202.json",
+   "file_gemello": "files/msgdata/msg/msg_0851.json",
+   "file_script": "files/fielddata/script/scr_seq/scr_seq_0846_T20R0202.s",
+   "file_header_script": "files/fielddata/script/scr_seq/scr_seq_0619_T20R0202_hdr.s",
+   "file_event_h": "files/fielddata/script/scr_seq/event_T20R0202.h",
+   "file_eventi": "files/fielddata/eventdata/zone_event/061_T20R0202.json"
+  },
+  {
+   "simbolo": "MAP_CT_CATANIA_CASA_PROTAGONISTA_1F",
+   "codice_file_hg": "T20R0201",
+   "banco_campagna": "msg_0545_T20R0201",
+   "gemello": "msg_0850",
+   "n_messaggi": 37,
+   "n_script": 8,
+   "n_oggetti": 3,
+   "file_banco": "files/msgdata/msg/msg_0545_T20R0201.json",
+   "file_gemello": "files/msgdata/msg/msg_0850.json",
+   "file_script": "files/fielddata/script/scr_seq/scr_seq_0845_T20R0201.s",
+   "file_header_script": "files/fielddata/script/scr_seq/scr_seq_0618_T20R0201_hdr.s",
+   "file_event_h": "files/fielddata/script/scr_seq/event_T20R0201.h",
+   "file_eventi": "files/fielddata/eventdata/zone_event/060_T20R0201.json"
+  }
+ ],
+ "npc": [
+  {
+   "map_symbol": "MAP_CT_MISTERBIANCO_CUBBAR",
+   "npc_id": "obj_t25sp0101_christian",
+   "x": 13,
+   "y": 11,
+   "sprite": "SPRITE_TRN_CHRISTIAN",
+   "msg_bank": "msg_0603_T25SP0101",
+   "msg_index": "00008",
+   "post_category": "ESENTE",
+   "dialect_area": "CT_GALERMO",
+   "ruolo": "COMPAGNO",
+   "visibile": "SEMPRE",
+   "hide_flag": "FLAG_M_CT_00",
+   "trainer_id": "",
+   "pokemon_species": "",
+   "accanto_a": "",
+   "codice_trama": "C-03",
+   "note": "Prologo: all’ingresso VIP; si unisce nel capitolo 2 (Galermo); sparisce con FLAG_M_CT_00"
+  },
+  {
+   "map_symbol": "MAP_CT_MISTERBIANCO_CUBBAR",
+   "npc_id": "obj_t25sp0101_subwoofer",
+   "x": 14,
+   "y": 11,
+   "sprite": "SPRITE_FOLLOWER_MON_EXPLOUD",
+   "msg_bank": "msg_0603_T25SP0101",
+   "msg_index": "00014",
+   "post_category": "ESENTE",
+   "dialect_area": "ITALIANO",
+   "ruolo": "POKEMON",
+   "visibile": "SEMPRE",
+   "hide_flag": "FLAG_M_CT_00",
+   "trainer_id": "",
+   "pokemon_species": "SPECIES_EXPLOUD",
+   "accanto_a": "obj_t25sp0101_christian",
+   "codice_trama": "",
+   "note": "Subwoofer è il nome della specie (Glossario G30-0024)"
+  },
+  {
+   "map_symbol": "MAP_CT_MISTERBIANCO_CUBBAR",
+   "npc_id": "obj_t25sp0101_figlio_avvocato",
+   "x": 8,
+   "y": 16,
+   "sprite": "SPRITE_GORGGEOUSM",
+   "msg_bank": "msg_0603_T25SP0101",
+   "msg_index": "00002",
+   "post_category": "CAPRO",
+   "dialect_area": "CT_CORSO_ITALIA",
+   "ruolo": "POPOLO",
+   "visibile": "SEMPRE",
+   "hide_flag": "",
+   "trainer_id": "",
+   "pokemon_species": "",
+   "accanto_a": "",
+   "codice_trama": "",
+   "note": "figlio d’avvocato; ha il Gattupardu"
+  },
+  {
+   "map_symbol": "MAP_CT_MISTERBIANCO_CUBBAR",
+   "npc_id": "obj_t25sp0101_gattupardu",
+   "x": 9,
+   "y": 16,
+   "sprite": "SPRITE_FOLLOWER_MON_STATIC_PERSIAN",
+   "msg_bank": "msg_0603_T25SP0101",
+   "msg_index": "00015",
+   "post_category": "ESENTE",
+   "dialect_area": "ITALIANO",
+   "ruolo": "POKEMON",
+   "visibile": "SEMPRE",
+   "hide_flag": "",
+   "trainer_id": "",
+   "pokemon_species": "SPECIES_PERSIAN",
+   "accanto_a": "obj_t25sp0101_figlio_avvocato",
+   "codice_trama": "",
+   "note": "Pokémon da salotto"
+  },
+  {
+   "map_symbol": "MAP_CT_MISTERBIANCO_CUBBAR",
+   "npc_id": "obj_t25sp0101_figlia_magistrato",
+   "x": 11,
+   "y": 16,
+   "sprite": "SPRITE_GORGGEOUSW",
+   "msg_bank": "msg_0603_T25SP0101",
+   "msg_index": "00003",
+   "post_category": "ESTIMATORE",
+   "dialect_area": "CT_CORSO_ITALIA",
+   "ruolo": "POPOLO",
+   "visibile": "SEMPRE",
+   "hide_flag": "",
+   "trainer_id": "",
+   "pokemon_species": "",
+   "accanto_a": "",
+   "codice_trama": "",
+   "note": "figlia di magistrato; ha il Novicudi"
+  },
+  {
+   "map_symbol": "MAP_CT_MISTERBIANCO_CUBBAR",
+   "npc_id": "obj_t25sp0101_novicudi",
+   "x": 12,
+   "y": 16,
+   "sprite": "SPRITE_FOLLOWER_MON_NINETALES",
+   "msg_bank": "msg_0603_T25SP0101",
+   "msg_index": "00016",
+   "post_category": "ESENTE",
+   "dialect_area": "ITALIANO",
+   "ruolo": "POKEMON",
+   "visibile": "SEMPRE",
+   "hide_flag": "",
+   "trainer_id": "",
+   "pokemon_species": "SPECIES_NINETALES",
+   "accanto_a": "obj_t25sp0101_figlia_magistrato",
+   "codice_trama": "",
+   "note": "Pokémon da salotto"
+  },
+  {
+   "map_symbol": "MAP_CT_MISTERBIANCO_CUBBAR",
+   "npc_id": "obj_t25sp0101_praticante",
+   "x": 14,
+   "y": 16,
+   "sprite": "SPRITE_ASSISTANTM",
+   "msg_bank": "msg_0603_T25SP0101",
+   "msg_index": "00004",
+   "post_category": "CAPRO",
+   "dialect_area": "CT_CORSO_ITALIA",
+   "ruolo": "POPOLO",
+   "visibile": "SEMPRE",
+   "hide_flag": "",
+   "trainer_id": "",
+   "pokemon_species": "",
+   "accanto_a": "",
+   "codice_trama": "",
+   "note": "praticante di uno studio legale"
+  },
+  {
+   "map_symbol": "MAP_CT_MISTERBIANCO_CUBBAR",
+   "npc_id": "obj_t25sp0101_pr_locale",
+   "x": 18,
+   "y": 16,
+   "sprite": "SPRITE_SUNGLASSES",
+   "msg_bank": "msg_0603_T25SP0101",
+   "msg_index": "00005",
+   "post_category": "ESTIMATORE",
+   "dialect_area": "CT_CORSO_ITALIA",
+   "ruolo": "POPOLO",
+   "visibile": "SEMPRE",
+   "hide_flag": "",
+   "trainer_id": "",
+   "pokemon_species": "",
+   "accanto_a": "",
+   "codice_trama": "",
+   "note": "PR del locale"
+  },
+  {
+   "map_symbol": "MAP_CT_MISTERBIANCO_CUBBAR",
+   "npc_id": "obj_t25sp0101_figlia_magistrato_2",
+   "x": 21,
+   "y": 16,
+   "sprite": "SPRITE_LADY",
+   "msg_bank": "msg_0603_T25SP0101",
+   "msg_index": "00006",
+   "post_category": "CAPRO",
+   "dialect_area": "CT_CORSO_ITALIA",
+   "ruolo": "POPOLO",
+   "visibile": "SEMPRE",
+   "hide_flag": "",
+   "trainer_id": "",
+   "pokemon_species": "",
+   "accanto_a": "",
+   "codice_trama": "",
+   "note": "figlia di magistrato"
+  },
+  {
+   "map_symbol": "MAP_CT_MISTERBIANCO_CUBBAR",
+   "npc_id": "obj_t25sp0101_figlio_imprenditore",
+   "x": 24,
+   "y": 16,
+   "sprite": "SPRITE_BADMAN",
+   "msg_bank": "msg_0603_T25SP0101",
+   "msg_index": "00007",
+   "post_category": "CAPRO",
+   "dialect_area": "CT_CORSO_ITALIA",
+   "ruolo": "POPOLO",
+   "visibile": "SEMPRE",
+   "hide_flag": "",
+   "trainer_id": "",
+   "pokemon_species": "",
+   "accanto_a": "",
+   "codice_trama": "",
+   "note": "figlio di un imprenditore; ha il Diavulazzu"
+  },
+  {
+   "map_symbol": "MAP_CT_MISTERBIANCO_CUBBAR",
+   "npc_id": "obj_t25sp0101_diavulazzu",
+   "x": 25,
+   "y": 16,
+   "sprite": "SPRITE_FOLLOWER_MON_HOUNDOOM",
+   "msg_bank": "msg_0603_T25SP0101",
+   "msg_index": "00017",
+   "post_category": "ESENTE",
+   "dialect_area": "ITALIANO",
+   "ruolo": "POKEMON",
+   "visibile": "SEMPRE",
+   "hide_flag": "",
+   "trainer_id": "",
+   "pokemon_species": "SPECIES_HOUNDOOM",
+   "accanto_a": "obj_t25sp0101_figlio_imprenditore",
+   "codice_trama": "",
+   "note": "collare con una targhetta senza nome"
+  },
+  {
+   "map_symbol": "MAP_CT_CATANIA_CASA_PROTAGONISTA_1F",
+   "npc_id": "obj_t20r0201_graziella",
+   "x": 6,
+   "y": 7,
+   "sprite": "SPRITE_TRN_GRAZIELLA",
+   "msg_bank": "msg_0545_T20R0201",
+   "msg_index": "00013",
+   "post_category": "ESENTE",
+   "dialect_area": "CT_CORSO_ITALIA",
+   "ruolo": "PERSONAGGIO",
+   "visibile": "SEMPRE",
+   "hide_flag": "",
+   "trainer_id": "",
+   "pokemon_species": "",
+   "accanto_a": "",
+   "codice_trama": "M-CT-01",
+   "note": "la madre del protagonista; custodisce i risparmi"
+  },
+  {
+   "map_symbol": "MAP_CT_CATANIA_CASA_PROTAGONISTA_1F",
+   "npc_id": "obj_t20r0201_puparu",
+   "x": 8,
+   "y": 9,
+   "sprite": "SPRITE_FOLLOWER_MON_MR_MIME",
+   "msg_bank": "msg_0545_T20R0201",
+   "msg_index": "00035",
+   "post_category": "ESENTE",
+   "dialect_area": "ITALIANO",
+   "ruolo": "POKEMON",
+   "visibile": "SEMPRE",
+   "hide_flag": "",
+   "trainer_id": "",
+   "pokemon_species": "SPECIES_MR_MIME",
+   "accanto_a": "obj_t20r0201_graziella",
+   "codice_trama": "",
+   "note": "domestico di casa"
+  },
+  {
+   "map_symbol": "MAP_CT_CATANIA_CASA_PROTAGONISTA_1F",
+   "npc_id": "obj_t20r0201_leccu",
+   "x": 7,
+   "y": 6,
+   "sprite": "SPRITE_FOLLOWER_MON_DELCATTY",
+   "msg_bank": "msg_0545_T20R0201",
+   "msg_index": "00036",
+   "post_category": "ESENTE",
+   "dialect_area": "ITALIANO",
+   "ruolo": "POKEMON",
+   "visibile": "SEMPRE",
+   "hide_flag": "",
+   "trainer_id": "",
+   "pokemon_species": "SPECIES_DELCATTY",
+   "accanto_a": "obj_t20r0201_graziella",
+   "codice_trama": "",
+   "note": "Pokémon da divano"
+  }
+ ],
+ "testi": [
+  {
+   "id": "msg_0603_T25SP0101_00000",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Misterbianco, il Cubbar.\fLe 3:30 del mattino. Il basso fa\ntremare i bicchieri sul banco.\r"
+  },
+  {
+   "id": "msg_0870_00000",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Misterbianco, il Cubbar.\fLe 3:30 del mattino. Il basso fa\ntremare i bicchieri sul banco.\r"
+  },
+  {
+   "id": "msg_0603_T25SP0101_00001",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Accanto a tutti c’è un Pokémon.\fAccanto a me, solo il bicchiere."
+  },
+  {
+   "id": "msg_0870_00001",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Accanto a tutti c’è un Pokémon.\fAccanto a me, solo il bicchiere."
+  },
+  {
+   "id": "msg_0603_T25SP0101_00002",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Ti presento il mio Gattupardu,\n{STRVAR_1 3, 0, 0}.\fPedigree certificato: costa quanto\nun bilocale a Ognina.\fIl tuo dov’è?"
+  },
+  {
+   "id": "msg_0870_00002",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Il mio Gattupardu sta benissimo,\n{STRVAR_1 3, 0, 0}.\fMio padre, invece, ha perso metà\ndello studio dopo le tue dimissioni.\fGrazie."
+  },
+  {
+   "id": "msg_0603_T25SP0101_00003",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Il mio Novicudi? Regalo di papà: è\nmagistrato, sai.\fDice che i Pokémon rari non si\ndiscutono, {STRVAR_1 3, 0, 0}."
+  },
+  {
+   "id": "msg_0870_00003",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Papà ha riaperto un fascicolo che\ndormiva da anni, {STRVAR_1 3, 0, 0}.\fDice che è merito delle tue\ndimissioni. Il mio Novicudi approva."
+  },
+  {
+   "id": "msg_0603_T25SP0101_00004",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Faccio il praticante da tre anni,\n{STRVAR_1 3, 0, 0}.\fRimborso spese: un caffè e un\ngrazie.\fIl Pokémon me lo comprerò da\ntitolare."
+  },
+  {
+   "id": "msg_0870_00004",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Dopo le tue dimissioni lo studio ha\ntagliato i praticanti, {STRVAR_1 3, 0, 0}.\fIl caffè non me lo offrono più.\nComplimenti."
+  },
+  {
+   "id": "msg_0603_T25SP0101_00005",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Sei in lista, {STRVAR_1 3, 0, 0}? No?\nTranquillo.\fBasta citare il mio nome\nall’ingresso: il tavolo è mio."
+  },
+  {
+   "id": "msg_0870_00005",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "{STRVAR_1 3, 0, 0}! Dopo le tue dimissioni la\ngente balla di più.\fGiuro: serate così piene non le\navevo mai viste."
+  },
+  {
+   "id": "msg_0603_T25SP0101_00006",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Mio padre dice che la giustizia è\nlenta ma arriva.\fMia madre dice che arriva dopo\nl’aperitivo, {STRVAR_1 3, 0, 0}."
+  },
+  {
+   "id": "msg_0870_00006",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Mio padre dice che le tue dimissioni\nhanno rallentato tutto, {STRVAR_1 3, 0, 0}.\fAnche l’aperitivo."
+  },
+  {
+   "id": "msg_0603_T25SP0101_00007",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Mio padre fa l’imprenditore,\n{STRVAR_1 3, 0, 0}. Non so bene cosa.\fSo che il Diavulazzu morde chi fa\ntroppe domande."
+  },
+  {
+   "id": "msg_0870_00007",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Dopo le tue dimissioni papà dice che\nle cose cambiano.\fHa già cambiato sigla due volte,\n{STRVAR_1 3, 0, 0}."
+  },
+  {
+   "id": "msg_0603_T25SP0101_00008",
+   "lingua": "scn",
+   "area": "CT",
+   "testo": "Mbare, talìa cu c’è!\r"
+  },
+  {
+   "id": "msg_0870_00008",
+   "lingua": "scn",
+   "area": "CT",
+   "testo": "Mbare, talìa cu c’è!\r"
+  },
+  {
+   "id": "msg_0603_T25SP0101_00009",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Eri sparito, {STRVAR_1 3, 0, 0}. Ti cercavo da\nun’ora.\fQuesta è la porta VIP: qui entra\nsolo chi conosce me.\r"
+  },
+  {
+   "id": "msg_0870_00009",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Eri sparito, {STRVAR_1 3, 0, 0}. Ti cercavo da\nun’ora.\fQuesta è la porta VIP: qui entra\nsolo chi conosce me.\r"
+  },
+  {
+   "id": "msg_0603_T25SP0101_00010",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Guardi il mio Subwoofer? Tranquillo,\nnon morde.\fFa solo tremare i bicchieri.\r"
+  },
+  {
+   "id": "msg_0870_00010",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Guardi il mio Subwoofer? Tranquillo,\nnon morde.\fFa solo tremare i bicchieri.\r"
+  },
+  {
+   "id": "msg_0603_T25SP0101_00011",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Senti, {STRVAR_1 3, 0, 0}: è tardi, hai una\nfaccia da giorno dopo.\fVai a casa e dormici sopra.\r"
+  },
+  {
+   "id": "msg_0870_00011",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Senti, {STRVAR_1 3, 0, 0}: è tardi, hai una\nfaccia da giorno dopo.\fVai a casa e dormici sopra.\r"
+  },
+  {
+   "id": "msg_0603_T25SP0101_00012",
+   "lingua": "scn",
+   "area": "CT",
+   "testo": "Dumani è dumani, mbare."
+  },
+  {
+   "id": "msg_0870_00012",
+   "lingua": "scn",
+   "area": "CT",
+   "testo": "Dumani è dumani, mbare."
+  },
+  {
+   "id": "msg_0603_T25SP0101_00013",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Vai, {STRVAR_1 3, 0, 0}. Ci rivediamo presto,\nlo sento.\fIl Subwoofer ha fiuto per queste\ncose."
+  },
+  {
+   "id": "msg_0870_00013",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Vai, {STRVAR_1 3, 0, 0}. Ci rivediamo presto,\nlo sento.\fIl Subwoofer ha fiuto per queste\ncose."
+  },
+  {
+   "id": "msg_0603_T25SP0101_00014",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Il Subwoofer di Christian vibra a\ntempo di cassa.\fOgni tanto sbuffa e un bicchiere\ntrema."
+  },
+  {
+   "id": "msg_0870_00014",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Il Subwoofer di Christian vibra a\ntempo di cassa.\fOgni tanto sbuffa e un bicchiere\ntrema."
+  },
+  {
+   "id": "msg_0603_T25SP0101_00015",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Il Gattupardu si lecca una zampa con\naria da salotto.\fTi ignora con grande eleganza."
+  },
+  {
+   "id": "msg_0870_00015",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Il Gattupardu sbadiglia.\fDalle tue dimissioni anche lui\nsembra più nervoso."
+  },
+  {
+   "id": "msg_0603_T25SP0101_00016",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Il Novicudi muove le nove code a\ntempo di musica.\fLe luci della pista fanno il resto."
+  },
+  {
+   "id": "msg_0870_00016",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Il Novicudi socchiude gli occhi.\fNove code, nove opinioni diverse\nsulle tue dimissioni."
+  },
+  {
+   "id": "msg_0603_T25SP0101_00017",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Il Diavulazzu ringhia piano.\fIl collare ha una targhetta\nd’argento: nessun nome, solo un\fnumero."
+  },
+  {
+   "id": "msg_0870_00017",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Il Diavulazzu ringhia piano.\fDalle tue dimissioni la targhetta\ndel collare è cambiata due volte."
+  },
+  {
+   "id": "msg_0603_T25SP0101_00018",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Prima di uscire, due parole con\nChristian all’ingresso VIP."
+  },
+  {
+   "id": "msg_0870_00018",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Prima di uscire, due parole con\nChristian all’ingresso VIP."
+  },
+  {
+   "id": "msg_0603_T25SP0101_00019",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Fuori comincia a schiarire.\fLa notte al Cubbar finisce qui."
+  },
+  {
+   "id": "msg_0870_00019",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Fuori comincia a schiarire.\fLa notte al Cubbar finisce qui."
+  },
+  {
+   "id": "msg_0546_T20R0202_00000",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "{STRVAR_1 3, 0, 0} accende il PC e controlla la\ncasella di posta."
+  },
+  {
+   "id": "msg_0851_00000",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "{STRVAR_1 3, 0, 0} accende il PC e controlla la\ncasella di posta."
+  },
+  {
+   "id": "msg_0546_T20R0202_00001",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Nessuna mail nuova.\fI 41 curricula inviati non hanno\nancora risposto."
+  },
+  {
+   "id": "msg_0851_00001",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Nessuna mail nuova.\fSolo tremila richieste di intervista\nsulle tue dimissioni."
+  },
+  {
+   "id": "msg_0546_T20R0202_00002",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Gli scaffali sono pieni di codici\nLUISS: civile, penale, procedura.\fLetti tutti. Serviti a poco."
+  },
+  {
+   "id": "msg_0851_00002",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Gli scaffali sono pieni di codici\nLUISS.\fAccanto, sei mesi di verbali di\nPalazzo d’Orléans."
+  },
+  {
+   "id": "msg_0546_T20R0202_00003",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Sulla scrivania c’è una lettera col\ntimbro del Ministero.\fEsito: “non idoneo”. Piegata in\nquattro."
+  },
+  {
+   "id": "msg_0851_00003",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Sulla scrivania c’è ancora la\nlettera del Ministero.\f“Non idoneo”. Eppure c’è stato un\nPresidente."
+  },
+  {
+   "id": "msg_0546_T20R0202_00004",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Il diploma del liceo Cutelli,\nincorniciato dalla mamma.\fLa cornice ha avuto più successo di\nte."
+  },
+  {
+   "id": "msg_0851_00004",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Il diploma del liceo Cutelli,\nincorniciato dalla mamma.\fAccanto, incorniciata, la nomina a\nPresidente."
+  },
+  {
+   "id": "msg_0546_T20R0202_00005",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Qualche ora prima.\fMisterbianco, il Cubbar."
+  },
+  {
+   "id": "msg_0851_00005",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Qualche ora prima.\fMisterbianco, il Cubbar."
+  },
+  {
+   "id": "msg_0546_T20R0202_00006",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Ore 14:00.\fCorso Italia, camera tua.\r"
+  },
+  {
+   "id": "msg_0851_00006",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Ore 14:00.\fCorso Italia, camera tua.\r"
+  },
+  {
+   "id": "msg_0546_T20R0202_00007",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "La testa pesa ancora di basso e di\nluci.\fÈ già pomeriggio.\r"
+  },
+  {
+   "id": "msg_0851_00007",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "La testa pesa ancora di basso e di\nluci.\fÈ già pomeriggio.\r"
+  },
+  {
+   "id": "msg_0546_T20R0202_00008",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "“{STRVAR_1 3, 0, 0}!!\fScendi subito!\fIl figlio dell’avvocato Lombardo ha\ngià aperto lo studio a Milano!”\r"
+  },
+  {
+   "id": "msg_0851_00008",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "“{STRVAR_1 3, 0, 0}!!\fScendi subito!\fIl figlio dell’avvocato Lombardo ha\ngià aperto lo studio a Milano!”\r"
+  },
+  {
+   "id": "msg_0546_T20R0202_00009",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Ecco. La giornata è cominciata."
+  },
+  {
+   "id": "msg_0851_00009",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Ecco. La giornata è cominciata."
+  },
+  {
+   "id": "msg_0545_T20R0201_00000",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Ben svegliato, {STRVAR_1 3, 0, 0}!\fSono le due del pomeriggio.\fLo hai sentito, no? Lo studio a\nMilano.\fA Milano, {STRVAR_1 3, 0, 0}. Capisci?\r"
+  },
+  {
+   "id": "msg_0850_00000",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Ben svegliato, {STRVAR_1 3, 0, 0}!\fSono le due del pomeriggio.\fLo hai sentito, no? Lo studio a\nMilano.\fA Milano, {STRVAR_1 3, 0, 0}. Capisci?\r"
+  },
+  {
+   "id": "msg_0545_T20R0201_00001",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Ben svegliata, {STRVAR_1 3, 0, 0}!\fSono le due del pomeriggio.\fLo hai sentito, no? Lo studio a\nMilano.\fA Milano, {STRVAR_1 3, 0, 0}. Capisci?\r"
+  },
+  {
+   "id": "msg_0850_00001",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Ben svegliata, {STRVAR_1 3, 0, 0}!\fSono le due del pomeriggio.\fLo hai sentito, no? Lo studio a\nMilano.\fA Milano, {STRVAR_1 3, 0, 0}. Capisci?\r"
+  },
+  {
+   "id": "msg_0545_T20R0201_00002",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Questo è il tuo zaino. Dentro ci ho\nmesso tre curricula e un fazzoletto.\fNon si sa mai.\r"
+  },
+  {
+   "id": "msg_0850_00002",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Questo è il tuo zaino. Dentro ci ho\nmesso tre curricula e un fazzoletto.\fNon si sa mai.\r"
+  },
+  {
+   "id": "msg_0545_T20R0201_00003",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Questa è la tua tessera. C’è la tua\nfoto.\fTi ho fatto sistemare il ciuffo dal\nfotografo.\r"
+  },
+  {
+   "id": "msg_0850_00003",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Questa è la tua tessera. C’è la tua\nfoto.\fTi ho fatto sistemare il ciuffo dal\nfotografo.\r"
+  },
+  {
+   "id": "msg_0545_T20R0201_00004",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Qui si salva tutto: i progressi, i\nricordi e anche la mia fiducia,\ffinché dura.\r"
+  },
+  {
+   "id": "msg_0850_00004",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Qui si salva tutto: i progressi, i\nricordi e anche la mia fiducia,\ffinché dura.\r"
+  },
+  {
+   "id": "msg_0545_T20R0201_00005",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "E queste sono le opzioni.\fTocca i tasti e capirai subito: hai\nstudiato tanto, no?\r"
+  },
+  {
+   "id": "msg_0850_00005",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "E queste sono le opzioni.\fTocca i tasti e capirai subito: hai\nstudiato tanto, no?\r"
+  },
+  {
+   "id": "msg_0545_T20R0201_00006",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Ah, {STRVAR_1 3, 0, 0}, quasi dimenticavo!\fTi ho ricaricato il telefono: Turi\nha chiamato tre volte.\r"
+  },
+  {
+   "id": "msg_0850_00006",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Ah, {STRVAR_1 3, 0, 0}, quasi dimenticavo!\fTi ho ricaricato il telefono: Turi\nha chiamato tre volte.\r"
+  },
+  {
+   "id": "msg_0545_T20R0201_00007",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "{STRVAR_1 3, 0, 0} riceve il Pokégear!\r"
+  },
+  {
+   "id": "msg_0850_00007",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "{STRVAR_1 3, 0, 0} riceve il Pokégear!\r"
+  },
+  {
+   "id": "msg_0545_T20R0201_00008",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Il Pokégear è il telefono che ogni\ncittadino dovrebbe avere.\fChiama, mostra la mappa e, se hai\ncoraggio, anche il Sondaggio.\r"
+  },
+  {
+   "id": "msg_0850_00008",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Il Pokégear è il telefono che ogni\ncittadino dovrebbe avere.\fChiama, mostra la mappa e, se hai\ncoraggio, anche il Sondaggio.\r"
+  },
+  {
+   "id": "msg_0545_T20R0201_00009",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Ti ricordi come si telefona? {YESNO 0}"
+  },
+  {
+   "id": "msg_0850_00009",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Ti ricordi come si telefona? {YESNO 0}"
+  },
+  {
+   "id": "msg_0545_T20R0201_00010",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Allora accendi il Pokégear e tocca\nil tasto del telefono.\r"
+  },
+  {
+   "id": "msg_0850_00010",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Allora accendi il Pokégear e tocca\nil tasto del telefono.\r"
+  },
+  {
+   "id": "msg_0545_T20R0201_00011",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Tocca Pokégear sullo schermo\ntattile.\fPoi tocca il tasto del telefono.\r"
+  },
+  {
+   "id": "msg_0850_00011",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Tocca Pokégear sullo schermo\ntattile.\fPoi tocca il tasto del telefono.\r"
+  },
+  {
+   "id": "msg_0545_T20R0201_00012",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "I nomi si registrano da soli.\nScegline uno e chiama.\fE ricordati: Turi ti aspetta al\nVermut, in via Gemmellaro."
+  },
+  {
+   "id": "msg_0850_00012",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "I nomi si registrano da soli.\nScegline uno e chiama.\fE ricordati: Turi ti aspetta al\nVermut, in via Gemmellaro."
+  },
+  {
+   "id": "msg_0545_T20R0201_00013",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Turi ti aspetta al Vermut, in via\nGemmellaro.\fVai, almeno prendi aria."
+  },
+  {
+   "id": "msg_0850_00013",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Turi ti aspetta al Vermut, in via\nGemmellaro.\fVai, almeno prendi aria."
+  },
+  {
+   "id": "msg_0545_T20R0201_00014",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Allora te ne vai in giro per la\nSicilia…\fFaccio una cosa: ogni volta che\nguadagni, tengo da parte una quota.\fIn viaggio i soldi servono. Vuoi che\nli custodisca io? {YESNO 0}"
+  },
+  {
+   "id": "msg_0850_00014",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Allora te ne vai in giro per la\nSicilia…\fFaccio una cosa: ogni volta che\nguadagni, tengo da parte una quota.\fIn viaggio i soldi servono. Vuoi che\nli custodisca io? {YESNO 0}"
+  },
+  {
+   "id": "msg_0545_T20R0201_00015",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Voglio sostenerti, {STRVAR_1 3, 0, 0}, anche\ncol Dossier in tasca.\fOgni volta che guadagni, tengo da\nparte una quota.\fVuoi che custodisca io i tuoi soldi?\n{YESNO 0}"
+  },
+  {
+   "id": "msg_0850_00015",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Voglio sostenerti, {STRVAR_1 3, 0, 0}, anche\ncol Dossier in tasca.\fOgni volta che guadagni, tengo da\nparte una quota.\fVuoi che custodisca io i tuoi soldi?\n{YESNO 0}"
+  },
+  {
+   "id": "msg_0545_T20R0201_00016",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Va bene, ci penso io ai tuoi soldi.\fFai attenzione. I Pokémon sono\namici: se fate squadra, potete\ftutto.\fOra vai!"
+  },
+  {
+   "id": "msg_0850_00016",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Va bene, ci penso io ai tuoi soldi.\fFai attenzione. I Pokémon sono\namici: se fate squadra, potete\ftutto.\fOra vai!"
+  },
+  {
+   "id": "msg_0545_T20R0201_00017",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Va bene, ma fai attenzione là fuori.\fI Pokémon sono amici: se fate\nsquadra, potete tutto.\fOra vai!"
+  },
+  {
+   "id": "msg_0850_00017",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Va bene, ma fai attenzione là fuori.\fI Pokémon sono amici: se fate\nsquadra, potete tutto.\fOra vai!"
+  },
+  {
+   "id": "msg_0545_T20R0201_00018",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Ciao! Eccoti a casa.\fTi ho tenuto la camera in ordine.\fO forse è una questione di soldi? {YESNO 0}"
+  },
+  {
+   "id": "msg_0850_00018",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Ciao! Eccoti a casa, Presidente. Ex.\fTi ho tenuto la camera in ordine.\fO forse è una questione di soldi? {YESNO 0}"
+  },
+  {
+   "id": "msg_0545_T20R0201_00019",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Fai quello che puoi."
+  },
+  {
+   "id": "msg_0850_00019",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Fai quello che puoi."
+  },
+  {
+   "id": "msg_0545_T20R0201_00020",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Oh!\fNon hai soldi da ritirare."
+  },
+  {
+   "id": "msg_0850_00020",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Oh!\fNon hai soldi da ritirare."
+  },
+  {
+   "id": "msg_0545_T20R0201_00021",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "I tuoi soldi sono al sicuro qui!\fPensa a te stesso."
+  },
+  {
+   "id": "msg_0850_00021",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "I tuoi soldi sono al sicuro qui!\fPensa a te stesso."
+  },
+  {
+   "id": "msg_0545_T20R0201_00022",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "{STRVAR_1 3, 0, 0}!\fPensa bene a come li spendi!"
+  },
+  {
+   "id": "msg_0850_00022",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "{STRVAR_1 3, 0, 0}!\fPensa bene a come li spendi!"
+  },
+  {
+   "id": "msg_0545_T20R0201_00023",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Vuoi mettere da parte dei soldi? {YESNO 0}"
+  },
+  {
+   "id": "msg_0850_00023",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Vuoi mettere da parte dei soldi? {YESNO 0}"
+  },
+  {
+   "id": "msg_0545_T20R0201_00024",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Oh!\fNon ti restano soldi da mettere da\nparte.\fNon sprecarli in sciocchezze,\nintesi?\fSo che sei ragionevole come me."
+  },
+  {
+   "id": "msg_0850_00024",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Oh!\fNon ti restano soldi da mettere da\nparte.\fNon sprecarli in sciocchezze,\nintesi?\fSo che sei ragionevole come me."
+  },
+  {
+   "id": "msg_0545_T20R0201_00025",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Ho messo da parte tanti soldi.\fNon posso tenerne altri."
+  },
+  {
+   "id": "msg_0850_00025",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Ho messo da parte tanti soldi.\fNon posso tenerne altri."
+  },
+  {
+   "id": "msg_0545_T20R0201_00026",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Hai già tanti soldi con te.\fNon posso dartene altri."
+  },
+  {
+   "id": "msg_0850_00026",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Hai già tanti soldi con te.\fNon posso dartene altri."
+  },
+  {
+   "id": "msg_0545_T20R0201_00027",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "PRELEVA"
+  },
+  {
+   "id": "msg_0850_00027",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "PRELEVA"
+  },
+  {
+   "id": "msg_0545_T20R0201_00028",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "DEPOSITA"
+  },
+  {
+   "id": "msg_0850_00028",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "DEPOSITA"
+  },
+  {
+   "id": "msg_0545_T20R0201_00029",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "CAMBIA"
+  },
+  {
+   "id": "msg_0850_00029",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "CAMBIA"
+  },
+  {
+   "id": "msg_0545_T20R0201_00030",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "ESCI"
+  },
+  {
+   "id": "msg_0850_00030",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "ESCI"
+  },
+  {
+   "id": "msg_0545_T20R0201_00031",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "In TV danno un talk show sul\nprecariato.\fTre ospiti, zero soluzioni.\fMeglio uscire."
+  },
+  {
+   "id": "msg_0850_00031",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "In TV parlano ancora delle\ndimissioni del Presidente.\fNessuno ha capito niente, tutti\nhanno un’opinione."
+  },
+  {
+   "id": "msg_0545_T20R0201_00032",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Arancini al ragù, specialità di\nmamma.\fA Catania sono maschili, che si\nsappia."
+  },
+  {
+   "id": "msg_0850_00032",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Arancini al ragù, specialità di\nmamma.\fA Catania sono maschili, che si\nsappia."
+  },
+  {
+   "id": "msg_0545_T20R0201_00033",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Un lavello lucidissimo.\fMamma lo pulisce quando è nervosa.\nQuindi sempre."
+  },
+  {
+   "id": "msg_0850_00033",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Un lavello lucidissimo.\fDalle tue dimissioni, mamma lo\npulisce due volte al giorno."
+  },
+  {
+   "id": "msg_0545_T20R0201_00034",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Dentro il frigo: acqua, limonata e\nun biglietto.\f“Mangia, che sei magro.”"
+  },
+  {
+   "id": "msg_0850_00034",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Dentro il frigo: acqua, limonata e\nun biglietto.\f“Mangia, che sei magro.”"
+  },
+  {
+   "id": "msg_0545_T20R0201_00035",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Il Puparu stira una camicia con cura\nchirurgica.\fNon dice una parola: è un mimo, del\nresto."
+  },
+  {
+   "id": "msg_0850_00035",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Il Puparu stira una camicia in\nsilenzio.\fHa smesso di guardare il\ntelegiornale."
+  },
+  {
+   "id": "msg_0545_T20R0201_00036",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Il Leccu si è sdraiato sul divano\ncome un nobile in pensione.\fTi lancia uno sguardo di\nsufficienza."
+  },
+  {
+   "id": "msg_0850_00036",
+   "lingua": "it",
+   "area": "CT",
+   "testo": "Il Leccu dorme sul divano.\fDalle tue dimissioni occupa il tuo\nposto."
+  }
+ ],
+ "glossario_aggiunte": [],
+ "risorse": {
+  "flag_impostati": [
+   {
+    "simbolo": "FLAG_M_CT_00",
+    "dove": "T25SP0101_013",
+    "nota": "alias FLAG_INTRO_CUBBAR; fine del flashback; nasconde Christian e il Subwoofer"
+   },
+   {
+    "simbolo": "FLAG_M_CT_01",
+    "dove": "T20R0201_000",
+    "nota": "M-CT-01 completata (nessun Consenso)"
+   },
+   {
+    "simbolo": "FLAG_GOT_BAG",
+    "dove": "T20R0201_000",
+    "nota": "flag del motore (menu): lo zaino"
+   },
+   {
+    "simbolo": "FLAG_GOT_TRAINER_CARD",
+    "dove": "T20R0201_000",
+    "nota": "flag del motore (menu): la tessera"
+   },
+   {
+    "simbolo": "FLAG_GOT_SAVE_BUTTON",
+    "dove": "T20R0201_000",
+    "nota": "flag del motore (menu): il salvataggio"
+   },
+   {
+    "simbolo": "FLAG_GOT_OPTIONS_BUTTON",
+    "dove": "T20R0201_000",
+    "nota": "flag del motore (menu): le opzioni"
+   },
+   {
+    "simbolo": "FLAG_GOT_POKEGEAR",
+    "dove": "T20R0201_000",
+    "nota": "registro 2.4: il telefono del protagonista"
+   },
+   {
+    "simbolo": "FLAG_TALKED_TO_MOM_AFTER_NAMING_RIVAL",
+    "dove": "T20R0201_001",
+    "nota": "nome di HeartGold: prima proposta dei risparmi"
+   },
+   {
+    "simbolo": "FLAG_SYS_MOMS_SAVINGS",
+    "dove": "T20R0201_001",
+    "nota": "letto dal C: parte del premio in denaro va alla madre"
+   }
+  ],
+  "flag_letti": [
+   "FLAG_GOT_STARTER"
+  ],
+  "variabili": [
+   {
+    "simbolo": "VAR_TR_SCENE_CT_01",
+    "valori": "0-6 (§3 del documento)",
+    "nota": "una sola variabile di scena per M-CT-00 e M-CT-01"
+   },
+   {
+    "simbolo": "VAR_TRINACRIA_ATTO",
+    "valori": "0 → 1",
+    "nota": "impostata a 1 da T20R0201_000 (Atto I)"
+   }
+  ],
+  "comandi_speciali": [
+   "ScrCmd_804 2 (T20R0202_003): livello 2 della mappa del Pokégear (4.4, R-GFX-33)"
+  ],
+  "prossimi_liberi": {
+   "variabile_di_scena_CT": "VAR_TR_SCENE_CT_02",
+   "flag_nascondi_CT": "FLAG_TR_HIDE_CT_001 (nessuno consumato)"
+  }
+ },
+ "ancore_attese": [
+  {
+   "da": "MAP_CT_MISTERBIANCO_CUBBAR",
+   "x": 16,
+   "z": 24,
+   "verso": "MAP_CT_MISTERBIANCO",
+   "indice": 0,
+   "blocco": "6.07"
+  },
+  {
+   "da": "MAP_CT_CATANIA_CASA_PROTAGONISTA_1F",
+   "x": 3,
+   "z": 10,
+   "verso": "MAP_CT_CATANIA_CORSO_ITALIA",
+   "indice": 1,
+   "blocco": "6.05"
+  },
+  {
+   "da": "MAP_CT_CATANIA_CASA_PROTAGONISTA_1F",
+   "x": 3,
+   "z": 3,
+   "verso": "MAP_CT_CATANIA_CASA_PROTAGONISTA_2F",
+   "indice": 0,
+   "blocco": "6.01"
+  },
+  {
+   "da": "MAP_CT_CATANIA_CASA_PROTAGONISTA_2F",
+   "x": 3,
+   "z": 4,
+   "verso": "MAP_CT_CATANIA_CASA_PROTAGONISTA_1F",
+   "indice": 1,
+   "blocco": "6.01"
+  }
+ ],
+ "aperti": [
+  "msg_0219 (discorso iniziale di HeartGold) e l'interfaccia restano in inglese: nessuna richiesta li traduce",
+  "60/40 provvisorio di CT: 4 CAPRO e 2 ESTIMATORE",
+  "sprite dinamici dei Pokémon in scena (Exploud, Ninetales, Houndoom, Mr. Mime, Delcatty): prova a schermo nel 7.4"
+ ],
+ "controllo": {
+  "script_check": "SCRIPT_OK",
+  "registro_npc": "REGISTRY_OK",
+  "linter": {
+   "msg_0603_T25SP0101 / msg_0870": "LINT_OK",
+   "msg_0546_T20R0202 / msg_0851": "LINT_OK",
+   "msg_0545_T20R0201 / msg_0850": "LINT_OK"
+  },
+  "avvisi_registro": 6
+ },
+ "file_da_copiare": [
+  {
+   "percorso": "files/msgdata/msg/msg_0603_T25SP0101.json",
+   "tipo": "banco di campagna",
+   "mappa": "MAP_CT_MISTERBIANCO_CUBBAR",
+   "azione": "sostituisci",
+   "sha1": "a1cd030f6be6c7eca1b00cfd2451757e55b36e9f"
+  },
+  {
+   "percorso": "files/msgdata/msg/msg_0870.json",
+   "tipo": "banco gemello post-dimissioni",
+   "mappa": "MAP_CT_MISTERBIANCO_CUBBAR",
+   "azione": "nuovo",
+   "sha1": "a0e1b5dd1b64b4d43be42979582d4ffa94d4f04d"
+  },
+  {
+   "percorso": "files/fielddata/script/scr_seq/scr_seq_0910_T25SP0101.s",
+   "tipo": "script",
+   "mappa": "MAP_CT_MISTERBIANCO_CUBBAR",
+   "azione": "sostituisci",
+   "sha1": "36e098b0cdf3dc47a0ac7de7495a5705a1cb6ea1"
+  },
+  {
+   "percorso": "files/fielddata/script/scr_seq/scr_seq_0683_T25SP0101_hdr.s",
+   "tipo": "intestazione degli script (OnFrame)",
+   "mappa": "MAP_CT_MISTERBIANCO_CUBBAR",
+   "azione": "sostituisci",
+   "sha1": "4beddcb8cecec2d6b6bb8af71346164b20213922"
+  },
+  {
+   "percorso": "files/fielddata/script/scr_seq/event_T25SP0101.h",
+   "tipo": "header degli eventi",
+   "mappa": "MAP_CT_MISTERBIANCO_CUBBAR",
+   "azione": "sostituisci",
+   "sha1": "988810a3a150a7ad4a41bd0aca9718ad762c0555"
+  },
+  {
+   "percorso": "files/fielddata/eventdata/zone_event/488_T25SP0101.json",
+   "tipo": "zone_event",
+   "mappa": "MAP_CT_MISTERBIANCO_CUBBAR",
+   "azione": "sostituisci",
+   "sha1": "94f414531987f8cbd37afc11364d45261e7811c9"
+  },
+  {
+   "percorso": "files/msgdata/msg/msg_0546_T20R0202.json",
+   "tipo": "banco di campagna",
+   "mappa": "MAP_CT_CATANIA_CASA_PROTAGONISTA_2F",
+   "azione": "sostituisci",
+   "sha1": "753f76363b02ad131ba63982cc1e5846525d83e3"
+  },
+  {
+   "percorso": "files/msgdata/msg/msg_0851.json",
+   "tipo": "banco gemello post-dimissioni",
+   "mappa": "MAP_CT_CATANIA_CASA_PROTAGONISTA_2F",
+   "azione": "nuovo",
+   "sha1": "e3f133df986bd1c5795f467d9d481116bee04b96"
+  },
+  {
+   "percorso": "files/fielddata/script/scr_seq/scr_seq_0846_T20R0202.s",
+   "tipo": "script",
+   "mappa": "MAP_CT_CATANIA_CASA_PROTAGONISTA_2F",
+   "azione": "sostituisci",
+   "sha1": "8b8e3c6502245a3b20b9421850b07b53eaa60eca"
+  },
+  {
+   "percorso": "files/fielddata/script/scr_seq/scr_seq_0619_T20R0202_hdr.s",
+   "tipo": "intestazione degli script (OnFrame)",
+   "mappa": "MAP_CT_CATANIA_CASA_PROTAGONISTA_2F",
+   "azione": "sostituisci",
+   "sha1": "f30f217bd07db53cca3592b8909b13c17f329b02"
+  },
+  {
+   "percorso": "files/fielddata/script/scr_seq/event_T20R0202.h",
+   "tipo": "header degli eventi",
+   "mappa": "MAP_CT_CATANIA_CASA_PROTAGONISTA_2F",
+   "azione": "sostituisci",
+   "sha1": "f9ebad1ed38bf690a427d3456a61559c1f3b25cc"
+  },
+  {
+   "percorso": "files/fielddata/eventdata/zone_event/061_T20R0202.json",
+   "tipo": "zone_event",
+   "mappa": "MAP_CT_CATANIA_CASA_PROTAGONISTA_2F",
+   "azione": "sostituisci",
+   "sha1": "363f366aa00a02dc703fd2bb78fc9e218848fb95"
+  },
+  {
+   "percorso": "files/msgdata/msg/msg_0545_T20R0201.json",
+   "tipo": "banco di campagna",
+   "mappa": "MAP_CT_CATANIA_CASA_PROTAGONISTA_1F",
+   "azione": "sostituisci",
+   "sha1": "bf1012f9188809a1179ec7cf9ebefcc082619617"
+  },
+  {
+   "percorso": "files/msgdata/msg/msg_0850.json",
+   "tipo": "banco gemello post-dimissioni",
+   "mappa": "MAP_CT_CATANIA_CASA_PROTAGONISTA_1F",
+   "azione": "nuovo",
+   "sha1": "2117424f4734683dd1907db1ce2d3fbf17ac75ac"
+  },
+  {
+   "percorso": "files/fielddata/script/scr_seq/scr_seq_0845_T20R0201.s",
+   "tipo": "script",
+   "mappa": "MAP_CT_CATANIA_CASA_PROTAGONISTA_1F",
+   "azione": "sostituisci",
+   "sha1": "bf9098bd21bc7b7aa149bc1f8d6629869d93a2b2"
+  },
+  {
+   "percorso": "files/fielddata/script/scr_seq/scr_seq_0618_T20R0201_hdr.s",
+   "tipo": "intestazione degli script (OnFrame)",
+   "mappa": "MAP_CT_CATANIA_CASA_PROTAGONISTA_1F",
+   "azione": "sostituisci",
+   "sha1": "1b8b8571629eafc14f5885e3a97d5447e527ed0e"
+  },
+  {
+   "percorso": "files/fielddata/script/scr_seq/event_T20R0201.h",
+   "tipo": "header degli eventi",
+   "mappa": "MAP_CT_CATANIA_CASA_PROTAGONISTA_1F",
+   "azione": "sostituisci",
+   "sha1": "09bdd7276ae7ed86b342eb5142b344d26547f938"
+  },
+  {
+   "percorso": "files/fielddata/eventdata/zone_event/060_T20R0201.json",
+   "tipo": "zone_event",
+   "mappa": "MAP_CT_CATANIA_CASA_PROTAGONISTA_1F",
+   "azione": "sostituisci",
+   "sha1": "91143a22b827da6fb999ae3ed1e4764f5068a436"
+  }
+ ],
+ "riga_finale": "BLOCCO COMPLETO: 6.01 - 3 mappe (Cubbar, camera e piano terra di casa), 28 script, 67 messaggi nei banchi di campagna e altrettanti gemelli (65 in italiano, 2 in siciliano), 14 oggetti in scena (8 persone e 6 Pokémon), 14 righe del registro NPC, variabile di scena VAR_TR_SCENE_CT_01 (0-6), FLAG_M_CT_00 e FLAG_M_CT_01; strumento nuovo trinacria_script_check.py (J00-J17) -> SCRIPT_OK; regole R-SCR-01...15"
+}
