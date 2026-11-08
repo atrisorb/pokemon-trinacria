@@ -207,7 +207,7 @@ def main():
         'cartella_file': 'docs/MODULO_6/6.01_FILE',
         'mappe': mappe, 'npc': npc_rows, 'testi': testi, 'glossario_aggiunte': [],
         'risorse': RISORSE, 'ancore_attese': ANCORE,
-        'aperti': ['msg_0219 (discorso iniziale di HeartGold) e l\'interfaccia restano in inglese: nessuna richiesta li traduce',
+        'aperti': ['msg_0219 (discorso iniziale di HeartGold) e tutta l\'interfaccia sono in inglese fino alla richiesta 6.00 (scaletta v2.24, da fare per prima)',
                    '60/40 provvisorio di CT: 4 CAPRO e 2 ESTIMATORE',
                    'sprite dinamici dei Pokémon in scena (Exploud, Ninetales, Houndoom, Mr. Mime, Delcatty): prova a schermo nel 7.4'],
         'controllo': {},
